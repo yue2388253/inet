@@ -51,6 +51,9 @@ void ExtInterface::initialize(int stage)
     else if (stage == INITSTAGE_LINK_LAYER_2) {
         if (!strcmp("copyToExt", par("copyConfiguration")))
             copyInterfaceConfigurationToExt();
+        // TODO: because Ethernet MAC overrides settings
+        if (!strcmp("copyFromExt", par("copyConfiguration")))
+            copyInterfaceConfigurationFromExt();
     }
 }
 
@@ -69,8 +72,8 @@ void ExtInterface::configureInterface()
 void ExtInterface::registerInterface()
 {
     IInterfaceTable *interfaceTable = findModuleFromPar<IInterfaceTable>(par("interfaceTableModule"), this);
-    if (interfaceTable)
-        interfaceTable->addInterface(this);
+//    if (interfaceTable)
+//        interfaceTable->addInterface(this);
     inet::registerInterface(*this, gate("upperLayerIn"), gate("upperLayerOut"));
 }
 

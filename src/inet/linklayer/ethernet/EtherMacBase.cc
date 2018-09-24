@@ -195,7 +195,10 @@ void EtherMacBase::initialize(int stage)
         subscribe(POST_MODEL_CHANGE, this);
     }
     else if (stage == INITSTAGE_LINK_LAYER) {
-        registerInterface();
+        if (!strcmp("host1", getContainingNode(this)->getFullName()))
+            registerInterface();
+        else
+            interfaceEntry = getContainingNicModule(this);
         initializeQueueModule();
         readChannelParameters(true);
     }

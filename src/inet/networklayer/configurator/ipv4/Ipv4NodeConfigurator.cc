@@ -99,6 +99,10 @@ void Ipv4NodeConfigurator::prepareNode()
 
 void Ipv4NodeConfigurator::prepareInterface(InterfaceEntry *interfaceEntry)
 {
+    //FIXME KLUDGE
+    if (interfaceEntry->findProtocolData<Ipv4InterfaceData>())
+        return;
+    //end of KLUDGE
     // ASSERT(!interfaceEntry->getProtocolData<Ipv4InterfaceData>());
     Ipv4InterfaceData *interfaceData = interfaceEntry->addProtocolData<Ipv4InterfaceData>();
     if (interfaceEntry->isLoopback()) {
