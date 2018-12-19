@@ -1,0 +1,3 @@
+#!/bin/bash
+ulimit -m 12000000
+./smoketest -c -t 1 "$@" examples.csv
