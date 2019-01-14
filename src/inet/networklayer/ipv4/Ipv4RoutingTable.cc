@@ -183,10 +183,10 @@ void Ipv4RoutingTable::receiveSignal(cComponent *source, simsignal_t signalID, c
     else if (signalID == interfaceStateChangedSignal) {
         invalidateCache();
         const auto *ieChangeDetails = check_and_cast<const InterfaceEntryChangeDetails *>(obj);
-        if (ieChangeDetails->getFieldId() == InterfaceEntry::F_STATE) {
+        if (ieChangeDetails->getFieldId() == InterfaceEntry::F_STATE || ieChangeDetails->getFieldId() == InterfaceEntry::F_CARRIER) {
             const auto *entry = ieChangeDetails->getInterfaceEntry();
             updateNetmaskRoutes();
-            if (entry->getState() != InterfaceEntry::State::UP)
+            if (entry->getState() != InterfaceEntry::State::UP || !entry->hasCarrier())
                 deleteInterfaceRoutes(entry);
             invalidateCache();
         }
