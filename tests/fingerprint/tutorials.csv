@@ -31,11 +31,11 @@
 /tutorials/rip/,                     -f omnetpp.ini -c Step6 -r 0,                              100s,           3bcf-7fac/tplx, PASS,   # Step6 extended
 /tutorials/rip/,                     -f omnetpp.ini -c Step6Solution1 -r 0,                     100s,           08cb-0ce4/tplx, PASS,
 /tutorials/rip/,                     -f omnetpp.ini -c Step6Solution2 -r 0,                     100s,           3bcf-7fac/tplx, PASS,
-/tutorials/rip/,                     -f omnetpp.ini -c Step6Solution3 -r 0,                     100s,           223b-de04/tplx, PASS,
+/tutorials/rip/,                     -f omnetpp.ini -c Step6Solution3 -r 0,                     100s,           1a40-ccdb/tplx, PASS,
 /tutorials/rip/,                     -f omnetpp.ini -c Step6DifferentTimings -r 0,              100s,           1c0d-58e3/tplx, PASS,
 /tutorials/rip/,                     -f omnetpp.ini -c Step7 -r 0,                              100s,           aa52-0f24/tplx, PASS,   # Step7 extended
 /tutorials/rip/,                     -f omnetpp.ini -c Step7SplitHorizon -r 0,                  100s,           65de-56c5/tplx, PASS,
-/tutorials/rip/,                     -f omnetpp.ini -c Step7TriggeredUpdates -r 0,              100s,           1462-582a/tplx, PASS,
+/tutorials/rip/,                     -f omnetpp.ini -c Step7TriggeredUpdates -r 0,              100s,           ee22-a51f/tplx, PASS,
 /tutorials/rip/,                     -f omnetpp.ini -c Step8 -r 0,                              100s,           aa52-0f24/tplx, PASS,
 /tutorials/rip/,                     -f omnetpp.ini -c Step9 -r 0,                              100s,           d6d1-82ea/tplx, PASS,   # Step9 extended
 /tutorials/rip/,                     -f omnetpp.ini -c Step9NoNetmaskRoutes -r 0,               100s,           e46c-f1bd/tplx, PASS,
