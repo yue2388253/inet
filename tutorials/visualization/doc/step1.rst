@@ -29,18 +29,34 @@ each visualizer integrates a canvas and an osg visualizer. Canvas and
 osg visualizers usually can be set simultaneously by using the same
 parameters, however it is also possible to set them separately.
 
-The configuration
-~~~~~~~~~~~~~~~~~
+During this tutorial, both canvas and osg visualizers are used
+simulatniously. The :ned:`IntegratedCanvasVisualizer` is enabled
+by default. In order to enable the :ned:`IntegratedOsgVisualizer`
+as well, the :par:`typename` of the osg visualizer module is set
+to "IntegratedOsgVisualizer".
 
-The configuration for this step uses the :ned:`VisualizationA` network,
-defined in
-:download:`VisualizationA.ned <../VisualizationA.ned>`.
+.. literalinclude:: ../omnetpp.ini
+   :language: ini
+   :start-at: [General]
+   :end-before: [Config Visualization01]
+
+Playground
+~~~~~~~~~~
+
+This step uses the :ned:`VisualizationA` network,
+defined in :download:`VisualizationA.ned <../VisualizationA.ned>`.
+The size of the playground is set to be 800x800 meters and the 'network'
+only contains an :ned:`IntegratedVisualizer` at the position of (x, y) = (100, 50).
 
 .. literalinclude:: ../VisualizationA.ned
    :language: ned
    :start-at: network VisualizationA
 
-For the first step, configuration is empty in the ini file.
+The configuration
+~~~~~~~~~~~~~~~~~
+
+Besides defining the used netwrok, there are no more configurations
+needed for this simulation. The result is shown in the following image:
 
 .. literalinclude:: ../omnetpp.ini
    :language: ini
@@ -51,10 +67,8 @@ Results
 -------
 
 By adding ``visualizer`` to the simulation model, the visualization of
-network phenomenons is enabled.
-
-As you can see in the following image, in 2D visualization you can see
-only the ``visualizer`` module on the playground.
+some of the networks phenomenona are enabled. The result is shown in the
+following image:
 
 .. figure:: media/step1_result_2d.png
    :width: 100%
