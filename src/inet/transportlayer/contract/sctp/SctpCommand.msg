@@ -43,12 +43,9 @@ class AddressVector { @existingClass; }
 //
 enum SctpErrorCode
 {
-
 }
 
-
-
-class SctpSimpleMessage extends cPacket
+packet SctpSimpleMessage
 {
     uint32 dataLen;     //TODO remove it, use set/getDataArraySize() functions only
     uint8_t data[];

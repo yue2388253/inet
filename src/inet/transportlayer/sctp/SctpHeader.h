@@ -210,18 +210,6 @@ class INET_API SctpAsconfChunk : public SctpAsconfChunk_Base
     virtual SctpParameter *removeAsconfParam();
 };
 
-class SctpIncomingSsnResetRequestParameter : public SctpIncomingSsnResetRequestParameter_Base
-{
-  private:
-    void copy(const SctpIncomingSsnResetRequestParameter& other);
-
-  public:
-    SctpIncomingSsnResetRequestParameter(const char *name=nullptr, int kind=0) : SctpIncomingSsnResetRequestParameter_Base() {}
-    SctpIncomingSsnResetRequestParameter(const SctpIncomingSsnResetRequestParameter& other) : SctpIncomingSsnResetRequestParameter_Base(other) {copy(other);}
-    SctpIncomingSsnResetRequestParameter& operator=(const SctpIncomingSsnResetRequestParameter& other) {if (this==&other) return *this; SctpIncomingSsnResetRequestParameter_Base::operator=(other); copy(other); return *this;}
-    virtual SctpIncomingSsnResetRequestParameter *dup() const override {return new SctpIncomingSsnResetRequestParameter(*this);}
-};
-
 class INET_API SctpAsconfAckChunk : public SctpAsconfAckChunk_Base
 {
   protected:
