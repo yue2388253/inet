@@ -65,7 +65,6 @@
 #include <string.h>
 
 namespace inet {
-
 namespace tcp {
 
 /* Forward declarations.*/
@@ -1076,7 +1075,6 @@ tcp_zero_window_probe(struct tcp_pcb *pcb)
 }
 
 } // namespace tcp
-
 } // namespace inet
 
 #endif /* LWIP_TCP */

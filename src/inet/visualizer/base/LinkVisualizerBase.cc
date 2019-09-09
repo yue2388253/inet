@@ -22,7 +22,6 @@
 #include "inet/visualizer/base/LinkVisualizerBase.h"
 
 namespace inet {
-
 namespace visualizer {
 
 LinkVisualizerBase::LinkVisualization::LinkVisualization(int sourceModuleId, int destinationModuleId) :
@@ -280,6 +279,5 @@ void LinkVisualizerBase::receiveSignal(cComponent *source, simsignal_t signal, c
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

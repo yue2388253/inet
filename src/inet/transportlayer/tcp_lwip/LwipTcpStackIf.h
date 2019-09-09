@@ -73,7 +73,6 @@ class LwipTcpStackIf
 };
 
 } // namespace tcp
-
 } // namespace inet
 
 #endif // ifndef __INET_LWIPTCPSTACKIF_H

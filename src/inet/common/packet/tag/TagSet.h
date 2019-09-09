@@ -168,7 +168,7 @@ inline T *TagSet::removeTagIfPresent()
     return index == -1 ? nullptr : static_cast<T *>(removeTag(index));
 }
 
-} // namespace
+} // namespace inet
 
 #endif // #ifndef __INET_TAGSET_H_
 

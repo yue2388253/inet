@@ -118,7 +118,6 @@ bool PimNeighborTable::addNeighbor(PimNeighbor *entry, double holdTime)
         if ((elem)->getAddress() == entry->getAddress())
             return false;
 
-
     EV_DETAIL << "Added new neighbor to table: " << entry->str() << "\n";
     entry->nt = this;
     neighborsOnInterface.push_back(entry);

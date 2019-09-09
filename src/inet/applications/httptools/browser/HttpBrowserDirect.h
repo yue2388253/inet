@@ -21,7 +21,6 @@
 #include "inet/applications/httptools/browser/HttpBrowserBase.h"
 
 namespace inet {
-
 namespace httptools {
 
 /**
@@ -49,7 +48,6 @@ class INET_API HttpBrowserDirect : public HttpBrowserBase
 };
 
 } // namespace httptools
-
 } // namespace inet
 
 #endif // ifndef __INET_HTTPBROWSERDIRECT_H

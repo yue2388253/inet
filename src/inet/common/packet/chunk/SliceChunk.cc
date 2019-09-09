@@ -155,5 +155,5 @@ std::string SliceChunk::str() const
     return os.str();
 }
 
-} // namespace
+} // namespace inet
 

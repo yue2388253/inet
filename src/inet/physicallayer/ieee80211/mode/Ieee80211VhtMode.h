@@ -29,7 +29,6 @@
 namespace inet {
 namespace physicallayer {
 
-
 class INET_API Ieee80211VhtModeBase
 {
     public:
@@ -65,7 +64,6 @@ class INET_API Ieee80211VhtModeBase
         virtual bps getNetBitrate() const;
         virtual bps getGrossBitrate() const;
 };
-
 
 class INET_API Ieee80211VhtSignalMode : public IIeee80211HeaderMode, public Ieee80211VhtModeBase, public Ieee80211HtTimingRelatedParametersBase
 {
@@ -166,7 +164,6 @@ class INET_API Ieee80211VhtPreambleMode : public IIeee80211PreambleMode, public 
         virtual Ptr<Ieee80211PhyPreamble> createPreamble() const override { return makeShared<Ieee80211VhtPhyPreamble>(); }
 
 };
-
 
 class INET_API Ieee80211Vhtmcs
 {
@@ -681,8 +678,6 @@ class INET_API Ieee80211VhtmcsTable
         static const DI<Ieee80211Vhtmcs> vhtMcs7BW160MHzNss8;
         static const DI<Ieee80211Vhtmcs> vhtMcs8BW160MHzNss8;
         static const DI<Ieee80211Vhtmcs> vhtMcs9BW160MHzNss8;
-
-
 };
 
 class INET_API Ieee80211VhtCompliantModes
@@ -697,10 +692,9 @@ class INET_API Ieee80211VhtCompliantModes
         virtual ~Ieee80211VhtCompliantModes();
 
         static const Ieee80211VhtMode *getCompliantMode(const Ieee80211Vhtmcs *mcsMode, Ieee80211VhtMode::BandMode carrierFrequencyMode, Ieee80211VhtPreambleMode::HighTroughputPreambleFormat preambleFormat, Ieee80211VhtModeBase::GuardIntervalType guardIntervalType);
-
 };
 
-} /* namespace physicallayer */
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet
 
 #endif // ifndef __INET_IEEE80211VHTMODE_H

@@ -22,7 +22,6 @@
 #include "inet/common/Units.h"
 
 namespace inet {
-
 namespace physicalenvironment {
 
 using namespace units::values;
@@ -40,7 +39,6 @@ class INET_API IMaterial
 };
 
 } // namespace physicalenvironment
-
 } // namespace inet
 
 #endif // ifndef __INET_IMATERIAL_H

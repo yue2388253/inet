@@ -82,7 +82,7 @@ class INET_API QosAckHandler : public cSimpleModule, public IAckHandler
         static std::string getStatusString(Status status);
 };
 
-} /* namespace ieee80211 */
-} /* namespace inet */
+} // namespace ieee80211
+} // namespace inet
 
 #endif // ifndef __INET_QOSACKHANDLER_H

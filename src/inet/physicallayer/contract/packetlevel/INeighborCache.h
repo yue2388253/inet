@@ -21,7 +21,6 @@
 #include "inet/physicallayer/contract/packetlevel/IRadio.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 /**
@@ -42,7 +41,6 @@ class INET_API INeighborCache : public IPrintableObject
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_INEIGHBORCACHE_H

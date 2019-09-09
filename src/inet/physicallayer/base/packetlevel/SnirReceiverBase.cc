@@ -20,7 +20,6 @@
 #include "inet/physicallayer/contract/packetlevel/IRadioMedium.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 void SnirReceiverBase::initialize(int stage)
@@ -56,6 +55,5 @@ bool SnirReceiverBase::computeIsReceptionSuccessful(const IListening *listening,
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

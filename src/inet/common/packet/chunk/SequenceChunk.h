@@ -123,7 +123,7 @@ class INET_API SequenceChunk : public Chunk
     virtual std::string str() const override;
 };
 
-} // namespace
+} // namespace inet
 
 #endif // #ifndef __INET_SEQUENCECHUNK_H_
 

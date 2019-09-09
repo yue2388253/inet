@@ -20,7 +20,6 @@
 #include "inet/common/ModuleAccess.h"
 
 namespace inet {
-
 namespace httptools {
 
 HttpNodeBase::HttpNodeBase()
@@ -233,5 +232,5 @@ std::string HttpNodeBase::formatHttpResponseLong(const Packet *pk)
 }
 
 } // namespace httptools
-
 } // namespace inet
+

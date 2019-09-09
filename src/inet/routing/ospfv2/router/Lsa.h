@@ -26,7 +26,6 @@
 #include "inet/routing/ospfv2/router/OspfCommon.h"
 
 namespace inet {
-
 namespace ospf {
 
 struct NextHop
@@ -205,7 +204,6 @@ std::ostream& operator<<(std::ostream& ostr, const OspfAsExternalLsaContents& co
 std::ostream& operator<<(std::ostream& ostr, const OspfAsExternalLsa& lsa);
 
 } // namespace ospf
-
 } // namespace inet
 
 #endif    // __LSA_HPP__

@@ -186,5 +186,5 @@ void RegionTagSet::moveTags(b shift)
             regionTag.setOffset(regionTag.getOffset() + shift);
 }
 
-} // namespace
+} // namespace inet
 

@@ -25,7 +25,6 @@
 #include "inet/transportlayer/rtp/RtpPacket_m.h"
 
 namespace inet {
-
 namespace rtp {
 
 //Forward declarations
@@ -97,7 +96,6 @@ class INET_API RtpPayloadReceiver : public cSimpleModule
 };
 
 } // namespace rtp
-
 } // namespace inet
 
 #endif // ifndef __INET_RTPPAYLOADRECEIVER_H

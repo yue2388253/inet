@@ -29,7 +29,6 @@ cplusplus {{
 #include "inet/networklayer/contract/ipv6/Ipv6Consts.h"
 }}
 
-
 namespace inet;
 
 cplusplus {{
@@ -115,7 +114,6 @@ cplusplus(Ipv6Header) {{
      * Removes and returns the first extension header of this datagram
      */
     virtual Ipv6ExtensionHeader *removeFirstExtensionHeader();
-
 
     /**
      * Removes and returns the first extension header with the given type.

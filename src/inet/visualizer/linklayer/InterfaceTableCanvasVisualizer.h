@@ -24,7 +24,6 @@
 #include "inet/visualizer/scene/NetworkNodeCanvasVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API InterfaceTableCanvasVisualizer : public InterfaceTableVisualizerBase
@@ -58,7 +57,6 @@ class INET_API InterfaceTableCanvasVisualizer : public InterfaceTableVisualizerB
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_INTERFACETABLECANVASVISUALIZER_H

@@ -21,7 +21,6 @@
 #include "inet/physicallayer/base/packetlevel/NarrowbandReceptionBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API FlatReceptionBase : public NarrowbandReceptionBase
@@ -33,7 +32,6 @@ class INET_API FlatReceptionBase : public NarrowbandReceptionBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_FLATRECEPTIONBASE_H

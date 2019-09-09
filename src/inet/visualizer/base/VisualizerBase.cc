@@ -26,7 +26,6 @@
 #include "inet/visualizer/base/VisualizerBase.h"
 
 namespace inet {
-
 namespace visualizer {
 
 void VisualizerBase::initialize(int stage)
@@ -109,6 +108,5 @@ void VisualizerBase::mapChunkIds(const Ptr<const Chunk>& chunk, const std::funct
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

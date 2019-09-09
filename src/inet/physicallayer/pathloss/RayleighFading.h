@@ -21,7 +21,6 @@
 #include "inet/physicallayer/pathloss/FreeSpacePathLoss.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 /**
@@ -38,7 +37,6 @@ class INET_API RayleighFading : public FreeSpacePathLoss
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_RAYLEIGHFADING_H

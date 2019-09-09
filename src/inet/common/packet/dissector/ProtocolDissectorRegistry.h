@@ -40,7 +40,7 @@ class INET_API ProtocolDissectorRegistry
     const ProtocolDissector *getProtocolDissector(const Protocol* protocol) const;
 };
 
-} // namespace
+} // namespace inet
 
 #endif // #ifndef __INET_PROTOCOLDISSECTORREGISTRY_H_
 

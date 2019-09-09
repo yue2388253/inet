@@ -21,7 +21,6 @@
 #include "inet/physicallayer/contract/packetlevel/INoise.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API NoiseBase : public INoise
@@ -39,7 +38,6 @@ class INET_API NoiseBase : public INoise
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_NOISEBASE_H

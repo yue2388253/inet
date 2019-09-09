@@ -33,7 +33,7 @@ class NonQoSSequenceNumberAssignment : public LegacySequenceNumberAssigment
 
 };
 
-} /* namespace ieee80211 */
-} /* namespace inet */
+} // namespace ieee80211
+} // namespace inet
 
 #endif // ifndef __INET_NONQOSSEQUENCENUMBERASSIGNMENT_H

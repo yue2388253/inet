@@ -20,7 +20,6 @@
 #include "inet/physicallayer/contract/packetlevel/IPathLoss.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API PathLossBase : public cModule, public IPathLoss
@@ -31,7 +30,6 @@ class INET_API PathLossBase : public cModule, public IPathLoss
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_PATHLOSSBASE_H

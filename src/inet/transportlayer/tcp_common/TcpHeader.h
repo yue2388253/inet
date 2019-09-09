@@ -24,7 +24,6 @@
 #include "inet/transportlayer/tcp_common/TcpHeader_m.h"
 
 namespace inet {
-
 namespace tcp {
 
 /** @name Comparing sequence numbers */
@@ -38,7 +37,6 @@ inline uint32 seqMax(uint32 a, uint32 b) { return ((a - b) < (1UL << 31)) ? a : 
 //@}
 
 } // namespace tcp
-
 } // namespace inet
 
 #endif // ifndef __INET_TCPSEGMENT_H

@@ -18,7 +18,6 @@
 #include "inet/physicallayer/base/packetlevel/FlatReceptionBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 FlatReceptionBase::FlatReceptionBase(const IRadio *receiver, const ITransmission *transmission, const simtime_t startTime, const simtime_t endTime, const Coord startPosition, const Coord endPosition, const Quaternion startOrientation, const Quaternion endOrientation, Hz carrierFrequency, Hz bandwidth) :
@@ -27,6 +26,5 @@ FlatReceptionBase::FlatReceptionBase(const IRadio *receiver, const ITransmission
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

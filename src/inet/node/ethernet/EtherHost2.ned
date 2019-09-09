@@ -21,7 +21,6 @@ import inet.applications.ethernet.EtherTrafGen;
 import inet.linklayer.contract.IEthernetInterface;
 import inet.networklayer.common.InterfaceTable;
 
-
 //
 // An example host with one Ethernet interface and an Ethernet traffic
 // generator directly connected to it. This host model does not contain

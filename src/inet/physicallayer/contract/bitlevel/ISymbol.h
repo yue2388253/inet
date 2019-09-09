@@ -19,7 +19,6 @@
 #include "inet/common/INETDefs.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API ISymbol
@@ -29,7 +28,6 @@ class INET_API ISymbol
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_ISYMBOL_H

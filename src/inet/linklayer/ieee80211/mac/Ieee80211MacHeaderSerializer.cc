@@ -19,7 +19,6 @@
 #include "inet/linklayer/ieee80211/mac/Ieee80211MacHeaderSerializer.h"
 
 namespace inet {
-
 namespace ieee80211 {
 
 Register_Serializer(Ieee80211MacHeader, Ieee80211MacHeaderSerializer);
@@ -234,6 +233,5 @@ const Ptr<Chunk> Ieee80211MacTrailerSerializer::deserialize(MemoryInputStream& s
 }
 
 } // namespace ieee80211
-
 } // namespace inet
 

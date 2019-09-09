@@ -18,7 +18,6 @@
 #include "inet/physicallayer/base/packetlevel/PropagationBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 PropagationBase::PropagationBase() :
@@ -47,6 +46,5 @@ void PropagationBase::finish()
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

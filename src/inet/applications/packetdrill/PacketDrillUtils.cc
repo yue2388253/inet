@@ -87,7 +87,6 @@ struct int_symbol *platform_symbols(void)
     return platform_symbols_table;
 }
 
-
 PacketDrillConfig::PacketDrillConfig()
 {
     ip_version = IP_VERSION_4;
@@ -230,7 +229,6 @@ int PacketDrillExpression::getU16(uint16 *val, char **error)
     *val = value.num;
     return STATUS_OK;
 }
-
 
 /* Do a symbol->int lookup, and return true if we found the symbol. */
 bool PacketDrillExpression::lookupIntSymbol(const char *input_symbol, int64 *output_integer, struct int_symbol *symbols)
@@ -462,6 +460,5 @@ PacketDrillSctpParameter::PacketDrillSctpParameter(uint16 type_, int16 len, void
     flags = flgs;
 }
 
-}    // namespace inet
-
+} // namespace inet
 

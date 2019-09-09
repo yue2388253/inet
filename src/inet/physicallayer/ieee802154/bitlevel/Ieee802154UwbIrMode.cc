@@ -23,7 +23,6 @@
 #include "inet/physicallayer/ieee802154/bitlevel/Ieee802154UwbIrMode.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 const double Ieee802154UwbIrMode::maxPulse = 1;
@@ -131,6 +130,5 @@ int Ieee802154UwbIrMode::getHoppingPos(int sym) const
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

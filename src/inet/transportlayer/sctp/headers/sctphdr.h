@@ -20,7 +20,6 @@
 #define __INET_SCTPHDR_H
 
 namespace inet {
-
 namespace sctp {
 
 #ifdef _MSC_VER
@@ -446,7 +445,6 @@ struct data_vector
 } __PACKED__;
 
 } // namespace sctp
-
 } // namespace inet
 
 #endif // ifndef __INET_SCTPHDR_H

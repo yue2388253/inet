@@ -25,7 +25,6 @@
 #endif // ifdef WITH_OSG
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(RoutingTableOsgVisualizer);
@@ -93,6 +92,5 @@ void RoutingTableOsgVisualizer::refreshRouteVisualization(const RouteVisualizati
 #endif // ifdef WITH_OSG
 
 } // namespace visualizer
-
 } // namespace inet
 

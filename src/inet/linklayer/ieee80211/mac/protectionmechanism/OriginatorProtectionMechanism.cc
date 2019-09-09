@@ -111,5 +111,5 @@ simtime_t OriginatorProtectionMechanism::computeDurationField(Packet *packet, co
         throw cRuntimeError("Unknown frame");
 }
 
-} /* namespace ieee80211 */
-} /* namespace inet */
+} // namespace ieee80211
+} // namespace inet

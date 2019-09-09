@@ -23,7 +23,6 @@
 #include "inet/visualizer/scene/NetworkNodeCanvasVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API StatisticCanvasVisualizer : public StatisticVisualizerBase
@@ -52,7 +51,6 @@ class INET_API StatisticCanvasVisualizer : public StatisticVisualizerBase
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_STATISTICCANVASVISUALIZER_H

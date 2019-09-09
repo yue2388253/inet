@@ -23,7 +23,6 @@
 #include "inet/physicallayer/contract/packetlevel/ISnir.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 /**
@@ -63,7 +62,6 @@ class INET_API ILayeredErrorModel : public IPrintableObject
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_ILAYEREDERRORMODEL_H

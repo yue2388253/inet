@@ -48,4 +48,5 @@ const ProtocolDissector *ProtocolDissectorRegistry::getProtocolDissector(const P
         throw cRuntimeError("Cannot find protocol dissector for %s", protocol->getName());
 }
 
-} // namespace
+} // namespace inet
+

@@ -20,7 +20,6 @@
 #include "inet/visualizer/common/StatisticOsgVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(StatisticOsgVisualizer);
@@ -89,6 +88,5 @@ void StatisticOsgVisualizer::refreshStatisticVisualization(const StatisticVisual
 #endif // ifdef WITH_OSG
 
 } // namespace visualizer
-
 } // namespace inet
 

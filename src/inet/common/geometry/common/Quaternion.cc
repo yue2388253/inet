@@ -203,4 +203,4 @@ void Quaternion::getSwingAndTwist(const Coord& direction, Quaternion& swing, Qua
     swing = *this * twist.conjugated();
 }
 
-} /* namespace inet */
+} // namespace inet

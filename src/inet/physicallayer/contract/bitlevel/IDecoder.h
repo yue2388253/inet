@@ -22,7 +22,6 @@
 #include "inet/physicallayer/contract/bitlevel/ISignalBitModel.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API IDecoder : public IPrintableObject
@@ -32,7 +31,6 @@ class INET_API IDecoder : public IPrintableObject
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IDECODER_H

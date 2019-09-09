@@ -116,4 +116,5 @@ void ChunkQueue::push(const Ptr<const Chunk>& chunk)
     CHUNK_CHECK_IMPLEMENTATION(isIteratorConsistent(iterator));
 }
 
-} // namespace
+} // namespace inet
+

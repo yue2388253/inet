@@ -18,7 +18,6 @@
 #include "inet/physicallayer/analogmodel/bitlevel/SignalAnalogModel.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 SignalAnalogModel::SignalAnalogModel(const simtime_t duration) :
@@ -50,6 +49,5 @@ std::ostream& NarrowbandSignalAnalogModel::printToStream(std::ostream& stream, i
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

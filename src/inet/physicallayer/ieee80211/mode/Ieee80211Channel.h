@@ -21,7 +21,6 @@
 #include "inet/physicallayer/ieee80211/mode/Ieee80211Band.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API Ieee80211Channel : public IPrintableObject
@@ -41,7 +40,6 @@ class INET_API Ieee80211Channel : public IPrintableObject
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IEEE80211CHANNEL_H

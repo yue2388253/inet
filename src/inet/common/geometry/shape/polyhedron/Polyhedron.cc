@@ -468,8 +468,7 @@ Polyhedron::~Polyhedron()
 
     for (auto & elem : faces)
         delete elem;
-
 }
 
-} /* namespace inet */
+} // namespace inet
 

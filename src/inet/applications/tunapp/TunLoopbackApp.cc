@@ -91,7 +91,6 @@ void TunLoopbackApp::handleMessage(cMessage *message)
         throw cRuntimeError("Unknown message: %s", message->getName());
 }
 
-
 void TunLoopbackApp::finish()
 {
     EV_INFO << "packets sent: " << packetsSent << endl;
@@ -99,3 +98,4 @@ void TunLoopbackApp::finish()
 }
 
 } // namespace inet
+

@@ -4,7 +4,6 @@
 #include "inet/transportlayer/rtp/RtcpPacket_m.h"
 
 namespace inet {
-
 namespace rtp {
 
 void RtcpPacket::paddingAndSetLength()
@@ -35,6 +34,5 @@ void RtcpSdesPacket::addSDESChunk(SdesChunk *sdesChunk)
 };
 
 } // namespace rtp
-
 } // namespace inet
 

@@ -17,7 +17,6 @@
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 //
 
-
 import inet.common.INETDefs;
 import inet.networklayer.contract.ipv4.Ipv4Address;
 

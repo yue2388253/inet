@@ -19,7 +19,6 @@
 #include "inet/visualizer/common/InfoOsgVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(InfoOsgVisualizer);
@@ -80,6 +79,5 @@ void InfoOsgVisualizer::refreshInfoVisualization(const InfoVisualization *infoVi
 #endif // ifdef WITH_OSG
 
 } // namespace visualizer
-
 } // namespace inet
 

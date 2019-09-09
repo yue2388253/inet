@@ -22,7 +22,6 @@
 #include "inet/physicallayer/base/packetlevel/FlatTransmitterBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API Ieee802154NarrowbandScalarTransmitter : public FlatTransmitterBase
@@ -35,7 +34,6 @@ class INET_API Ieee802154NarrowbandScalarTransmitter : public FlatTransmitterBas
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IEEE802154NARROWBANDSCALARTRANSMITTER_H

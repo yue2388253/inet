@@ -2738,7 +2738,6 @@ void SctpAssociation::processAddInAndOutResetRequestArrived(const SctpAddStreams
     startTimer(getPath(remoteAddr)->ResetTimer, getPath(remoteAddr)->pathRto);
 }
 
-
 SctpEventCode SctpAssociation::processOutAndResponseArrived(SctpOutgoingSsnResetRequestParameter *outRequestParam,
         SctpStreamResetResponseParameter *responseParam)
 {

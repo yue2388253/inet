@@ -18,7 +18,6 @@
 #include "inet/visualizer/networklayer/RoutingTableCanvasVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(RoutingTableCanvasVisualizer);
@@ -112,6 +111,5 @@ void RoutingTableCanvasVisualizer::refreshRouteVisualization(const RouteVisualiz
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

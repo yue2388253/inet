@@ -23,7 +23,6 @@
 #include "inet/physicallayer/contract/packetlevel/ISnir.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API SnirBase : public virtual ISnir
@@ -41,7 +40,6 @@ class INET_API SnirBase : public virtual ISnir
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_SNIRBASE_H

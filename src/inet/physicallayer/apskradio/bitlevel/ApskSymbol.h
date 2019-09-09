@@ -24,7 +24,6 @@
 #include "inet/physicallayer/contract/bitlevel/ISymbol.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API ApskSymbol : public std::complex<double>, public ISymbol
@@ -37,7 +36,6 @@ class INET_API ApskSymbol : public std::complex<double>, public ISymbol
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_APSKSYMBOL_H

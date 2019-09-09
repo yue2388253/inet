@@ -35,5 +35,5 @@ class INET_API DhcpMessageSerializer : public FieldsChunkSerializer
 
 } // namespace inet
 
-
 #endif /* INET_APPLICATIONS_DHCP_DHCPMESSAGESERIALIZER_H_ */
+

@@ -33,7 +33,6 @@
 #endif // ifdef WITH_OSG
 
 namespace inet {
-
 namespace visualizer {
 
 using namespace inet::physicalenvironment;
@@ -131,6 +130,5 @@ void PhysicalEnvironmentOsgVisualizer::refreshDisplay() const
 #endif // ifdef WITH_OSG
 
 } // namespace visualizer
-
 } // namespace inet
 

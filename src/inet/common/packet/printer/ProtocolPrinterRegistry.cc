@@ -48,4 +48,5 @@ const ProtocolPrinter *ProtocolPrinterRegistry::getProtocolPrinter(const Protoco
         throw cRuntimeError("Cannot find protocol printer for %s", protocol->getName());
 }
 
-} // namespace
+} // namespace inet
+

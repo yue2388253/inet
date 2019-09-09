@@ -23,7 +23,6 @@
 #include "inet/transportlayer/rtp/RtpPayloadSender.h"
 
 namespace inet {
-
 namespace rtp {
 
 /**
@@ -77,7 +76,6 @@ class INET_API RtpAvProfilePayload32Sender : public RtpPayloadSender
 };
 
 } // namespace rtp
-
 } // namespace inet
 
 #endif    // __INET_RTPAVPROFILEPAYLOAD32SENDER_H

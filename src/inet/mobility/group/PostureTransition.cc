@@ -83,7 +83,6 @@ PostureTransition::~PostureTransition()
     }
 }
 
-
 /**
  * This function initiates a new instance of markov matrix with the given matrix. Note that it copies the matrix into the created matrix.
  * The function first verifies if the given matrix can be a Markov transition matrix.
@@ -507,7 +506,6 @@ double **PostureTransition::extractMatrixFromSteadyState(double *vec)
         for (i = 0; i < numPos; i++)
             for (j = 0; j < numPos; j++)
                 change[i][j] = 1;
-
 
         for (j = 0; j < numPos; j++)
             for (i = 0; i < numPos; i++) {

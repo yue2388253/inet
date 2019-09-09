@@ -21,7 +21,6 @@
 #include "inet/physicallayer/contract/packetlevel/IRadioMedium.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 using namespace inet::math;
@@ -267,7 +266,6 @@ class INET_API AntennaGainFunction : public IFunction<double, Domain<Quaternion>
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // #ifndef __INET_POWERFUNCTION_H_

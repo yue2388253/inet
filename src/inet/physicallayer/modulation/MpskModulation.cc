@@ -18,7 +18,6 @@
 #include "inet/physicallayer/modulation/MpskModulation.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 static std::vector<ApskSymbol> *createConstellation(unsigned int codeWordSize)
@@ -65,6 +64,5 @@ double MpskModulation::calculateSER(double snir, Hz bandwidth, bps bitrate) cons
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

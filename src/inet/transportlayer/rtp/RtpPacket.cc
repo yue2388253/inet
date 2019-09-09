@@ -18,7 +18,6 @@
 #include "inet/transportlayer/rtp/RtpPacket_m.h"
 
 namespace inet {
-
 namespace rtp {
 
 std::string RtpHeader::str() const
@@ -37,6 +36,5 @@ void RtpHeader::dump() const
 }
 
 } // namespace rtp
-
 } // namespace inet
 

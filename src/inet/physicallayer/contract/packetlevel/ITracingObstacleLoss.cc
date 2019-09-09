@@ -18,7 +18,6 @@
 #include "inet/physicallayer/contract/packetlevel/ITracingObstacleLoss.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 simsignal_t ITracingObstacleLoss::obstaclePenetratedSignal = cComponent::registerSignal("obstaclePenetrated");
@@ -34,6 +33,5 @@ ITracingObstacleLoss::ObstaclePenetratedEvent::ObstaclePenetratedEvent(const phy
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

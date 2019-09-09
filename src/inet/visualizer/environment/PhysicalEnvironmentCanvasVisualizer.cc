@@ -25,7 +25,6 @@
 #include "inet/visualizer/environment/PhysicalEnvironmentCanvasVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 using namespace inet::physicalenvironment;
@@ -150,6 +149,5 @@ void PhysicalEnvironmentCanvasVisualizer::computeFacePoints(const IPhysicalObjec
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

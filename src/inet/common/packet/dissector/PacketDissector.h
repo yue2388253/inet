@@ -148,7 +148,7 @@ class INET_API PacketDissector
     void dissectPacket(Packet *packet, const Protocol *protocol) const;
 };
 
-} // namespace
+} // namespace inet
 
 #endif // #ifndef __INET_PACKETDISSECTOR_H_
 

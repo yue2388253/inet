@@ -24,7 +24,6 @@
 #include "inet/common/packet/Packet.h"
 
 namespace inet {
-
 namespace httptools {
 
 #define MSGKIND_START_SESSION     0
@@ -155,7 +154,6 @@ class INET_API HttpBrowserBase : public HttpNodeBase
 };
 
 } // namespace httptools
-
 } // namespace inet
 
 #endif // ifndef __INET_HTTPBROWSERBASE_H

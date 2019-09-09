@@ -232,7 +232,6 @@ Topology::LinkOut *L2NetworkConfigurator::findLinkOut(Node *node, int gateId)
         if (node->getLinkOut(i)->getLocalGateId() == gateId)
             return node->getLinkOut(i);
 
-
     return nullptr;
 }
 
@@ -312,7 +311,6 @@ bool L2NetworkConfigurator::Matcher::matches(const char *s)
     for (auto & elem : matchers)
         if (elem->matches(s))
             return true;
-
 
     return false;
 }

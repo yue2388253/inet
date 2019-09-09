@@ -71,13 +71,11 @@ std::string SequentialFs::getHistory() const
     return history;
 }
 
-
 SequentialFs::~SequentialFs()
 {
     for (auto element : elements)
         delete element;
 }
-
 
 OptionalFs::OptionalFs(IFrameSequence *element, std::function<bool(OptionalFs*, FrameSequenceContext*)> predicate) :
     element(element),

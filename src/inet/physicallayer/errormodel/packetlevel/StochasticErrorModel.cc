@@ -19,7 +19,6 @@
 #include "inet/physicallayer/errormodel/packetlevel/StochasticErrorModel.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(StochasticErrorModel);
@@ -101,6 +100,5 @@ double StochasticErrorModel::computeSymbolErrorRate(const ISnir *snir, IRadioSig
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

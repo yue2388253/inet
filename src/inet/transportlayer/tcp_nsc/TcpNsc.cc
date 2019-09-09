@@ -50,7 +50,6 @@
 #include <sim_errno.h>
 
 namespace inet {
-
 namespace tcp {
 
 Define_Module(TcpNsc);
@@ -889,7 +888,6 @@ void TcpNsc::sendToIP(const void *dataP, int lenP)
     tcpHdr->setCrcMode(crcMode);
     insertTransportProtocolHeader(fp, Protocol::tcp, tcpHdr);
 
-
     b payloadLength = fp->getDataLength() - tcpHdr->getChunkLength();
     EV_TRACE << this << ": Sending: conn=" << conn << ", data: " << dataP << " of len " << lenP << " from " << src
              << " to " << dest << "\n";
@@ -1164,7 +1162,6 @@ void TcpNsc::process_STATUS(TcpNscConnection& connP, TcpCommand *tcpCommandP, cM
     statusInfo->setState(fsm.getState());
     statusInfo->setStateName(stateName(fsm.getState()));
 
-
     statusInfo->setSnd_mss(state->snd_mss);
     statusInfo->setSnd_una(state->snd_una);
     statusInfo->setSnd_nxt(state->snd_nxt);
@@ -1187,6 +1184,5 @@ void TcpNsc::process_STATUS(TcpNscConnection& connP, TcpCommand *tcpCommandP, cM
 }
 
 } // namespace tcp
-
 } // namespace inet
 

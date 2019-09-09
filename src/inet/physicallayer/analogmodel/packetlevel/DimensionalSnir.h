@@ -23,7 +23,6 @@
 #include "inet/physicallayer/base/packetlevel/SnirBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API DimensionalSnir : public SnirBase
@@ -49,7 +48,6 @@ class INET_API DimensionalSnir : public SnirBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_DIMENSIONALSNIR_H

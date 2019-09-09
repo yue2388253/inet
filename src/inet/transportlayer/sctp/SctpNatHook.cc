@@ -302,7 +302,6 @@ INetfilter::IHook::Result SctpNatHook::datagramPreRoutingHook(Packet *datagram)
     return INetfilter::IHook::ACCEPT;
 }
 
-
 void SctpNatHook::sendBackError(SctpHeader* sctp)
 {
   //  SctpHeader *sctpmsg = new SctpHeader();

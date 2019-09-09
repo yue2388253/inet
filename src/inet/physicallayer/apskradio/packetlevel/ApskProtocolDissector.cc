@@ -23,7 +23,6 @@
 #include "inet/physicallayer/apskradio/packetlevel/ApskPhyHeader_m.h"
 #include "inet/physicallayer/apskradio/packetlevel/ApskProtocolDissector.h"
 
-
 namespace inet {
 
 Register_Protocol_Dissector(&Protocol::apskPhy, ApskProtocolDissector);

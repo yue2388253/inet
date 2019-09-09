@@ -21,7 +21,6 @@
 #include "inet/common/INETDefs.h"
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API AnimationPosition
@@ -55,7 +54,6 @@ class INET_API AnimationPosition
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_ANIMATIONPOSITION_H

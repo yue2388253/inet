@@ -19,7 +19,6 @@
 #include "inet/visualizer/common/PacketDropCanvasVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(PacketDropCanvasVisualizer);
@@ -111,6 +110,5 @@ void PacketDropCanvasVisualizer::setAlpha(const PacketDropVisualization *packetD
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

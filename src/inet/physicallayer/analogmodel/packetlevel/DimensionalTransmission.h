@@ -22,7 +22,6 @@
 #include "inet/physicallayer/base/packetlevel/FlatTransmissionBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 using namespace inet::math;
@@ -42,7 +41,6 @@ class INET_API DimensionalTransmission : public FlatTransmissionBase, public IDi
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_DIMENSIONALTRANSMISSION_H

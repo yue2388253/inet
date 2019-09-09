@@ -38,7 +38,7 @@ class INET_API ChunkSerializerRegistry
     const ChunkSerializer *getSerializer(const std::type_info& typeInfo) const;
 };
 
-} // namespace
+} // namespace inet
 
 #endif // #ifndef __INET_CHUNKSERIALIZERREGISTRY_H_
 

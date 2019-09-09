@@ -46,7 +46,7 @@ cModule *getModuleByRelativePath(cModule *modp, const char *path)
     return modp;    // nullptr if not found
 }
 
-} // namespace
+} // namespace - unnamed
 
 bool ModulePathAddress::tryParse(const char *addr)
 {

@@ -47,8 +47,8 @@ class INET_API Ieee80211OfdmEncoder : public IEncoder
     const Ieee80211OfdmCode *getCode() const override { return code; }
 };
 
-} /* namespace physicallayer */
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet
 
 #endif // ifndef __INET_IEEE80211OFDMENCODER_H
 

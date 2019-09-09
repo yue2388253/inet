@@ -21,7 +21,6 @@
 #include "inet/networklayer/ipv4/IcmpHeader_m.h"
 #include "inet/networklayer/ipv4/IcmpProtocolDissector.h"
 
-
 namespace inet {
 
 Register_Protocol_Dissector(&Protocol::icmpv4, IcmpProtocolDissector);

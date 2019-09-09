@@ -21,7 +21,6 @@
 #include "inet/common/INETDefs.h"
 
 namespace inet {
-
 namespace ieee80211 {
 
 class INET_API Ieee80211UnicastFilter : public cObjectResultFilter
@@ -55,7 +54,6 @@ class INET_API Ieee80211NotRetryFilter : public cObjectResultFilter
 };
 
 } // namespace ieee80211
-
 } // namespace inet
 
 #endif // ifndef __INET_RESULTFILTERS_H

@@ -23,7 +23,6 @@
 #include "inet/environment/contract/IMaterial.h"
 
 namespace inet {
-
 namespace physicalenvironment {
 
 class INET_API IPhysicalObject
@@ -44,7 +43,6 @@ class INET_API IPhysicalObject
 };
 
 } // namespace physicalenvironment
-
 } // namespace inet
 
 #endif // ifndef __INET_IPHYSICALOBJECT_H

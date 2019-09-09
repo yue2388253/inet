@@ -64,4 +64,5 @@ const Ptr<Chunk> FieldsChunkSerializer::deserialize(MemoryInputStream& stream, c
     return fieldsChunk;
 }
 
-} // namespace
+} // namespace inet
+

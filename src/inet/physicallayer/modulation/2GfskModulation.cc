@@ -18,7 +18,6 @@
 #include "inet/physicallayer/modulation/2GfskModulation.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 const _2GfskModulation _2GfskModulation::singleton;
@@ -29,6 +28,5 @@ _2GfskModulation::_2GfskModulation() :
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

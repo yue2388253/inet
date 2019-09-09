@@ -23,7 +23,6 @@
 #include "inet/visualizer/scene/NetworkNodeOsgVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API QueueOsgVisualizer : public QueueVisualizerBase
@@ -62,7 +61,6 @@ class INET_API QueueOsgVisualizer : public QueueVisualizerBase
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_QUEUEOSGGVISUALIZER_H

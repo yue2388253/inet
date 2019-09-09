@@ -22,7 +22,6 @@
 #include "inet/physicallayer/contract/packetlevel/IModulation.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API NarrowbandTransmitterBase : public TransmitterBase
@@ -54,7 +53,6 @@ class INET_API NarrowbandTransmitterBase : public TransmitterBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_NARROWBANDTRANSMITTERBASE_H

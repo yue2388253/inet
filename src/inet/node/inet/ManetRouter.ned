@@ -3,7 +3,6 @@ package inet.node.inet;
 import inet.applications.contract.IApp;
 import inet.routing.contract.IManetRouting;
 
-
 module ManetRouter extends AdhocHost
 {
     submodules:

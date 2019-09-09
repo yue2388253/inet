@@ -39,7 +39,7 @@ class INET_API NetworkCommunicationFingerprintCalculator : public cSingleFingerp
     virtual void addEvent(cEvent *event) override;
 };
 
-} // namespace
+} // namespace inet
 
 #endif // #ifndef __INET_NETWORKCOMMUNICATIONFINGERPRINTCALCULATOR_H_
 

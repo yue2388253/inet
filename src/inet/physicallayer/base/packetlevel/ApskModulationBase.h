@@ -23,7 +23,6 @@
 #include "inet/physicallayer/contract/packetlevel/IApskModulation.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 /**
@@ -51,7 +50,6 @@ class INET_API ApskModulationBase : public IApskModulation
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_APSKMODULATIONBASE_H

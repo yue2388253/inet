@@ -23,7 +23,6 @@
 #include "inet/physicallayer/contract/packetlevel/IRadioSignal.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API NarrowbandTransmissionBase : public TransmissionBase, public virtual INarrowbandSignal
@@ -44,7 +43,6 @@ class INET_API NarrowbandTransmissionBase : public TransmissionBase, public virt
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_NARROWBANDTRANSMISSIONBASE_H

@@ -15,7 +15,6 @@
 // along with this program; if not, see <http://www.gnu.org/licenses/>.
 //
 
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -33,7 +32,6 @@
 #include "inet/transportlayer/contract/sctp/SctpCommand_m.h"
 #include "inet/transportlayer/sctp/SctpAssociation.h"
 #include "inet/transportlayer/udp/UdpHeader_m.h"
-
 
 namespace inet {
 
@@ -913,7 +911,6 @@ int PacketDrillApp::syscallWrite(struct syscall_spec *syscall, cQueue *args, cha
     return STATUS_OK;
 }
 
-
 int PacketDrillApp::syscallConnect(struct syscall_spec *syscall, cQueue *args, char **error)
 {
     int script_fd;
@@ -949,7 +946,6 @@ int PacketDrillApp::syscallConnect(struct syscall_spec *syscall, cQueue *args, c
 
     return STATUS_OK;
 }
-
 
 int PacketDrillApp::syscallSetsockopt(struct syscall_spec *syscall, cQueue *args, char **error)
 {

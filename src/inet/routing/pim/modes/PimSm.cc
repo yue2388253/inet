@@ -1246,8 +1246,6 @@ void PimSm::multicastPacketForwarded(Packet *pk)
         return;
 
     // send Register message to RP
-
-
     if (routeSG->registerState == Route::RS_JOIN) {
         // refresh KAT timer
         if (routeSG->keepAliveTimer) {
@@ -1606,7 +1604,6 @@ void PimSm::updateDesignatedRouterAddress(InterfaceEntry *ie)
     for (int i = 0; i < numNeighbors && eachNeighborHasPriority; i++)
         if (pimNbt->getNeighbor(interfaceId, i))
             eachNeighborHasPriority = false;
-
 
     Ipv4Address drAddress = ie->getProtocolData<Ipv4InterfaceData>()->getIPAddress();
     int drPriority = this->designatedRouterPriority;

@@ -18,7 +18,6 @@
 #include "inet/physicallayer/antenna/IsotropicAntenna.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(IsotropicAntenna);
@@ -35,6 +34,5 @@ std::ostream& IsotropicAntenna::printToStream(std::ostream& stream, int level) c
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

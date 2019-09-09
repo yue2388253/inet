@@ -19,7 +19,6 @@
 #include <stdio.h>
 #include <string.h>
 
-
 #include "inet/common/IProtocolRegistrationListener.h"
 #include "inet/common/ProtocolTag_m.h"
 #include "inet/linklayer/common/Ieee802Ctrl.h"

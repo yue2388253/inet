@@ -23,7 +23,6 @@
 #include "inet/physicallayer/contract/packetlevel/RadioControlInfo_m.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(ApskScalarTransmitter);
@@ -61,6 +60,5 @@ const ITransmission *ApskScalarTransmitter::createTransmission(const IRadio *tra
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

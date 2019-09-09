@@ -22,7 +22,6 @@
 #include "inet/linklayer/ieee80211/mgmt/Ieee80211MgmtBase.h"
 
 namespace inet {
-
 namespace ieee80211 {
 
 /**
@@ -59,7 +58,6 @@ class INET_API Ieee80211MgmtAdhoc : public Ieee80211MgmtBase
 };
 
 } // namespace ieee80211
-
 } // namespace inet
 
 #endif // ifndef __INET_IEEE80211MGMTADHOC_H

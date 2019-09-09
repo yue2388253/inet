@@ -21,7 +21,6 @@
 #include "inet/physicallayer/base/packetlevel/SnirBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API UnitDiskSnir : public SnirBase
@@ -37,7 +36,6 @@ class INET_API UnitDiskSnir : public SnirBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IDEALSNIR_H

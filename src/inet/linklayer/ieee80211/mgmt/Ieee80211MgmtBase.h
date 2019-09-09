@@ -28,7 +28,6 @@
 #include "inet/networklayer/contract/IInterfaceTable.h"
 
 namespace inet {
-
 namespace ieee80211 {
 
 /**
@@ -101,7 +100,6 @@ class INET_API Ieee80211MgmtBase : public OperationalBase
 };
 
 } // namespace ieee80211
-
 } // namespace inet
 
 #endif // ifndef __INET_IEEE80211MGMTBASE_H

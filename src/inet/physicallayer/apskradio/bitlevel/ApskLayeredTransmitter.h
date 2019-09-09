@@ -27,7 +27,6 @@
 #include "inet/physicallayer/contract/packetlevel/ITransmitter.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API ApskLayeredTransmitter : public TransmitterBase
@@ -79,7 +78,6 @@ class INET_API ApskLayeredTransmitter : public TransmitterBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_APSKLAYEREDTRANSMITTER_H

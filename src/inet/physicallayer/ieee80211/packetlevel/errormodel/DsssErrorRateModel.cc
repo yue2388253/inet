@@ -24,7 +24,6 @@
 #include "inet/physicallayer/ieee80211/packetlevel/errormodel/DsssErrorRateModel.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 #ifndef ENABLE_GSL
@@ -161,6 +160,5 @@ double DsssErrorRateModel::SymbolErrorProb256Cck(double e1)
 #endif // ifdef ENABLE_GSL
 
 } // namespace physicallayer
-
 } // namespace inet
 

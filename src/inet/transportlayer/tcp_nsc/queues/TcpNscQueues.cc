@@ -24,7 +24,6 @@
 #include "inet/transportlayer/tcp_nsc/TcpNscConnection.h"
 
 namespace inet {
-
 namespace tcp {
 
 Register_Class(TcpNscSendQueue);
@@ -174,6 +173,5 @@ void TcpNscReceiveQueue::notifyAboutSending(const Packet *packet)
 }
 
 } // namespace tcp
-
 } // namespace inet
 

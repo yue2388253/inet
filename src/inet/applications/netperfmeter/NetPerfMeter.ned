@@ -29,7 +29,6 @@ package inet.applications.netperfmeter;
 
 import inet.applications.contract.IApp;
 
-
 //
 // Application model for comparing the performance of various transport
 // protocols.

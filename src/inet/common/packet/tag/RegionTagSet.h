@@ -289,7 +289,7 @@ inline std::vector<RegionTagSet::RegionTag<T>> RegionTagSet::removeAllTags(b off
     return result;
 }
 
-} // namespace
+} // namespace inet
 
 #endif // #ifndef __INET_REGIONTAGSET_H_
 

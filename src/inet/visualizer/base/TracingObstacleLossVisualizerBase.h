@@ -23,7 +23,6 @@
 #include "inet/visualizer/util/AnimationPosition.h"
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API TracingObstacleLossVisualizerBase : public VisualizerBase, public cListener
@@ -76,7 +75,6 @@ class INET_API TracingObstacleLossVisualizerBase : public VisualizerBase, public
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_TRACINGOBSTACLELOSSVISUALIZERBASE_H

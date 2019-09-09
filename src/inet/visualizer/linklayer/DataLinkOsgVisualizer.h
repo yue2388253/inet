@@ -21,7 +21,6 @@
 #include "inet/visualizer/base/LinkOsgVisualizerBase.h"
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API DataLinkOsgVisualizer : public LinkOsgVisualizerBase
@@ -32,7 +31,6 @@ class INET_API DataLinkOsgVisualizer : public LinkOsgVisualizerBase
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_DATALINKOSGVISUALIZER_H

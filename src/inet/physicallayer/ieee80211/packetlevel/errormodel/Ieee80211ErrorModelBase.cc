@@ -20,7 +20,6 @@
 #include "inet/physicallayer/ieee80211/packetlevel/errormodel/Ieee80211ErrorModelBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Ieee80211ErrorModelBase::Ieee80211ErrorModelBase()
@@ -74,6 +73,5 @@ Packet *Ieee80211ErrorModelBase::computeCorruptedPacket(const Packet *packet, do
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

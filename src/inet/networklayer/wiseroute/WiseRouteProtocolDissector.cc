@@ -21,7 +21,6 @@
 #include "inet/networklayer/wiseroute/WiseRouteHeader_m.h"
 #include "inet/networklayer/wiseroute/WiseRouteProtocolDissector.h"
 
-
 namespace inet {
 
 Register_Protocol_Dissector(&Protocol::wiseRoute, WiseRouteProtocolDissector);

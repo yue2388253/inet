@@ -20,7 +20,6 @@
 #include "inet/physicallayer/ieee80211/packetlevel/Ieee80211DimensionalTransmission.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(Ieee80211DimensionalReceiver);
@@ -49,6 +48,5 @@ bool Ieee80211DimensionalReceiver::computeIsReceptionPossible(const IListening *
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

@@ -22,7 +22,6 @@
 #include "inet/visualizer/scene/NetworkNodeOsgVisualization.h"
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API NetworkNodeOsgVisualizer : public NetworkNodeVisualizerBase
@@ -54,7 +53,6 @@ class INET_API NetworkNodeOsgVisualizer : public NetworkNodeVisualizerBase
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_NETWORKNODEOSGVISUALIZER_H

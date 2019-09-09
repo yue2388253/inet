@@ -19,7 +19,6 @@
 #include "inet/applications/httptools/server/HttpServerBase.h"
 
 namespace inet {
-
 namespace httptools {
 
 Define_Module(HttpBrowserDirect);
@@ -100,6 +99,5 @@ void HttpBrowserDirect::sendRequestsToServer(std::string www, HttpRequestQueue q
 }
 
 } // namespace httptools
-
 } // namespace inet
 

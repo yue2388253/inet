@@ -25,7 +25,6 @@
 #include "inet/physicallayer/contract/packetlevel/IRadioMedium.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 void DimensionalAnalogModelBase::initialize(int stage)
@@ -113,6 +112,5 @@ const ISnir *DimensionalAnalogModelBase::computeSNIR(const IReception *reception
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

@@ -20,7 +20,6 @@
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 //
 
-
 import inet.common.INETDefs;
 import inet.common.packet.chunk.Chunk;
 import inet.networklayer.contract.ipv6.Ipv6Address;
@@ -47,7 +46,6 @@ class MobilityHeader extends FieldsChunk  // extends Ipv6ExtensionHeader // TODO
     MobilityHeaderType mobilityHeaderType;
 }
 
-
 class BindingUpdate extends MobilityHeader
 {
     unsigned int lifetime;
@@ -62,7 +60,6 @@ class BindingUpdate extends MobilityHeader
     // for CN communication; value different from 0 shows that it is used
     int bindingAuthorizationData = 0; // 28.08.07 - CB
 }
-
 
 //Defining the status fields for the Binding Acknowledgement Message
 
@@ -115,7 +112,6 @@ class BindingError extends MobilityHeader
     BeStatus status;
     Ipv6Address homeAddress;
     //Mobility Options not defined
-
 }
 
 //=============Message definition of Home Test Init Message ==========
@@ -150,14 +146,12 @@ class CareOfTest extends MobilityHeader
     // care-of nonce index not modelled
 }
 
-
 ///////////////////////////////////////////
 // 18.09.07 - CB
 ///////////////////////////////////////////
 class BindingRefreshRequest extends MobilityHeader
 {
 }
-
 
 ///////////////////////////////////////////
 // 17.10.07 - CB

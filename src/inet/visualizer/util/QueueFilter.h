@@ -22,7 +22,6 @@
 #include "inet/common/queueing/contract/IPacketQueue.h"
 
 namespace inet {
-
 namespace visualizer {
 
 /**
@@ -41,7 +40,6 @@ class INET_API QueueFilter
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_QUEUEFILTER_H

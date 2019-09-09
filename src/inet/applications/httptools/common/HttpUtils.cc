@@ -21,7 +21,6 @@
 #include "inet/applications/httptools/common/HttpUtils.h"
 
 namespace inet {
-
 namespace httptools {
 
 inline bool isnotspace(int c) { return !isspace(c); }
@@ -237,6 +236,5 @@ std::vector<std::string> splitFile(std::string fileName)
 }
 
 } // namespace httptools
-
 } // namespace inet
 

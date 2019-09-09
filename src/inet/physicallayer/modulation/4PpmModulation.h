@@ -21,7 +21,6 @@
 #include "inet/physicallayer/base/packetlevel/PpmModulationBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API _4PpmModulation : public PpmModulationBase
@@ -36,7 +35,6 @@ class INET_API _4PpmModulation : public PpmModulationBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_4PPMMODULATION_H

@@ -21,7 +21,6 @@
 #include "inet/physicallayer/base/packetlevel/PhysicalLayerDefs.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 /**
@@ -84,7 +83,6 @@ inline std::string printObjectToString(const IPrintableObject *object, int level
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IPRINTABLEOBJECT_H

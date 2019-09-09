@@ -165,7 +165,6 @@ class INET_API TcpLwip : public cSimpleModule, public LwipTcpStackIf, public Lif
 };
 
 } // namespace tcp
-
 } // namespace inet
 
 #endif // ifndef __INET_TCP_LWIP_H

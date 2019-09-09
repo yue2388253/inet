@@ -526,7 +526,6 @@ void NextHopForwarding::encapsulate(Packet *transportPacket, const InterfaceEntr
     auto ifTag = transportPacket->findTag<InterfaceReq>();
     destIE = ifTag ? interfaceTable->getInterfaceById(ifTag->getInterfaceId()) : nullptr;
 
-
     // when source address was given, use it; otherwise it'll get the address
     // of the outgoing interface after routing
     if (!src.isUnspecified()) {

@@ -63,7 +63,7 @@ class INET_API ReorderBuffer : public ChunkBuffer
     const Ptr<const Chunk> popAvailableData(b length = b(-1));
 };
 
-} // namespace
+} // namespace inet
 
 #endif // #ifndef __INET_REORDERBUFFER_H_
 

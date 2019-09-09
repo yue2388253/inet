@@ -34,7 +34,6 @@ SctpHeader& SctpHeader::operator=(const SctpHeader& other)
     return *this;
 }
 
-
 void SctpHeader::copy(const SctpHeader& other)
 {
    // handleChange();
@@ -96,7 +95,6 @@ size_t SctpHeader::getSctpChunksArraySize() const
 {
     return sctpChunkList.size();
 }
-
 
 void SctpHeader::replaceSctpChunk(SctpChunk *chunk, uint32 k)
 {

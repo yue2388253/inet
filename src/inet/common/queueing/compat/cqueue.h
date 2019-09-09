@@ -365,6 +365,5 @@ typedef cQueue::CompareFunc CompareFunc;
 } // namespace queueing
 } // namespace inet
 
-
 #endif
 

@@ -23,7 +23,6 @@
 #include "inet/routing/ospfv2/router/OspfRouter.h"
 
 namespace inet {
-
 namespace ospf {
 
 void InterfaceStateDesignatedRouter::processEvent(OspfInterface *intf, OspfInterface::OspfInterfaceEventType event)
@@ -58,6 +57,5 @@ void InterfaceStateDesignatedRouter::processEvent(OspfInterface *intf, OspfInter
 }
 
 } // namespace ospf
-
 } // namespace inet
 

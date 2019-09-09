@@ -58,6 +58,6 @@ Ieee80211OfdmDecoderModule::~Ieee80211OfdmDecoderModule()
     delete ofdmDecoder;
 }
 
-} /* namespace physicallayer */
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet
 

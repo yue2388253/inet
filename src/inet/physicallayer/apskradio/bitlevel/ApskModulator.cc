@@ -22,7 +22,6 @@
 #include "inet/physicallayer/modulation/QpskModulation.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(ApskModulator);
@@ -64,6 +63,5 @@ const ITransmissionSymbolModel *ApskModulator::modulate(const ITransmissionBitMo
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

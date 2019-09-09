@@ -18,7 +18,6 @@
 #include "inet/physicallayer/antenna/AxiallySymmetricAntenna.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(AxiallySymmetricAntenna);
@@ -36,7 +35,6 @@ void AxiallySymmetricAntenna::initialize(int stage)
         gain = makeShared<AntennaGain>(par("axisOfSymmetry"), baseGain, par("gains"));
     }
 }
-
 
 std::ostream& AxiallySymmetricAntenna::printToStream(std::ostream& stream, int level) const
 {
@@ -91,6 +89,5 @@ double AxiallySymmetricAntenna::AntennaGain::computeGain(const Quaternion direct
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

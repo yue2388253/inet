@@ -18,7 +18,6 @@
 #include "inet/routing/ospfv2/router/OspfRoutingTableEntry.h"
 
 namespace inet {
-
 namespace ospf {
 
 OspfRoutingTableEntry::OspfRoutingTableEntry(IInterfaceTable *_ift) :
@@ -198,6 +197,5 @@ const std::string OspfRoutingTableEntry::getPathTypeString(RoutingPathType pathT
 }
 
 } // namespace ospf
-
 } // namespace inet
 

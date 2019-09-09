@@ -65,6 +65,6 @@ class INET_API PolyhedronFace
         virtual ~PolyhedronFace();
 };
 
-} /* namespace inet */
+} // namespace inet
 
 #endif // ifndef __INET_POLYHEDRONFACE_H

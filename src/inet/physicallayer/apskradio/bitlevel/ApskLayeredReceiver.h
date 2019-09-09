@@ -32,7 +32,6 @@
 #include "inet/physicallayer/contract/packetlevel/IRadioMedium.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API ApskLayeredReceiver : public SnirReceiverBase
@@ -82,7 +81,6 @@ class INET_API ApskLayeredReceiver : public SnirReceiverBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_APSKLAYEREDRECEIVER_H

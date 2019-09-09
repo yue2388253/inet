@@ -101,7 +101,6 @@ void MoBanCoordinator::initialize(int stage)
             if (!readMobilityPatternFile())
                 throw cRuntimeError("MoBAN Coordinator: error in reading the input mobility pattern file");
 
-
         lastPosition = selectDestination();
         publishToNodes();
         computeMaxSpeed();

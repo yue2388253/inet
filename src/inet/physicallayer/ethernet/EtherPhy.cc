@@ -21,7 +21,6 @@
 #include "inet/physicallayer/ethernet/EtherPhy.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(EtherPhy);
@@ -62,6 +61,5 @@ void EtherPhy::handleMessage(cMessage *message)
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

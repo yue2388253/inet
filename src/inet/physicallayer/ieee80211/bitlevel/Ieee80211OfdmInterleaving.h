@@ -21,7 +21,6 @@
 #include "inet/physicallayer/contract/bitlevel/IInterleaver.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API Ieee80211OfdmInterleaving : public IInterleaving
@@ -38,8 +37,9 @@ class INET_API Ieee80211OfdmInterleaving : public IInterleaving
     int getNumberOfCodedBitsPerSubcarrier() const { return numberOfCodedBitsPerSubcarrier; }
     int getNumberOfCodedBitsPerSymbol() const { return numberOfCodedBitsPerSymbol; }
 };
-} /* namespace physicallayer */
-} /* namespace inet */
+
+} // namespace physicallayer
+} // namespace inet
 
 #endif // ifndef __INET_IEEE80211OFDMINTERLEAVING_H
 

@@ -26,7 +26,6 @@
 #include "inet/physicallayer/contract/packetlevel/IRadioMedium.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 NarrowbandReceiverBase::NarrowbandReceiverBase() :
@@ -92,6 +91,5 @@ const IReceptionDecision *NarrowbandReceiverBase::computeReceptionDecision(const
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

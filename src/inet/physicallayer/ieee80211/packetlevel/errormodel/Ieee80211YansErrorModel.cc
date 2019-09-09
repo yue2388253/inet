@@ -33,7 +33,6 @@
 #include "inet/physicallayer/modulation/QpskModulation.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(Ieee80211YansErrorModel);
@@ -283,6 +282,5 @@ double Ieee80211YansErrorModel::getDataSuccessRate(const IIeee80211Mode* mode, u
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

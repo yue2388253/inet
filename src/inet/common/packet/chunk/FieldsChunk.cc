@@ -75,4 +75,5 @@ const Ptr<Chunk> FieldsChunk::peekUnchecked(PeekPredicate predicate, PeekConvert
     return converter(const_cast<FieldsChunk *>(this)->shared_from_this(), iterator, length, flags);
 }
 
-} // namespace
+} // namespace inet
+

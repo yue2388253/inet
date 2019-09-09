@@ -23,7 +23,6 @@
 #include "inet/power/contract/ICcEnergySource.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 /**
@@ -75,7 +74,6 @@ class INET_API StateBasedCcEnergyConsumer : public cSimpleModule, public virtual
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_STATEBASEDCCENERGYCONSUMER_H

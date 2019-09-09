@@ -17,7 +17,7 @@
 // @author: Zoltan Bojthe
 //
 
-
 cplusplus {{
 #include "inet/common/INETDefs.h"
 }}
+

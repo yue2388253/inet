@@ -23,7 +23,6 @@
 #include "inet/physicallayer/ieee80211/packetlevel/errormodel/BerParseFile.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API Ieee80211BerTableErrorModel : public ErrorModelBase
@@ -46,7 +45,6 @@ class INET_API Ieee80211BerTableErrorModel : public ErrorModelBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IEEE80211BERTABLEERRORMODEL_H

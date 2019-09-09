@@ -79,7 +79,6 @@ const B ETHER_PAUSE_COMMAND_PADDED_BYTES = std::max(MIN_ETHERNET_FRAME_BYTES, ET
  */
 #define ETHER_IS_VALID_LEN(foo)  ((foo) >= MIN_ETHERNET_FRAME_BYTES && (foo) <= ETHER_MAX_LEN)
 
-
 } // namespace inet
 
 #endif // ifndef __INET_ETHERNET_H

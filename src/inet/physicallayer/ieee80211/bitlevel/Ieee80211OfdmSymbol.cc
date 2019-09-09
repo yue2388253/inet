@@ -18,7 +18,6 @@
 #include "inet/physicallayer/ieee80211/bitlevel/Ieee80211OfdmSymbol.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 void Ieee80211OfdmSymbol::pushApskSymbol(const ApskSymbol *apskSymbol, int subcarrierIndex)
@@ -42,6 +41,6 @@ std::ostream& operator<<(std::ostream& out, const Ieee80211OfdmSymbol& symbol)
     return out;
 }
 
-} /* namespace physicallayer */
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet
 

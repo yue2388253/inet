@@ -26,7 +26,6 @@
 #endif // ifdef WITH_OSG
 
 namespace inet {
-
 namespace osg {
 
 #if defined(WITH_OSG) && defined(WITH_VISUALIZERS)
@@ -74,7 +73,6 @@ class INET_API TopLevelScene : public Group
 #endif // ifdef WITH_OSG
 
 } // namespace osg
-
 } // namespace inet
 
 #endif // ifndef __INET_OSGSCENE_H

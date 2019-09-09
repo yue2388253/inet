@@ -20,4 +20,5 @@ namespace inet {
 b ChunkSerializer::totalSerializedLength = b(0);
 b ChunkSerializer::totalDeserializedLength = b(0);
 
-} // namespace
+} // namespace inet
+

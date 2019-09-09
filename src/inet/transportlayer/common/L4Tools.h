@@ -45,6 +45,7 @@ const Ptr<T> removeTransportProtocolHeader(Packet *packet)
 
 const Ptr<TransportHeaderBase> removeTransportProtocolHeader(Packet *packet, const Protocol& protocol);
 
-}
+} // namespace inet
 
 #endif // __INET_L4TOOLS_H
+

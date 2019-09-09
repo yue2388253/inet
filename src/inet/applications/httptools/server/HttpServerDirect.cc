@@ -20,7 +20,6 @@
 #include "inet/common/ModuleAccess.h"
 
 namespace inet {
-
 namespace httptools {
 
 Define_Module(HttpServerDirect);
@@ -66,6 +65,5 @@ void HttpServerDirect::handleMessage(cMessage *msg)
 }
 
 } // namespace httptools
-
 } // namespace inet
 

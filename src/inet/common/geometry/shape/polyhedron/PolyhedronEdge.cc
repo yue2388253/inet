@@ -30,5 +30,5 @@ bool PolyhedronEdge::operator ==(const PolyhedronEdge& rhs) const
            (point1 == rhs.point2 && point2 == rhs.point1);
 }
 
-} /* namespace inet */
+} // namespace inet
 

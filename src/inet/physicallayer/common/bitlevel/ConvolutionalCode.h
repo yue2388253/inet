@@ -50,8 +50,8 @@ class INET_API ConvolutionalCode : public IForwardErrorCorrection
     virtual double computeNetBitErrorRate(double grossBitErrorRate) const override;
 };
 
-} /* namespace physicallayer */
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet
 
 #endif // ifndef __INET_CONVOLUTIONALCODE_H
 

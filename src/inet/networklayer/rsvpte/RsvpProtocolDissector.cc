@@ -21,7 +21,6 @@
 #include "inet/networklayer/rsvpte/RsvpPacket_m.h"
 #include "inet/networklayer/rsvpte/RsvpProtocolDissector.h"
 
-
 namespace inet {
 
 Register_Protocol_Dissector(&Protocol::rsvpTe, RsvpProtocolDissector);

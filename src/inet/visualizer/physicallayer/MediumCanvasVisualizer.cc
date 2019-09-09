@@ -30,7 +30,6 @@
 #include "inet/visualizer/physicallayer/MediumCanvasVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 using namespace inet::physicallayer;
@@ -686,6 +685,5 @@ void MediumCanvasVisualizer::handleSignalArrivalEnded(const IReception *receptio
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

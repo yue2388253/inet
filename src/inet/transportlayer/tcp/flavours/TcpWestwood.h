@@ -25,7 +25,6 @@
 #include "inet/transportlayer/tcp/flavours/TcpSegmentTransmitInfoList.h"
 
 namespace inet {
-
 namespace tcp {
 
 /**
@@ -89,7 +88,6 @@ class INET_API TcpWestwood : public TcpBaseAlg
 };
 
 } // namespace tcp
-
 } // namespace inet
 
 #endif // ifndef __INET_TCPWESTWOOD_H

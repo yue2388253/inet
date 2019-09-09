@@ -18,7 +18,6 @@
 #include "inet/physicallayer/modulation/Qam64Modulation.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 const double k = 1 / sqrt(42);
@@ -46,6 +45,5 @@ Qam64Modulation::Qam64Modulation() : MqamModulationBase(&constellation)
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

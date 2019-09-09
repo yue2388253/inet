@@ -22,7 +22,6 @@
 #include "inet/physicallayer/ieee80211/packetlevel/Ieee80211TransmissionBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 // TODO: IdealTransmissionBase
@@ -35,7 +34,6 @@ class INET_API Ieee80211UnitDiskTransmission : public UnitDiskTransmission, publ
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IEEE80211UNITDISKTRANSMISSION_H

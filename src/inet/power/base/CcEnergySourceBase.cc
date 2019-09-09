@@ -18,7 +18,6 @@
 #include "inet/power/base/CcEnergySourceBase.h"
 
 namespace inet {
-
 namespace power {
 
 A CcEnergySourceBase::computeTotalCurrentConsumption() const
@@ -51,6 +50,5 @@ void CcEnergySourceBase::removeEnergyConsumer(const IEnergyConsumer *energyConsu
 }
 
 } // namespace power
-
 } // namespace inet
 

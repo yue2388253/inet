@@ -21,7 +21,6 @@
 #include "inet/physicallayer/contract/packetlevel/ISnir.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 /**
@@ -56,7 +55,6 @@ class INET_API IErrorModel : public IPrintableObject
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IERRORMODEL_H

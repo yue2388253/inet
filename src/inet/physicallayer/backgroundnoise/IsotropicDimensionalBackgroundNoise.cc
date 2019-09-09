@@ -20,7 +20,6 @@
 #include "inet/physicallayer/common/packetlevel/BandListening.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(IsotropicDimensionalBackgroundNoise);
@@ -59,6 +58,5 @@ const INoise *IsotropicDimensionalBackgroundNoise::computeNoise(const IListening
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

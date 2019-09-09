@@ -37,7 +37,6 @@ class INET_API SctpNatHook : public cSimpleModule, NetfilterBase::HookBase
 };
 
 } // namespace sctp
-
 } // namespace inet
 
 #endif // ifndef __INET_SCTPNATHOOK_H

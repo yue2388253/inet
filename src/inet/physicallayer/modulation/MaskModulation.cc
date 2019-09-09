@@ -18,7 +18,6 @@
 #include "inet/physicallayer/modulation/MaskModulation.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 static std::vector<ApskSymbol> *createConstellation(double maxAmplitude, unsigned int codeWordSize)
@@ -58,6 +57,5 @@ double MaskModulation::calculateSER(double snir, Hz bandwidth, bps bitrate) cons
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

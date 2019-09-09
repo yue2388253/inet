@@ -29,7 +29,6 @@
 #include "inet/physicallayer/modulation/QpskModulation.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 std::ostream& Ieee80211OfdmEncoder::printToStream(std::ostream& stream, int level) const
@@ -99,6 +98,7 @@ Ieee80211OfdmEncoder::~Ieee80211OfdmEncoder()
     delete interleaver;
     delete scrambler;
 }
-} /* namespace physicallayer */
-} /* namespace inet */
+
+} // namespace physicallayer
+} // namespace inet
 

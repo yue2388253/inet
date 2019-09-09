@@ -21,7 +21,6 @@
 #include "inet/physicallayer/base/packetlevel/PathLossBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 /**
@@ -83,7 +82,6 @@ class INET_API UwbIrStochasticPathLoss : public PathLossBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_UWBIRSTOCHASTICPATHLOSS_H

@@ -46,5 +46,5 @@ std::ostream& operator<<(std::ostream& os, const RecipientBlockAckAgreement& agr
     return os;
 }
 
-} /* namespace ieee80211 */
-} /* namespace inet */
+} // namespace ieee80211
+} // namespace inet

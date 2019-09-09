@@ -51,8 +51,8 @@ class INET_API Ieee80211OfdmDecoderModule : public cSimpleModule, public IDecode
     const IReceptionPacketModel *decode(const IReceptionBitModel *bitModel) const override;
 };
 
-} /* namespace physicallayer */
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet
 
 #endif // ifndef __INET_IEEE80211OFDMDECODERMODULE_H
 

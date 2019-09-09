@@ -80,5 +80,5 @@ RecipientMacDataService::~RecipientMacDataService()
     delete basicReassembly;
 }
 
-} /* namespace ieee80211 */
-} /* namespace inet */
+} // namespace ieee80211
+} // namespace inet

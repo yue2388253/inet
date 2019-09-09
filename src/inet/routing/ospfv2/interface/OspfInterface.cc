@@ -31,7 +31,6 @@
 #include "inet/routing/ospfv2/router/OspfRouter.h"
 
 namespace inet {
-
 namespace ospf {
 
 OspfInterface::OspfInterface(OspfInterface::OspfInterfaceType ifType) :
@@ -672,6 +671,5 @@ std::ostream& operator<<(std::ostream& stream, const OspfInterface& intf)
 }
 
 } // namespace ospf
-
 } // namespace inet
 

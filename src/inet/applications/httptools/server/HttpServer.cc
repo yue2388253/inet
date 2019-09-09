@@ -18,7 +18,6 @@
 #include "inet/applications/httptools/server/HttpServer.h"
 
 namespace inet {
-
 namespace httptools {
 
 Define_Module(HttpServer);
@@ -185,6 +184,5 @@ void HttpServer::socketDeleted(TcpSocket *socket)
 }
 
 } // namespace httptools
-
 } // namespace inet
 

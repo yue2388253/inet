@@ -23,7 +23,6 @@
 #include "inet/visualizer/base/RoutingTableVisualizerBase.h"
 
 namespace inet {
-
 namespace visualizer {
 
 RoutingTableVisualizerBase::RouteVisualization::RouteVisualization(const Ipv4Route *route, int nodeModuleId, int nextHopModuleId) :
@@ -259,6 +258,5 @@ std::string RoutingTableVisualizerBase::getRouteVisualizationText(const Ipv4Rout
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

@@ -18,7 +18,6 @@
 #include "inet/physicallayer/ieee80211/bitlevel/Ieee80211OfdmInterleaverModule.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(Ieee80211OfdmInterleaverModule);
@@ -43,6 +42,7 @@ Ieee80211OfdmInterleaverModule::~Ieee80211OfdmInterleaverModule()
     delete interleaver->getInterleaving();
     delete interleaver;
 }
-} /* namespace physicallayer */
-} /* namespace inet */
+
+} // namespace physicallayer
+} // namespace inet
 

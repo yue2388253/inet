@@ -25,7 +25,6 @@
 #include "inet/visualizer/scene/NetworkNodeOsgVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API MediumOsgVisualizer : public MediumVisualizerBase
@@ -114,7 +113,6 @@ class INET_API MediumOsgVisualizer : public MediumVisualizerBase
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_MEDIUMOSGVISUALIZER_H

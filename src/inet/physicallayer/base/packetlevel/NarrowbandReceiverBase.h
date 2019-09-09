@@ -23,7 +23,6 @@
 #include "inet/physicallayer/contract/packetlevel/IModulation.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API NarrowbandReceiverBase : public SnirReceiverBase
@@ -59,7 +58,6 @@ class INET_API NarrowbandReceiverBase : public SnirReceiverBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_NARROWBANDRECEIVERBASE_H

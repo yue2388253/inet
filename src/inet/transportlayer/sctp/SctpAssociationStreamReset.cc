@@ -906,7 +906,6 @@ uint32 SctpAssociation::getSsnOfStream(uint16 id)
     return iterator->second->getNextStreamSeqNum();
 }
 
-
 void SctpAssociation::resetSsns()
 {
     for (auto & elem : sendStreams)

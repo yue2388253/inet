@@ -22,7 +22,6 @@
 #include "inet/visualizer/base/PathVisualizerBase.h"
 
 namespace inet {
-
 namespace visualizer {
 
 PathVisualizerBase::PathVisualization::PathVisualization(const std::vector<int>& path) :
@@ -280,6 +279,5 @@ void PathVisualizerBase::receiveSignal(cComponent *source, simsignal_t signal, c
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

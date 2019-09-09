@@ -30,7 +30,6 @@
 #include "inet/linklayer/ieee8022/Ieee8022LlcHeader_m.h"
 
 namespace inet {
-
 namespace ieee80211 {
 
 Define_Module(Ieee80211Portal);
@@ -118,6 +117,5 @@ void Ieee80211Portal::decapsulate(Packet *packet)
 }
 
 } // namespace ieee80211
-
 } // namespace inet
 

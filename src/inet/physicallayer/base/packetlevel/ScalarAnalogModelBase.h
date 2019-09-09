@@ -23,7 +23,6 @@
 #include "inet/physicallayer/base/packetlevel/AnalogModelBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API ScalarAnalogModelBase : public AnalogModelBase
@@ -47,7 +46,6 @@ class INET_API ScalarAnalogModelBase : public AnalogModelBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_SCALARANALOGMODELBASE_H

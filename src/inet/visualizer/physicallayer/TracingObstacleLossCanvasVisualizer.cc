@@ -19,7 +19,6 @@
 #include "inet/visualizer/physicallayer/TracingObstacleLossCanvasVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 using namespace inet::physicallayer;
@@ -153,6 +152,5 @@ void TracingObstacleLossCanvasVisualizer::setAlpha(const ObstacleLossVisualizati
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

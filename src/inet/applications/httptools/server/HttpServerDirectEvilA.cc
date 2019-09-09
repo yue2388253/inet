@@ -18,7 +18,6 @@
 #include "inet/applications/httptools/server/HttpServerDirectEvilA.h"
 
 namespace inet {
-
 namespace httptools {
 
 Define_Module(HttpServerDirectEvilA);
@@ -52,6 +51,5 @@ std::string HttpServerDirectEvilA::generateBody()
 }
 
 } // namespace httptools
-
 } // namespace inet
 

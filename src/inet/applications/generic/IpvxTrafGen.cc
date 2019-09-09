@@ -34,7 +34,6 @@ namespace inet {
 
 Define_Module(IpvxTrafGen);
 
-
 std::vector<const Protocol *> IpvxTrafGen::allocatedProtocols;
 
 IpvxTrafGen::IpvxTrafGen()

@@ -25,7 +25,6 @@
 #endif // ifdef WITH_OSG
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(LinkBreakOsgVisualizer);
@@ -101,6 +100,5 @@ void LinkBreakOsgVisualizer::setAlpha(const LinkBreakVisualization *linkBreakVis
 #endif // ifdef WITH_OSG
 
 } // namespace visualizer
-
 } // namespace inet
 

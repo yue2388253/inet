@@ -98,6 +98,6 @@ class INET_API BvhTree
         void lineSegmentQuery(const LineSegment& lineSegment,  const IVisitor *visitor) const;
 };
 
-} /* namespace inet */
+} // namespace inet
 
 #endif // ifndef __INET_BVHTREE_H

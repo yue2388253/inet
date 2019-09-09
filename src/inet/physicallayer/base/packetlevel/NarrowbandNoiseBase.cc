@@ -18,7 +18,6 @@
 #include "inet/physicallayer/base/packetlevel/NarrowbandNoiseBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 NarrowbandNoiseBase::NarrowbandNoiseBase(simtime_t startTime, simtime_t endTime, Hz carrierFrequency, Hz bandwidth) :
@@ -37,6 +36,5 @@ std::ostream& NarrowbandNoiseBase::printToStream(std::ostream& stream, int level
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

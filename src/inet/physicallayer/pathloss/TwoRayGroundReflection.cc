@@ -20,7 +20,6 @@
 #include "inet/physicallayer/pathloss/TwoRayGroundReflection.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 using namespace inet::physicalenvironment;
@@ -80,6 +79,5 @@ double TwoRayGroundReflection::computePathLoss(const ITransmission *transmission
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

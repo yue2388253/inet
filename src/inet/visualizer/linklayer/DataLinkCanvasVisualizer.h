@@ -21,7 +21,6 @@
 #include "inet/visualizer/base/LinkCanvasVisualizerBase.h"
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API DataLinkCanvasVisualizer : public LinkCanvasVisualizerBase
@@ -34,7 +33,6 @@ class INET_API DataLinkCanvasVisualizer : public LinkCanvasVisualizerBase
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_DATALINKCANVASVISUALIZER_H

@@ -148,7 +148,6 @@ std::string to_str(const std::map<K,V>& m) {
     return out.str();
 }
 
-
 } // namespace inet
 
 #endif // ifndef __INET_STLUTILS_H

@@ -27,7 +27,6 @@
 #include "inet/common/INETMath.h"
 
 namespace inet {
-
 namespace httptools {
 
 enum DistrType { dt_normal, dt_uniform, dt_exponential, dt_histogram, dt_constant, dt_zipf };
@@ -301,7 +300,6 @@ class INET_API rdObjectFactory
 };
 
 } // namespace httptools
-
 } // namespace inet
 
 #endif // ifndef __INET_HTTPRANDOM_H

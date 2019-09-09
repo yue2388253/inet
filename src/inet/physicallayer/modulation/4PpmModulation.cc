@@ -18,7 +18,6 @@
 #include "inet/physicallayer/modulation/4PpmModulation.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 const _4PpmModulation _4PpmModulation::singleton;
@@ -29,6 +28,5 @@ _4PpmModulation::_4PpmModulation() :
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

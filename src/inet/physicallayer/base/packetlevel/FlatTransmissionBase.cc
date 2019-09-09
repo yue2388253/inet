@@ -18,7 +18,6 @@
 #include "inet/physicallayer/base/packetlevel/FlatTransmissionBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 FlatTransmissionBase::FlatTransmissionBase(const IRadio *transmitter, const Packet *packet, const simtime_t startTime, const simtime_t endTime, const simtime_t preambleDuration, const simtime_t headerDuration, const simtime_t dataDuration, const Coord startPosition, const Coord endPosition, const Quaternion startOrientation, const Quaternion endOrientation, b headerLength, b dataLength, bps bitrate, const IModulation *modulation, Hz carrierFrequency, Hz bandwidth) :
@@ -40,6 +39,5 @@ std::ostream& FlatTransmissionBase::printToStream(std::ostream& stream, int leve
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

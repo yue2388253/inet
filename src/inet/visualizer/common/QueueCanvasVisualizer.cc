@@ -20,7 +20,6 @@
 #include "inet/visualizer/common/QueueCanvasVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(QueueCanvasVisualizer);
@@ -92,6 +91,5 @@ void QueueCanvasVisualizer::refreshQueueVisualization(const QueueVisualization *
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

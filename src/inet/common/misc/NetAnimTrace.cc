@@ -68,7 +68,6 @@ void NetAnimTrace::dump()
             for (cModule::GateIterator ig(*it); !ig.end(); ig++)
                 if ((*ig)->getType() == cGate::OUTPUT && (*ig)->getNextGate())
                     addLink(*ig);
-
 }
 
 void NetAnimTrace::receiveSignal(cComponent *source, simsignal_t signalID, cObject *obj, cObject *details)

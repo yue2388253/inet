@@ -19,7 +19,6 @@
 #include "inet/physicallayer/propagation/ConstantSpeedPropagation.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(ConstantSpeedPropagation);
@@ -95,6 +94,5 @@ const IArrival *ConstantSpeedPropagation::computeArrival(const ITransmission *tr
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

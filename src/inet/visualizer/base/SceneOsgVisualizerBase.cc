@@ -29,7 +29,6 @@
 #endif // ifdef WITH_OSG
 
 namespace inet {
-
 namespace visualizer {
 
 #ifdef WITH_OSG
@@ -208,6 +207,5 @@ osg::BoundingSphere SceneOsgVisualizerBase::getNetworkBoundingSphere()
 #endif // ifdef WITH_OSG
 
 } // namespace visualizer
-
 } // namespace inet
 

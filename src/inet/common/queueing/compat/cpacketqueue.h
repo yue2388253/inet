@@ -187,6 +187,5 @@ class INET_API cPacketQueue : public cQueue
 }  // namespace queueing
 }  // namespace inet
 
-
 #endif
 

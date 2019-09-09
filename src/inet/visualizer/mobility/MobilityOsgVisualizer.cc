@@ -29,7 +29,6 @@
 #endif // ifdef WITH_OSG
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(MobilityOsgVisualizer);
@@ -142,6 +141,5 @@ void MobilityOsgVisualizer::receiveSignal(cComponent *source, simsignal_t signal
 #endif // ifdef WITH_OSG
 
 } // namespace visualizer
-
 } // namespace inet
 

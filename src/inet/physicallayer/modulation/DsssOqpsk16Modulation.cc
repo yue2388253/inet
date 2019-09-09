@@ -18,7 +18,6 @@
 #include "inet/physicallayer/modulation/DsssOqpsk16Modulation.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 DsssOqpsk16Modulation::DsssOqpsk16Modulation() :
@@ -84,6 +83,5 @@ double DsssOqpsk16Modulation::calculateSER(double snir, Hz bandwidth, bps bitrat
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

@@ -61,7 +61,7 @@ class INET_API AckHandler : public cSimpleModule, public IAckHandler
         static std::string getStatusString(Status status);
 };
 
-} /* namespace ieee80211 */
-} /* namespace inet */
+} // namespace ieee80211
+} // namespace inet
 
 #endif // __INET_ACKHANDLER_H

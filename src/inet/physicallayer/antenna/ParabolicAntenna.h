@@ -22,7 +22,6 @@
 #include "inet/physicallayer/base/packetlevel/AntennaBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API ParabolicAntenna : public AntennaBase
@@ -56,7 +55,6 @@ class INET_API ParabolicAntenna : public AntennaBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_PARABOLICANTENNA_H

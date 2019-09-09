@@ -19,7 +19,6 @@
 #include "inet/visualizer/physicallayer/RadioOsgVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 using namespace inet::physicallayer;
@@ -73,6 +72,5 @@ void RadioOsgVisualizer::refreshRadioVisualization(const RadioVisualization *rad
 #endif // ifdef WITH_OSG
 
 } // namespace visualizer
-
 } // namespace inet
 

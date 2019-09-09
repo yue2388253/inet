@@ -22,7 +22,6 @@
 #include "inet/physicallayer/contract/packetlevel/IPrintableObject.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class IRadio;
@@ -43,7 +42,6 @@ class INET_API IListening : public IPrintableObject
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_ILISTENING_H

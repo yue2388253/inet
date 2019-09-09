@@ -19,7 +19,6 @@
 #include "inet/physicallayer/contract/packetlevel/IRadio.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 CommunicationCacheBase::RadioCacheEntry::RadioCacheEntry() :
@@ -427,6 +426,5 @@ void CommunicationCacheBase::removeCachedSignal(const IRadio *receiver, const IT
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

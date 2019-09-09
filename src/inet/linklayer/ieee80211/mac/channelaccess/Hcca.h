@@ -39,8 +39,8 @@ class INET_API Hcca : public IChannelAccess, public cSimpleModule
         virtual void releaseChannel(IChannelAccess::ICallback *callback) override;
 };
 
-} /* namespace ieee80211 */
-} /* namespace inet */
+} // namespace ieee80211
+} // namespace inet
 
 #endif // ifndef __INET_HCCA_H
 

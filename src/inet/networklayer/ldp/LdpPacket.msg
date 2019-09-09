@@ -10,7 +10,6 @@
 // See the GNU Lesser General Public License for more details.
 //
 
-
 import inet.common.INETDefs;
 import inet.common.packet.chunk.Chunk;
 import inet.networklayer.contract.ipv4.Ipv4Address;
@@ -58,7 +57,6 @@ class LdpPacket extends FieldsChunk
     Ipv4Address receiverAddress;
 }
 
-
 //
 // LDP Label Mapping Message
 //
@@ -75,7 +73,6 @@ class LdpLabelRequest extends LdpPacket
 {
     FecTlv fec;
 }
-
 
 //
 // LDP Hello Message
@@ -119,6 +116,4 @@ class LdpAddress extends LdpPacket
     string family;
     string addresses[];
 }
-
-
 

@@ -28,7 +28,6 @@
 #include "inet/physicallayer/contract/bitlevel/IScrambler.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API ApskEncoder : public IEncoder, public cSimpleModule
@@ -53,7 +52,6 @@ class INET_API ApskEncoder : public IEncoder, public cSimpleModule
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_APSKENCODER_H

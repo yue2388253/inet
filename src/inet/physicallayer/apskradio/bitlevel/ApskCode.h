@@ -24,7 +24,6 @@
 #include "inet/physicallayer/contract/bitlevel/IScrambler.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API ApskCode : public ICode
@@ -44,8 +43,9 @@ class INET_API ApskCode : public ICode
     const IInterleaving *getInterleaving() const { return interleaving; }
     const IScrambling *getScrambling() const { return scrambling; }
 };
-} /* namespace physicallayer */
-} /* namespace inet */
 
-#endif /* __INET_APSKCODE_H */
+} // namespace physicallayer
+} // namespace inet
+
+#endif // __INET_APSKCODE_H
 

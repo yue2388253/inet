@@ -17,7 +17,6 @@
 #include "inet/common/packet/dissector/ProtocolDissector.h"
 #include "inet/common/packet/dissector/ProtocolDissectorRegistry.h"
 
-
 namespace inet {
 
 Register_Protocol_Dissector(nullptr, DefaultProtocolDissector);
@@ -30,5 +29,5 @@ void DefaultProtocolDissector::dissect(Packet *packet, const Protocol *protocol,
     callback.endProtocolDataUnit(protocol);
 }
 
-} // namespace
+} // namespace inet
 

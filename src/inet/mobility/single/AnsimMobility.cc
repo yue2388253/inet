@@ -35,7 +35,6 @@ static cXMLElement *firstChildWithTag(cXMLElement *node, const char *tagname)
     return child;
 }
 
-
 void AnsimMobility::computeMaxSpeed()
 {
     cXMLElement *rootElem = par("ansimTrace");

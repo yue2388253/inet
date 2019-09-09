@@ -172,7 +172,6 @@ int Ted::assignIndex(std::vector<vertex_t>& vertices, Ipv4Address nodeAddr)
         if (vertices[i].node == nodeAddr)
             return i;
 
-
     // if not found, create
     vertex_t newVertex;
     newVertex.node = nodeAddr;

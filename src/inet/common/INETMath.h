@@ -217,7 +217,6 @@ inline double n_choose_k(int n, int k) {
 }
 
 } // namespace math
-
 } // namespace inet
 
 #endif // ifndef __INET_INETMATH_H

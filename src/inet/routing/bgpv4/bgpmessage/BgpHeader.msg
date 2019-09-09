@@ -40,7 +40,6 @@ class BgpAsPathSegment extends cObject
     uint16_t asValue[];
 }
 
-
 //
 // BGPv4 message types
 //

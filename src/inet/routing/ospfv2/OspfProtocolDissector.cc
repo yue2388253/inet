@@ -21,10 +21,8 @@
 #include "inet/routing/ospfv2/OspfPacket_m.h"
 #include "inet/routing/ospfv2/OspfProtocolDissector.h"
 
-
 namespace inet {
 namespace ospf {
-
 
 Register_Protocol_Dissector(&Protocol::ospf, OspfProtocolDissector);
 

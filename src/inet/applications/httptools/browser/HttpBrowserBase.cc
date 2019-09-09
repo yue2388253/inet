@@ -21,7 +21,6 @@
 #include "inet/common/lifecycle/NodeStatus.h"
 
 namespace inet {
-
 namespace httptools {
 
 HttpBrowserBase::HttpBrowserBase()
@@ -563,6 +562,5 @@ void HttpBrowserBase::readScriptedEvents(const char *filename)
 }
 
 } // namespace httptools
-
 } // namespace inet
 

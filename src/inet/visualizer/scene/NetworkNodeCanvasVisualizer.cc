@@ -19,7 +19,6 @@
 #include "inet/visualizer/scene/NetworkNodeCanvasVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(NetworkNodeCanvasVisualizer);
@@ -81,6 +80,5 @@ void NetworkNodeCanvasVisualizer::removeNetworkNodeVisualization(NetworkNodeVisu
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

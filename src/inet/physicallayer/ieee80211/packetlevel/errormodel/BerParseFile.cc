@@ -26,7 +26,6 @@
 #include "inet/physicallayer/ieee80211/packetlevel/errormodel/BerParseFile.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 void BerParseFile::clearBerTable()
@@ -359,6 +358,5 @@ BerParseFile::~BerParseFile()
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

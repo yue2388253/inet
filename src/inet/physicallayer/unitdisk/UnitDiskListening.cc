@@ -18,7 +18,6 @@
 #include "inet/physicallayer/unitdisk/UnitDiskListening.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 UnitDiskListening::UnitDiskListening(const IRadio *radio, simtime_t startTime, simtime_t endTime, Coord startPosition, Coord endPosition) :
@@ -33,6 +32,5 @@ std::ostream& UnitDiskListening::printToStream(std::ostream& stream, int level) 
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

@@ -23,7 +23,6 @@
 #include "inet/visualizer/scene/NetworkNodeOsgVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API EnergyStorageOsgVisualizer : public EnergyStorageVisualizerBase
@@ -62,7 +61,6 @@ class INET_API EnergyStorageOsgVisualizer : public EnergyStorageVisualizerBase
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_ENERGYSTORAGEOSGGVISUALIZER_H

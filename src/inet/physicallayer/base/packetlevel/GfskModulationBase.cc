@@ -18,7 +18,6 @@
 #include "inet/physicallayer/base/packetlevel/GfskModulationBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 GfskModulationBase::GfskModulationBase(unsigned int constellationSize) :
@@ -27,6 +26,5 @@ GfskModulationBase::GfskModulationBase(unsigned int constellationSize) :
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

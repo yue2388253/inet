@@ -21,7 +21,6 @@
 #include "inet/physicallayer/analogmodel/packetlevel/ScalarTransmission.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API ApskScalarTransmission : public ScalarTransmission
@@ -33,7 +32,6 @@ class INET_API ApskScalarTransmission : public ScalarTransmission
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_APSKSCALARTRANSMISSION_H

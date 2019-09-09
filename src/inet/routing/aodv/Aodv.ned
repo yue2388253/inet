@@ -20,7 +20,6 @@ package inet.routing.aodv;
 
 import inet.applications.contract.IApp;
 
-
 //
 // Ad hoc On-Demand Distance Vector Routing Protocol module.
 //

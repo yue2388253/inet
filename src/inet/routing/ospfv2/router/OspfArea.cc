@@ -23,7 +23,6 @@
 #include "inet/routing/ospfv2/router/OspfRouter.h"
 
 namespace inet {
-
 namespace ospf {
 
 Area::Area(CrcMode crcMode, IInterfaceTable *ift, AreaId id) :
@@ -2655,5 +2654,4 @@ bool Area::isAllZero(Ipv4AddressRange entry) const
 }
 
 } // namespace ospf
-
 } // namespace inet

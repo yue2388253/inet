@@ -30,7 +30,6 @@
 #include "inet/transportlayer/contract/tcp/TcpSocket.h"
 
 namespace inet {
-
 namespace bgp {
 
 class BgpSession;
@@ -185,7 +184,6 @@ private:
 };
 
 } // namespace bgp
-
 } // namespace inet
 
 #endif // ifndef __INET_BGPROUTER_H

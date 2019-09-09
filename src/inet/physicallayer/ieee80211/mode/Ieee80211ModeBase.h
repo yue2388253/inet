@@ -32,7 +32,7 @@ class INET_API Ieee80211ModeBase : public IIeee80211Mode
         virtual const char *getName() const override { return name.c_str(); }
 };
 
-} /* namespace physicallayer */
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet
 
 #endif // ifndef __INET_IEEE80211MODEBASE_H

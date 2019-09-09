@@ -18,12 +18,10 @@
 #include "inet/power/contract/IEpEnergyStorage.h"
 
 namespace inet {
-
 namespace power {
 
 simsignal_t IEpEnergyStorage::residualEnergyCapacityChangedSignal = cComponent::registerSignal("residualEnergyCapacityChanged");
 
 } // namespace power
-
 } // namespace inet
 

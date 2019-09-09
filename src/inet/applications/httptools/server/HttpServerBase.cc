@@ -21,7 +21,6 @@
 #include "inet/common/lifecycle/NodeStatus.h"
 
 namespace inet {
-
 namespace httptools {
 
 HttpServerBase::HttpServerBase()
@@ -536,6 +535,5 @@ std::string HttpServerBase::readHtmlBodyFile(std::string file, std::string path)
 }
 
 } // namespace httptools
-
 } // namespace inet
 

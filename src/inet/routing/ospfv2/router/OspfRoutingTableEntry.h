@@ -28,7 +28,6 @@
 #include "inet/routing/ospfv2/router/OspfCommon.h"
 
 namespace inet {
-
 namespace ospf {
 
 class INET_API OspfRoutingTableEntry : public Ipv4Route
@@ -95,7 +94,6 @@ class INET_API OspfRoutingTableEntry : public Ipv4Route
 std::ostream& operator<<(std::ostream& out, const OspfRoutingTableEntry& entry);
 
 } // namespace ospf
-
 } // namespace inet
 
 #endif // ifndef __INET_OSPFROUTINGTABLEENTRY_H

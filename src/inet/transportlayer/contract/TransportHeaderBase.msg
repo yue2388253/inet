@@ -37,7 +37,6 @@ class INET_API TransportHeaderBase : public FieldsChunk
 
 }}
 
-
 namespace inet;
 
 //

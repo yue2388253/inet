@@ -28,7 +28,6 @@
 #include "inet/transportlayer/sctp/SctpHeaderSerializer.h"
 #include "inet/transportlayer/sctp/headers/sctphdr.h"
 
-
 #if !defined(_WIN32) && !defined(__CYGWIN__) && !defined(_WIN64)
 #include <netinet/in.h>    // htonl, ntohl, ...
 #include <arpa/inet.h>
@@ -39,7 +38,6 @@
 #define MAXBUFLEN 1<<16
 
 namespace inet {
-
 namespace sctp {
 
 Register_Serializer(SctpHeader, SctpHeaderSerializer);
@@ -1121,7 +1119,6 @@ void SctpHeaderSerializer::hmacSha1(const uint8 *buf, uint32 buflen, const uint8
         digest[i] = 0;
     }
 }
-
 
 const Ptr<Chunk> SctpHeaderSerializer::deserialize(MemoryInputStream& stream) const
 {
@@ -2209,5 +2206,5 @@ void SctpHeaderSerializer::calculateSharedKey()
 }
 
 } // namespace sctp
-
 } // namespace inet
+

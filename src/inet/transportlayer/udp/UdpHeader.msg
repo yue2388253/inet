@@ -16,13 +16,11 @@
 // along with this program; if not, see <http://www.gnu.org/licenses/>.
 //
 
-
 import inet.common.INETDefs;
 import inet.transportlayer.common.CrcMode;
 import inet.transportlayer.contract.TransportHeaderBase;
 
 namespace inet;
-
 
 cplusplus {{
 const B UDP_HEADER_LENGTH = B(8);

@@ -18,7 +18,6 @@
 #include "inet/visualizer/util/InterfaceFilter.h"
 
 namespace inet {
-
 namespace visualizer {
 
 void InterfaceFilter::setPattern(const char* pattern)
@@ -34,6 +33,5 @@ bool InterfaceFilter::matches(const InterfaceEntry *interfaceEntry) const
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

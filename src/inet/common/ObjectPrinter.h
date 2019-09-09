@@ -107,6 +107,5 @@ class INET_API ObjectPrinter
 
 }  // namespace inet
 
-
 #endif
 

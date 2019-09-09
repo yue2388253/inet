@@ -18,7 +18,6 @@
 #include "inet/physicallayer/ieee80211/bitlevel/Ieee80211OfdmSymbolModel.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Ieee80211OfdmTransmissionSymbolModel::~Ieee80211OfdmTransmissionSymbolModel()
@@ -46,6 +45,7 @@ Ieee80211OfdmReceptionSymbolModel::Ieee80211OfdmReceptionSymbolModel(int headerS
     ReceptionSymbolModel(headerSymbolLength, headerSymbolRate, payloadSymbolLength, payloadSymbolRate, symbols)
 {
 }
-} /* namespace physicallayer */
-} /* namespace inet */
+
+} // namespace physicallayer
+} // namespace inet
 

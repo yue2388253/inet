@@ -39,6 +39,6 @@ bool SequenceControlField::operator <(const SequenceControlField& other) const
            (sequenceNumber == other.sequenceNumber && fragmentNumber < other.fragmentNumber);
 }
 
-} /* namespace ieee80211 */
-} /* namespace inet */
+} // namespace ieee80211
+} // namespace inet
 

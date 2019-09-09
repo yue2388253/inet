@@ -68,6 +68,6 @@ AdditiveScrambler::AdditiveScrambler(const AdditiveScrambling *scrambling) : scr
     scramblingSequence = generateScramblingSequence(generatorPolynomial, seed);
 }
 
-} /* namespace physicallayer */
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet
 

@@ -22,7 +22,6 @@
 #include "inet/physicallayer/common/bitlevel/SignalSymbolModel.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API Ieee80211OfdmTransmissionSymbolModel : public TransmissionSymbolModel
@@ -38,8 +37,9 @@ class INET_API Ieee80211OfdmReceptionSymbolModel : public ReceptionSymbolModel
     Ieee80211OfdmReceptionSymbolModel(int headerSymbolLength, double headerSymbolRate, int payloadSymbolLength, double payloadSymbolRate, const std::vector<const ISymbol *> *symbols);
     virtual ~Ieee80211OfdmReceptionSymbolModel();
 };
-} /* namespace physicallayer */
-} /* namespace inet */
+
+} // namespace physicallayer
+} // namespace inet
 
 #endif // ifndef __INET_IEEE80211OFDMSYMBOLMODEL_H
 

@@ -33,4 +33,4 @@ PolyhedronPoint::PolyhedronPoint()
     x = y = z = 0;
 }
 
-} /* namespace inet */
+} // namespace inet

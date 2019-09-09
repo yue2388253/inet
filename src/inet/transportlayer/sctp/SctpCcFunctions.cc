@@ -20,7 +20,6 @@
 #include "inet/transportlayer/sctp/SctpAssociation.h"
 
 namespace inet {
-
 namespace sctp {
 
 #ifdef _MSC_VER
@@ -992,6 +991,5 @@ void SctpAssociation::cwndUpdateAfterCwndTimeout(SctpPathVariables *path)
 }
 
 } // namespace sctp
-
 } // namespace inet
 

@@ -19,7 +19,6 @@
 #include "inet/physicallayer/base/packetlevel/PhysicalLayerBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 void PhysicalLayerBase::initialize(int stage)
@@ -65,6 +64,5 @@ bool PhysicalLayerBase::isLowerMessage(cMessage *message)
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

@@ -46,6 +46,6 @@ class INET_API Box : public GeometricObjectBase
         virtual bool isNil() const override { return this == &NIL; }
         virtual bool isUnspecified() const override { return min.isUnspecified() || max.isUnspecified(); }
 };
-} /* namespace inet */
+} // namespace inet
 
 #endif // ifndef __INET_BOX_H

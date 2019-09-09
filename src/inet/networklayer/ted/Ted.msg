@@ -12,7 +12,6 @@
 // See the GNU Lesser General Public License for more details.
 //
 
-
 import inet.common.INETDefs;
 import inet.networklayer.contract.ipv4.Ipv4Address;
 
@@ -41,7 +40,6 @@ struct TeLinkStateInfo
     bool state;             // false = down, true = up
 }
 
-
 //
 // Data structure supplied with NF_TED_CHANGE signal.
 // This triggers the link state protocol to send out up-to-date link state info
@@ -51,5 +49,4 @@ class TedChangeInfo extends cObject
 {
     int tedLinkIndices[];
 }
-
 

@@ -74,7 +74,6 @@ class INET_API Quaternion
     const Quaternion &operator *= (double scale) { s *= scale; v *= scale; return *this; }
     const Quaternion &operator /= (double scale) { s /= scale; v /= scale; return *this; }
 
-
     //! gets the length of this Quaternion
     double length() const { return std::sqrt(s*s + v*v); }
 
@@ -148,6 +147,6 @@ inline std::string Quaternion::str() const
     return os.str();
 }
 
-} /* namespace inet */
+} // namespace inet
 
 #endif // ifndef __INET_QUATERNION_H

@@ -18,7 +18,6 @@
 #include "inet/physicallayer/modulation/QbpskModulation.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 const std::vector<ApskSymbol> QbpskModulation::constellation = {
@@ -47,6 +46,5 @@ double QbpskModulation::calculateBER(double snir, Hz bandwidth, bps bitrate) con
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

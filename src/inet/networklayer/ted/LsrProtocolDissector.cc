@@ -21,7 +21,6 @@
 #include "inet/networklayer/ted/LinkStatePacket_m.h"
 #include "inet/networklayer/ted/LsrProtocolDissector.h"
 
-
 namespace inet {
 
 Register_Protocol_Dissector(&Protocol::linkStateRouting, LsrProtocolDissector);

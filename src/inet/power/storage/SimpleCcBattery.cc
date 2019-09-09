@@ -22,7 +22,6 @@
 #include "inet/power/storage/SimpleCcBattery.h"
 
 namespace inet {
-
 namespace power {
 
 Define_Module(SimpleCcBattery);
@@ -119,6 +118,5 @@ void SimpleCcBattery::executeNodeOperation(C newResidualCapacity)
 }
 
 } // namespace power
-
 } // namespace inet
 

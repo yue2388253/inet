@@ -21,7 +21,6 @@
 #include "inet/physicallayer/analogmodel/packetlevel/DimensionalTransmission.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API ApskDimensionalTransmission : public DimensionalTransmission
@@ -33,7 +32,6 @@ class INET_API ApskDimensionalTransmission : public DimensionalTransmission
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_APSKDIMENSIONALTRANSMISSION_H

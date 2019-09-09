@@ -15,7 +15,6 @@
 // along with this program; if not, see <http://www.gnu.org/licenses/>.
 //
 
-
 //
 // PPP header+trailer length:
 //    - Flag(8) + Address(8) + Control(8) + Protocol(16) + FCS(16) = 7 octets.

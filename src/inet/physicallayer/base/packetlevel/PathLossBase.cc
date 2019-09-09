@@ -19,7 +19,6 @@
 #include "inet/physicallayer/contract/packetlevel/IRadioSignal.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 double PathLossBase::computePathLoss(const ITransmission *transmission, const IArrival *arrival) const
@@ -33,6 +32,5 @@ double PathLossBase::computePathLoss(const ITransmission *transmission, const IA
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

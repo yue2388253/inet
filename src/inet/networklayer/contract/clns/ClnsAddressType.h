@@ -19,8 +19,7 @@
  * @author Marcel Marek (mailto:imarek@fit.vutbr.cz), Vladimir Vesely (mailto:ivesely@fit.vutbr.cz)
  * @date 10.8.2016
  * @brief Class representing a CLNS Address type
-  */
-
+ */
 
 #ifndef ANSA_NETWORKLAYER_CLNS_CLNSADDRESSTYPE_H_
 #define ANSA_NETWORKLAYER_CLNS_CLNSADDRESSTYPE_H_
@@ -35,7 +34,6 @@ class INET_API CLNSAddressType : public IL3AddressType
 {
   public:
     static CLNSAddressType INSTANCE;
-
 
   public:
     CLNSAddressType() {}
@@ -52,6 +50,6 @@ class INET_API CLNSAddressType : public IL3AddressType
     virtual L3Address getLinkLocalAddress(const InterfaceEntry *ie) const override { return ClnsAddress::UNSPECIFIED_ADDRESS; }
 };
 
-} /* namespace inet */
+} // namespace inet
 
 #endif /* ANSA_NETWORKLAYER_CLNS_CLNSADDRESSTYPE_H_ */

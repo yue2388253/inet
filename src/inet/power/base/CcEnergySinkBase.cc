@@ -18,7 +18,6 @@
 #include "inet/power/base/CcEnergySinkBase.h"
 
 namespace inet {
-
 namespace power {
 
 A CcEnergySinkBase::computeTotalCurrentGeneration() const
@@ -51,6 +50,5 @@ void CcEnergySinkBase::removeEnergyGenerator(const IEnergyGenerator *energyGener
 }
 
 } // namespace power
-
 } // namespace inet
 

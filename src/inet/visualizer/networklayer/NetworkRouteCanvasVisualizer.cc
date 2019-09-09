@@ -32,7 +32,6 @@
 #include "inet/visualizer/networklayer/NetworkRouteCanvasVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(NetworkRouteCanvasVisualizer);
@@ -87,6 +86,5 @@ const PathCanvasVisualizerBase::PathVisualization *NetworkRouteCanvasVisualizer:
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

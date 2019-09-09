@@ -373,7 +373,6 @@ void Udp::processPacketFromApp(Packet *packet)
     if (destPort <= 0 || destPort > 65535)
         throw cRuntimeError("send invalid remote port number %d", destPort);
 
-
     if (packet->findTag<MulticastReq>() == nullptr)
         packet->addTag<MulticastReq>()->setMulticastLoop(sd->multicastLoop);
     if (sd->ttl != -1 && packet->findTag<HopLimitReq>() == nullptr)

@@ -22,7 +22,6 @@
 #include "inet/routing/ospfv2/interface/OspfInterfaceState.h"
 
 namespace inet {
-
 namespace ospf {
 
 class INET_API InterfaceStateDesignatedRouter : public OspfInterfaceState
@@ -33,7 +32,6 @@ class INET_API InterfaceStateDesignatedRouter : public OspfInterfaceState
 };
 
 } // namespace ospf
-
 } // namespace inet
 
 #endif // ifndef __INET_OSPFINTERFACESTATEDESIGNATEDROUTER_H

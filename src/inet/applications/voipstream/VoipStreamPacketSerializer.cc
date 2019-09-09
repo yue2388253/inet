@@ -54,7 +54,6 @@ void VoipStreamPacketSerializer::serialize(MemoryOutputStream& stream, const Ptr
             stream.writeBytes((uint8_t *)bytes.getDataPtr(), B(bytes.getDataArraySize()));
         }
     }
-
 }
 
 const Ptr<Chunk> VoipStreamPacketSerializer::deserialize(MemoryInputStream& stream) const

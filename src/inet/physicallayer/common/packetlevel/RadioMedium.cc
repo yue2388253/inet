@@ -565,7 +565,6 @@ void RadioMedium::sendToAffectedRadios(IRadio *radio, const ISignal *transmitted
     }
     else
         sendToAllRadios(radio, transmittedSignal);
-
 }
 
 void RadioMedium::sendToRadio(IRadio *transmitter, const IRadio *receiver, const ISignal *transmittedSignal)

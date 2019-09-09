@@ -22,7 +22,6 @@
 #include "inet/visualizer/base/PhysicalEnvironmentVisualizerBase.h"
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API PhysicalEnvironmentCanvasVisualizer : public PhysicalEnvironmentVisualizerBase
@@ -62,7 +61,6 @@ class INET_API PhysicalEnvironmentCanvasVisualizer : public PhysicalEnvironmentV
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_PHYSICALENVIRONMENTCANVASVISUALIZER_H

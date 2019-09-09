@@ -65,7 +65,6 @@ TxopProcedure::ProtectionMechanism TxopProcedure::selectProtectionMechanism(Acce
     return ProtectionMechanism::SINGLE_PROTECTION;
 }
 
-
 simtime_t TxopProcedure::getStart() const
 {
     return start;
@@ -92,7 +91,6 @@ void TxopProcedure::startTxop(AccessCategory ac)
     emit(txopStartedSignal, this);
     EV_INFO << "Txop started: limit = " << limit << ".\n";
 }
-
 
 void TxopProcedure::endTxop()
 {
@@ -145,3 +143,4 @@ void TxopDurationFilter::receiveSignal(cResultFilter *prev, simtime_t_cref t, cO
 
 } // namespace ieee80211
 }// namespace inet
+

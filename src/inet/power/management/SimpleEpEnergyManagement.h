@@ -23,7 +23,6 @@
 #include "inet/power/contract/IEpEnergyStorage.h"
 
 namespace inet {
-
 namespace power {
 
 class INET_API SimpleEpEnergyManagement : public cSimpleModule, public virtual IEpEnergyManagement, public cListener
@@ -60,7 +59,6 @@ class INET_API SimpleEpEnergyManagement : public cSimpleModule, public virtual I
 };
 
 } // namespace power
-
 } // namespace inet
 
 #endif // ifndef __INET_SIMPLEEPENERGYMANAGEMENT_H

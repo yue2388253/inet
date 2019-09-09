@@ -17,7 +17,6 @@
 // author: Zoltan Bojthe
 //
 
-
 import inet.common.INETDefs;
 import inet.common.packet.ChunkBuffer;
 import inet.common.packet.ChunkQueue;

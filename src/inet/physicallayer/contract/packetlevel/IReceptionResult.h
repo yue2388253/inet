@@ -23,7 +23,6 @@
 #include "inet/physicallayer/contract/packetlevel/RadioControlInfo_m.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 /**
@@ -54,7 +53,6 @@ class INET_API IReceptionResult : public IPrintableObject
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IRECEPTIONRESULT_H

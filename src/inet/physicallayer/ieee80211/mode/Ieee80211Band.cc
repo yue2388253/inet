@@ -18,7 +18,6 @@
 #include "inet/physicallayer/ieee80211/mode/Ieee80211Band.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Ieee80211BandBase::Ieee80211BandBase(const char *name) :
@@ -104,6 +103,5 @@ const IIeee80211Band *Ieee80211CompliantBands::getBand(const char *name)
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

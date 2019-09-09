@@ -23,7 +23,6 @@
 #include "inet/environment/contract/IMaterialRegistry.h"
 
 namespace inet {
-
 namespace physicalenvironment {
 
 class INET_API MaterialRegistry : public IMaterialRegistry
@@ -45,7 +44,6 @@ class INET_API MaterialRegistry : public IMaterialRegistry
 };
 
 } // namespace physicalenvironment
-
 } // namespace inet
 
 #endif // ifndef __INET_MATERIALREGISTRY_H

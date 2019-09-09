@@ -21,7 +21,6 @@
 #include "inet/physicallayer/base/packetlevel/ErrorModelBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 /**
@@ -48,7 +47,6 @@ class INET_API StochasticErrorModel : public ErrorModelBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_STOCHASTICERRORMODEL_H

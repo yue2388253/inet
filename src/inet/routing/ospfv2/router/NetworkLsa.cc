@@ -18,7 +18,6 @@
 #include "inet/routing/ospfv2/router/Lsa.h"
 
 namespace inet {
-
 namespace ospf {
 
 bool NetworkLsa::update(const OspfNetworkLsa *lsa)
@@ -64,6 +63,5 @@ bool NetworkLsa::differsFrom(const OspfNetworkLsa *networkLSA) const
 }
 
 } // namespace ospf
-
 } // namespace inet
 

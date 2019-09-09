@@ -22,7 +22,6 @@
 #include "inet/physicallayer/base/packetlevel/FlatReceptionBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 using namespace inet::math;
@@ -40,7 +39,6 @@ class INET_API DimensionalReception : public FlatReceptionBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_DIMENSIONALRECEPTION_H

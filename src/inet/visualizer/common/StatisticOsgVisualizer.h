@@ -27,7 +27,6 @@
 #endif // ifdef WITH_OSG
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API StatisticOsgVisualizer : public StatisticVisualizerBase
@@ -67,7 +66,6 @@ class INET_API StatisticOsgVisualizer : public StatisticVisualizerBase
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_STATISTICOSGVISUALIZER_H

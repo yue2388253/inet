@@ -22,7 +22,6 @@
 #include "inet/linklayer/ieee80211/mac/Ieee80211Frame_m.h"
 
 namespace inet {
-
 namespace ieee80211 {
 
 Register_ResultFilter("ieee80211Unicast", Ieee80211UnicastFilter);
@@ -84,6 +83,5 @@ void Ieee80211NotRetryFilter::receiveSignal(cResultFilter *prev, simtime_t_cref 
 }
 
 } // namespace ieee80211
-
 } // namespace inet
 

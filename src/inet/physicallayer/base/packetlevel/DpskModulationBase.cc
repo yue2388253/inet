@@ -18,7 +18,6 @@
 #include "inet/physicallayer/base/packetlevel/DpskModulationBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 DpskModulationBase::DpskModulationBase(unsigned int constellationSize) :
@@ -27,6 +26,5 @@ DpskModulationBase::DpskModulationBase(unsigned int constellationSize) :
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

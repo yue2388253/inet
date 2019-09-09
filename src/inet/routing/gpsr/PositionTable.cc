@@ -63,7 +63,6 @@ void PositionTable::removeOldPositions(simtime_t timestamp)
             addressToPositionMap.erase(it++);
         else
             it++;
-
 }
 
 void PositionTable::clear()

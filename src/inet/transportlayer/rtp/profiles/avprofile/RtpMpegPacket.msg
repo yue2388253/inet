@@ -70,4 +70,3 @@ class RtpMpegHeader extends FieldsChunk
     //int ffc;
 }
 
-

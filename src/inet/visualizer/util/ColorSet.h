@@ -21,7 +21,6 @@
 #include "inet/common/INETDefs.h"
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API ColorSet
@@ -36,7 +35,6 @@ class INET_API ColorSet
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_COLORSET_H

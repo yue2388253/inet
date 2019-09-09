@@ -21,7 +21,6 @@
 #include "inet/common/geometry/common/Coord.h"
 
 namespace inet {
-
 namespace physicalenvironment {
 
 class INET_API IGround
@@ -45,7 +44,6 @@ class INET_API IGround
 };
 
 } // namespace physicalenvironment
-
 } // namespace inet
 
 #endif // ifndef __INET_IGROUND_H

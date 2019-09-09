@@ -21,7 +21,6 @@
 #include "inet/physicallayer/contract/packetlevel/IPrintableObject.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API IIeee80211Band : public cObject, public IPrintableObject
@@ -92,7 +91,6 @@ class INET_API Ieee80211CompliantBands
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IEEE80211BAND_H

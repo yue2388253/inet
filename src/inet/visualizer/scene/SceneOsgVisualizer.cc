@@ -26,7 +26,6 @@
 #endif // ifdef WITH_OSG
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(SceneOsgVisualizer);
@@ -71,6 +70,5 @@ void SceneOsgVisualizer::initializeViewpoint()
 #endif // ifdef WITH_OSG
 
 } // namespace visualizer
-
 } // namespace inet
 

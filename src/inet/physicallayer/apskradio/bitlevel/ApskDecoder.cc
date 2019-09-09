@@ -20,7 +20,6 @@
 #include "inet/physicallayer/common/bitlevel/SignalPacketModel.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(ApskDecoder);
@@ -96,6 +95,5 @@ const IReceptionPacketModel *ApskDecoder::decode(const IReceptionBitModel *bitMo
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

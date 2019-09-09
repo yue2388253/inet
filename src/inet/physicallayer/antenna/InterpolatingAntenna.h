@@ -22,7 +22,6 @@
 #include "inet/physicallayer/base/packetlevel/AntennaBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 /**
@@ -65,7 +64,6 @@ class INET_API InterpolatingAntenna : public AntennaBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_INTERPOLATINGANTENNA_H

@@ -21,7 +21,6 @@
 #include "inet/physicallayer/analogmodel/bitlevel/SignalAnalogModel.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API ScalarSignalAnalogModel : public NarrowbandSignalAnalogModel, public virtual IScalarSignal
@@ -51,7 +50,6 @@ class INET_API ScalarReceptionSignalAnalogModel : public ScalarSignalAnalogModel
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_SCALARSIGNALANALOGMODEL_H

@@ -343,6 +343,5 @@ void Dsdv::handleMessageWhenUp(cMessage *msg)
         throw cRuntimeError("Message not supported %s", msg->getName());
 }
 
-
 } // namespace inet
 

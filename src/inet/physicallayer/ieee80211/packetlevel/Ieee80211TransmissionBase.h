@@ -22,7 +22,6 @@
 #include "inet/physicallayer/ieee80211/mode/Ieee80211Channel.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API Ieee80211TransmissionBase : public IPrintableObject
@@ -41,7 +40,6 @@ class INET_API Ieee80211TransmissionBase : public IPrintableObject
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IEEE80211TRANSMISSIONBASE_H

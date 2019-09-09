@@ -169,13 +169,10 @@ void ThermometerFigure::parse(cProperty *property)
 {
     cGroupFigure::parse(property);
 
-
     setBounds(parseBounds(property, getBounds()));
-
 
     // Set default
     redrawTicks();
-
 
     const char *s;
     if ((s = property->getValue(PKEY_MERCURY_COLOR)) != nullptr)

@@ -36,7 +36,7 @@ message NetPerfMeterTransmitTimer
    unsigned int streamID;
 }
 
-
 class NetPerfMeterDataMessage extends SctpSimpleMessage
 {
 }
+

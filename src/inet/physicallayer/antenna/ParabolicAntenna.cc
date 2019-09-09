@@ -18,7 +18,6 @@
 #include "inet/physicallayer/antenna/ParabolicAntenna.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(ParabolicAntenna);
@@ -64,6 +63,5 @@ double ParabolicAntenna::AntennaGain::computeGain(const Quaternion direction) co
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

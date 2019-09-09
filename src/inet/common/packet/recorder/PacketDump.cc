@@ -47,7 +47,6 @@
 #include "inet/transportlayer/udp/UdpHeader_m.h"
 #endif // ifdef WITH_UDP
 
-
 namespace inet {
 
 PacketDump::PacketDump()

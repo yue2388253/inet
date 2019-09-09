@@ -17,7 +17,6 @@
 // @author Zoltan Bojthe
 //
 
-
 #include "inet/common/TlvOptions_m.h"
 
 namespace inet {
@@ -67,3 +66,4 @@ int TlvOptions::findByType(short int type, int firstPos) const
 }
 
 } // namespace inet
+

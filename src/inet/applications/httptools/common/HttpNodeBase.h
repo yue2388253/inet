@@ -33,7 +33,6 @@
 #include "inet/applications/httptools/common/HttpUtils.h"
 
 namespace inet {
-
 namespace httptools {
 
 #define HTTPT_REQUEST_MESSAGE             10000
@@ -99,7 +98,6 @@ class INET_API HttpNodeBase : public cSimpleModule, public LifecycleUnsupported
 };
 
 } // namespace httptools
-
 } // namespace inet
 
 #endif // ifndef __INET_HTTPNODEBASE_H

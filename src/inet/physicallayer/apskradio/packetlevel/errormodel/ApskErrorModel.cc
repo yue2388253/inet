@@ -20,7 +20,6 @@
 #include "inet/physicallayer/base/packetlevel/FlatTransmissionBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(ApskErrorModel);
@@ -74,6 +73,5 @@ double ApskErrorModel::computeSymbolErrorRate(const ISnir *snir, IRadioSignal::S
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

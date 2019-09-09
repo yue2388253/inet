@@ -26,7 +26,6 @@ namespace inet {
 
 Define_Module(StaticConcentricMobility);
 
-
 void StaticConcentricMobility::setInitialPosition()
 {
     unsigned int numHosts = par("numHosts");

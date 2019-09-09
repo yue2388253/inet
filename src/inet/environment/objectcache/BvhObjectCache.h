@@ -25,7 +25,6 @@
 #include "inet/environment/common/PhysicalEnvironment.h"
 
 namespace inet {
-
 namespace physicalenvironment {
 
 class INET_API BvhObjectCache : public IObjectCache, public cModule
@@ -58,7 +57,6 @@ class INET_API BvhObjectCache : public IObjectCache, public cModule
 };
 
 } // namespace physicalenvironment
-
 } // namespace inet
 
 #endif // ifndef __INET_BVHOBJECTCACHE_H

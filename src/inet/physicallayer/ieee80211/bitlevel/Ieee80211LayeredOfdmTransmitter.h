@@ -28,7 +28,6 @@
 #include "inet/physicallayer/ieee80211/mode/Ieee80211OfdmMode.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API Ieee80211LayeredOfdmTransmitter : public TransmitterBase
@@ -101,7 +100,6 @@ class INET_API Ieee80211LayeredOfdmTransmitter : public TransmitterBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IEEE80211LAYEREDOFDMTRANSMITTER_H

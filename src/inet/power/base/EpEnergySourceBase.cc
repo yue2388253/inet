@@ -18,7 +18,6 @@
 #include "inet/power/base/EpEnergySourceBase.h"
 
 namespace inet {
-
 namespace power {
 
 W EpEnergySourceBase::computeTotalPowerConsumption() const
@@ -51,6 +50,5 @@ void EpEnergySourceBase::removeEnergyConsumer(const IEnergyConsumer *energyConsu
 }
 
 } // namespace power
-
 } // namespace inet
 

@@ -23,7 +23,6 @@
 #include "inet/physicallayer/common/bitlevel/LayeredReception.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API LayeredDimensionalAnalogModel : public DimensionalAnalogModelBase
@@ -35,7 +34,6 @@ class INET_API LayeredDimensionalAnalogModel : public DimensionalAnalogModelBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_LAYEREDDIMENSIONALANALOGMODEL_H

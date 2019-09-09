@@ -18,7 +18,6 @@
 #include "inet/physicallayer/contract/packetlevel/IRadioSignal.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 cEnum *IRadioSignal::signalPartEnum = nullptr;
@@ -38,6 +37,5 @@ const char *IRadioSignal::getSignalPartName(SignalPart signalPart)
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

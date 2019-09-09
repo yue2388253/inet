@@ -97,7 +97,6 @@ void Edcaf::calculateTimingParameters()
     EV_DEBUG << "Contention window parameters are initialized: cw = " << cw << ", cwMin = " << cwMin << ", cwMax = " << cwMax << std::endl;
 }
 
-
 void Edcaf::incrementCw()
 {
     Enter_Method_Silent("incrementCw");

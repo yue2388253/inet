@@ -29,7 +29,6 @@
 #include "inet/common/INETMath.h" // M_PI
 
 namespace inet {
-
 namespace units {
 
 namespace internal    // Boost would call this "detail"
@@ -274,12 +273,8 @@ value<Value, pow<Unit, Num, Den> > raise(const value<Value, Unit>& a)
     return value<Value, pow<Unit, Num, Den> >(internal::fixed_power<Num, Den>::pow(a.get()));
 }
 
-} // namespace units
-
 /*****************************************************************************/
 // Implementation
-
-namespace units {
 
 namespace internal {
 
@@ -742,8 +737,6 @@ struct scaling_factor<translate<U, N, D> >
 
 } // namespace internal
 
-} // namespace units
-
 /*****************************************************************************/
 // Display
 
@@ -754,8 +747,6 @@ struct scaling_factor<translate<U, N, D> >
 
 #define UNITS_DISPLAY_NAME(unit, string) \
     namespace units { UNIT_DISPLAY_NAME(unit, string) }
-
-namespace units {
 
 namespace internal {
 
@@ -874,12 +865,8 @@ std::ostream& operator<<(std::ostream& os, const value<Value, Unit>& value)
     return os;
 }
 
-} // namespace units
-
 /*****************************************************************************/
 // Additional units
-
-namespace units {
 
 namespace units {
 
@@ -1466,7 +1453,6 @@ Value tan(const value<Value, Unit>& angle)
 }
 
 } // namespace units
-
 } // namespace inet
 
 #endif // ifndef __INET_UNITS_H

@@ -37,9 +37,7 @@
 #include "inet/networklayer/ipv4/Ipv4Header_m.h"
 #endif // ifdef WITH_IPv4
 
-
 namespace inet {
-
 namespace sctp {
 
 Define_Module(Sctp);
@@ -557,7 +555,6 @@ SctpAssociation *Sctp::findAssocForInitAck(SctpInitAckChunk *initAckChunk, L3Add
     return assoc;
 }
 
-
 SctpAssociation *Sctp::findAssocForMessage(L3Address srcAddr, L3Address destAddr, uint32 srcPort, uint32 destPort, bool findListen)
 {
     SockPair key;
@@ -1041,6 +1038,5 @@ void Sctp::finish()
 }
 
 } // namespace sctp
-
 } // namespace inet
 

@@ -21,7 +21,6 @@
 #include "inet/power/storage/SimpleEpEnergyStorage.h"
 
 namespace inet {
-
 namespace power {
 
 Define_Module(SimpleEpEnergyStorage);
@@ -174,6 +173,5 @@ void SimpleEpEnergyStorage::scheduleTimer()
 }
 
 } // namespace power
-
 } // namespace inet
 

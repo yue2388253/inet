@@ -362,7 +362,6 @@ void SctpSocket::connectx(AddressVector remoteAddressList, int32 remotePort, boo
     connect(remoteAddressList.front(), remotePort, streamReset, prMethod, numRequests);
 }
 
-
 void SctpSocket::send(Packet *packet)
 {
     auto sendReq = packet->findTag<SctpSendReq>();

@@ -27,7 +27,6 @@
 #endif // ifdef WITH_OSG
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API InterfaceTableOsgVisualizer : public InterfaceTableVisualizerBase
@@ -67,7 +66,6 @@ class INET_API InterfaceTableOsgVisualizer : public InterfaceTableVisualizerBase
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_INTERFACETABLEOSGVISUALIZER_H

@@ -57,6 +57,5 @@ DimensionalReceptionSignalAnalogModel::DimensionalReceptionSignalAnalogModel(con
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

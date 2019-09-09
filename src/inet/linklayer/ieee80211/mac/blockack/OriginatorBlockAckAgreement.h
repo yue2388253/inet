@@ -78,7 +78,7 @@ class OriginatorBlockAckAgreement : public cObject
 
 };
 
-} /* namespace ieee80211 */
-} /* namespace inet */
+} // namespace ieee80211
+} // namespace inet
 
 #endif // ifndef __INET_ORIGINATORBLOCKACKAGREEMENT_H

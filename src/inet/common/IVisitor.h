@@ -30,6 +30,6 @@ class INET_API IVisitor
         virtual ~IVisitor() {}
 };
 
-} /* namespace inet */
+} // namespace inet
 
 #endif /* __INET_IVISITOR_H_ */

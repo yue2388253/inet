@@ -21,7 +21,6 @@
 #include "inet/visualizer/base/PathOsgVisualizerBase.h"
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API TransportRouteOsgVisualizer : public PathOsgVisualizerBase
@@ -33,7 +32,6 @@ class INET_API TransportRouteOsgVisualizer : public PathOsgVisualizerBase
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_TRANSPORTROUTEOSGVISUALIZER_H

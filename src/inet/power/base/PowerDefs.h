@@ -22,13 +22,11 @@
 #include "inet/common/Units.h"
 
 namespace inet {
-
 namespace power {
 
 using namespace units::values;
 
 } // namespace power
-
 } // namespace inet
 
 #endif // ifndef __INET_POWERDEFS_H

@@ -22,7 +22,6 @@
 #include "inet/visualizer/scene/NetworkNodeCanvasVisualization.h"
 
 namespace inet {
-
 namespace visualizer {
 
 NetworkNodeCanvasVisualization::Annotation::Annotation(cFigure *figure, const cFigure::Point& size, Placement placementHint, double placementPriority) :
@@ -344,6 +343,5 @@ void NetworkNodeCanvasVisualization::layout()
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

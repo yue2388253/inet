@@ -42,7 +42,6 @@ const int LDP_KIND = 10;
 const int HOW_KIND = 50;
 
 } // namespace mpls_constants
-
 } // namespace inet
 
 #endif // ifndef __INET_CONSTTYPE_H

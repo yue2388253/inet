@@ -22,7 +22,6 @@
 #include "inet/power/contract/IEnergySource.h"
 
 namespace inet {
-
 namespace power {
 
 /**
@@ -40,7 +39,6 @@ class INET_API IEnergyStorage : public virtual IEnergySource, public virtual IEn
 };
 
 } // namespace power
-
 } // namespace inet
 
 #endif // ifndef __INET_IENERGYSTORAGE_H

@@ -16,7 +16,6 @@
 #ifndef INET_ROUTING_BGPV4_BGPMESSAGE_BGPHEADERSERIALIZER_H_
 #define INET_ROUTING_BGPV4_BGPMESSAGE_BGPHEADERSERIALIZER_H_
 
-
 #include "inet/common/packet/serializer/FieldsChunkSerializer.h"
 
 namespace inet {
@@ -38,5 +37,5 @@ class INET_API BgpHeaderSerializer : public FieldsChunkSerializer
 } // namespace bgp
 } // namespace inet
 
-
 #endif /* INET_ROUTING_BGPV4_BGPMESSAGE_BGPHEADERSERIALIZER_H_ */
+

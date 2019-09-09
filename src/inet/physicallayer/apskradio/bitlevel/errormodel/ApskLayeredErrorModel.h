@@ -21,7 +21,6 @@
 #include "inet/physicallayer/base/bitlevel/LayeredErrorModelBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API ApskLayeredErrorModel : public LayeredErrorModelBase
@@ -38,7 +37,6 @@ class INET_API ApskLayeredErrorModel : public LayeredErrorModelBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_LAYEREDAPSKERRORMODEL_H

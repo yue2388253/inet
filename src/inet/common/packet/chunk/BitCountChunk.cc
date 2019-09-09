@@ -126,4 +126,5 @@ std::string BitCountChunk::str() const
     return os.str();
 }
 
-} // namespace
+} // namespace inet
+

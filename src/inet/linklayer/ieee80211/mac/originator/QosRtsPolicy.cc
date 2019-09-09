@@ -65,5 +65,5 @@ simtime_t QosRtsPolicy::getCtsTimeout(Packet *packet, const Ptr<const Ieee80211R
     return ctsTimeout == -1 ? modeSet->getSifsTime() + modeSet->getSlotTime() + rateSelection->computeResponseCtsFrameMode(packet, rtsFrame)->getPhyRxStartDelay() : ctsTimeout;
 }
 
-} /* namespace ieee80211 */
-} /* namespace inet */
+} // namespace ieee80211
+} // namespace inet

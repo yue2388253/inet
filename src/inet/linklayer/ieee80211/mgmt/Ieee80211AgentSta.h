@@ -25,7 +25,6 @@
 #include "inet/networklayer/common/InterfaceTable.h"
 
 namespace inet {
-
 namespace ieee80211 {
 
 /**
@@ -105,7 +104,6 @@ class INET_API Ieee80211AgentSta : public cSimpleModule, public cListener       
 };
 
 } // namespace ieee80211
-
 } // namespace inet
 
 #endif // ifndef __INET_IEEE80211AGENTSTA_H

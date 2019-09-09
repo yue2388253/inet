@@ -22,7 +22,6 @@
 #include "inet/physicallayer/contract/bitlevel/ISignalSymbolModel.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API IModulator : public IPrintableObject
@@ -33,7 +32,6 @@ class INET_API IModulator : public IPrintableObject
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IMODULATOR_H

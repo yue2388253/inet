@@ -18,7 +18,6 @@
 #include "inet/environment/ground/FlatGround.h"
 
 namespace inet {
-
 namespace physicalenvironment {
 
 Define_Module(FlatGround);
@@ -40,6 +39,5 @@ Coord FlatGround::computeGroundNormal(const Coord &position) const
 }
 
 } // namespace physicalenvironment
-
 } // namespace inet
 

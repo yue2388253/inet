@@ -21,7 +21,6 @@
 #include "inet/visualizer/base/LinkBreakVisualizerBase.h"
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API LinkBreakOsgVisualizer : public LinkBreakVisualizerBase
@@ -58,7 +57,6 @@ class INET_API LinkBreakOsgVisualizer : public LinkBreakVisualizerBase
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_LINKBREAKOSGVISUALIZER_H

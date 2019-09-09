@@ -72,7 +72,6 @@ class INET_API SctpHeader : public SctpHeader_Base
     virtual void eraseSctpChunks(size_t k) override {};
     virtual void replaceSctpChunk(SctpChunk *msg, uint32 k);
 
-
    // virtual void addChunk(SctpChunk * chunk);
 
     /**

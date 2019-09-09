@@ -15,7 +15,6 @@
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 //
 
-
 import inet.common.INETDefs;
 
 namespace inet::httptools;
@@ -35,5 +34,4 @@ message HttpServerStatusUpdateMsg
     double pvalue;          // The initial elevated probability.
     double pamortize;       // The amortization factor -- i.e. how much the pvalue is decreased on each hit.
 }
-
 

@@ -25,7 +25,6 @@
 #include "inet/visualizer/base/TransportConnectionVisualizerBase.h"
 
 namespace inet {
-
 namespace visualizer {
 
 TransportConnectionVisualizerBase::TransportConnectionVisualization::TransportConnectionVisualization(int sourceModuleId, int destinationModuleId, int count) :
@@ -139,6 +138,5 @@ void TransportConnectionVisualizerBase::receiveSignal(cComponent *source, simsig
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

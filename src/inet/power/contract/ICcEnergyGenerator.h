@@ -21,7 +21,6 @@
 #include "inet/power/contract/IEnergyGenerator.h"
 
 namespace inet {
-
 namespace power {
 
 /**
@@ -47,7 +46,6 @@ class INET_API ICcEnergyGenerator : public virtual IEnergyGenerator
 };
 
 } // namespace power
-
 } // namespace inet
 
 #endif // ifndef __INET_ICCENERGYGENERATOR_H

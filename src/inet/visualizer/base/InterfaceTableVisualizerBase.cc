@@ -31,7 +31,6 @@
 #include "inet/visualizer/base/InterfaceTableVisualizerBase.h"
 
 namespace inet {
-
 namespace visualizer {
 
 InterfaceTableVisualizerBase::InterfaceVisualization::InterfaceVisualization(int networkNodeId, int interfaceId) :
@@ -282,6 +281,5 @@ void InterfaceTableVisualizerBase::receiveSignal(cComponent *source, simsignal_t
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

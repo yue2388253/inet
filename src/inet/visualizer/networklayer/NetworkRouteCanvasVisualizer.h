@@ -21,7 +21,6 @@
 #include "inet/visualizer/base/PathCanvasVisualizerBase.h"
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API NetworkRouteCanvasVisualizer : public PathCanvasVisualizerBase
@@ -35,7 +34,6 @@ class INET_API NetworkRouteCanvasVisualizer : public PathCanvasVisualizerBase
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_NETWORKROUTECANVASVISUALIZER_H

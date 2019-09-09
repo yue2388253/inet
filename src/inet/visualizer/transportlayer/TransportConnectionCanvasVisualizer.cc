@@ -19,7 +19,6 @@
 #include "inet/visualizer/transportlayer/TransportConnectionCanvasVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(TransportConnectionCanvasVisualizer);
@@ -123,6 +122,5 @@ void TransportConnectionCanvasVisualizer::setConnectionLabelsVisible(bool visibl
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

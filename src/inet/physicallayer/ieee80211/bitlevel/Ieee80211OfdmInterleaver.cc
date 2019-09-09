@@ -18,7 +18,6 @@
 #include "inet/physicallayer/ieee80211/bitlevel/Ieee80211OfdmInterleaver.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 std::ostream& Ieee80211OfdmInterleaver::printToStream(std::ostream& stream, int level) const
@@ -80,6 +79,7 @@ Ieee80211OfdmInterleaver::Ieee80211OfdmInterleaver(const Ieee80211OfdmInterleavi
     numberOfCodedBitsPerSymbol = interleaving->getNumberOfCodedBitsPerSymbol();
     s = std::max(numberOfCodedBitsPerSubcarrier / 2, 1);
 }
-} /* namespace physicallayer */
-} /* namespace inet */
+
+} // namespace physicallayer
+} // namespace inet
 

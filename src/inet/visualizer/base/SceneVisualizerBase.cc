@@ -21,7 +21,6 @@
 #include "inet/visualizer/base/SceneVisualizerBase.h"
 
 namespace inet {
-
 namespace visualizer {
 
 using namespace inet::physicalenvironment;
@@ -70,6 +69,5 @@ Box SceneVisualizerBase::getSceneBounds()
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

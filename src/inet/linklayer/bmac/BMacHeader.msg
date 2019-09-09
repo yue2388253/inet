@@ -41,7 +41,6 @@ enum BMacType {
     BMAC_DATA_TIMEOUT = 204;
 };
 
-
 class BMacHeader extends MacHeaderBase
 {
     BMacType   type;

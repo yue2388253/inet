@@ -20,7 +20,6 @@
 #include "inet/visualizer/base/QueueVisualizerBase.h"
 
 namespace inet {
-
 namespace visualizer {
 
 void QueueVisualizerBase::QueueVisitor::visit(cObject *object)
@@ -100,6 +99,5 @@ void QueueVisualizerBase::removeAllQueueVisualizations()
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

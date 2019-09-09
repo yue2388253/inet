@@ -18,7 +18,6 @@
 #include "inet/physicallayer/unitdisk/UnitDiskReception.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Register_Enum(inet::physicallayer::UnitDiskReception::Power,
@@ -42,6 +41,5 @@ std::ostream& UnitDiskReception::printToStream(std::ostream& stream, int level) 
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

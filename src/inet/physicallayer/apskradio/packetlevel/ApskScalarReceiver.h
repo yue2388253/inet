@@ -22,7 +22,6 @@
 #include "inet/physicallayer/contract/packetlevel/IModulation.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API ApskScalarReceiver : public FlatReceiverBase
@@ -38,7 +37,6 @@ class INET_API ApskScalarReceiver : public FlatReceiverBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_APSKSCALARRECEIVER_H

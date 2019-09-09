@@ -53,7 +53,6 @@ void ByteArray::copyDataFromByteArray(unsigned int destOffset, const ByteArray& 
     copyDataFromBuffer(destOffset, other.data + srcOffset, length);
 }
 
-
 void ByteArray::addDataFromBuffer(const void *ptr, unsigned int length)
 {
     if (0 == length)

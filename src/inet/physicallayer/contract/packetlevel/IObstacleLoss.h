@@ -22,7 +22,6 @@
 #include "inet/physicallayer/contract/packetlevel/IPrintableObject.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 /**
@@ -42,7 +41,6 @@ class INET_API IObstacleLoss : public IPrintableObject
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IOBSTACLELOSS_H

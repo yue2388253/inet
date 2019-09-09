@@ -73,7 +73,7 @@ class INET_API FieldsChunk : public Chunk
     //@}
 };
 
-} // namespace
+} // namespace inet
 
 #endif // #ifndef __INET_FIELDCHUNK_H_
 

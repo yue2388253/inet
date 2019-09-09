@@ -21,7 +21,6 @@
 #include "inet/physicallayer/contract/packetlevel/IRadio.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 using namespace inet::math;
@@ -179,6 +178,5 @@ Ptr<const IFunction<WpHz, Domain<simsec, Hz>>> DimensionalTransmitterBase::creat
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

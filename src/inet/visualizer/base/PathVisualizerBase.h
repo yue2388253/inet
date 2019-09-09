@@ -28,7 +28,6 @@
 #include "inet/visualizer/util/NetworkNodeFilter.h"
 
 namespace inet {
-
 namespace visualizer {
 
 // TODO: move to some utility file
@@ -129,7 +128,6 @@ class INET_API PathVisualizerBase : public VisualizerBase, public cListener
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_PATHVISUALIZERBASE_H

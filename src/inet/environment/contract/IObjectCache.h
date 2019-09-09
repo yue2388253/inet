@@ -23,7 +23,6 @@
 #include "inet/environment/contract/IPhysicalObject.h"
 
 namespace inet {
-
 namespace physicalenvironment {
 
 /**
@@ -41,7 +40,6 @@ class INET_API IObjectCache
 };
 
 } // namespace physicalenvironment
-
 } // namespace inet
 
 #endif // ifndef __INET_IOBJECTCACHE_H

@@ -18,7 +18,6 @@
 #include "inet/physicallayer/base/packetlevel/MqamModulationBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 MqamModulationBase::MqamModulationBase(const std::vector<ApskSymbol> *constellation) :
@@ -48,6 +47,5 @@ double MqamModulationBase::calculateBER(double snir, Hz bandwidth, bps bitrate) 
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

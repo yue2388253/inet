@@ -275,7 +275,6 @@ class Ieee80211AddbaRequest extends Ieee80211ActionFrame
     // BlockAckReq frame is sent. The Fragment Number subfield is set to 0.
     int _fragmentNumber = 0; // FIXME: DataOrMgmtFreme has a fragmentNumber
     SequenceNumber startingSequenceNumber; // the sequence number of the first MSDU
-
 }
 
 class Ieee80211AddbaResponse extends Ieee80211ActionFrame

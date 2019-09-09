@@ -22,7 +22,6 @@
 #include "inet/physicallayer/base/packetlevel/NarrowbandNoiseBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 using namespace inet::math;
@@ -43,7 +42,6 @@ class INET_API DimensionalNoise : public NarrowbandNoiseBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_DIMENSIONALNOISE_H

@@ -31,7 +31,6 @@
 #endif // ifdef WITH_OSGEARTH
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(SceneOsgEarthVisualizer);
@@ -110,6 +109,5 @@ void SceneOsgEarthVisualizer::initializeViewpoint()
 #endif // ifdef WITH_OSGEARTH
 
 } // namespace visualizer
-
 } // namespace inet
 

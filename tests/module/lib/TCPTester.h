@@ -28,7 +28,6 @@
 #include "inet/common/packet/recorder/PacketDump.h"
 
 namespace inet {
-
 namespace tcp {
 
 /**

@@ -22,7 +22,6 @@
 #include "inet/physicallayer/contract/packetlevel/IObstacleLoss.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API ITracingObstacleLoss : public IObstacleLoss
@@ -47,7 +46,6 @@ class INET_API ITracingObstacleLoss : public IObstacleLoss
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_ITRACINGOBSTACLELOSS_H

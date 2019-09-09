@@ -22,7 +22,6 @@
 #include "inet/physicallayer/base/packetlevel/FlatTransmitterBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API ApskDimensionalTransmitter : public DimensionalTransmitterBase, public FlatTransmitterBase
@@ -39,7 +38,6 @@ class INET_API ApskDimensionalTransmitter : public DimensionalTransmitterBase, p
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_APSKDIMENSIONALTRANSMITTER_H

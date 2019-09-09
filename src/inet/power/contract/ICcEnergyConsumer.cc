@@ -18,12 +18,10 @@
 #include "inet/power/contract/ICcEnergyConsumer.h"
 
 namespace inet {
-
 namespace power {
 
 simsignal_t ICcEnergyConsumer::currentConsumptionChangedSignal = cComponent::registerSignal("currentConsumptionChanged");
 
 } // namespace power
-
 } // namespace inet
 

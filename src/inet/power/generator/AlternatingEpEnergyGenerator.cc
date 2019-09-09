@@ -18,7 +18,6 @@
 #include "inet/power/generator/AlternatingEpEnergyGenerator.h"
 
 namespace inet {
-
 namespace power {
 
 Define_Module(AlternatingEpEnergyGenerator);
@@ -70,6 +69,5 @@ void AlternatingEpEnergyGenerator::scheduleIntervalTimer()
 }
 
 } // namespace power
-
 } // namespace inet
 

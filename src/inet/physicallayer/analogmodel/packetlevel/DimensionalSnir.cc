@@ -18,7 +18,6 @@
 #include "inet/physicallayer/analogmodel/packetlevel/DimensionalSnir.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 DimensionalSnir::DimensionalSnir(const DimensionalReception *reception, const DimensionalNoise *noise) :
@@ -134,6 +133,5 @@ double DimensionalSnir::getMean() const
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

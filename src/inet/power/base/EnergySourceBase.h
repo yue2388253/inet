@@ -21,7 +21,6 @@
 #include "inet/power/contract/IEnergySource.h"
 
 namespace inet {
-
 namespace power {
 
 class INET_API EnergySourceBase : public virtual IEnergySource
@@ -37,7 +36,6 @@ class INET_API EnergySourceBase : public virtual IEnergySource
 };
 
 } // namespace power
-
 } // namespace inet
 
 #endif // ifndef __INET_ENERGYSOURCEBASE_H

@@ -65,7 +65,6 @@ QosAckHandler::Status QosAckHandler::getMgmtOrNonQoSAckStatus(const Ptr<const Ie
         return it->second;
 }
 
-
 QosAckHandler::Status QosAckHandler::getQoSDataAckStatus(const Ptr<const Ieee80211DataHeader>& header)
 {
     auto id = std::make_pair(header->getReceiverAddress(), std::make_pair(header->getTid(), SequenceControlField(header->getSequenceNumber(), header->getFragmentNumber())));
@@ -203,7 +202,6 @@ void QosAckHandler::processFailedBlockAckReq(const Ptr<const Ieee80211BlockAckRe
         throw cRuntimeError("Unknown block ack request");
 }
 
-
 void QosAckHandler::processTransmittedDataOrMgmtFrame(const Ptr<const Ieee80211DataOrMgmtHeader>& header)
 {
     if (header->getType() == ST_DATA_WITH_QOS) {
@@ -315,6 +313,6 @@ void QosAckHandler::printAckStatuses()
     std::cout << "=========================================" << std::endl;
 }
 
+} // namespace ieee80211
+} // namespace inet
 
-} /* namespace ieee80211 */
-} /* namespace inet */

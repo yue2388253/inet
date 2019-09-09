@@ -33,7 +33,6 @@
 #include "inet/physicallayer/modulation/QpskModulation.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(Ieee80211NistErrorModel);
@@ -197,7 +196,6 @@ double Ieee80211NistErrorModel::getFec1024QamBer(double snr, uint64_t nbits, uin
   return pms;
 }
 
-
 double Ieee80211NistErrorModel::getOFDMAndERPOFDMChunkSuccessRate(const ApskModulationBase *subcarrierModulation, const ConvolutionalCode *convolutionalCode, unsigned int bitLength, double snr) const
 {
     if (subcarrierModulation == &BpskModulation::singleton || subcarrierModulation == &QbpskModulation::singleton) {
@@ -325,6 +323,5 @@ double Ieee80211NistErrorModel::getDataSuccessRate(const IIeee80211Mode* mode, u
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

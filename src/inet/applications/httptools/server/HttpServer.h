@@ -25,7 +25,6 @@
 #include "inet/applications/httptools/server/HttpServerBase.h"
 
 namespace inet {
-
 namespace httptools {
 
 /**
@@ -69,7 +68,6 @@ class INET_API HttpServer : public HttpServerBase, public TcpSocket::ICallback
 };
 
 } // namespace httptools
-
 } // namespace inet
 
 #endif // ifndef __INET_HTTPSERVER_H

@@ -28,7 +28,6 @@
 #include "inet/transportlayer/contract/tcp/TcpSocket.h"
 
 namespace inet {
-
 namespace httptools {
 
 /**
@@ -126,7 +125,6 @@ class INET_API HttpBrowser : public HttpBrowserBase, public TcpSocket::ICallback
 };
 
 } // namespace httptools
-
 } // namespace inet
 
 #endif // ifndef __INET_HTTPBROWSER_H

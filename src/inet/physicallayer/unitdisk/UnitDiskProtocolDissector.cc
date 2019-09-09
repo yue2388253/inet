@@ -17,12 +17,10 @@
 // @author: Zoltan Bojthe
 //
 
-
 #include "inet/common/ProtocolGroup.h"
 #include "inet/common/packet/dissector/ProtocolDissectorRegistry.h"
 #include "inet/physicallayer/unitdisk/UnitDiskPhyHeader_m.h"
 #include "inet/physicallayer/unitdisk/UnitDiskProtocolDissector.h"
-
 
 namespace inet {
 

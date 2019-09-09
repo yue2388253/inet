@@ -51,7 +51,6 @@
 #include "inet/transportlayer/udp/UdpHeader_m.h"
 
 namespace inet {
-
 namespace sctp {
 
 void SctpAssociation::calculateRcvBuffer()
@@ -103,7 +102,6 @@ bool SctpAssociation::unorderedQueueEmptyOfStream(uint16 sid)
     assert(streamIterator != sendStreams.end());
     return streamIterator->second->getUnorderedStreamQ()->isEmpty();
 }
-
 
 bool SctpAssociation::getFragInProgressOfStream(uint16 sid)
 {
@@ -391,7 +389,6 @@ void SctpAssociation::sendToIP(Packet *pkt, const Ptr<SctpHeader>& sctpmsg,
     else if (sctpmsg->getVTag() == 0) {
         sctpmsg->setVTag(localVTag);
     }
-
 
     EV_INFO << "insertTransportProtocolHeader sctpmsg\n";
     insertTransportProtocolHeader(pkt, Protocol::sctp, sctpmsg);
@@ -1287,7 +1284,6 @@ void SctpAssociation::sendPacketDrop(const bool flag)
           /*  auto& smsg = sctpchunk->Chunk::peek<SctpSimpleMessage>(Chunk::BackwardIterator(B(0)));*/
 
             SctpSimpleMessage *smsg = check_and_cast<SctpSimpleMessage *>(dataChunk->decapsulate());
-
 
             if (smsg->getDataLen() > diff) {
                 uint16 newLength = smsg->getDataLen() - diff;
@@ -2565,7 +2561,6 @@ void SctpAssociation::fragmentOutboundDataMsgs() {
             }
         }
     }
-
 }
 
 SctpDataMsg *SctpAssociation::dequeueOutboundDataMsg(SctpPathVariables *path,
@@ -2627,7 +2622,6 @@ SctpDataMsg *SctpAssociation::dequeueOutboundDataMsg(SctpPathVariables *path,
             EV_DETAIL << "DequeueOutboundDataMsg() found chunk (" << datMsg->str() << ") in the stream queue " << nextStream << "(" << streamQ << ") queue size=" << streamQ->getLength() << endl;
         }
     }
-
 
     if (datMsg != nullptr) {
         qCounter.roomSumSendStreams -= ADD_PADDING(datMsg->getEncapsulatedPacket()->getByteLength() + SCTP_DATA_CHUNK_LENGTH);
@@ -2992,6 +2986,5 @@ void SctpAssociation::putInTransmissionQ(const uint32 tsn, SctpDataVariables *ch
 }
 
 } // namespace sctp
-
 } // namespace inet
 

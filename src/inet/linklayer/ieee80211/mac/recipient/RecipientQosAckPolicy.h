@@ -46,7 +46,7 @@ class INET_API RecipientQosAckPolicy : public ModeSetListener, public IRecipient
         virtual simtime_t computeBasicBlockAckDurationField(Packet *packet, const Ptr<const Ieee80211BasicBlockAckReq>& basicBlockAckReq) const override;
 };
 
-} /* namespace ieee80211 */
-} /* namespace inet */
+} // namespace ieee80211
+} // namespace inet
 
 #endif // ifndef __INET_RECIPIENTQOSACKPOLICY_H

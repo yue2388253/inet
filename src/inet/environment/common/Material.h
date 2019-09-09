@@ -21,7 +21,6 @@
 #include "inet/environment/contract/IMaterial.h"
 
 namespace inet {
-
 namespace physicalenvironment {
 
 /**
@@ -47,7 +46,6 @@ class INET_API Material : public cNamedObject, public IMaterial
 };
 
 } // namespace physicalenvironment
-
 } // namespace inet
 
 #endif // ifndef __INET_MATERIAL_H

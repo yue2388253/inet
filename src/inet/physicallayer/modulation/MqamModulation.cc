@@ -18,7 +18,6 @@
 #include "inet/physicallayer/modulation/MqamModulation.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 // http://www.gaussianwaves.com/2012/10/constructing-a-rectangular-constellation-for-16-qam/
@@ -58,6 +57,5 @@ std::ostream& MqamModulation::printToStream(std::ostream& stream, int level) con
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

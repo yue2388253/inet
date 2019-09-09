@@ -40,7 +40,7 @@ class INET_API CtsProcedure : public ICtsProcedure
         virtual void processTransmittedCts(const Ptr<const Ieee80211CtsFrame>& ctsFrame) override;
 };
 
-} /* namespace ieee80211 */
-} /* namespace inet */
+} // namespace ieee80211
+} // namespace inet
 
 #endif // ifndef __INET_CTSPROCEDURE_H

@@ -26,6 +26,6 @@ Ieee80211VhtInterleaving::Ieee80211VhtInterleaving(const std::vector<unsigned in
 {
 }
 
-} /* namespace physicallayer */
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet
 

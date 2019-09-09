@@ -26,7 +26,6 @@
 #include "inet/routing/ospfv2/OspfPacket_m.h"
 
 namespace inet {
-
 namespace ospf {
 
 INET_API void setOspfCrc(const Ptr<OspfPacket>& ospfPacket, CrcMode crcMode);
@@ -34,7 +33,6 @@ INET_API void setLsaCrc(OspfLsa& lsa, CrcMode crcMode);
 INET_API void setLsaHeaderCrc(OspfLsaHeader& lsaHeader, CrcMode crcMode);
 
 } // namespace ospf
-
 } // namespace inet
 
 #endif // ifndef __INET_OSPFCRC_H

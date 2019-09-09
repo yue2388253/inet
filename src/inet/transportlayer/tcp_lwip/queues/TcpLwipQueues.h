@@ -25,7 +25,6 @@
 #include "inet/common/packet/chunk/BytesChunk.h"
 
 namespace inet {
-
 namespace tcp {
 
 // forward declarations:
@@ -227,7 +226,6 @@ class INET_API TcpLwipReceiveQueue : public cObject
 };
 
 } // namespace tcp
-
 } // namespace inet
 
 #endif // ifndef __INET_TCPLWIPQUEUES_H

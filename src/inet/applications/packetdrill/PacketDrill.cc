@@ -16,7 +16,6 @@
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 //
 
-
 #include <assert.h>
 #include <cinttypes>
 #include <stdio.h>
@@ -49,7 +48,6 @@ PacketDrill::PacketDrill(PacketDrillApp *mod)
 
 PacketDrill::~PacketDrill()
 {
-
 }
 
 Ptr<Ipv4Header> PacketDrill::makeIpv4Header(IpProtocolId protocol, enum direction_t direction, L3Address localAddr, L3Address remoteAddr)
@@ -94,7 +92,6 @@ void PacketDrill::setIpv4HeaderCrc(Ptr<Ipv4Header> &ipv4Header)
     }
 }
 
-
 Packet* PacketDrill::buildUDPPacket(int address_family, enum direction_t direction,
                                      uint16 udpPayloadBytes, char **error)
 {
@@ -124,7 +121,6 @@ Packet* PacketDrill::buildUDPPacket(int address_family, enum direction_t directi
     packet->insertAtFront(ipHeader);
     return packet;
 }
-
 
 TcpOption *setOptionValues(PacketDrillTcpOption* opt)
 {
@@ -801,7 +797,6 @@ PacketDrillSctpChunk* PacketDrill::buildSackChunk(int64 flgs, int64 cum_tsn, int
     sackchunk->setFlags(flags);
     PacketDrillSctpChunk *sctpchunk = new PacketDrillSctpChunk(SACK, sackchunk);
     return sctpchunk;
-
 }
 
 PacketDrillSctpChunk* PacketDrill::buildCookieEchoChunk(int64 flgs, int64 len, PacketDrillBytes *cookie)

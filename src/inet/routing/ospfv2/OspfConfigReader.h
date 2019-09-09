@@ -27,7 +27,6 @@
 #include "inet/routing/ospfv2/router/OspfRouter.h"
 
 namespace inet {
-
 namespace ospf {
 
 /**
@@ -117,7 +116,6 @@ class INET_API OspfConfigReader
 };
 
 } // namespace ospf
-
 } // namespace inet
 
 #endif // ifndef __INET_OSPFCONFIGREADER_H

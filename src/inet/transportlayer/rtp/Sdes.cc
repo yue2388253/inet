@@ -20,7 +20,6 @@
 #include "inet/transportlayer/rtp/Sdes.h"
 
 namespace inet {
-
 namespace rtp {
 
 Register_Class(SdesItem);
@@ -207,6 +206,5 @@ int SdesChunk::getLength() const
 }
 
 } // namespace rtp
-
 } // namespace inet
 

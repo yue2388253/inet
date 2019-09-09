@@ -126,4 +126,5 @@ std::string ByteCountChunk::str() const
     return os.str();
 }
 
-} // namespace
+} // namespace inet
+

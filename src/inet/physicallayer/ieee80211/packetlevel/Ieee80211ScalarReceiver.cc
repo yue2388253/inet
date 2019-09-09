@@ -20,7 +20,6 @@
 #include "inet/physicallayer/ieee80211/packetlevel/Ieee80211ScalarTransmission.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(Ieee80211ScalarReceiver);
@@ -49,6 +48,5 @@ bool Ieee80211ScalarReceiver::computeIsReceptionPossible(const IListening *liste
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

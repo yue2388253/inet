@@ -20,7 +20,6 @@
 #include "inet/physicallayer/contract/packetlevel/IRadioMedium.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(ScalarAnalogModel);
@@ -44,6 +43,5 @@ const IReception *ScalarAnalogModel::computeReception(const IRadio *receiverRadi
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

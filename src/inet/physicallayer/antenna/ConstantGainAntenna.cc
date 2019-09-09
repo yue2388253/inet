@@ -18,7 +18,6 @@
 #include "inet/physicallayer/antenna/ConstantGainAntenna.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(ConstantGainAntenna);
@@ -44,6 +43,5 @@ std::ostream& ConstantGainAntenna::printToStream(std::ostream& stream, int level
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

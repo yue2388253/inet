@@ -3,7 +3,6 @@
 #include "inet/networklayer/common/L3AddressResolver.h"
 
 namespace inet {
-
 namespace xmlutils {
 
 const cXMLElement *getUniqueChild(const cXMLElement *node, const char *name)
@@ -181,6 +180,5 @@ bool getAttributeBoolValue(const cXMLElement *node, const char *attrName)
 }
 
 } // namespace xmlutils
-
 } // namespace inet
 

@@ -21,7 +21,6 @@
 #include "inet/physicallayer/unitdisk/UnitDiskReceiver.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 // TODO: Ieee80211ReceiverBase
@@ -39,7 +38,6 @@ class INET_API Ieee80211UnitDiskReceiver : public UnitDiskReceiver
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IEEE80211UNITDISKRECEIVER_H

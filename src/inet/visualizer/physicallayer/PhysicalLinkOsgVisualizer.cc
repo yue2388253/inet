@@ -19,7 +19,6 @@
 #include "inet/visualizer/physicallayer/PhysicalLinkOsgVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(PhysicalLinkOsgVisualizer);
@@ -35,6 +34,5 @@ bool PhysicalLinkOsgVisualizer::isLinkEnd(cModule *module) const
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

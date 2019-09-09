@@ -21,7 +21,6 @@
 #include "inet/physicallayer/base/packetlevel/DpskModulationBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API DbpskModulation : public DpskModulationBase
@@ -36,7 +35,6 @@ class INET_API DbpskModulation : public DpskModulationBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_DBPSKMODULATION_H

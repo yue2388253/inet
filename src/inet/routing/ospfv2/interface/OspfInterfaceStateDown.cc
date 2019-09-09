@@ -25,7 +25,6 @@
 #include "inet/routing/ospfv2/router/OspfRouter.h"
 
 namespace inet {
-
 namespace ospf {
 
 void InterfaceStateDown::processEvent(OspfInterface *intf, OspfInterface::OspfInterfaceEventType event)
@@ -80,6 +79,5 @@ void InterfaceStateDown::processEvent(OspfInterface *intf, OspfInterface::OspfIn
 }
 
 } // namespace ospf
-
 } // namespace inet
 

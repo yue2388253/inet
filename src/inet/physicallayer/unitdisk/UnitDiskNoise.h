@@ -21,7 +21,6 @@
 #include "inet/physicallayer/base/packetlevel/NoiseBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API UnitDiskNoise : public NoiseBase
@@ -38,7 +37,6 @@ class INET_API UnitDiskNoise : public NoiseBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IDEALNOISE_H

@@ -26,7 +26,6 @@
 #include "inet/physicallayer/contract/bitlevel/ISignalSymbolModel.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API ApskDemodulator : public IDemodulator, public cSimpleModule
@@ -47,7 +46,6 @@ class INET_API ApskDemodulator : public IDemodulator, public cSimpleModule
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_APSKDEMODULATOR_H

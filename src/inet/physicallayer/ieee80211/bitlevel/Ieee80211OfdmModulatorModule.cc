@@ -42,6 +42,6 @@ Ieee80211OfdmModulatorModule::~Ieee80211OfdmModulatorModule()
     delete ofdmModulator;
 }
 
-} /* namespace physicallayer */
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet
 

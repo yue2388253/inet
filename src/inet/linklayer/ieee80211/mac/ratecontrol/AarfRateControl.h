@@ -44,7 +44,6 @@ class INET_API AarfRateControl : public RateControlBase
         virtual void initialize(int stage) override;
         virtual void handleMessage(cMessage *msg) override;
 
-
         virtual void multiplyIncreaseThreshold(double factor);
         virtual void resetIncreaseThreshdold();
         virtual void resetTimer();
@@ -57,7 +56,8 @@ class INET_API AarfRateControl : public RateControlBase
         virtual void frameReceived(Packet *frame) override;
 };
 
-} /* namespace ieee80211 */
-} /* namespace inet */
+} // namespace ieee80211
+} // namespace inet
 
 #endif // infndef __INET_AARFRATECONTROL_H
+

@@ -22,7 +22,6 @@
 #include "inet/physicallayer/contract/packetlevel/ISnir.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API SnirReceiverBase : public ReceiverBase
@@ -49,7 +48,6 @@ class INET_API SnirReceiverBase : public ReceiverBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_SNIRRECEIVERBASE_H

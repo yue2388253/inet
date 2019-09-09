@@ -70,6 +70,6 @@ class INET_API Polyhedron : public ShapeBase
         virtual ~Polyhedron();
 };
 
-} /* namespace inet */
+} // namespace inet
 
 #endif // ifndef __INET_POLYHEDRON_H

@@ -18,7 +18,6 @@
 #include "inet/physicallayer/antenna/CosineAntenna.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(CosineAntenna);
@@ -60,6 +59,5 @@ double CosineAntenna::AntennaGain::computeGain(const Quaternion direction) const
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

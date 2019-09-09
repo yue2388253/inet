@@ -40,4 +40,5 @@ const ChunkSerializer *ChunkSerializerRegistry::getSerializer(const std::type_in
         throw cRuntimeError("Cannot find serializer for %s", opp_typename(typeInfo));
 }
 
-} // namespace
+} // namespace inet
+

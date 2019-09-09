@@ -21,7 +21,6 @@
 #include "inet/visualizer/base/TracingObstacleLossVisualizerBase.h"
 
 namespace inet {
-
 namespace visualizer {
 
 using namespace inet::physicalenvironment;
@@ -117,5 +116,4 @@ void TracingObstacleLossVisualizerBase::removeObstacleLossVisualization(const Ob
 }
 
 } // namespace visualizer
-
 }// namespace inet

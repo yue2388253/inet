@@ -18,7 +18,6 @@
 #include "inet/common/OsgScene.h"
 
 namespace inet {
-
 namespace osg {
 
 #if defined(WITH_OSG) && defined(WITH_VISUALIZERS)
@@ -66,6 +65,5 @@ SimulationScene *TopLevelScene::getSimulationScene(cModule *module)
 #endif // ifdef WITH_OSG
 
 } // namespace osg
-
 } // namespace inet
 

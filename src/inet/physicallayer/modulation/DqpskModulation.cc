@@ -18,7 +18,6 @@
 #include "inet/physicallayer/modulation/DqpskModulation.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 const DqpskModulation DqpskModulation::singleton;
@@ -29,6 +28,5 @@ DqpskModulation::DqpskModulation() :
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

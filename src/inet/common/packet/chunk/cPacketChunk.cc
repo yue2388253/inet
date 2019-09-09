@@ -70,4 +70,5 @@ std::string cPacketChunk::str() const {
         return std::string("cPacketChunk, packet = {<null>}");
 }
 
-} // namespace
+} // namespace inet
+

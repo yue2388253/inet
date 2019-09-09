@@ -19,7 +19,6 @@
 #include "inet/visualizer/linklayer/DataLinkOsgVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(DataLinkOsgVisualizer);
@@ -35,6 +34,5 @@ bool DataLinkOsgVisualizer::isLinkEnd(cModule *module) const
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

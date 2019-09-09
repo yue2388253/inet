@@ -132,5 +132,5 @@ void PacketDissector::dissectPacket(Packet *packet, const Protocol *protocol) co
     packet->setBackOffset(trailerPopOffset);
 }
 
-} // namespace
+} // namespace inet
 

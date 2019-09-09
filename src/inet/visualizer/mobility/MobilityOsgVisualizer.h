@@ -24,7 +24,6 @@
 #include "inet/visualizer/scene/NetworkNodeOsgVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API MobilityOsgVisualizer : public MobilityVisualizerBase
@@ -69,7 +68,6 @@ class INET_API MobilityOsgVisualizer : public MobilityVisualizerBase
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_MOBILITYOSGVISUALIZER_H

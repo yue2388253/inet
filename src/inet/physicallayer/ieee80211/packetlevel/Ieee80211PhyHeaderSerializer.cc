@@ -20,7 +20,6 @@
 #include "inet/physicallayer/ieee80211/packetlevel/Ieee80211PhyHeaderSerializer.h"
 
 namespace inet {
-
 namespace  physicallayer {
 
 Register_Serializer(Ieee80211FhssPhyHeader, Ieee80211PhyHeaderSerializer);
@@ -75,6 +74,5 @@ const Ptr<Chunk> Ieee80211PhyHeaderSerializer::deserialize(MemoryInputStream& st
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

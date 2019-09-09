@@ -21,7 +21,6 @@
 #include "inet/physicallayer/common/packetlevel/Radio.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API UnitDiskRadio : public Radio
@@ -35,7 +34,6 @@ class INET_API UnitDiskRadio : public Radio
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IDEALRADIO_H

@@ -44,7 +44,6 @@ class INET_API Pim : public RoutingProtocolBase, protected cListener
         virtual Result datagramLocalOutHook(Packet *packet) override { return ACCEPT; }
     };
 
-
   protected:
     // parameters
     CrcMode crcMode = CRC_MODE_UNDEFINED;

@@ -21,7 +21,6 @@
 #include "inet/physicallayer/contract/packetlevel/IAnalogModel.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 /**
@@ -38,7 +37,6 @@ class INET_API UnitDiskAnalogModel : public cModule, public IAnalogModel
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IDEALANALOGMODEL_H

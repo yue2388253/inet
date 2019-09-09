@@ -26,7 +26,6 @@
 #endif // ifdef WITH_OSG
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(NetworkConnectionOsgVisualizer);
@@ -59,6 +58,5 @@ void NetworkConnectionOsgVisualizer::createNetworkConnectionVisualization(cModul
 #endif // ifdef WITH_OSG
 
 } // namespace visualizer
-
 } // namespace inet
 

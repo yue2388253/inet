@@ -21,7 +21,6 @@
 #include "inet/power/management/SimpleEpEnergyManagement.h"
 
 namespace inet {
-
 namespace power {
 
 Define_Module(SimpleEpEnergyManagement);
@@ -134,6 +133,5 @@ void SimpleEpEnergyManagement::receiveSignal(cComponent *source, simsignal_t sig
 }
 
 } // namespace power
-
 } // namespace inet
 

@@ -18,7 +18,6 @@
 #include "inet/transportlayer/rtp/profiles/avprofile/RtpAvProfile.h"
 
 namespace inet {
-
 namespace rtp {
 
 Define_Module(RtpAvProfile);
@@ -32,6 +31,5 @@ void RtpAvProfile::initialize()
 }
 
 } // namespace rtp
-
 } // namespace inet
 

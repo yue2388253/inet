@@ -23,7 +23,6 @@
 #include "inet/physicallayer/common/packetlevel/BandListening.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(ApskDimensionalReceiver);
@@ -52,6 +51,5 @@ bool ApskDimensionalReceiver::computeIsReceptionPossible(const IListening *liste
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

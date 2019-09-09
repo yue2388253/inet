@@ -130,7 +130,6 @@ class INET_API TcpLwipConnection
 };
 
 } // namespace tcp
-
 } // namespace inet
 
 #endif // ifndef __INET_TCPLWIPCONNECTION_H

@@ -28,7 +28,6 @@
 #include "inet/common/packet/chunk/BytesChunk.h"
 
 namespace inet {
-
 namespace tcp {
 
 /**
@@ -185,7 +184,6 @@ class INET_API TcpNscReceiveQueue : public cObject
 };
 
 } // namespace tcp
-
 } // namespace inet
 
 #endif // ifndef __INET_TCP_NSC_BYTESTREAMQUEUES_H

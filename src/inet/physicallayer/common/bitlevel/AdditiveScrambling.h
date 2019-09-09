@@ -39,8 +39,8 @@ class INET_API AdditiveScrambling : public IScrambling
     const ShortBitVector& getSeed() const { return seed; }
 };
 
-} /* namespace physicallayer */
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet
 
 #endif // ifndef __INET_ADDITIVESCRAMBLING_H
 

@@ -18,7 +18,6 @@
 #include "inet/physicallayer/apskradio/bitlevel/ApskCode.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 #define SYMBOL_SIZE    48
@@ -47,7 +46,6 @@ std::ostream& ApskCode::printToStream(std::ostream& stream, int level) const
     return stream;
 }
 
-} /* namespace physicallayer */
-
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet
 

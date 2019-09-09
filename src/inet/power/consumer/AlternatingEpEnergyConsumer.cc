@@ -18,7 +18,6 @@
 #include "inet/power/consumer/AlternatingEpEnergyConsumer.h"
 
 namespace inet {
-
 namespace power {
 
 Define_Module(AlternatingEpEnergyConsumer);
@@ -68,6 +67,5 @@ void AlternatingEpEnergyConsumer::scheduleIntervalTimer()
 }
 
 } // namespace power
-
 } // namespace inet
 

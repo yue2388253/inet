@@ -22,7 +22,6 @@
 #include "inet/applications/httptools/server/HttpServerDirect.h"
 
 namespace inet {
-
 namespace httptools {
 
 /**
@@ -51,7 +50,6 @@ class INET_API HttpServerDirectEvilA : public HttpServerDirect
 };
 
 } // namespace httptools
-
 } // namespace inet
 
 #endif // ifndef __INET_HTTPSERVERDIRECTEVILA_H

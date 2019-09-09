@@ -15,7 +15,6 @@
 // along with this program; if not, see <http://www.gnu.org/licenses/>.
 //
 
-
 import inet.common.INETDefs;
 import inet.common.Units;
 import inet.common.packet.chunk.Chunk;
@@ -40,6 +39,4 @@ class GenericAppMsg extends FieldsChunk
     bool serverClose;        // with TCP: if true, server should close the
                              // connection after sending the reply
 }
-
-
 

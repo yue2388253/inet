@@ -19,8 +19,6 @@
 #include <iostream>
 
 #include "inet/applications/pingapp/PingApp.h"
-
-
 #include "inet/common/ModuleAccess.h"
 #include "inet/common/Protocol.h"
 #include "inet/common/ProtocolGroup.h"
@@ -51,7 +49,6 @@
 #include "inet/networklayer/icmpv6/Icmpv6Header_m.h"
 #include "inet/networklayer/ipv6/Ipv6InterfaceData.h"
 #endif // ifdef WITH_IPv6
-
 
 namespace inet {
 

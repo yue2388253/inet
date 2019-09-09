@@ -32,7 +32,6 @@
 #include "inet/visualizer/networklayer/NetworkRouteOsgVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(NetworkRouteOsgVisualizer);
@@ -73,6 +72,5 @@ bool NetworkRouteOsgVisualizer::isPathElement(cModule *module) const
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

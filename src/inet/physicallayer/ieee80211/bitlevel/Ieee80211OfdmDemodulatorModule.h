@@ -23,7 +23,6 @@
 #include "inet/physicallayer/ieee80211/bitlevel/Ieee80211OfdmDemodulator.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API Ieee80211OfdmDemodulatorModule : public IDemodulator, public cSimpleModule
@@ -43,8 +42,9 @@ class INET_API Ieee80211OfdmDemodulatorModule : public IDemodulator, public cSim
     const Ieee80211OfdmModulation *getModulation() const { return ofdmDemodulator->getModulation(); }
     const IReceptionBitModel *demodulate(const IReceptionSymbolModel *symbolModel) const override;
 };
-} /* namespace physicallayer */
-} /* namespace inet */
+
+} // namespace physicallayer
+} // namespace inet
 
 #endif // ifndef __INET_IEEE80211OFDMDEMODULATORMODULE_H
 

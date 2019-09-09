@@ -15,7 +15,6 @@
 // along with this program; if not, see <http://www.gnu.org/licenses/>.
 //
 
-
 import inet.common.INETDefs;
 
 message PacketDrillInfo
@@ -26,3 +25,4 @@ message PacketDrillInfo
     uint16_t timeType;
     simtime_t liveTime;
 }
+

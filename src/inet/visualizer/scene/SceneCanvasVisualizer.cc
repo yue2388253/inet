@@ -19,7 +19,6 @@
 #include "inet/visualizer/scene/SceneCanvasVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(SceneCanvasVisualizer);
@@ -232,8 +231,6 @@ void SceneCanvasVisualizer::displayDescription(const char *descriptionFigurePath
     descriptionTextFigure->setText(description.c_str());
 }
 
-
 } // namespace visualizer
-
 } // namespace inet
 

@@ -21,7 +21,6 @@
 #include "inet/physicallayer/contract/packetlevel/IPrintableObject.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 /**
@@ -43,7 +42,6 @@ class INET_API IReceptionAnalogModel : public virtual ISignalAnalogModel
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_ISIGNALANALOGMODEL_H

@@ -22,7 +22,6 @@
 #include "inet/physicallayer/base/packetlevel/FlatReceiverBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API Ieee802154NarrowbandDimensionalReceiver : public FlatReceiverBase
@@ -41,7 +40,6 @@ class INET_API Ieee802154NarrowbandDimensionalReceiver : public FlatReceiverBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IEEE802154DIMENSIONALRECEIVER_H

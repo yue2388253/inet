@@ -18,7 +18,6 @@
 #include "inet/physicallayer/ieee80211/packetlevel/Ieee80211ScalarTransmission.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Ieee80211ScalarTransmission::Ieee80211ScalarTransmission(const IRadio *transmitter, const Packet *packet, const simtime_t startTime, const simtime_t endTime, const simtime_t preambleDuration, const simtime_t headerDuration, const simtime_t dataDuration, const Coord startPosition, const Coord endPosition, const Quaternion startOrientation, const Quaternion endOrientation, const IModulation *modulation, b headerLength, b dataLength, Hz carrierFrequency, Hz bandwidth, bps bitrate, W power, const IIeee80211Mode *mode, const Ieee80211Channel *channel) :
@@ -37,6 +36,5 @@ std::ostream& Ieee80211ScalarTransmission::printToStream(std::ostream& stream, i
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

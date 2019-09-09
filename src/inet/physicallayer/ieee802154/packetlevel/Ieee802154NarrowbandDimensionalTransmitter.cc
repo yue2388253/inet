@@ -22,7 +22,6 @@
 #include "inet/physicallayer/ieee802154/packetlevel/Ieee802154NarrowbandDimensionalTransmitter.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(Ieee802154NarrowbandDimensionalTransmitter);
@@ -64,6 +63,5 @@ const ITransmission *Ieee802154NarrowbandDimensionalTransmitter::createTransmiss
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

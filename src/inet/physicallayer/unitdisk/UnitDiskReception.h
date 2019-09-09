@@ -21,7 +21,6 @@
 #include "inet/physicallayer/base/packetlevel/ReceptionBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 /**
@@ -50,7 +49,6 @@ class INET_API UnitDiskReception : public ReceptionBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IDEALRECEPTION_H

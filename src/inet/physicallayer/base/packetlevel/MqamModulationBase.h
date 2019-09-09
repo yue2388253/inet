@@ -21,7 +21,6 @@
 #include "inet/physicallayer/base/packetlevel/ApskModulationBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 /**
@@ -37,7 +36,6 @@ class INET_API MqamModulationBase : public ApskModulationBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_MQAMMODULATIONBASE_H

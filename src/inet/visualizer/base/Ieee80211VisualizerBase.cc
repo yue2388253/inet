@@ -25,7 +25,6 @@
 #include "inet/visualizer/base/Ieee80211VisualizerBase.h"
 
 namespace inet {
-
 namespace visualizer {
 
 Ieee80211VisualizerBase::Ieee80211Visualization::Ieee80211Visualization(int networkNodeId, int interfaceId) :
@@ -195,6 +194,5 @@ std::string Ieee80211VisualizerBase::getIcon(W power) const
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

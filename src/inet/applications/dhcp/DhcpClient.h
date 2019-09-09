@@ -84,7 +84,6 @@ class INET_API DhcpClient : public ApplicationBase, public cListener, public Udp
     const char *getAndCheckMessageTypeName(DhcpMessageType type);
     virtual void refreshDisplay() const override;
 
-
     /*
      * Opens a UDP socket for client-server communication.
      */

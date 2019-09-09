@@ -81,7 +81,7 @@ class INET_API ByteCountChunk : public Chunk
     //@}
 };
 
-} // namespace
+} // namespace inet
 
 #endif // #ifndef __INET_BYTECOUNTCHUNK_H_
 

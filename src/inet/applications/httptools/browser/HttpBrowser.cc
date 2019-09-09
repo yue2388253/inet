@@ -20,7 +20,6 @@
 #include "inet/applications/httptools/browser/HttpBrowser.h"
 
 namespace inet {
-
 namespace httptools {
 
 Define_Module(HttpBrowser);
@@ -326,6 +325,5 @@ void HttpBrowser::submitToSocket(const char *moduleName, int connectPort, HttpRe
 }
 
 } // namespace httptools
-
 } // namespace inet
 

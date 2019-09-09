@@ -28,7 +28,6 @@
 #include "inet/networklayer/contract/ipv4/Ipv4Address.h"
 
 namespace inet {
-
 namespace ospf {
 
 // global constants
@@ -297,7 +296,6 @@ inline char hexPairToByte(char upperHex, char lowerHex)
 }
 
 } // namespace ospf
-
 } // namespace inet
 
 #endif    // __COMMON_HPP__

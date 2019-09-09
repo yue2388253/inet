@@ -372,4 +372,3 @@ class INET_API SctpSocket : public ISocket
 
 #endif // ifndef __INET_SCTPSOCKET_H
 
-

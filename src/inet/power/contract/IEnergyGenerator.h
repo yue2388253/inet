@@ -21,7 +21,6 @@
 #include "inet/power/base/PowerDefs.h"
 
 namespace inet {
-
 namespace power {
 
 class IEnergySink;
@@ -52,7 +51,6 @@ class INET_API IEnergyGenerator
 };
 
 } // namespace power
-
 } // namespace inet
 
 #endif // ifndef __INET_IENERGYGENERATOR_H

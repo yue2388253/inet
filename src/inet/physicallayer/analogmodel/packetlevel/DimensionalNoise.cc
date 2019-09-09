@@ -18,7 +18,6 @@
 #include "inet/physicallayer/analogmodel/packetlevel/DimensionalNoise.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 DimensionalNoise::DimensionalNoise(simtime_t startTime, simtime_t endTime, Hz carrierFrequency, Hz bandwidth, const Ptr<const IFunction<WpHz, Domain<simsec, Hz>>>& power) :
@@ -57,6 +56,5 @@ W DimensionalNoise::computeMaxPower(simtime_t startTime, simtime_t endTime) cons
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

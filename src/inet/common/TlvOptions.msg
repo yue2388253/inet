@@ -17,7 +17,6 @@
 // @author Zoltan Bojthe
 //
 
-
 import inet.common.INETDefs;
 
 namespace inet;
@@ -61,5 +60,4 @@ cplusplus(TlvOptions) {{
      */
     int findByType(short int type, int firstPos=0) const;
 }}
-
 

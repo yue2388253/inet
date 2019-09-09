@@ -26,7 +26,6 @@
 #include "inet/routing/ospfv2/router/OspfRouter.h"
 
 namespace inet {
-
 namespace ospf {
 
 void OspfInterfaceState::changeState(OspfInterface *intf, OspfInterfaceState *newState, OspfInterfaceState *currentState)
@@ -405,6 +404,5 @@ void OspfInterfaceState::printElectionResult(const OspfInterface *onInterface, D
 }
 
 } // namespace ospf
-
 } // namespace inet
 

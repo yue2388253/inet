@@ -27,7 +27,7 @@ class INET_API SequenceChunkSerializer : public ChunkSerializer
     virtual const Ptr<Chunk> deserialize(MemoryInputStream& stream, const std::type_info& typeInfo) const override;
 };
 
-} // namespace
+} // namespace inet
 
 #endif // #ifndef __INET_SEQUENCECHUNKSERIALIZER_H_
 

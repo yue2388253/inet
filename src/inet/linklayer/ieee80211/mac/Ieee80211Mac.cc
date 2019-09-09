@@ -43,7 +43,6 @@ using namespace inet::physicallayer;
 
 Define_Module(Ieee80211Mac);
 
-
 Ieee80211Mac::Ieee80211Mac()
 {
 }

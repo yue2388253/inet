@@ -23,7 +23,6 @@
 #include "inet/physicallayer/ieee80211/packetlevel/Ieee80211ScalarTransmitter.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(Ieee80211ScalarTransmitter);
@@ -65,6 +64,5 @@ const ITransmission *Ieee80211ScalarTransmitter::createTransmission(const IRadio
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

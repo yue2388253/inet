@@ -55,7 +55,6 @@ const char *QueueBasedTokenGenerator::resolveDirective(char directive)
     return result.c_str();
 }
 
-
 void QueueBasedTokenGenerator::receiveSignal(cComponent *source, simsignal_t signal, cObject *object, cObject *details)
 {
     Enter_Method_Silent();

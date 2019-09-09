@@ -756,7 +756,7 @@ inline std::ostream& operator<<(std::ostream& os, const Chunk *chunk) { if (chun
 
 inline std::ostream& operator<<(std::ostream& os, const Chunk& chunk) { return os << chunk.str(); }
 
-} // namespace
+} // namespace inet
 
 #endif // #ifndef __INET_CHUNK_H_
 

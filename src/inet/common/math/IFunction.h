@@ -22,7 +22,6 @@
 #include "inet/common/Ptr.h"
 
 namespace inet {
-
 namespace math {
 
 /**
@@ -152,7 +151,6 @@ inline std::ostream& operator<<(std::ostream& os, const IFunction<R, Domain<T ..
 }
 
 } // namespace math
-
 } // namespace inet
 
 #endif // #ifndef __INET_MATH_IFUNCTION_H_

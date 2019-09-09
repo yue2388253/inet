@@ -63,7 +63,6 @@
 #include <string.h>
 
 namespace inet {
-
 namespace tcp {
 
 static
@@ -1493,7 +1492,6 @@ tcp_pcbs_sane()
 #endif /* LWIP_TCP */
 
 } // namespace tcp
-
 } // namespace inet
 
 

@@ -28,7 +28,7 @@ class INET_API DcfReceiveLifetimeHandler
         simtime_t maxReceiveLifetime;
 };
 
-} /* namespace ieee80211 */
-} /* namespace inet */
+} // namespace ieee80211
+} // namespace inet
 
 #endif // ifndef DCFRECEIVELIFETIMEHANDLER_H

@@ -93,7 +93,7 @@ void deserializeSdesChunk(MemoryInputStream& stream, const Ptr<RtcpPacket> rtcpP
             rtcpPacket->markIncorrect();
 }
 
-}
+} // namespace - unnamed
 
 void RtcpPacketSerializer::serialize(MemoryOutputStream& stream, const Ptr<const Chunk>& chunk) const
 {
@@ -149,7 +149,6 @@ void RtcpPacketSerializer::serialize(MemoryOutputStream& stream, const Ptr<const
             break;
         }
     }
-
 }
 
 const Ptr<Chunk> RtcpPacketSerializer::deserialize(MemoryInputStream& stream) const

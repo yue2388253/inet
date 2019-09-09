@@ -23,7 +23,6 @@
 #include "inet/physicallayer/modulation/QpskModulation.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(Ieee80211OfdmDemodulatorModule);
@@ -44,6 +43,7 @@ Ieee80211OfdmDemodulatorModule::~Ieee80211OfdmDemodulatorModule()
     delete ofdmDemodulator->getModulation();
     delete ofdmDemodulator;
 }
-} /* namespace physicallayer */
-} /* namespace inet */
+
+} // namespace physicallayer
+} // namespace inet
 

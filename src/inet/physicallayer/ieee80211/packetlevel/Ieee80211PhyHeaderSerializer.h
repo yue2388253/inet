@@ -21,7 +21,6 @@
 #include "inet/common/packet/serializer/FieldsChunkSerializer.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 /**
@@ -38,7 +37,6 @@ class INET_API Ieee80211PhyHeaderSerializer : public FieldsChunkSerializer
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IEEE80211PHYHEADERSERIALIZER_H

@@ -191,7 +191,6 @@ class INET_API TcpNsc : public cSimpleModule, ISendCallback, IInterruptCallback,
 };
 
 } // namespace tcp
-
 } // namespace inet
 
 #endif // ifndef __INET_TCP_NSC_H

@@ -54,7 +54,6 @@ enum Icmpv6Type
     ICMPv6_EXPERIMENTAL_MOBILITY = 150;  //Zarrar Yousaf 02.08.07 (FMIPv6 Implementation)
 }
 
-
 //
 // ICMPv6 "codes" for type ICMPv6_DESTINATION_UNREACHABLE
 //
@@ -67,7 +66,6 @@ enum Icmpv6DestUnav
     ADDRESS_UNREACHABLE = 3;
     PORT_UNREACHABLE = 4;
 }
-
 
 //
 // ICMPv6 "codes" for type ICMPv6_TIME_EXCEEDED
@@ -89,7 +87,6 @@ enum Icmpv6ParameterProblem
     UNRECOGNIZED_NEXT_HDR_TYPE = 1;
     UNRECOGNIZED_IPV6_OPTION = 2;
 }
-
 
 //
 // Represents an ICMPv6 packet.

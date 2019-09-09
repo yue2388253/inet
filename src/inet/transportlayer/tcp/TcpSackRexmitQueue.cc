@@ -19,7 +19,6 @@
 #include "inet/transportlayer/tcp/TcpSackRexmitQueue.h"
 
 namespace inet {
-
 namespace tcp {
 
 TcpSackRexmitQueue::TcpSackRexmitQueue()
@@ -388,6 +387,5 @@ void TcpSackRexmitQueue::checkSackBlock(uint32 fromSeqNum, uint32& length, bool&
 }
 
 } // namespace tcp
-
 } // namespace inet
 

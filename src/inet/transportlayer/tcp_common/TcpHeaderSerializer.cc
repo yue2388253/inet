@@ -23,7 +23,6 @@
 #endif // if !defined(_WIN32) && !defined(__WIN32__) && !defined(WIN32) && !defined(__CYGWIN__) && !defined(_WIN64)
 
 namespace inet {
-
 namespace tcp {
 
 Register_Serializer(TcpHeader, TcpHeaderSerializer);
@@ -281,6 +280,5 @@ TcpOption *TcpHeaderSerializer::deserializeOption(MemoryInputStream& stream) con
 }
 
 } // namespace tcp
-
 } // namespace inet
 

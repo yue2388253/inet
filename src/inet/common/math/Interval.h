@@ -23,7 +23,6 @@
 #include "inet/common/math/Point.h"
 
 namespace inet {
-
 namespace math {
 
 template<typename ... T>
@@ -146,7 +145,6 @@ inline std::ostream& operator<<(std::ostream& os, const Interval<T ...>& i) {
 }
 
 } // namespace math
-
 } // namespace inet
 
 #endif // #ifndef __INET_MATH_INTERVAL_H_

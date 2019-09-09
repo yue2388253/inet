@@ -27,7 +27,6 @@
 #endif // ifdef WITH_OSG
 
 namespace inet {
-
 namespace visualizer {
 
 #ifdef WITH_OSG
@@ -112,6 +111,5 @@ void LinkOsgVisualizerBase::setAlpha(const LinkVisualization *link, double alpha
 #endif // ifdef WITH_OSG
 
 } // namespace visualizer
-
 } // namespace inet
 

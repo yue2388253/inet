@@ -21,7 +21,6 @@
 #include "inet/applications/httptools/server/HttpServerBase.h"
 
 namespace inet {
-
 namespace httptools {
 
 /**
@@ -46,7 +45,6 @@ class INET_API HttpServerDirect : public HttpServerBase
 };
 
 } // namespace httptools
-
 } // namespace inet
 
 #endif // ifndef __INET_HTTPSERVERDIRECT_H

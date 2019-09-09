@@ -22,7 +22,6 @@ import inet.common.queueing.PacketMultiplexer;
 import inet.common.queueing.PacketQueue;
 import inet.common.queueing.RedDropper;
 
-
 //
 // This is an example queue, that implements
 // one class of the Assured Forwarding PHB group (RFC 2597).

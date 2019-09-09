@@ -18,7 +18,6 @@
 #include "inet/visualizer/util/ColorSet.h"
 
 namespace inet {
-
 namespace visualizer {
 
 void ColorSet::parseColors(const char *colorNames)
@@ -46,6 +45,5 @@ cFigure::Color ColorSet::getColor(int index) const
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

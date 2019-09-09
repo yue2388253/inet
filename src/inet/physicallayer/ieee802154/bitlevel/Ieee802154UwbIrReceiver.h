@@ -23,7 +23,6 @@
 #include "inet/physicallayer/ieee802154/bitlevel/Ieee802154UwbIrMode.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 // This class was created by porting some C++ code from the DeciderUWBIRED class in MiXiM.
@@ -50,7 +49,6 @@ class INET_API Ieee802154UwbIrReceiver : public ReceiverBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IEEE802154UWBIRRECEIVER_H

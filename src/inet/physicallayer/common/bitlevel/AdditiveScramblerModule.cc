@@ -43,6 +43,6 @@ AdditiveScramblerModule::~AdditiveScramblerModule()
     delete scrambler;
 }
 
-} /* namespace physicallayer */
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet
 

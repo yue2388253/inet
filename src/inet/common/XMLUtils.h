@@ -5,7 +5,6 @@
 #include "inet/networklayer/contract/ipv4/Ipv4Address.h"
 
 namespace inet {
-
 namespace xmlutils {
 
 INET_API const cXMLElement *getUniqueChild(const cXMLElement *node, const char *name);
@@ -32,7 +31,6 @@ INET_API bool getAttributeBoolValue(const cXMLElement *node, const char *attrNam
 INET_API bool parseBool(const char *text);
 
 } // namespace xmlutils
-
 } // namespace inet
 
 #endif // ifndef __INET_XMLUTILS_H

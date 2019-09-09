@@ -31,7 +31,6 @@
 #include "inet/applications/httptools/common/HttpUtils.h"
 
 namespace inet {
-
 namespace httptools {
 
 class HttpServerBase;
@@ -187,7 +186,6 @@ class INET_API HttpController : public cSimpleModule
 };
 
 } // namespace httptools
-
 } // namespace inet
 
 #endif // ifndef __INET_HTTPCONTROLLER_H

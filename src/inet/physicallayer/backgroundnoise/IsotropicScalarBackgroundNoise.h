@@ -21,7 +21,6 @@
 #include "inet/physicallayer/contract/packetlevel/IBackgroundNoise.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API IsotropicScalarBackgroundNoise : public cModule, public IBackgroundNoise
@@ -41,7 +40,6 @@ class INET_API IsotropicScalarBackgroundNoise : public cModule, public IBackgrou
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_ISOTROPICSCALARBACKGROUNDNOISE_H

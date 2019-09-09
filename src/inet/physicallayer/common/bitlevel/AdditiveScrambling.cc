@@ -35,6 +35,6 @@ std::ostream& AdditiveScrambling::printToStream(std::ostream& stream, int level)
     return stream;
 }
 
-} /* namespace physicallayer */
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet
 

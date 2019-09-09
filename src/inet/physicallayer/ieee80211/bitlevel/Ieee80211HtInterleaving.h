@@ -37,7 +37,7 @@ class INET_API Ieee80211HtInterleaving : public IInterleaving
         Ieee80211HtInterleaving(const std::vector<unsigned int>& numberOfCodedBitsPerSpatialStreams, Hz bandwidth);
 };
 
-} /* namespace physicallayer */
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet
 
 #endif // ifndef __INET_IEEE80211HTINTERLEAVING_H

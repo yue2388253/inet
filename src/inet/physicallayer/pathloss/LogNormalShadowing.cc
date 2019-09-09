@@ -18,7 +18,6 @@
 #include "inet/physicallayer/pathloss/LogNormalShadowing.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(LogNormalShadowing);
@@ -58,6 +57,5 @@ double LogNormalShadowing::computePathLoss(mps propagationSpeed, Hz frequency, m
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

@@ -21,7 +21,6 @@
 #include "inet/physicallayer/ieee80211/mode/Ieee80211OfdmMode.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API Ieee80211ErpOfdmMode : public Ieee80211OfdmMode
@@ -67,9 +66,8 @@ class INET_API Ieee80211ErpOfdmCompliantModes
         static const Ieee80211ErpOfdmMode erpOnlyOfdmMode54Mbps;
 };
 
-} /* namespace physicallayer */
-
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet
 
 #endif // ifndef __INET_IEEE80211ERPOFDMMODE_H
 

@@ -21,7 +21,6 @@
 #include "inet/visualizer/base/PathVisualizerBase.h"
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API PathOsgVisualizerBase : public PathVisualizerBase
@@ -59,7 +58,6 @@ class INET_API PathOsgVisualizerBase : public PathVisualizerBase
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_PATHOSGVISUALIZERBASE_H

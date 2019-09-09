@@ -21,7 +21,6 @@
 #include "inet/common/INETDefs.h"
 
 namespace inet {
-
 namespace rtp {
 
 //Forward declarations:
@@ -216,7 +215,6 @@ class INET_API RtpProfile : public cSimpleModule
 };
 
 } // namespace rtp
-
 } // namespace inet
 
 #endif // ifndef __INET_RTPPROFILE_H

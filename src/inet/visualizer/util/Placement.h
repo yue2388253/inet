@@ -21,7 +21,6 @@
 #include "inet/common/INETDefs.h"
 
 namespace inet {
-
 namespace visualizer {
 
 enum Placement
@@ -41,7 +40,6 @@ enum Placement
 Placement parsePlacement(const char *s);
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_PLACEMENT_H

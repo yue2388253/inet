@@ -91,7 +91,6 @@ class INET_API DsssErrorRateModel
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif /* DSSS_ERROR_RATE_MODEL_H */

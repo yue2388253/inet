@@ -21,7 +21,6 @@
 #include "inet/common/INETDefs.h"
 
 namespace inet {
-
 namespace ospf {
 
 enum OspfTimerType {
@@ -37,7 +36,6 @@ enum OspfTimerType {
 };
 
 } // namespace ospf
-
 } // namespace inet
 
 #endif // ifndef __INET_OSPFTIMER_H

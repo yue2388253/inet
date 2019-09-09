@@ -18,7 +18,6 @@
 #include "inet/physicallayer/analogmodel/packetlevel/DimensionalTransmission.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 DimensionalTransmission::DimensionalTransmission(const IRadio *transmitter, const Packet *packet, const simtime_t startTime, const simtime_t endTime, const simtime_t preambleDuration, const simtime_t headerDuration, const simtime_t dataDuration, const Coord startPosition, const Coord endPosition, const Quaternion startOrientation, const Quaternion endOrientation, const IModulation *modulation, b headerLength, b dataLength, Hz carrierFrequency, Hz bandwidth, bps bitrate, const Ptr<const IFunction<WpHz, Domain<simsec, Hz>>>& power) :
@@ -39,6 +38,5 @@ std::ostream& DimensionalTransmission::printToStream(std::ostream& stream, int l
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

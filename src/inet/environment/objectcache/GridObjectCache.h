@@ -25,7 +25,6 @@
 #include "inet/environment/contract/IPhysicalObject.h"
 
 namespace inet {
-
 namespace physicalenvironment {
 
 class INET_API GridObjectCache : public IObjectCache, public cModule
@@ -55,7 +54,6 @@ class INET_API GridObjectCache : public IObjectCache, public cModule
 };
 
 } // namespace physicalenvironment
-
 } // namespace inet
 
 #endif // ifndef __INET_GRIDOBJECTCACHE_H

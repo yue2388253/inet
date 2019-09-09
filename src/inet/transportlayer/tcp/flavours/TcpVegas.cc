@@ -22,7 +22,6 @@
 #include "inet/transportlayer/tcp/flavours/TcpVegas.h"
 
 namespace inet {
-
 namespace tcp {
 
 Register_Class(TcpVegas);
@@ -386,6 +385,5 @@ void TcpVegas::segmentRetransmitted(uint32 fromseq, uint32 toseq)
 }
 
 } // namespace tcp
-
 } // namespace inet
 

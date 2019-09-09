@@ -25,7 +25,6 @@
 #endif // ifdef WITH_OSG
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(Ieee80211OsgVisualizer);
@@ -92,6 +91,5 @@ void Ieee80211OsgVisualizer::removeIeee80211Visualization(const Ieee80211Visuali
 #endif // ifdef WITH_OSG
 
 } // namespace visualizer
-
 } // namespace inet
 

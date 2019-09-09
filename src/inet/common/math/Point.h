@@ -21,7 +21,6 @@
 #include "inet/common/Units.h"
 
 namespace inet {
-
 namespace math {
 
 template<typename T>
@@ -268,7 +267,6 @@ inline std::ostream& operator<<(std::ostream& os, const Point<T ...>& p) {
 }
 
 } // namespace math
-
 } // namespace inet
 
 #endif // #ifndef __INET_MATH_POINT_H_

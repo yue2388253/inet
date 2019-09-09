@@ -43,8 +43,8 @@ class INET_API AdditiveScramblerModule : public cSimpleModule, public IScrambler
     virtual const AdditiveScrambling *getScrambling() const override { return scrambler->getScrambling(); }
 };
 
-} /* namespace physicallayer */
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet
 
 #endif // ifndef __INET_ADDITIVESCRAMBLERMODULE_H
 

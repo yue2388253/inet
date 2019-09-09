@@ -22,7 +22,6 @@
 #include "inet/physicallayer/contract/packetlevel/IErrorModel.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API FlatReceiverBase : public NarrowbandReceiverBase
@@ -61,7 +60,6 @@ class INET_API FlatReceiverBase : public NarrowbandReceiverBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_FLATRECEIVERBASE_H

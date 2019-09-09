@@ -17,7 +17,6 @@
 #include "inet/physicallayer/pathloss/SuiPathLoss.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(SuiPathLoss);
@@ -102,6 +101,5 @@ double SuiPathLoss::computePathLoss(mps propagationSpeed, Hz frequency, m distan
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

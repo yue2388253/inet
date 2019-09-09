@@ -22,7 +22,6 @@
 #include "inet/physicallayer/apskradio/packetlevel/ApskPhyHeader_m.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API ApskPhyHeaderSerializer : public ChunkSerializer
@@ -33,7 +32,6 @@ class INET_API ApskPhyHeaderSerializer : public ChunkSerializer
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_APSKPHYHEADERSERIALIZER_H

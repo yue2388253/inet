@@ -18,7 +18,6 @@
 #include "inet/physicallayer/base/packetlevel/NarrowbandReceptionBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 NarrowbandReceptionBase::NarrowbandReceptionBase(const IRadio *receiver, const ITransmission *transmission, const simtime_t startTime, const simtime_t endTime, const Coord startPosition, const Coord endPosition, const Quaternion startOrientation, const Quaternion endOrientation, Hz carrierFrequency, Hz bandwidth) :
@@ -38,6 +37,5 @@ std::ostream& NarrowbandReceptionBase::printToStream(std::ostream& stream, int l
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

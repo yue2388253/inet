@@ -154,16 +154,16 @@ uint32 SctpReceiveStream::enqueueNewDataChunk(SctpDataVariables *dchunk)
     return delivery;
 }
 
-int32 SctpReceiveStream::getExpectedStreamSeqNum() {
+int32 SctpReceiveStream::getExpectedStreamSeqNum()
+{
     return expectedStreamSeqNum;
 }
 
-void SctpReceiveStream::setExpectedStreamSeqNum(int32 seqNum) {
+void SctpReceiveStream::setExpectedStreamSeqNum(int32 seqNum)
+{
     expectedStreamSeqNum = seqNum;
 }
 
-
 } // namespace sctp
-
 } // namespace inet
 

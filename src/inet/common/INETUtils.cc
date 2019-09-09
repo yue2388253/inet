@@ -18,7 +18,6 @@
 #include "inet/common/INETUtils.h"
 
 namespace inet {
-
 namespace utils {
 
 std::string ltostr(long i)
@@ -173,6 +172,5 @@ void makePathForFile(const char *filename)
 }
 
 } // namespace utils
-
 } // namespace inet
 

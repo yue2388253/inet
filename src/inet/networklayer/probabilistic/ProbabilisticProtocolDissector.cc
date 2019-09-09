@@ -21,7 +21,6 @@
 #include "inet/networklayer/probabilistic/ProbabilisticBroadcastHeader_m.h"
 #include "inet/networklayer/probabilistic/ProbabilisticProtocolDissector.h"
 
-
 namespace inet {
 
 Register_Protocol_Dissector(&Protocol::probabilistic, ProbabilisticProtocolDissector);

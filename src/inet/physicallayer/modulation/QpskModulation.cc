@@ -18,7 +18,6 @@
 #include "inet/physicallayer/modulation/QpskModulation.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 const double k = 1 / sqrt(2);
@@ -34,6 +33,5 @@ QpskModulation::QpskModulation() : MqamModulationBase(&constellation)
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

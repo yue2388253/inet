@@ -18,12 +18,10 @@
 #include "inet/power/contract/ICcEnergyStorage.h"
 
 namespace inet {
-
 namespace power {
 
 simsignal_t ICcEnergyStorage::residualChargeCapacityChangedSignal = cComponent::registerSignal("residualChargeCapacityChanged");
 
 } // namespace power
-
 } // namespace inet
 

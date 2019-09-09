@@ -138,5 +138,5 @@ int TagSet::getTagIndex(const std::type_info& typeInfo) const
     }
 }
 
-} // namespace
+} // namespace inet
 

@@ -21,7 +21,6 @@
 #include "inet/visualizer/base/NetworkConnectionVisualizerBase.h"
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API NetworkConnectionOsgVisualizer : public NetworkConnectionVisualizerBase
@@ -44,7 +43,6 @@ class INET_API NetworkConnectionOsgVisualizer : public NetworkConnectionVisualiz
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_NETWORKCONNECTIONOSGVISUALIZER_H

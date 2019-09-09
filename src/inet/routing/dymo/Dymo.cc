@@ -33,7 +33,6 @@
 #include "inet/transportlayer/contract/udp/UdpControlInfo.h"
 
 namespace inet {
-
 namespace dymo {
 
 Define_Module(Dymo);
@@ -1441,6 +1440,5 @@ void Dymo::receiveSignal(cComponent *source, simsignal_t signalID, cObject *obj,
 }
 
 } // namespace dymo
-
 } // namespace inet
 

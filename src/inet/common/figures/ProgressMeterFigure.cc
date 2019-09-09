@@ -143,7 +143,6 @@ void ProgressMeterFigure::setLabelOffset(int offset)
     };
 }
 
-
 const cFigure::Font& ProgressMeterFigure::getLabelFont() const
 {
     return labelFigure->getFont();
@@ -201,7 +200,6 @@ void ProgressMeterFigure::setMaxValue(double value)
 void ProgressMeterFigure::parse(cProperty *property)
 {
     cGroupFigure::parse(property);
-
 
     setBounds(parseBounds(property, getBounds()));
 

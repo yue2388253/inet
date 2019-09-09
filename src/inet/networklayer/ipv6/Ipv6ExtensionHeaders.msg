@@ -44,7 +44,6 @@ enum Ipv6TlvOptionTypes
     IPv6TLVOPTION_TLV_GPSR = 47;
 };
 
-
 //
 // Hop-by-Hop Options Header.
 // RFC 2460 Section 4.3

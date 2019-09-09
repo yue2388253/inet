@@ -27,7 +27,6 @@
 #include "inet/routing/bgpv4/bgpmessage/BgpHeader_m.h"
 
 namespace inet {
-
 namespace bgp {
 
 class INET_API Bgp : public cSimpleModule, protected cListener, public LifecycleUnsupported
@@ -53,7 +52,6 @@ private:
 };
 
 } // namespace bgp
-
 } // namespace inet
 
 #endif // ifndef __INET_BGPROUTING_H

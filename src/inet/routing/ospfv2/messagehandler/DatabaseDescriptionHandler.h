@@ -22,7 +22,6 @@
 #include "inet/routing/ospfv2/messagehandler/IMessageHandler.h"
 
 namespace inet {
-
 namespace ospf {
 
 class INET_API DatabaseDescriptionHandler : public IMessageHandler
@@ -37,7 +36,6 @@ class INET_API DatabaseDescriptionHandler : public IMessageHandler
 };
 
 } // namespace ospf
-
 } // namespace inet
 
 #endif // ifndef __INET_DATABASEDESCRIPTIONHANDLER_H

@@ -22,7 +22,6 @@
 #include "inet/physicallayer/contract/packetlevel/IReception.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API ISnir : public IPrintableObject
@@ -38,7 +37,6 @@ class INET_API ISnir : public IPrintableObject
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_ISNIR_H

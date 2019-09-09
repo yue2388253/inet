@@ -15,7 +15,6 @@
 // License along with this program; if not, see <http://www.gnu.org/licenses/>.
 //
 
-
 import inet.common.INETDefs;
 import inet.common.TagBase;
 import inet.networklayer.ipv6.Ipv6Header;

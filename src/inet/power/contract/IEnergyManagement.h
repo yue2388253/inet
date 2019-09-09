@@ -21,7 +21,6 @@
 #include "inet/power/contract/IEnergyStorage.h"
 
 namespace inet {
-
 namespace power {
 
 /**
@@ -47,7 +46,6 @@ class INET_API IEnergyManagement
 };
 
 } // namespace power
-
 } // namespace inet
 
 #endif // ifndef __INET_IENERGYMANAGEMENT_H

@@ -23,7 +23,6 @@
 #include "inet/visualizer/base/MobilityVisualizerBase.h"
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API MobilityCanvasVisualizer : public MobilityVisualizerBase
@@ -62,7 +61,6 @@ class INET_API MobilityCanvasVisualizer : public MobilityVisualizerBase
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_MOBILITYCANVASVISUALIZER_H

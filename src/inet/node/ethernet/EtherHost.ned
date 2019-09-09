@@ -25,7 +25,6 @@ import inet.linklayer.contract.IEthernetInterface;
 import inet.linklayer.ethernet.EtherEncap;
 import inet.networklayer.common.InterfaceTable;
 
-
 //
 // An example host with one Ethernet port and a traffic generator that
 // generates request-reply traffic directly over Ethernet. This host model

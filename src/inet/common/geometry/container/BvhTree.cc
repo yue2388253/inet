@@ -129,4 +129,4 @@ BvhTree::~BvhTree()
     delete right;
 }
 
-} /* namespace inet */
+} // namespace inet

@@ -21,7 +21,6 @@
 #include "inet/physicallayer/ieee80211/packetlevel/errormodel/Ieee80211NistErrorModel.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(Ieee80211BerTableErrorModel);
@@ -85,6 +84,5 @@ double Ieee80211BerTableErrorModel::computeSymbolErrorRate(const ISnir *snir, IR
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

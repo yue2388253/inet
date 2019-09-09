@@ -22,7 +22,6 @@
 #include "inet/physicallayer/ieee80211/packetlevel/Ieee80211TransmissionBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Ieee80211ReceiverBase::Ieee80211ReceiverBase() :
@@ -102,6 +101,5 @@ const IReceptionResult *Ieee80211ReceiverBase::computeReceptionResult(const ILis
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

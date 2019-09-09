@@ -16,7 +16,6 @@
 // along with this program; if not, see <http://www.gnu.org/licenses/>.
 //
 
-
 import inet.common.INETDefs;
 import inet.common.packet.chunk.Chunk;
 import inet.common.packet.Packet;
@@ -28,7 +27,6 @@ cplusplus {{
 #include <vector>
 #include "inet/transportlayer/contract/sctp/SctpCommand.h"
 }}
-
 
 namespace inet;
 

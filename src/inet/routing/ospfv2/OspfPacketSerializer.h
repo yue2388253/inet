@@ -20,7 +20,6 @@
 #include "inet/routing/ospfv2/OspfPacket_m.h"
 
 namespace inet {
-
 namespace ospf {
 
 /**

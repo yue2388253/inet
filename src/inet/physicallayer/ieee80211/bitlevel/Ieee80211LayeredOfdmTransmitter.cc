@@ -38,7 +38,6 @@
 #include "inet/physicallayer/ieee80211/packetlevel/Ieee80211Tag_m.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(Ieee80211LayeredOfdmTransmitter);
@@ -350,6 +349,5 @@ Ieee80211LayeredOfdmTransmitter::~Ieee80211LayeredOfdmTransmitter()
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

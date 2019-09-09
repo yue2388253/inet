@@ -19,7 +19,6 @@
 #include "inet/environment/objectcache/BvhObjectCache.h"
 
 namespace inet {
-
 namespace physicalenvironment {
 
 Define_Module(BvhObjectCache);
@@ -70,6 +69,5 @@ void BvhObjectCache::visitObjects(const IVisitor *visitor, const LineSegment& li
 }
 
 } // namespace physicalenvironment
-
 } // namespace inet
 

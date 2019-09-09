@@ -23,7 +23,6 @@
 #include "inet/physicallayer/contract/packetlevel/IRadioMedium.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 void ScalarAnalogModelBase::initialize(int stage)
@@ -146,6 +145,5 @@ const ISnir *ScalarAnalogModelBase::computeSNIR(const IReception *reception, con
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

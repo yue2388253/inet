@@ -20,7 +20,6 @@
 #include "inet/visualizer/transportlayer/TransportConnectionOsgVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(TransportConnectionOsgVisualizer);
@@ -106,6 +105,5 @@ void TransportConnectionOsgVisualizer::removeConnectionVisualization(const Trans
 #endif // ifdef WITH_OSG
 
 } // namespace visualizer
-
 } // namespace inet
 

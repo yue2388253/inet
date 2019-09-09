@@ -25,7 +25,6 @@
 #include "inet/physicallayer/contract/bitlevel/IModulator.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API ApskModulator : public IModulator, public cSimpleModule
@@ -46,7 +45,6 @@ class INET_API ApskModulator : public IModulator, public cSimpleModule
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_APSKMODULATOR_H

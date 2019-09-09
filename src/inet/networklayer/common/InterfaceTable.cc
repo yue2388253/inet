@@ -89,7 +89,6 @@ void InterfaceTable::refreshDisplay() const
                 updateLinkDisplayString(ie);
         }
     }
-
 }
 
 void InterfaceTable::handleMessageWhenUp(cMessage *msg)

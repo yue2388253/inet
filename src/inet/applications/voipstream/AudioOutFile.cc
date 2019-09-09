@@ -158,7 +158,6 @@ bool AudioOutFile::close()
     if (audio_st)
         avcodec_close(audio_st->codec);
 
-
     if (!(oc->oformat->flags & AVFMT_NOFILE)) {
         /* close the output file */
         avio_close(oc->pb);

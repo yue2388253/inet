@@ -21,7 +21,6 @@
 #include "inet/power/contract/IEnergyManagement.h"
 
 namespace inet {
-
 namespace power {
 
 /**
@@ -43,7 +42,6 @@ class INET_API ICcEnergyManagement : public IEnergyManagement
 };
 
 } // namespace power
-
 } // namespace inet
 
 #endif // ifndef __INET_ICCENERGYMANAGEMENT_H

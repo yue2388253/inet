@@ -32,7 +32,6 @@
 #include "inet/physicallayer/ieee80211/packetlevel/Ieee80211ControlInfo_m.h"
 
 namespace inet {
-
 namespace ieee80211 {
 
 using namespace physicallayer;
@@ -343,7 +342,6 @@ void Ieee80211MgmtSta::processScanCommand(Ieee80211Prim_ScanRequest *ctrl)
     if (scanning.channelList.empty())
         for (int i = 0; i < numChannels; i++)
             scanning.channelList.push_back(i);
-
 
     // start scanning
     if (scanning.activeScan)
@@ -769,6 +767,5 @@ void Ieee80211MgmtSta::storeAPInfo(Packet *packet, const Ptr<const Ieee80211Mgmt
 }
 
 } // namespace ieee80211
-
 } // namespace inet
 

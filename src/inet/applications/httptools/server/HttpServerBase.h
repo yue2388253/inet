@@ -23,7 +23,6 @@
 #include "inet/applications/httptools/common/HttpNodeBase.h"
 
 namespace inet {
-
 namespace httptools {
 
 // Event message kinds
@@ -109,7 +108,6 @@ class INET_API HttpServerBase : public HttpNodeBase
 };
 
 } // namespace httptools
-
 } // namespace inet
 
 #endif // ifndef __INET_HTTPSERVERBASE_H

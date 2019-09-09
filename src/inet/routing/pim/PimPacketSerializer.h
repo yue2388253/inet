@@ -38,5 +38,5 @@ class INET_API PimPacketSerializer : public FieldsChunkSerializer
 
 } // namespace inet
 
-
 #endif /* INET_ROUTING_PIM_PIMPACKETSERIALIZER_H_ */
+

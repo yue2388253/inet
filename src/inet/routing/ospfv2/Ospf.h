@@ -28,7 +28,6 @@
 #include "inet/routing/ospfv2/router/OspfRouter.h"
 
 namespace inet {
-
 namespace ospf {
 
 /**
@@ -79,7 +78,6 @@ class Ospf : public RoutingProtocolBase, protected cListener
 };
 
 } // namespace ospf
-
 } // namespace inet
 
 #endif // ifndef __INET_OSPFROUTING_H

@@ -19,7 +19,6 @@
 #include "inet/visualizer/base/MobilityVisualizerBase.h"
 
 namespace inet {
-
 namespace visualizer {
 
 MobilityVisualizerBase::MobilityVisualization::MobilityVisualization(IMobility *mobility) :
@@ -100,6 +99,5 @@ void MobilityVisualizerBase::unsubscribe()
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

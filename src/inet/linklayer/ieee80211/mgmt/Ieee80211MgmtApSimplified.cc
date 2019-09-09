@@ -22,7 +22,6 @@
 #include "inet/linklayer/ieee80211/mgmt/Ieee80211MgmtApSimplified.h"
 
 namespace inet {
-
 namespace ieee80211 {
 
 Define_Module(Ieee80211MgmtApSimplified);
@@ -90,6 +89,5 @@ void Ieee80211MgmtApSimplified::handleProbeResponseFrame(Packet *packet, const P
 }
 
 } // namespace ieee80211
-
 } // namespace inet
 

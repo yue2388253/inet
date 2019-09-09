@@ -19,7 +19,6 @@
 #include "inet/visualizer/common/InfoCanvasVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(InfoCanvasVisualizer);
@@ -90,6 +89,5 @@ void InfoCanvasVisualizer::refreshInfoVisualization(const InfoVisualization *inf
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

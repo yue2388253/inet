@@ -20,7 +20,6 @@
 #include "inet/physicallayer/contract/packetlevel/IRadioSignal.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 ScalarSnir::ScalarSnir(const IReception *reception, const INoise *noise) :
@@ -81,6 +80,5 @@ double ScalarSnir::getMean() const
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

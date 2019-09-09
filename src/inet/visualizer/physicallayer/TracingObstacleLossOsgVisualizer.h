@@ -21,7 +21,6 @@
 #include "inet/visualizer/base/TracingObstacleLossVisualizerBase.h"
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API TracingObstacleLossOsgVisualizer : public TracingObstacleLossVisualizerBase
@@ -61,7 +60,6 @@ class INET_API TracingObstacleLossOsgVisualizer : public TracingObstacleLossVisu
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_TRACINGOBSTACLELOSSOSGVISUALIZER_H

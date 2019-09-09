@@ -14,7 +14,6 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 //
 
-
 #include "inet/common/IProtocolRegistrationListener.h"
 #include "inet/common/LayeredProtocolBase.h"
 #include "inet/common/lifecycle/ModuleOperations.h"

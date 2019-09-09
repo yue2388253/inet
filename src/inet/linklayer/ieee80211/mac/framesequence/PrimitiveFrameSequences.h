@@ -117,7 +117,6 @@ class INET_API RtsFs : public IFrameSequence {
         virtual std::string getHistory() const override { return "RTS"; } // TODO: completeStep = true?
 };
 
-
 class INET_API CtsFs : public IFrameSequence {
     protected:
         int firstStep = -1;
@@ -130,7 +129,6 @@ class INET_API CtsFs : public IFrameSequence {
 
         virtual std::string getHistory() const override { return "CTS"; } // TODO: completeStep = true?
 };
-
 
 class INET_API FragFrameAckFs : public IFrameSequence {
     protected:

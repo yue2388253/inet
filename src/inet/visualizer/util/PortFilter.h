@@ -21,7 +21,6 @@
 #include "inet/common/MatchableObject.h"
 
 namespace inet {
-
 namespace visualizer {
 
 /**
@@ -40,7 +39,6 @@ class INET_API PortFilter
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_PORTFILTER_H

@@ -68,8 +68,7 @@ class INET_API ReassemblyBuffer : public ChunkBuffer
     }
 };
 
-
-} // namespace
+} // namespace inet
 
 #endif // #ifndef __INET_REASSEMBLYBUFFER_H_
 

@@ -27,7 +27,6 @@
 #include "inet/transportlayer/rtp/RtpPacket_m.h"
 
 namespace inet {
-
 namespace rtp {
 
 Define_Module(RtpAvProfilePayload32Receiver);
@@ -167,6 +166,5 @@ void RtpAvProfilePayload32Receiver::processRtpPacket(Packet *rtpPacket)
 }
 
 } // namespace rtp
-
 } // namespace inet
 

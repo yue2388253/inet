@@ -114,7 +114,7 @@ class INET_API Edcaf : public IChannelAccess, public IContention::ICallback, pub
         virtual AccessCategory getAccessCategory() { return ac; }
 };
 
-} /* namespace ieee80211 */
-} /* namespace inet */
+} // namespace ieee80211
+} // namespace inet
 
 #endif // ifndef __INET_EDCAF_H

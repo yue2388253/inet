@@ -58,7 +58,6 @@ class INET_API Ieee8021dRelay : public LayeredProtocolBase
 
     typedef std::pair<MacAddress, MacAddress> MacAddressPair;
 
-
     struct Comp
     {
         bool operator() (const MacAddressPair& first, const MacAddressPair& second) const
@@ -71,7 +70,6 @@ class INET_API Ieee8021dRelay : public LayeredProtocolBase
     {
         return ranges.find(MacAddressPair(value, value)) != ranges.end();
     }
-
 
     std::set<MacAddressPair, Comp> registeredMacAddresses;
 

@@ -57,4 +57,5 @@ std::string EmptyChunk::str() const
     return "EmptyChunk";
 }
 
-} // namespace
+} // namespace inet
+

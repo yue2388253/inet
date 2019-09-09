@@ -22,7 +22,6 @@
 #include "inet/routing/ospfv2/router/OspfRouter.h"
 
 namespace inet {
-
 namespace ospf {
 
 Router::Router(cSimpleModule *containingModule, IInterfaceTable *ift, IIpv4RoutingTable *rt) :
@@ -1535,6 +1534,5 @@ bool Router::isDirectRoute(OspfRoutingTableEntry &entry)
 }
 
 } // namespace ospf
-
 } // namespace inet
 

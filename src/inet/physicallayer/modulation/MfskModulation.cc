@@ -18,7 +18,6 @@
 #include "inet/physicallayer/modulation/MfskModulation.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 MfskModulation::MfskModulation(unsigned int codeWordSize) :
@@ -42,6 +41,5 @@ double MfskModulation::calculateSER(double snir, Hz bandwidth, bps bitrate) cons
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

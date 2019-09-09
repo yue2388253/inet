@@ -27,7 +27,6 @@
 #endif // ifdef WITH_OSG
 
 namespace inet {
-
 namespace visualizer {
 
 #ifdef WITH_OSG
@@ -102,6 +101,5 @@ void PathOsgVisualizerBase::setAlpha(const PathVisualization *pathVisualization,
 #endif // ifdef WITH_OSG
 
 } // namespace visualizer
-
 } // namespace inet
 

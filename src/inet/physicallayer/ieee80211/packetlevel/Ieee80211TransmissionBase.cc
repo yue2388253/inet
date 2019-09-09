@@ -18,7 +18,6 @@
 #include "inet/physicallayer/ieee80211/packetlevel/Ieee80211TransmissionBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Ieee80211TransmissionBase::Ieee80211TransmissionBase(const IIeee80211Mode *mode, const Ieee80211Channel *channel) :
@@ -36,6 +35,5 @@ std::ostream& Ieee80211TransmissionBase::printToStream(std::ostream& stream, int
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

@@ -33,7 +33,6 @@
 #include "inet/applications/httptools/common/HttpMessages_m.h"    // for HttpContentType
 
 namespace inet {
-
 namespace httptools {
 
 std::string trimLeft(std::string str);
@@ -55,7 +54,6 @@ int safeatobool(const char *strval, bool defaultVal = false);
 std::vector<std::string> splitFile(std::string fileName);
 
 } // namespace httptools
-
 } // namespace inet
 
 #endif // ifndef __INET_HTTPUTILS_H

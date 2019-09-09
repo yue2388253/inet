@@ -21,7 +21,6 @@
 #include "inet/physicallayer/base/packetlevel/ListeningBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 /**
@@ -36,7 +35,6 @@ class INET_API UnitDiskListening : public ListeningBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IDEALLISTENING_H

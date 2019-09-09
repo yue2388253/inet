@@ -24,7 +24,6 @@
 #include "inet/physicallayer/modulation/QpskModulation.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(ApskDemodulator);
@@ -62,6 +61,5 @@ const IReceptionBitModel *ApskDemodulator::demodulate(const IReceptionSymbolMode
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

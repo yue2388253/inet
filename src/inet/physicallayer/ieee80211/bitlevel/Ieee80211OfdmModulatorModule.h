@@ -21,7 +21,6 @@
 #include "inet/physicallayer/ieee80211/bitlevel/Ieee80211OfdmModulator.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API Ieee80211OfdmModulatorModule : public IModulator, public cSimpleModule
@@ -42,8 +41,8 @@ class INET_API Ieee80211OfdmModulatorModule : public IModulator, public cSimpleM
     const ITransmissionSymbolModel *modulate(const ITransmissionBitModel *bitModel) const override;
 };
 
-} /* namespace physicallayer */
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet
 
 #endif // ifndef __INET_IEEE80211OFDMMODULATORMODULE_H
 

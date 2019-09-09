@@ -120,7 +120,6 @@ struct make_integer_sequence
 
 } // namespace integer_sequence_detail
 
-
 template <typename T, T N>
 using make_integer_sequence = typename integer_sequence_detail::make_integer_sequence<T, N>::type;
 
@@ -133,3 +132,4 @@ using index_sequence_for = make_index_sequence<sizeof...(T)>;
 } // namespace inet
 
 #endif // #ifndef __INET_MATH_INDEXSEQUENCE_H_
+

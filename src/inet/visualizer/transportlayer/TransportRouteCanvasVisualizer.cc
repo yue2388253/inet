@@ -40,7 +40,6 @@
 #include "inet/visualizer/transportlayer/TransportRouteCanvasVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(TransportRouteCanvasVisualizer);
@@ -105,6 +104,5 @@ const PathCanvasVisualizerBase::PathVisualization *TransportRouteCanvasVisualize
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

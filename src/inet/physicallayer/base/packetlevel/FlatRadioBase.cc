@@ -21,7 +21,6 @@
 #include "inet/physicallayer/contract/packetlevel/RadioControlInfo_m.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(FlatRadioBase);
@@ -59,6 +58,5 @@ void FlatRadioBase::setBitrate(bps newBitrate)
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

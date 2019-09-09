@@ -24,7 +24,6 @@
 #include "inet/physicallayer/ieee80211/packetlevel/Ieee80211PhyHeader_m.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(Ieee80211DimensionalTransmitter);
@@ -75,6 +74,5 @@ const ITransmission *Ieee80211DimensionalTransmitter::createTransmission(const I
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

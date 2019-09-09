@@ -21,7 +21,6 @@
 #include "inet/visualizer/base/StatisticVisualizerBase.h"
 
 namespace inet {
-
 namespace visualizer {
 
 Register_ResultRecorder("statisticVisualizer", StatisticVisualizerBase::LastValueRecorder);
@@ -251,6 +250,5 @@ void StatisticVisualizerBase::refreshStatisticVisualization(const StatisticVisua
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

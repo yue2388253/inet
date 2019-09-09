@@ -128,6 +128,6 @@ Ieee80211OfdmDecoder::~Ieee80211OfdmDecoder()
     delete fecDecoder;
 }
 
-} /* namespace physicallayer */
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet
 

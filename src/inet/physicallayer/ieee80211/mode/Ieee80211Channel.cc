@@ -18,7 +18,6 @@
 #include "inet/physicallayer/ieee80211/mode/Ieee80211Channel.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Ieee80211Channel::Ieee80211Channel(const IIeee80211Band *band, int channelNumber) :
@@ -38,6 +37,5 @@ std::ostream& Ieee80211Channel::printToStream(std::ostream& stream, int level) c
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

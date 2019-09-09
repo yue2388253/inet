@@ -22,7 +22,6 @@
 #include "inet/physicallayer/ieee80211/mode/Ieee80211ModeBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API Ieee80211IrPreambleMode : public IIeee80211PreambleMode
@@ -147,7 +146,6 @@ class INET_API Ieee80211IrCompliantModes
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IEEE80211IRMODE_H

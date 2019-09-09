@@ -22,7 +22,6 @@
 #include "inet/applications/httptools/server/HttpServer.h"
 
 namespace inet {
-
 namespace httptools {
 
 /**
@@ -51,7 +50,6 @@ class INET_API HttpServerEvilA : public HttpServer
 };
 
 } // namespace httptools
-
 } // namespace inet
 
 #endif // ifndef __INET_HTTPSERVEREVILA_H

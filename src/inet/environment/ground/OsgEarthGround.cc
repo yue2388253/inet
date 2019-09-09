@@ -24,12 +24,10 @@
 #include "inet/common/geometry/common/GeographicCoordinateSystem.h"
 #include "inet/visualizer/scene/SceneOsgEarthVisualizer.h"
 
-
 namespace inet {
-
-using namespace visualizer;
-
 namespace physicalenvironment {
+
+using namespace inet::visualizer;
 
 Define_Module(OsgEarthGround);
 
@@ -76,7 +74,6 @@ Coord OsgEarthGround::computeGroundNormal(const Coord &position) const
 }
 
 } // namespace physicalenvironment
-
 } // namespace inet
 
 #endif // defined(WITH_OSGEARTH) && defined(WITH_VISUALIZERS)

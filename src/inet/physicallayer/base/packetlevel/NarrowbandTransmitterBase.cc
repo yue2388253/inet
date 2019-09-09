@@ -20,7 +20,6 @@
 #include "inet/physicallayer/common/packetlevel/SignalTag_m.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 NarrowbandTransmitterBase::NarrowbandTransmitterBase() :
@@ -49,7 +48,6 @@ std::ostream& NarrowbandTransmitterBase::printToStream(std::ostream& stream, int
     return stream;
 }
 
-
 Hz NarrowbandTransmitterBase::computeCarrierFrequency(const Packet *packet) const
 {
     auto signalBandReq = const_cast<Packet *>(packet)->findTag<SignalBandReq>();
@@ -63,6 +61,5 @@ Hz NarrowbandTransmitterBase::computeBandwidth(const Packet *packet) const
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

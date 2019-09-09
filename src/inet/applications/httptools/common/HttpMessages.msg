@@ -62,7 +62,6 @@
 //    This feature can be used to simulate usage errors or malicious behavior, e.g. DDoS attacks.
 //
 
-
 import inet.common.INETDefs;
 import inet.common.packet.chunk.Chunk;
 import inet.transportlayer.common.CrcMode;
@@ -91,7 +90,6 @@ class HttpRequestMessage extends HttpBaseMessage
     bool badRequest = false;    // Set to true to simulate a bad request. Server answers w. 404.
 }
 
-
 //
 // Content type of HTTP responses.
 //
@@ -103,7 +101,6 @@ enum HttpContentType
     CT_TEXT = 3;
 };
 
-
 //
 // Message class for HTTP replies
 //
@@ -112,3 +109,4 @@ class HttpReplyMessage extends HttpBaseMessage
     int result = 0;      // e.g. 200 for OK, 404 for NOT FOUND.
     HttpContentType contentType = CT_UNKNOWN;
 }
+

@@ -18,7 +18,6 @@
 #include "inet/physicallayer/ieee80211/mode/Ieee80211DsssMode.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Ieee80211DsssDataMode::Ieee80211DsssDataMode(const DpskModulationBase *modulation) :
@@ -58,7 +57,6 @@ const simtime_t Ieee80211DsssMode::getRifsTime() const
     return -1;
 }
 
-
 } // namespace physicallayer
-
 } // namespace inet
+

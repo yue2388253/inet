@@ -19,7 +19,6 @@
 #include "inet/transportlayer/sctp/SctpHeader.h"
 
 namespace inet {
-
 namespace sctp {
 
 class SctpUdpHook : public NetfilterBase::HookBase {
@@ -35,10 +34,7 @@ class SctpUdpHook : public NetfilterBase::HookBase {
 };
 
 } // namespace sctp
-
 } // namespace inet
 
 #endif
-
-
 

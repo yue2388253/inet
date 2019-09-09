@@ -1969,7 +1969,6 @@ std::ostream& operator<<(std::ostream& out, const PimDm::Route& route)
     }
 
     return out;
-
 }
 
 const std::string PimDm::graftPruneStateString(UpstreamInterface::GraftPruneState ps)

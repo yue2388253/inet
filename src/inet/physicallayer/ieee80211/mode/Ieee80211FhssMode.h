@@ -22,7 +22,6 @@
 #include "inet/physicallayer/ieee80211/mode/Ieee80211ModeBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API Ieee80211FhssPreambleMode : public IIeee80211PreambleMode
@@ -138,7 +137,6 @@ class INET_API Ieee80211FhssCompliantModes
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IEEE80211FHSSMODE_H

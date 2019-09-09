@@ -20,7 +20,6 @@
 #include "inet/visualizer/base/InfoVisualizerBase.h"
 
 namespace inet {
-
 namespace visualizer {
 
 InfoVisualizerBase::InfoVisualization::InfoVisualization(int moduleId) :
@@ -130,6 +129,5 @@ const char* InfoVisualizerBase::getInfoVisualizationText(cModule *module) const
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

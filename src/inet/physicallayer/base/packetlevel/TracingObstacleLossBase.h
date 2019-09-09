@@ -22,7 +22,6 @@
 #include "inet/physicallayer/contract/packetlevel/ITracingObstacleLoss.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API TracingObstacleLossBase : public cModule, public ITracingObstacleLoss
@@ -30,7 +29,6 @@ class INET_API TracingObstacleLossBase : public cModule, public ITracingObstacle
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_TRACINGOBSTACLELOSSBASE_H

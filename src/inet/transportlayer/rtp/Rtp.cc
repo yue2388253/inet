@@ -30,7 +30,6 @@
 #include "inet/transportlayer/rtp/RtpSenderStatusMessage_m.h"
 
 namespace inet {
-
 namespace rtp {
 
 Define_Module(Rtp);
@@ -412,6 +411,5 @@ void Rtp::initializeRTCP()
 }
 
 } // namespace rtp
-
 } // namespace inet
 

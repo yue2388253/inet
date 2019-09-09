@@ -23,7 +23,6 @@
 #include "inet/physicallayer/modulation/DqpskModulation.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 enum Ieee80211HrDsssPreambleType {
@@ -181,7 +180,6 @@ class INET_API Ieee80211HrDsssCompliantModes
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IEEE80211HRDSSSMODE_H

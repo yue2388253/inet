@@ -22,7 +22,6 @@
 #include "inet/power/contract/IEpEnergySink.h"
 
 namespace inet {
-
 namespace power {
 
 /**
@@ -59,7 +58,6 @@ class INET_API AlternatingEpEnergyGenerator : public cSimpleModule, public IEpEn
 };
 
 } // namespace power
-
 } // namespace inet
 
 #endif // ifndef __INET_ALTERNATINGEPENERGYGENERATOR_H

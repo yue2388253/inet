@@ -19,7 +19,6 @@
 #include "inet/physicallayer/contract/packetlevel/IRadioMedium.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 TransmissionBase::TransmissionBase(const IRadio *transmitter, const Packet *packet, const simtime_t startTime, const simtime_t endTime, const simtime_t preambleDuration, const simtime_t headerDuration, const simtime_t dataDuration, const Coord startPosition, const Coord endPosition, const Quaternion startOrientation, const Quaternion endOrientation) :
@@ -112,6 +111,5 @@ const simtime_t TransmissionBase::getDuration(IRadioSignal::SignalPart part) con
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

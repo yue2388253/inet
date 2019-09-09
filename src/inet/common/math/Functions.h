@@ -21,7 +21,6 @@
 #include "inet/common/math/Interpolators.h"
 
 namespace inet {
-
 namespace math {
 
 using namespace inet::units::values;
@@ -1414,7 +1413,6 @@ void simplifyAndCall(const typename D::I& i, const BilinearFunction<R, D> *f, co
 }
 
 } // namespace math
-
 } // namespace inet
 
 #endif // #ifndef __INET_MATH_FUNCTIONS_H_

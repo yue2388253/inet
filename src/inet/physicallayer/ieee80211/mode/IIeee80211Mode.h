@@ -22,7 +22,6 @@
 #include "inet/physicallayer/ieee80211/packetlevel/Ieee80211PhyHeader_m.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API IIeee80211PreambleMode : public cObject, public IPrintableObject
@@ -81,7 +80,6 @@ class INET_API IIeee80211Mode : public cObject, public IPrintableObject
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IIEEE80211MODE_H

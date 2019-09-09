@@ -25,7 +25,6 @@
 #include "inet/transportlayer/tcp_lwip/LwipTcpStackIf.h"
 
 namespace inet {
-
 namespace tcp {
 
 LwipTcpLayer::LwipTcpLayer(LwipTcpStackIf& stackIfP) :
@@ -132,6 +131,5 @@ void LwipTcpLayer::notifyAboutIncomingSegmentProcessing(LwipTcpLayer::tcp_pcb *p
 }
 
 } // namespace tcp
-
 } // namespace inet
 

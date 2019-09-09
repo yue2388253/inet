@@ -537,7 +537,6 @@ void XMac::handleSelfMessage(cMessage *msg)
               msg->getKind(), macState, radio->getRadioMode());
 }
 
-
 /**
  * Handle XMAC preambles and received data packets.
  */
@@ -648,7 +647,6 @@ void XMac::changeDisplayColor(XMAC_COLORS color)
     }
 }
 
-
 void XMac::decapsulate(Packet *packet)
 {
     const auto& xmacHeader = packet->popAtFront<XMacHeader>();
@@ -688,3 +686,4 @@ void XMac::encapsulate(Packet *packet)
 }
 
 } // namespace inet
+

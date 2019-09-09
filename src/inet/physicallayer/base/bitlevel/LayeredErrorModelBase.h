@@ -21,7 +21,6 @@
 #include "inet/physicallayer/contract/bitlevel/ILayeredErrorModel.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API LayeredErrorModelBase : public cModule, public ILayeredErrorModel
@@ -33,7 +32,6 @@ class INET_API LayeredErrorModelBase : public cModule, public ILayeredErrorModel
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_LAYEREDERRORMODELBASE_H

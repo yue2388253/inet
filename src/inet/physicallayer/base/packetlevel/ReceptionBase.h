@@ -23,7 +23,6 @@
 #include "inet/physicallayer/contract/packetlevel/ITransmission.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API ReceptionBase : public virtual IReception, public virtual IReceptionAnalogModel, public cObject
@@ -78,7 +77,6 @@ class INET_API ReceptionBase : public virtual IReception, public virtual IRecept
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_RECEPTIONBASE_H

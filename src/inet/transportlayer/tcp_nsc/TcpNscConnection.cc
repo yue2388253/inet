@@ -34,7 +34,6 @@
 #include <netinet/in.h>
 
 namespace inet {
-
 namespace tcp {
 
 static const unsigned short PORT_UNDEF = -1;
@@ -204,6 +203,5 @@ void TcpNscConnection::abort()
 }
 
 } // namespace tcp
-
 } // namespace inet
 

@@ -21,7 +21,6 @@
 #include "inet/physicallayer/ieee80211/packetlevel/Ieee80211TransmitterBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API Ieee80211UnitDiskTransmitter : public Ieee80211TransmitterBase
@@ -43,7 +42,6 @@ class INET_API Ieee80211UnitDiskTransmitter : public Ieee80211TransmitterBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IEEE80211UNITDISKTRANSMITTER_H

@@ -29,7 +29,6 @@
 #include "inet/physicallayer/ieee802154/bitlevel/Ieee802154UwbIrMode.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 /**
@@ -67,7 +66,6 @@ class INET_API Ieee802154UwbIrTransmitter : public TransmitterBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IEEE802154UWBIRTRANSMITTER_H

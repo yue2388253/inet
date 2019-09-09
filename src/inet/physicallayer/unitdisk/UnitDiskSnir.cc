@@ -18,7 +18,6 @@
 #include "inet/physicallayer/unitdisk/UnitDiskSnir.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 UnitDiskSnir::UnitDiskSnir(const IReception *reception, const INoise *noise) :
@@ -48,6 +47,5 @@ double UnitDiskSnir::getMean() const
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

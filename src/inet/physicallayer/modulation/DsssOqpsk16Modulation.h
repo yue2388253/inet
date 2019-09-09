@@ -21,7 +21,6 @@
 #include "inet/physicallayer/base/packetlevel/ApskModulationBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API DsssOqpsk16Modulation : public ApskModulationBase
@@ -35,7 +34,6 @@ class INET_API DsssOqpsk16Modulation : public ApskModulationBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_DSSSOQPSK16MODULATION_H

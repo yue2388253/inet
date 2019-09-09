@@ -18,7 +18,6 @@
 #include "inet/physicallayer/unitdisk/UnitDiskTransmission.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 UnitDiskTransmission::UnitDiskTransmission(const IRadio *transmitter, const Packet *macFrame, const simtime_t startTime, const simtime_t endTime, const simtime_t preambleDuration, const simtime_t headerDuration, const simtime_t dataDuration, const Coord startPosition, const Coord endPosition, const Quaternion startOrientation, const Quaternion endOrientation, m communicationRange, m interferenceRange, m detectionRange) :
@@ -41,6 +40,5 @@ std::ostream& UnitDiskTransmission::printToStream(std::ostream& stream, int leve
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

@@ -24,7 +24,6 @@
 #include "inet/routing/ospfv2/router/OspfRouter.h"
 
 namespace inet {
-
 namespace ospf {
 
 void NeighborStateDown::processEvent(Neighbor *neighbor, Neighbor::NeighborEventType event)
@@ -53,6 +52,5 @@ void NeighborStateDown::processEvent(Neighbor *neighbor, Neighbor::NeighborEvent
 }
 
 } // namespace ospf
-
 } // namespace inet
 

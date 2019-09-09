@@ -19,7 +19,6 @@
 #include "inet/physicallayer/base/packetlevel/AnalogModelBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 double AnalogModelBase::computeAntennaGain(const IAntennaGain* antennaGain, const Coord& startPosition, const Coord& endPosition, const Quaternion& startOrientation) const
@@ -34,6 +33,5 @@ double AnalogModelBase::computeAntennaGain(const IAntennaGain* antennaGain, cons
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

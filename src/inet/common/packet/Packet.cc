@@ -300,5 +300,5 @@ TagSet& getTags(cMessage *msg)
         return check_and_cast<Message *>(msg)->getTags();
 }
 
-} // namespace
+} // namespace inet
 

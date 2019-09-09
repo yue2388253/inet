@@ -18,7 +18,6 @@
 #include "inet/routing/ospfv2/router/Lsa.h"
 
 namespace inet {
-
 namespace ospf {
 
 bool SummaryLsa::update(const OspfSummaryLsa *lsa)
@@ -69,6 +68,5 @@ bool SummaryLsa::differsFrom(const OspfSummaryLsa *summaryLSA) const
 }
 
 } // namespace ospf
-
 } // namespace inet
 

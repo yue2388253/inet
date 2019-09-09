@@ -19,7 +19,6 @@
 #include "inet/physicallayer/energyconsumer/StateBasedCcEnergyConsumer.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 using namespace inet::power;
@@ -149,6 +148,5 @@ A StateBasedCcEnergyConsumer::computeCurrentConsumption() const
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

@@ -18,10 +18,8 @@
 #include "inet/power/base/EnergyStorageBase.h"
 
 namespace inet {
-
 namespace power {
 
 } // namespace power
-
 } // namespace inet
 

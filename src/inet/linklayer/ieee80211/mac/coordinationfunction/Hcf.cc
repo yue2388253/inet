@@ -732,7 +732,6 @@ void Hcf::recipientProcessTransmittedControlResponseFrame(Packet *packet, const 
         throw cRuntimeError("Unknown control response frame");
 }
 
-
 void Hcf::processMgmtFrame(Packet *mgmtPacket, const Ptr<const Ieee80211MgmtHeader>& mgmtHeader)
 {
     Enter_Method_Silent("processMgmtFrame");
@@ -745,7 +744,6 @@ void Hcf::setFrameMode(Packet *packet, const Ptr<const Ieee80211MacHeader>& head
     ASSERT(mode != nullptr);
     packet->addTagIfAbsent<Ieee80211ModeReq>()->setMode(mode);
 }
-
 
 bool Hcf::isReceptionInProgress()
 {

@@ -57,6 +57,6 @@ const Packet *LayeredReceptionResult::getPacket() const
     return packetModel->getPacket();
 }
 
-} /* namespace physicallayer */
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet
 

@@ -20,7 +20,6 @@
 #include "inet/physicallayer/ieee80211/packetlevel/Ieee80211TransmitterBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Ieee80211TransmitterBase::Ieee80211TransmitterBase() :
@@ -89,7 +88,6 @@ const Ieee80211Channel *Ieee80211TransmitterBase::computeTransmissionChannel(con
     if (transmissionChannel == nullptr)
         throw cRuntimeError("Transmission channel is undefined");
     return transmissionChannel;
-
 }
 
 void Ieee80211TransmitterBase::setModeSet(const Ieee80211ModeSet *modeSet)
@@ -135,6 +133,5 @@ void Ieee80211TransmitterBase::setChannelNumber(int channelNumber)
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

@@ -19,7 +19,6 @@
 #include "inet/visualizer/physicallayer/PhysicalLinkCanvasVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(PhysicalLinkCanvasVisualizer);
@@ -44,6 +43,5 @@ const LinkVisualizerBase::LinkVisualization *PhysicalLinkCanvasVisualizer::creat
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

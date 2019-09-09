@@ -66,6 +66,5 @@ void Ipv4Header::setTypeOfService(short trafficClass)
     setExplicitCongestionNotification((trafficClass >> 6) & 0x03);
 }
 
-
 } // namespace inet
 

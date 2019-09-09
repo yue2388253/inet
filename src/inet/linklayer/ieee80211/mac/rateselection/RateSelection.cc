@@ -175,6 +175,6 @@ void RateSelection::setFrameMode(Packet *packet, const Ptr<const Ieee80211MacHea
     packet->addTagIfAbsent<Ieee80211ModeReq>()->setMode(mode);
 }
 
-
 } // namespace ieee80211
 } // namespace inet
+

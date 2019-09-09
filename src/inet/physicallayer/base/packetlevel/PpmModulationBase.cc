@@ -18,7 +18,6 @@
 #include "inet/physicallayer/base/packetlevel/PpmModulationBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 PpmModulationBase::PpmModulationBase(unsigned int numberOfPulses) :
@@ -27,6 +26,5 @@ PpmModulationBase::PpmModulationBase(unsigned int numberOfPulses) :
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

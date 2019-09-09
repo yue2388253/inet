@@ -31,7 +31,6 @@
 #endif // ifdef WITH_OSG
 
 namespace inet {
-
 namespace visualizer {
 
 #ifdef WITH_OSG
@@ -209,6 +208,5 @@ void NetworkNodeOsgVisualization::removeAnnotation(osg::Node *node)
 #endif // ifdef WITH_OSG
 
 } // namespace visualizer
-
 } // namespace inet
 

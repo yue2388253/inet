@@ -19,8 +19,6 @@
 
 namespace inet {
 
-class InterfaceEntry;
-
 inline bool _isNetworkNode(const cModule *mod)
 {
     cProperties *props = mod->getProperties();

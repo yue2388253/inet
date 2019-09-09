@@ -22,7 +22,6 @@
 #include "inet/physicallayer/ieee80211/mode/IIeee80211Mode.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API Ieee80211ErrorModelBase : public ErrorModelBase
@@ -42,7 +41,6 @@ class INET_API Ieee80211ErrorModelBase : public ErrorModelBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IEEE80211ERRORMODELBASE_H

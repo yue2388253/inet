@@ -25,7 +25,6 @@
 #endif // ifdef WITH_OSG
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API SceneOsgVisualizer : public SceneOsgVisualizerBase
@@ -41,7 +40,6 @@ class INET_API SceneOsgVisualizer : public SceneOsgVisualizerBase
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_SCENEOSGVISUALIZER_H

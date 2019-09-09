@@ -215,5 +215,5 @@ void BitVector::copy(const BitVector& other)
         appendBit(other.getBit(i));
 }
 
-} /* namespace inet */
+} // namespace inet
 

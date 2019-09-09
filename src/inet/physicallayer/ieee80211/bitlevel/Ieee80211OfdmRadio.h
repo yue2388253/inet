@@ -21,7 +21,6 @@
 #include "inet/physicallayer/base/packetlevel/FlatRadioBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API Ieee80211OfdmRadio : public FlatRadioBase
@@ -35,7 +34,6 @@ class INET_API Ieee80211OfdmRadio : public FlatRadioBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IEEE80211OFDMRADIO_H

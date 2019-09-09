@@ -22,7 +22,6 @@
 #include "inet/routing/ospfv2/neighbor/OspfNeighborState.h"
 
 namespace inet {
-
 namespace ospf {
 
 class INET_API NeighborStateTwoWay : public NeighborState
@@ -33,7 +32,6 @@ class INET_API NeighborStateTwoWay : public NeighborState
 };
 
 } // namespace ospf
-
 } // namespace inet
 
 #endif // ifndef __INET_OSPFNEIGHBORSTATETWOWAY_H

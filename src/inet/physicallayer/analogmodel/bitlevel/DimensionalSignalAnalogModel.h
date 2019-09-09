@@ -22,7 +22,6 @@
 #include "inet/physicallayer/analogmodel/bitlevel/SignalAnalogModel.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 using namespace inet::math;
@@ -54,7 +53,6 @@ class INET_API DimensionalReceptionSignalAnalogModel : public DimensionalSignalA
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_DIMENSIONALSIGNALANALOGMODEL_H

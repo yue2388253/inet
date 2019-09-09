@@ -18,7 +18,6 @@
 #include "inet/visualizer/util/AnimationSpeedInterpolator.h"
 
 namespace inet {
-
 namespace visualizer {
 
 static double smootherstep(double edge0, double edge1, double x)
@@ -60,6 +59,5 @@ void AnimationSpeedInterpolator::setAnimationSpeed(double animationSpeed)
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

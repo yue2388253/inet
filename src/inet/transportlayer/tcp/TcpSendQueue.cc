@@ -18,7 +18,6 @@
 #include "inet/transportlayer/tcp/TcpSendQueue.h"
 
 namespace inet {
-
 namespace tcp {
 
 Register_Class(TcpSendQueue);
@@ -94,6 +93,5 @@ void TcpSendQueue::discardUpTo(uint32 seqNum)
 }
 
 } // namespace tcp
-
 } // namespace inet
 

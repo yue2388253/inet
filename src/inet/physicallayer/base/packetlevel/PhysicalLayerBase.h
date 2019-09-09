@@ -24,7 +24,6 @@
 #include "inet/physicallayer/contract/packetlevel/IPhysicalLayer.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API PhysicalLayerBase : public LayeredProtocolBase, public IPhysicalLayer
@@ -51,7 +50,6 @@ class INET_API PhysicalLayerBase : public LayeredProtocolBase, public IPhysicalL
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_PHYSICALLAYERBASE_H

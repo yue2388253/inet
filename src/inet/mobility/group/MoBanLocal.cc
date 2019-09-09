@@ -134,6 +134,5 @@ Coord MoBanLocal::getCurrentVelocity()
     return LineSegmentsMobilityBase::getCurrentVelocity() + coordinator->getCurrentVelocity();
 }
 
-
 } // namespace inet
 

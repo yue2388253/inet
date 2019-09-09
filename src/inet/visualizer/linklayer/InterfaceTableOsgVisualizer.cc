@@ -20,7 +20,6 @@
 #include "inet/visualizer/linklayer/InterfaceTableOsgVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(InterfaceTableOsgVisualizer);
@@ -88,6 +87,5 @@ void InterfaceTableOsgVisualizer::refreshInterfaceVisualization(const InterfaceV
 #endif // ifdef WITH_OSG
 
 } // namespace visualizer
-
 } // namespace inet
 

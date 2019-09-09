@@ -22,7 +22,6 @@
 #include "inet/physicallayer/ieee80211/packetlevel/Ieee80211ReceiverBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API Ieee80211ScalarReceiver : public Ieee80211ReceiverBase
@@ -38,7 +37,6 @@ class INET_API Ieee80211ScalarReceiver : public Ieee80211ReceiverBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IEEE80211SCALARRECEIVER_H

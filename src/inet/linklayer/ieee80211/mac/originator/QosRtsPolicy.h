@@ -42,7 +42,7 @@ class INET_API QosRtsPolicy : public ModeSetListener, public IRtsPolicy
         virtual int getRtsThreshold() const override { return rtsThreshold; }
 };
 
-} /* namespace ieee80211 */
-} /* namespace inet */
+} // namespace ieee80211
+} // namespace inet
 
 #endif // ifndef __INET_QOSRTSPOLICY_H

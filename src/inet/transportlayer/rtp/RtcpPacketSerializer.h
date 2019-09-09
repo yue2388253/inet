@@ -16,7 +16,6 @@
 #ifndef INET_TRANSPORTLAYER_RTP_RTCPPACKETSERIALIZER_H_
 #define INET_TRANSPORTLAYER_RTP_RTCPPACKETSERIALIZER_H_
 
-
 #include "inet/common/packet/serializer/FieldsChunkSerializer.h"
 
 namespace inet {
@@ -37,7 +36,6 @@ class INET_API RtcpPacketSerializer : public FieldsChunkSerializer
 
 } // namespace rtp
 } // namespace inet
-
 
 #endif /* INET_TRANSPORTLAYER_RTP_RTCPPACKETSERIALIZER_H_ */
 

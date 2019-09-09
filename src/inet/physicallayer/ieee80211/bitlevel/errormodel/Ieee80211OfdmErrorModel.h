@@ -23,7 +23,6 @@
 #include "inet/physicallayer/ieee80211/packetlevel/errormodel/Ieee80211NistErrorModel.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API Ieee80211OfdmErrorModel : public Ieee80211NistErrorModel, public ILayeredErrorModel
@@ -48,8 +47,8 @@ class INET_API Ieee80211OfdmErrorModel : public Ieee80211NistErrorModel, public 
     virtual std::ostream& printToStream(std::ostream& stream, int level) const override;
 };
 
-} /* namespace physicallayer */
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet
 
 #endif // ifndef __INET_IEEE80211LAYEREDERRORMODEL_H
 

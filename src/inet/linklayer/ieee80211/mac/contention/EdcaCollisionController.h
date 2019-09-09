@@ -37,7 +37,7 @@ class INET_API EdcaCollisionController : public IEdcaCollisionController, public
         virtual bool isInternalCollision(Edcaf *edcaf) override;
 };
 
-} /* namespace ieee80211 */
-} /* namespace inet */
+} // namespace ieee80211
+} // namespace inet
 
 #endif // ifndef INET_EDCACOLLISIONCONTROLLER_H

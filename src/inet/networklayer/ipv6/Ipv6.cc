@@ -44,7 +44,6 @@
 #include "inet/networklayer/xmipv6/MobilityHeader_m.h"
 #endif /* WITH_xMIPv6 */
 
-
 namespace inet {
 
 #define FRAGMENT_TIMEOUT    60   // 60 sec, from Ipv6 RFC

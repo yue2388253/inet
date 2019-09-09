@@ -20,7 +20,6 @@
 #include "inet/common/math/Point.h"
 
 namespace inet {
-
 namespace math {
 
 template<typename X, typename Y>
@@ -238,7 +237,6 @@ const IInterpolator<X, Y> *createInterpolator(const char *text) {
 }
 
 } // namespace math
-
 } // namespace inet
 
 #endif // #ifndef __INET_MATH_INTERPOLATORS_H_

@@ -497,6 +497,5 @@ void MediumOsgVisualizer::handleSignalArrivalEnded(const IReception *reception)
 #endif // ifdef WITH_OSG
 
 } // namespace visualizer
-
 } // namespace inet
 

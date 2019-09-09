@@ -18,7 +18,6 @@
 #include "inet/physicallayer/unitdisk/UnitDiskNoise.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 UnitDiskNoise::UnitDiskNoise(simtime_t startTime, simtime_t endTime, bool isInterfering) :
@@ -34,6 +33,5 @@ std::ostream& UnitDiskNoise::printToStream(std::ostream& stream, int level) cons
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

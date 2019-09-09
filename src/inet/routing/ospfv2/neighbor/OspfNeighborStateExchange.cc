@@ -28,7 +28,6 @@
 #include "inet/routing/ospfv2/router/OspfRouter.h"
 
 namespace inet {
-
 namespace ospf {
 
 void NeighborStateExchange::processEvent(Neighbor *neighbor, Neighbor::NeighborEventType event)
@@ -94,6 +93,5 @@ void NeighborStateExchange::processEvent(Neighbor *neighbor, Neighbor::NeighborE
 }
 
 } // namespace ospf
-
 } // namespace inet
 

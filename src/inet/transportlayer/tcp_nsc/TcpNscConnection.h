@@ -114,7 +114,6 @@ class INET_API TcpNscConnection
 };
 
 } // namespace tcp
-
 } // namespace inet
 
 #endif // ifndef __INET_TCP_NSC_CONNECTION_H

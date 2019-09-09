@@ -22,7 +22,6 @@
 #include "inet/physicallayer/ieee80211/packetlevel/Ieee80211TransmissionBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API Ieee80211ScalarTransmission : public ScalarTransmission, public Ieee80211TransmissionBase
@@ -34,7 +33,6 @@ class INET_API Ieee80211ScalarTransmission : public ScalarTransmission, public I
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IEEE80211SCALARTRANSMISSION_H

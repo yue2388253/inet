@@ -20,7 +20,6 @@
 #include "inet/visualizer/physicallayer/RadioCanvasVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 using namespace inet::physicallayer;
@@ -259,6 +258,5 @@ double RadioCanvasVisualizer::getGainRadius(double gain, double maxGain) const
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

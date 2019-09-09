@@ -19,7 +19,6 @@
 #include "inet/visualizer/power/EnergyStorageCanvasVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 using namespace inet::power;
@@ -92,6 +91,5 @@ void EnergyStorageCanvasVisualizer::refreshEnergyStorageVisualization(const Ener
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

@@ -30,7 +30,6 @@
 #include "inet/routing/ospfv2/router/OspfRoutingTableEntry.h"
 
 namespace inet {
-
 namespace ospf {
 
 /**
@@ -385,7 +384,6 @@ class INET_API Router
 };
 
 } // namespace ospf
-
 } // namespace inet
 
 #endif // ifndef __INET_OSPFROUTER_H

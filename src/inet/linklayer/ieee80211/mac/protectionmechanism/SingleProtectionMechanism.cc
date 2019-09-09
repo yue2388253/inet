@@ -33,7 +33,6 @@ void SingleProtectionMechanism::initialize(int stage)
     }
 }
 
-
 //
 // For an RTS that is not part of a dual clear-to-send (CTS) exchange, the Duration/ID field is set
 // to the estimated time, in microseconds, required to transmit the pending frame, plus one CTS
@@ -191,5 +190,5 @@ simtime_t SingleProtectionMechanism::computeDurationField(Packet *packet, const 
         throw cRuntimeError("Unknown frame type");
 }
 
-} /* namespace ieee80211 */
-} /* namespace inet */
+} // namespace ieee80211
+} // namespace inet

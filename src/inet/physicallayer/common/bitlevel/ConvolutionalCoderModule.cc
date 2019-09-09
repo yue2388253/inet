@@ -47,6 +47,6 @@ ConvolutionalCoderModule::~ConvolutionalCoderModule()
     delete convolutionalCoder;
 }
 
-} /* namespace physicallayer */
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet
 

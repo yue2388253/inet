@@ -16,7 +16,6 @@
 // along with this program; if not, see <http://www.gnu.org/licenses/>.
 //
 
-
 #include "inet/common/packet/serializer/BytesChunkSerializer.h"
 #include "inet/transportlayer/contract/tcp/TcpCommand_m.h"
 #include "inet/transportlayer/tcp_common/TcpHeader.h"
@@ -25,7 +24,6 @@
 #include "inet/transportlayer/tcp_lwip/queues/TcpLwipQueues.h"
 
 namespace inet {
-
 namespace tcp {
 
 Register_Class(TcpLwipSendQueue);
@@ -179,6 +177,5 @@ void TcpLwipReceiveQueue::notifyAboutSending(const TcpHeader *tcpsegP)
 }
 
 } // namespace tcp
-
 } // namespace inet
 

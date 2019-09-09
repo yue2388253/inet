@@ -23,7 +23,6 @@
 #include "inet/physicallayer/unitdisk/UnitDiskTransmitter.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(UnitDiskRadio);
@@ -50,6 +49,5 @@ void UnitDiskRadio::decapsulate(Packet *packet) const
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

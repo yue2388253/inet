@@ -50,7 +50,7 @@ class INET_API Ieee80211OfdmCompliantModulations
     static const Ieee80211OfdmModulation qam256Modulation;
 };
 
-} /* namespace physicallayer */
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet
 
 #endif /* __INET_IEEE80211OFDMMODULATION_H */

@@ -81,7 +81,6 @@ bool L3AddressResolver::tryParse(L3Address& result, const char *addr, int addrTy
     return true;
 }
 
-
 bool L3AddressResolver::tryResolve(const char *s, L3Address& result, int addrType)
 {
     // empty address

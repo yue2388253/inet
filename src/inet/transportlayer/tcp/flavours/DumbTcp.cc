@@ -135,6 +135,5 @@ void DumbTcp::rttMeasurementCompleteUsingTS(uint32 echoedTS)
 }
 
 } // namespace tcp
-
 } // namespace inet
 

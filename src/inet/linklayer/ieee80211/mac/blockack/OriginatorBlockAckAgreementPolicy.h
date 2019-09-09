@@ -54,7 +54,7 @@ class INET_API OriginatorBlockAckAgreementPolicy : public ModeSetListener, publi
         virtual int getMaximumAllowedBufferSize() const override { return maximumAllowedBufferSize; }
 };
 
-} /* namespace ieee80211 */
-} /* namespace inet */
+} // namespace ieee80211
+} // namespace inet
 
 #endif // ifndef __INET_ORIGINATORBLOCKACKAGREEMENTPOLICY_H

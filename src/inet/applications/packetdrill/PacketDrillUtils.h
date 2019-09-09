@@ -119,7 +119,6 @@ struct int_symbol {
 #define FLAG_DATA_CHUNK_SSN_NOCHECK             0x00000400
 #define FLAG_DATA_CHUNK_PPID_NOCHECK            0x00000800
 
-
 #define FLAG_SACK_CHUNK_CUM_TSN_NOCHECK         0x00000100
 #define FLAG_SACK_CHUNK_A_RWND_NOCHECK          0x00000200
 #define FLAG_SACK_CHUNK_GAP_BLOCKS_NOCHECK      0x00000400
@@ -192,16 +191,13 @@ struct option_list {
     struct option_list *next;
 };
 
-
 #define NO_TIME_RANGE -1    /* time_usecs_end if no range */
-
 
 /* The errno-related info from strace to summarize a system call error */
 struct errno_spec {
     const char *errno_macro;    /* errno symbol (C macro name) */
     const char *strerror;       /* strerror translation of errno */
 };
-
 
 /* Return a pointer to a table of platform-specific string->int mappings. */
 struct int_symbol *platform_symbols(void);
@@ -215,10 +211,8 @@ static inline bool is_valid_u16(int64 x) { return (x >= 0) && (x <= USHRT_MAX); 
 
 static inline bool is_valid_u32(int64 x) { return (x >= 0) && (x <= UINT_MAX); };
 
-
 #define ADDR_STR_LEN 66
 #define TUN_DRIVER_DEFAULT_MTU 1500    /* default MTU for tun device */
-
 
 /* Types of events in a script */
 enum event_t {
@@ -361,7 +355,6 @@ struct sctp_initmsg_expr {
     PacketDrillExpression *sinit_max_init_timeo;
 };
 
-
 /* Parse tree for a sctp_assoc_value struct in a [gs]etsockopt syscall. */
 struct sctp_assoc_value_expr {
     PacketDrillExpression *assoc_id;
@@ -461,7 +454,6 @@ class INET_API PacketDrillConfig
         void parseScriptOptions(cQueue *options);
 };
 
-
 class INET_API PacketDrillPacket
 {
     public:
@@ -525,7 +517,6 @@ class INET_API PacketDrillEvent : public cObject
         struct command_spec *getCommand() { return eventKind.command; };
 };
 
-
 class INET_API PacketDrillExpression : public cObject
 {
     public:
@@ -588,7 +579,6 @@ class INET_API PacketDrillExpression : public cObject
         void setAddStreams(struct sctp_add_streams_expr *exp) {value.sctp_addstreams = exp; };
         struct sctp_add_streams_expr *getAddStreams() { return value.sctp_addstreams; };
 
-
         int unescapeCstringExpression(const char *input_string, char **error);
         int getS32(int32 *value, char **error);
         int getU16(uint16 *value, char **error);
@@ -596,7 +586,6 @@ class INET_API PacketDrillExpression : public cObject
         int symbolToInt(const char *input_symbol, int64 *output_integer, char **error);
         bool lookupIntSymbol(const char *input_symbol, int64 *output_integer, struct int_symbol *symbols);
 };
-
 
 class INET_API PacketDrillScript
 {
@@ -755,6 +744,7 @@ class INET_API PacketDrillSctpParameter : public cObject
         void *getContent() { return content; };
 };
 
-}
+} // namespace inet
 
-#endif
+#endif // __INET_PACKETDRILLUTILS_H
+

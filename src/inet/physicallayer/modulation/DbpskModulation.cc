@@ -18,7 +18,6 @@
 #include "inet/physicallayer/modulation/DbpskModulation.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 const DbpskModulation DbpskModulation::singleton;
@@ -29,6 +28,5 @@ DbpskModulation::DbpskModulation() :
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

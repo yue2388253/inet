@@ -19,7 +19,6 @@
 #include "inet/physicallayer/base/packetlevel/AntennaBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 AntennaBase::AntennaBase() :
@@ -44,6 +43,5 @@ std::ostream& AntennaBase::printToStream(std::ostream& stream, int level) const
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

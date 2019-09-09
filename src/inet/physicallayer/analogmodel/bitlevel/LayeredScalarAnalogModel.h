@@ -23,7 +23,6 @@
 #include "inet/physicallayer/common/bitlevel/LayeredReception.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API LayeredScalarAnalogModel : public ScalarAnalogModelBase
@@ -35,7 +34,6 @@ class INET_API LayeredScalarAnalogModel : public ScalarAnalogModelBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_LAYEREDSCALARANALOGMODEL_H

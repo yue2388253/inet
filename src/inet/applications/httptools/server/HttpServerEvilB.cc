@@ -18,7 +18,6 @@
 #include "inet/applications/httptools/server/HttpServerEvilB.h"
 
 namespace inet {
-
 namespace httptools {
 
 Define_Module(HttpServerEvilB);
@@ -55,6 +54,5 @@ std::string HttpServerEvilB::generateBody()
 }
 
 } // namespace httptools
-
 } // namespace inet
 

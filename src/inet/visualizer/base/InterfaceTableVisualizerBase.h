@@ -27,7 +27,6 @@
 #include "inet/visualizer/util/Placement.h"
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API InterfaceTableVisualizerBase : public VisualizerBase, public cListener
@@ -98,7 +97,6 @@ class INET_API InterfaceTableVisualizerBase : public VisualizerBase, public cLis
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_INTERFACETABLEVISUALIZERBASE_H

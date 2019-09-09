@@ -22,7 +22,6 @@
 #include "inet/physicallayer/obstacleloss/DielectricObstacleLoss.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 using namespace inet::physicalenvironment;
@@ -146,6 +145,5 @@ void DielectricObstacleLoss::TotalObstacleLossComputation::visit(const cObject *
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

@@ -18,7 +18,6 @@
 #include "inet/physicallayer/antenna/DipoleAntenna.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(DipoleAntenna);
@@ -57,6 +56,5 @@ double DipoleAntenna::AntennaGain::computeGain(Quaternion direction) const
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

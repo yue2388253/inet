@@ -88,7 +88,6 @@ void DhcpMessageSerializer::serialize(MemoryOutputStream& stream, const Ptr<cons
     stream.writeByte(99);
     length += 4;
 
-
     // options structure
     // |  Tag   | Length |    Data        |
     // | 1 byte | 1 byte | Length byte(s) |

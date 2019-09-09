@@ -29,7 +29,6 @@ cplusplus {{
 typedef std::vector<Ipv4Address> Ipv4AddressVector;
 }}
 
-
 class Ipv4Address
 {
     @existingClass;

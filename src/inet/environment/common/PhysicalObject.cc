@@ -18,7 +18,6 @@
 #include "inet/environment/common/PhysicalObject.h"
 
 namespace inet {
-
 namespace physicalenvironment {
 
 PhysicalObject::PhysicalObject(const char *name, int id, const Coord& position, const Quaternion& orientation, const ShapeBase *shape, const Material *material, double lineWidth, const cFigure::Color& lineColor, const cFigure::Color& fillColor, double opacity, const char *texture, const char *tags) :
@@ -38,6 +37,5 @@ PhysicalObject::PhysicalObject(const char *name, int id, const Coord& position, 
 }
 
 } // namespace physicalenvironment
-
 } // namespace inet
 

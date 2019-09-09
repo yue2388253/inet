@@ -30,7 +30,6 @@
 #include "inet/routing/ospfv2/router/OspfCommon.h"
 
 namespace inet {
-
 namespace ospf {
 
 class OspfInterfaceState;
@@ -195,7 +194,6 @@ class INET_API OspfInterface
 };
 
 } // namespace ospf
-
 } // namespace inet
 
 #endif // ifndef __INET_OSPFINTERFACE_H

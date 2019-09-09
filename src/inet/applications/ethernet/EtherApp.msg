@@ -40,4 +40,3 @@ class EtherAppResp extends FieldsChunk
     int numFrames;
 }
 
-

@@ -21,7 +21,6 @@
 #include "inet/physicallayer/base/packetlevel/FlatTransmissionBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API ScalarTransmission : public FlatTransmissionBase, public virtual IScalarSignal
@@ -39,7 +38,6 @@ class INET_API ScalarTransmission : public FlatTransmissionBase, public virtual 
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_SCALARTRANSMISSION_H

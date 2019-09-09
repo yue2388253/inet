@@ -30,7 +30,7 @@ class INET_API OriginatorBlockAckProcedure : public IOriginatorBlockAckProcedure
         virtual const Ptr<Ieee80211BlockAckReq> buildBasicBlockAckReqFrame(const MacAddress& receiverAddress, Tid tid, SequenceNumber startingSequenceNumber) const override;
 };
 
-} /* namespace ieee80211 */
-} /* namespace inet */
+} // namespace ieee80211
+} // namespace inet
 
 #endif // __INET_ORIGINATORBLOCKACKPROCEDURE_H

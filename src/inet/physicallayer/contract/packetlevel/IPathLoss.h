@@ -22,7 +22,6 @@
 #include "inet/physicallayer/contract/packetlevel/ITransmission.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 /**
@@ -54,7 +53,6 @@ class INET_API IPathLoss : public IPrintableObject
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IPATHLOSS_H

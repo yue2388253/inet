@@ -23,7 +23,6 @@
 #include "inet/visualizer/scene/NetworkNodeOsgVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API RadioOsgVisualizer : public RadioVisualizerBase
@@ -62,7 +61,6 @@ class INET_API RadioOsgVisualizer : public RadioVisualizerBase
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_RADIOOSGGVISUALIZER_H

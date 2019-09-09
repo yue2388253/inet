@@ -19,7 +19,6 @@
 #include "inet/physicallayer/ieee802154/packetlevel/Ieee802154NarrowbandScalarReceiver.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(Ieee802154NarrowbandScalarReceiver);
@@ -44,6 +43,5 @@ std::ostream& Ieee802154NarrowbandScalarReceiver::printToStream(std::ostream& st
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

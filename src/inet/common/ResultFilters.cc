@@ -33,9 +33,7 @@
 #endif
 
 namespace inet {
-
 namespace utils {
-
 namespace filters {
 
 Register_ResultFilter("dataAge", DataAgeFilter);
@@ -95,7 +93,6 @@ void ApplicationPacketSequenceNumberFilter::receiveSignal(cResultFilter *prev, s
             fire(this, t, (long)applicationPacket->getSequenceNumber(), details);
     }
 }
-
 
 Register_ResultFilter("mobilityPos", MobilityPosFilter);
 
@@ -272,7 +269,6 @@ void LiveThroughputFilter::finish(cComponent *component, simsignal_t signalID)
     }
 }
 
-
 Register_ResultFilter("elapsedTime", ElapsedTimeFilter);
 
 ElapsedTimeFilter::ElapsedTimeFilter()
@@ -325,7 +321,6 @@ void MinimumSnirFromSnirIndFilter::receiveSignal(cResultFilter *prev, simtime_t_
 #endif  // WITH_RADIO
 }
 
-
 Register_ResultFilter("packetErrorRate", PacketErrorRateFromErrorRateIndFilter);
 
 void PacketErrorRateFromErrorRateIndFilter::receiveSignal(cResultFilter *prev, simtime_t_cref t, cObject *object, cObject *details)
@@ -339,7 +334,6 @@ void PacketErrorRateFromErrorRateIndFilter::receiveSignal(cResultFilter *prev, s
 #endif  // WITH_RADIO
 }
 
-
 Register_ResultFilter("bitErrorRate", BitErrorRateFromErrorRateIndFilter);
 
 void BitErrorRateFromErrorRateIndFilter::receiveSignal(cResultFilter *prev, simtime_t_cref t, cObject *object, cObject *details)
@@ -352,7 +346,6 @@ void BitErrorRateFromErrorRateIndFilter::receiveSignal(cResultFilter *prev, simt
     }
 #endif  // WITH_RADIO
 }
-
 
 Register_ResultFilter("symbolErrorRate", SymbolErrorRateFromErrorRateIndFilter);
 
@@ -447,8 +440,6 @@ void LocalSignalFilter::receiveSignal(cComponent *source, simsignal_t signal, cO
 }
 
 } // namespace filters
-
 } // namespace utils
-
 } // namespace inet
 

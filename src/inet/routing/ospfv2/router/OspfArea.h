@@ -29,7 +29,6 @@
 #include "inet/routing/ospfv2/router/OspfRoutingTableEntry.h"
 
 namespace inet {
-
 namespace ospf {
 
 class Router;
@@ -164,7 +163,6 @@ inline std::ostream& operator<<(std::ostream& ostr, Area& area)
 }
 
 } // namespace ospf
-
 } // namespace inet
 
 #endif // ifndef __INET_OSPFAREA_H

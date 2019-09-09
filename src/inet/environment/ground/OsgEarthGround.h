@@ -28,7 +28,6 @@
 #include "inet/common/geometry/common/GeographicCoordinateSystem.h"
 
 namespace inet {
-
 namespace physicalenvironment {
 
 class INET_API OsgEarthGround : public IGround, public cModule
@@ -46,7 +45,6 @@ class INET_API OsgEarthGround : public IGround, public cModule
 };
 
 } // namespace physicalenvironment
-
 } // namespace inet
 
 #endif // defined(WITH_OSGEARTH) && defined(WITH_VISUALIZERS)

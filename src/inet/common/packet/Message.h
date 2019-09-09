@@ -134,7 +134,7 @@ inline std::ostream& operator<<(std::ostream& os, const Message *message) { retu
 
 inline std::ostream& operator<<(std::ostream& os, const Message& message) { return os << message.str(); }
 
-} // namespace
+} // namespace inet
 
 #endif // #ifndef __INET_MESSAGE_H_
 

@@ -18,7 +18,6 @@
 #include "inet/visualizer/util/PortFilter.h"
 
 namespace inet {
-
 namespace visualizer {
 
 void PortFilter::setPattern(const char* pattern)
@@ -35,5 +34,4 @@ bool PortFilter::matches(int value) const
 }
 
 } // namespace visualizer
-
 } // namespace inet

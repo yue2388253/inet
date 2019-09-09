@@ -19,7 +19,6 @@ package inet.node.httptools;
 
 import inet.applications.httptools.common.IHttpDirectApp;
 
-
 //
 // Simple host for the HttpTools project. The node is a simple container for apps.
 // Suitable apps are the ~HttpBrowserDirect and ~HttpServerDirect modules from HttpTools.

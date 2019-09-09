@@ -103,7 +103,7 @@ void deserializeEncodedSourceAddress(MemoryInputStream& stream, const Ptr<PimPac
     addr.sourceAddress = stream.readIpv4Address();
 }
 
-}
+} // namespace - unnamed
 
 void PimPacketSerializer::serialize(MemoryOutputStream& stream, const Ptr<const Chunk>& chunk) const
 {
@@ -413,21 +413,4 @@ const Ptr<Chunk> PimPacketSerializer::deserialize(MemoryInputStream& stream) con
 }
 
 } // namespace inet
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

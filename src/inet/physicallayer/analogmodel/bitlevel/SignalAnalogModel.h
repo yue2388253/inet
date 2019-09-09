@@ -22,7 +22,6 @@
 #include "inet/physicallayer/contract/packetlevel/IRadioSignal.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API SignalAnalogModel : public virtual ISignalAnalogModel
@@ -54,7 +53,6 @@ class INET_API NarrowbandSignalAnalogModel : public SignalAnalogModel, public vi
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_SIGNALANALOGMODEL_H

@@ -18,7 +18,6 @@
 #include "inet/physicallayer/base/packetlevel/ReceptionBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 ReceptionBase::ReceptionBase(const IRadio *receiver, const ITransmission *transmission, const simtime_t startTime, const simtime_t endTime, const Coord startPosition, const Coord endPosition, const Quaternion startOrientation, const Quaternion endOrientation) :
@@ -103,6 +102,5 @@ const simtime_t ReceptionBase::getDuration(IRadioSignal::SignalPart part) const
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

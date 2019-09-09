@@ -22,7 +22,6 @@
 #include "inet/linklayer/lmac/LMacHeader_m.h"
 #include "inet/linklayer/lmac/LMacProtocolDissector.h"
 
-
 namespace inet {
 
 Register_Protocol_Dissector(&Protocol::lmac, LMacProtocolDissector);

@@ -33,6 +33,7 @@ public:
     const char **getAllowedPropertyKeys() const override;
 };
 
-}
+} // namespace inet
 
 #endif /* INET_SIMTIMETEXTFIGURE_H */
+

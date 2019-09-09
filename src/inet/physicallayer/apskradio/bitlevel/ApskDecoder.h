@@ -22,7 +22,6 @@
 #include "inet/physicallayer/contract/bitlevel/IDecoder.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API ApskDecoder : public cSimpleModule, public IDecoder
@@ -47,7 +46,6 @@ class INET_API ApskDecoder : public cSimpleModule, public IDecoder
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_APSKDECODER_H

@@ -25,7 +25,6 @@
 #include "inet/environment/common/PhysicalEnvironment.h"
 
 namespace inet {
-
 namespace physicalenvironment {
 
 Define_Module(PhysicalEnvironment);
@@ -492,6 +491,5 @@ void PhysicalEnvironment::visitObjects(const IVisitor *visitor, const LineSegmen
 }
 
 } // namespace physicalenvironment
-
 } // namespace inet
 

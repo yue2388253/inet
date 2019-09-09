@@ -31,7 +31,6 @@ namespace inet { namespace tcp { class TcpConnection; } }
 #endif // WITH_TCP_INET
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API TransportConnectionVisualizerBase : public VisualizerBase, public cListener
@@ -85,7 +84,6 @@ class INET_API TransportConnectionVisualizerBase : public VisualizerBase, public
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_TRANSPORTCONNECTIONVISUALIZERBASE_H

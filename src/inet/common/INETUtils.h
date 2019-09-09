@@ -23,7 +23,6 @@
 #include "inet/common/INETDefs.h"
 
 namespace inet {
-
 namespace utils {
 
 /**
@@ -96,7 +95,6 @@ INET_API void makePath(const char *pathname);
 INET_API void makePathForFile(const char *filename);
 
 } // namespace utils
-
 } // namespace inet
 
 #endif // ifndef __INET_OPP_UTILS_H

@@ -21,7 +21,6 @@
 #include "inet/physicallayer/contract/packetlevel/IModulation.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API DpskModulationBase : public IModulation
@@ -39,7 +38,6 @@ class INET_API DpskModulationBase : public IModulation
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_DPSKMODULATIONBASE_H

@@ -18,7 +18,6 @@
 #include "inet/applications/httptools/common/HttpRandom.h"
 
 namespace inet {
-
 namespace httptools {
 
 std::string rdObject::typeStr()
@@ -217,7 +216,6 @@ void rdHistogram::__normalizeBins()
     if (sum != 0)
         for (auto & elem : m_bins)
             elem.sum = elem.sum / sum;
-
 }
 
 rdConstant::rdConstant(double value)
@@ -362,6 +360,5 @@ rdObject *rdObjectFactory::create(cXMLAttributeMap attributes)
 }
 
 } // namespace httptools
-
 } // namespace inet
 

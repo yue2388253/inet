@@ -24,7 +24,6 @@
 #include "inet/routing/ospfv2/router/OspfRouter.h"
 
 namespace inet {
-
 namespace ospf {
 
 MessageHandler::MessageHandler(Router *containingRouter, cSimpleModule *containingModule) :
@@ -583,6 +582,5 @@ void MessageHandler::printLinkStateAcknowledgementPacket(const OspfLinkStateAckn
 }
 
 } // namespace ospf
-
 } // namespace inet
 

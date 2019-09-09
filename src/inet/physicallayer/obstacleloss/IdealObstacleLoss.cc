@@ -22,7 +22,6 @@
 #include "inet/physicallayer/obstacleloss/IdealObstacleLoss.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 using namespace inet::physicalenvironment;
@@ -84,6 +83,5 @@ void IdealObstacleLoss::TotalObstacleLossComputation::visit(const cObject *objec
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

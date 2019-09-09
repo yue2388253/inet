@@ -15,7 +15,6 @@
 // along with this program; if not, see <http://www.gnu.org/licenses/>.
 //
 
-
 import inet.common.INETDefs;
 import inet.common.packet.chunk.Chunk;
 import inet.linklayer.common.MacAddress;
@@ -34,7 +33,6 @@ enum ArpOpcode
     ARP_RARP_REQUEST = 3; // Request Reverse. RFC 903
     ARP_RARP_REPLY = 4;   // Reply Reverse. RFC 903
 }
-
 
 //
 // ARP packet. This is a specialized version: prepared for IEEE 802 hardware

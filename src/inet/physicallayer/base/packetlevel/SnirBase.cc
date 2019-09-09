@@ -18,7 +18,6 @@
 #include "inet/physicallayer/base/packetlevel/SnirBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 SnirBase::SnirBase(const IReception *reception, const INoise *noise) :
@@ -36,6 +35,5 @@ std::ostream& SnirBase::printToStream(std::ostream& stream, int level) const
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

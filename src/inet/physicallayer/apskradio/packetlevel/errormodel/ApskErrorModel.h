@@ -21,7 +21,6 @@
 #include "inet/physicallayer/base/packetlevel/ErrorModelBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 /**
@@ -40,7 +39,6 @@ class INET_API ApskErrorModel : public ErrorModelBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_APSKERRORMODEL_H

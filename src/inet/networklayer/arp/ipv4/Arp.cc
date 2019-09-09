@@ -443,7 +443,6 @@ L3Address Arp::getL3AddressFor(const MacAddress& macAddr) const
         if (elem.second->macAddress == macAddr && elem.second->lastUpdate + cacheTimeout >= now)
             return elem.first;
 
-
     return Ipv4Address::UNSPECIFIED_ADDRESS;
 }
 

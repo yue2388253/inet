@@ -19,11 +19,9 @@
 #include "inet/applications/httptools/server/HttpServerBase.h"
 
 namespace inet {
-
 namespace httptools {
 
 Define_Module(HttpController);
-
 
 HttpController::HttpController() :
     rdServerSelection(nullptr)
@@ -474,6 +472,5 @@ HttpController::WebServerEntry *HttpController::__getRandomServerInfo()
 }
 
 } // namespace httptools
-
 } // namespace inet
 

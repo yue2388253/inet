@@ -21,7 +21,6 @@
 #include "inet/common/INETDefs.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API EtherPhy : public cSimpleModule
@@ -37,7 +36,6 @@ class INET_API EtherPhy : public cSimpleModule
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_ETHERPHY_H

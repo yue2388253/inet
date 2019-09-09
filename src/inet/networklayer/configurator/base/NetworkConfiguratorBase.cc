@@ -537,7 +537,6 @@ NetworkConfiguratorBase::InterfaceInfo *NetworkConfiguratorBase::determineGatewa
             if (!interfaceTable->getInterface(i)->isLoopback())
                 numInterfaces++;
 
-
         if (numInterfaces > 1 && routingTable && routingTable->isForwardingEnabled()) {
             // node has at least one more interface, supposedly connecting to another link
             if (gatewayInterfaceInfo)

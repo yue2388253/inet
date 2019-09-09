@@ -19,7 +19,6 @@
 #include "inet/environment/objectcache/GridObjectCache.h"
 
 namespace inet {
-
 namespace physicalenvironment {
 
 Define_Module(GridObjectCache);
@@ -74,6 +73,5 @@ void GridObjectCache::visitObjects(const IVisitor *visitor, const LineSegment& l
 }
 
 } // namespace physicalenvironment
-
 } // namespace inet
 

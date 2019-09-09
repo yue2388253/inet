@@ -21,7 +21,6 @@
 #include "inet/networklayer/mpls/MplsPacket_m.h"
 #include "inet/networklayer/mpls/MplsProtocolDissector.h"
 
-
 namespace inet {
 
 Register_Protocol_Dissector(&Protocol::mpls, MplsProtocolDissector);

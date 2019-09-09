@@ -16,7 +16,6 @@
 #ifndef INET_TRANSPORTLAYER_RTP_PROFILES_AVPROFILE_RTPMPEGPACKETSERIALIZER_H_
 #define INET_TRANSPORTLAYER_RTP_PROFILES_AVPROFILE_RTPMPEGPACKETSERIALIZER_H_
 
-
 #include "inet/common/packet/serializer/FieldsChunkSerializer.h"
 
 namespace inet {

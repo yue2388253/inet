@@ -22,7 +22,6 @@
 #include "inet/physicallayer/apskradio/packetlevel/ApskPhyHeader_m.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(ApskDimensionalTransmitter);
@@ -69,6 +68,5 @@ const ITransmission *ApskDimensionalTransmitter::createTransmission(const IRadio
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

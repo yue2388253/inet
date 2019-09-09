@@ -21,7 +21,6 @@
 #include "inet/environment/contract/IGround.h"
 
 namespace inet {
-
 namespace physicalenvironment {
 
 class INET_API FlatGround : public IGround, public cModule
@@ -38,7 +37,6 @@ class INET_API FlatGround : public IGround, public cModule
 };
 
 } // namespace physicalenvironment
-
 } // namespace inet
 
 #endif // ifndef __INET_FLATGROUND_H

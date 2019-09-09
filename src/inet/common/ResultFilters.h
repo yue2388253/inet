@@ -21,9 +21,7 @@
 #include "inet/common/INETDefs.h"
 
 namespace inet {
-
 namespace utils {
-
 namespace filters {
 
 class VoidPtrWrapper : public cObject
@@ -301,9 +299,7 @@ class INET_API LocalSignalFilter : public cObjectResultFilter
 };
 
 } // namespace filters
-
 } // namespace utils
-
 } // namespace inet
 
 #endif // ifndef __INET_RESULTFILTERS_H

@@ -22,7 +22,6 @@
 #include "inet/transportlayer/tcp/flavours/TcpSegmentTransmitInfoList.h"
 
 namespace inet {
-
 namespace tcp {
 
 void TcpSegmentTransmitInfoList::set(uint32_t beg, uint32_t end, simtime_t sentTime)
@@ -93,6 +92,5 @@ void TcpSegmentTransmitInfoList::clearTo(uint32_t endseq)
 }
 
 } // namespace tcp
-
 } // namespace inet
 

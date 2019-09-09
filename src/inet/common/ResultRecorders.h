@@ -92,7 +92,7 @@ class INET_API WeightedHistogramRecorder : public cNumericResultRecorder
         virtual std::string str() const override;
 };
 
-
 } // namespace inet
 
 #endif
+

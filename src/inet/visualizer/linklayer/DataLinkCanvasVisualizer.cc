@@ -19,7 +19,6 @@
 #include "inet/visualizer/linklayer/DataLinkCanvasVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(DataLinkCanvasVisualizer);
@@ -44,6 +43,5 @@ const LinkVisualizerBase::LinkVisualization *DataLinkCanvasVisualizer::createLin
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

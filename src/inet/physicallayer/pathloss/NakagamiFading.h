@@ -21,7 +21,6 @@
 #include "inet/physicallayer/pathloss/FreeSpacePathLoss.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 /**
@@ -42,7 +41,6 @@ class INET_API NakagamiFading : public FreeSpacePathLoss
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_NAKAGAMIFADING_H

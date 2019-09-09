@@ -22,7 +22,6 @@
 #include "inet/physicallayer/base/packetlevel/AntennaBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API DipoleAntenna : public AntennaBase
@@ -54,7 +53,6 @@ class INET_API DipoleAntenna : public AntennaBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_DIPOLEANTENNA_H

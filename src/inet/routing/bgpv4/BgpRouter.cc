@@ -23,7 +23,6 @@
 //#include "inet/routing/ospfv2/router/OspfRoutingTableEntry.h"
 
 namespace inet {
-
 namespace bgp {
 
 BgpRouter::BgpRouter(cSimpleModule *bgpModule, IInterfaceTable *ift, IIpv4RoutingTable *rt)
@@ -1099,5 +1098,4 @@ bool BgpRouter::isReachable(const Ipv4Address addr) const
 }
 
 } // namespace bgp
-
 } // namespace inet

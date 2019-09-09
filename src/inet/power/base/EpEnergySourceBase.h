@@ -23,7 +23,6 @@
 #include "inet/power/contract/IEpEnergySource.h"
 
 namespace inet {
-
 namespace power {
 
 class INET_API EpEnergySourceBase : public EnergySourceBase, public virtual IEpEnergySource, public cListener
@@ -43,7 +42,6 @@ class INET_API EpEnergySourceBase : public EnergySourceBase, public virtual IEpE
 };
 
 } // namespace power
-
 } // namespace inet
 
 #endif // ifndef __INET_EPENERGYSOURCEBASE_H

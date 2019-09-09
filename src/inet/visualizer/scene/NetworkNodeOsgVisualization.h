@@ -27,7 +27,6 @@
 #endif // ifdef WITH_OSG
 
 namespace inet {
-
 namespace visualizer {
 
 #ifdef WITH_OSG
@@ -44,7 +43,6 @@ class INET_API NetworkNodeOsgVisualization : public NetworkNodeVisualizerBase::N
       public:
         Annotation(osg::Node *node, osg::Vec3d size, double priority);
     };
-
 
   protected:
     osg::Vec3d size;
@@ -67,7 +65,6 @@ class INET_API NetworkNodeOsgVisualization : public NetworkNodeVisualizerBase::N
 #endif // ifdef WITH_OSG
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_NETWORKNODEOSGVISUALIZATION_H

@@ -19,7 +19,6 @@
 #include "inet/visualizer/common/QueueOsgVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(QueueOsgVisualizer);
@@ -72,6 +71,5 @@ void QueueOsgVisualizer::refreshQueueVisualization(const QueueVisualization *que
 #endif // ifdef WITH_OSG
 
 } // namespace visualizer
-
 } // namespace inet
 

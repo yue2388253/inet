@@ -212,7 +212,7 @@ inline std::ostream& operator<<(std::ostream& os, const ChunkQueue *queue) { ret
 
 inline std::ostream& operator<<(std::ostream& os, const ChunkQueue& queue) { return os << queue.str(); }
 
-} // namespace
+} // namespace inet
 
 #endif // #ifndef __INET_CHUNKQUEUE_H_
 

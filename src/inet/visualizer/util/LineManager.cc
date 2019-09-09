@@ -20,7 +20,6 @@
 #include "inet/visualizer/util/LineManager.h"
 
 namespace inet {
-
 namespace visualizer {
 
 std::map<const cCanvas *, LineManager> LineManager::canvasLineManagers;
@@ -151,5 +150,4 @@ Coord LineManager::getLineShift(int sourceModuleId, int destinationModuleId, con
 }
 
 } // namespace visualizer
-
 } // namespace inet

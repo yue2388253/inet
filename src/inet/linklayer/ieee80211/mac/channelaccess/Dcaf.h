@@ -75,7 +75,7 @@ class INET_API Dcaf : public IChannelAccess, public IContention::ICallback, publ
 
 };
 
-} /* namespace ieee80211 */
-} /* namespace inet */
+} // namespace ieee80211
+} // namespace inet
 
 #endif // ifndef __INET_DCFCHANNELACCESS_H

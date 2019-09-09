@@ -92,7 +92,6 @@ class INET_API Dcf : public ICoordinationFunction, public IFrameSequenceHandler:
         // Station counters
         StationRetryCounters *stationRetryCounters = nullptr;
 
-
     protected:
         virtual int numInitStages() const override { return NUM_INIT_STAGES; }
         virtual void initialize(int stage) override;
@@ -141,7 +140,7 @@ class INET_API Dcf : public ICoordinationFunction, public IFrameSequenceHandler:
         virtual void corruptedFrameReceived() override;
 };
 
-} /* namespace ieee80211 */
-} /* namespace inet */
+} // namespace ieee80211
+} // namespace inet
 
 #endif // ifndef __INET_DCF_H

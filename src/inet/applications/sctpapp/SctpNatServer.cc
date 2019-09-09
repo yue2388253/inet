@@ -124,7 +124,6 @@ void SctpNatServer::sendInfo(NatInfo *info)
     send(msg, "socketOut");
     EV << "abortMsg sent to peer1\n";
 
-
     struct nat_message *nat2 = (struct nat_message *)(buffer2);
     buflen = 16;
     nat2->peer1 = info->peer2;

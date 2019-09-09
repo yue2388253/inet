@@ -22,7 +22,6 @@
 #include "inet/transportlayer/tcp/flavours/TcpWestwood.h"
 
 namespace inet {
-
 namespace tcp {
 
 Register_Class(TcpWestwood);
@@ -312,6 +311,5 @@ void TcpWestwood::segmentRetransmitted(uint32 fromseq, uint32 toseq)
 }
 
 } // namespace tcp
-
 } // namespace inet
 

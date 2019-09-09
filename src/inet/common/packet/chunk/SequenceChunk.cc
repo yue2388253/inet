@@ -365,4 +365,5 @@ std::string SequenceChunk::str() const
     return os.str();
 }
 
-} // namespace
+} // namespace inet
+

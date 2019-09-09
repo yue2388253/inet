@@ -53,7 +53,7 @@ class INET_API Ieee80211VhtCompliantCodes
 
 };
 
-} /* namespace physicallayer */
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet
 
 #endif // ifndef __INET_IEEE80211HTSIGNALCODE_H

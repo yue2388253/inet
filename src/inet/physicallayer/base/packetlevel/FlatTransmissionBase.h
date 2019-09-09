@@ -21,7 +21,6 @@
 #include "inet/physicallayer/base/packetlevel/NarrowbandTransmissionBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API FlatTransmissionBase : public NarrowbandTransmissionBase
@@ -42,7 +41,6 @@ class INET_API FlatTransmissionBase : public NarrowbandTransmissionBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_FLATTRANSMISSIONBASE_H

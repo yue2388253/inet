@@ -23,7 +23,6 @@
 #include "inet/routing/ospfv2/OspfPacket_m.h"
 
 namespace inet {
-
 namespace ospf {
 
 class Router;
@@ -43,7 +42,6 @@ class INET_API IMessageHandler
 };
 
 } // namespace ospf
-
 } // namespace inet
 
 #endif // ifndef __INET_IMESSAGEHANDLER_H

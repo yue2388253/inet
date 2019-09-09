@@ -19,7 +19,6 @@
 #include "inet/visualizer/mobility/MobilityCanvasVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(MobilityCanvasVisualizer);
@@ -203,6 +202,5 @@ void MobilityCanvasVisualizer::receiveSignal(cComponent *source, simsignal_t sig
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

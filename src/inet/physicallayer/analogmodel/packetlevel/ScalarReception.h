@@ -22,7 +22,6 @@
 #include "inet/physicallayer/contract/packetlevel/IRadioSignal.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API ScalarReception : public FlatReceptionBase, public virtual IScalarSignal
@@ -39,7 +38,6 @@ class INET_API ScalarReception : public FlatReceptionBase, public virtual IScala
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_SCALARRECEPTION_H

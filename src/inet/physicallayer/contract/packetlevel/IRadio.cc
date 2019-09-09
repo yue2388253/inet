@@ -18,7 +18,6 @@
 #include "inet/physicallayer/contract/packetlevel/IRadio.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 int IRadio::nextId = 0;
@@ -79,6 +78,5 @@ const char *IRadio::getRadioTransmissionStateName(TransmissionState transmission
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

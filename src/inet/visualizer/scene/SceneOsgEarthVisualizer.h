@@ -28,7 +28,6 @@
 #endif // ifdef WITH_OSGEARTH
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API SceneOsgEarthVisualizer : public SceneOsgVisualizerBase
@@ -56,7 +55,6 @@ class INET_API SceneOsgEarthVisualizer : public SceneOsgVisualizerBase
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_SCENEOSGEARTHVISUALIZER_H

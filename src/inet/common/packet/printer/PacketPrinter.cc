@@ -352,5 +352,5 @@ void PacketPrinter::printLengthColumn(const Ptr<const PacketDissector::ProtocolD
     }
 }
 
-} // namespace
+} // namespace inet
 

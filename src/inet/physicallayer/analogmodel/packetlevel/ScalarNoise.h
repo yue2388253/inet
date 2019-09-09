@@ -21,7 +21,6 @@
 #include "inet/physicallayer/base/packetlevel/NarrowbandNoiseBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API ScalarNoise : public NarrowbandNoiseBase
@@ -41,7 +40,6 @@ class INET_API ScalarNoise : public NarrowbandNoiseBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_SCALARNOISE_H

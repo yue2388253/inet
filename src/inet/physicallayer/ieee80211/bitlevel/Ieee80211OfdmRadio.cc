@@ -23,7 +23,6 @@
 #include "inet/physicallayer/ieee80211/packetlevel/Ieee80211Tag_m.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(Ieee80211OfdmRadio);
@@ -58,6 +57,5 @@ void Ieee80211OfdmRadio::decapsulate(Packet *packet) const
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

@@ -28,7 +28,6 @@
 #endif // ifdef WITH_OSG
 
 namespace inet {
-
 namespace osg {
 
 #if defined(WITH_OSG) && defined(WITH_VISUALIZERS)
@@ -389,6 +388,5 @@ void LineNode::setEnd(const Coord& end)
 #endif // ifdef WITH_OSG
 
 } // namespace osg
-
 } // namespace inet
 

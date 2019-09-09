@@ -37,5 +37,5 @@ void DefaultProtocolPrinter::print(const Ptr<const Chunk>& chunk, const Protocol
         context.infoColumn << chunk;
 }
 
-} // namespace
+} // namespace inet
 

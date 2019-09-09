@@ -52,8 +52,8 @@ class INET_API AdditiveScrambler : public IScrambler
     const BitVector& getScramblingSequcene() const { return scramblingSequence; }
 };
 
-} /* namespace physicallayer */
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet
 
 #endif // __INET_ADDITIVESCRAMBLER_H
 

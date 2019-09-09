@@ -95,7 +95,7 @@ class INET_API PacketPrinter : public cMessagePrinter
     virtual std::string printPacketToString(Packet *packet, const Options *options, const char *format = nullptr) const;
 };
 
-} // namespace
+} // namespace inet
 
 #endif // #ifndef __INET_PACKETPRINTER_H_
 

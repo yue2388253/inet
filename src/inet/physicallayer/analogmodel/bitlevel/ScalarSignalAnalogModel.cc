@@ -18,7 +18,6 @@
 #include "inet/physicallayer/analogmodel/bitlevel/ScalarSignalAnalogModel.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 ScalarSignalAnalogModel::ScalarSignalAnalogModel(const simtime_t duration, Hz carrierFrequency, Hz bandwidth, W power) :
@@ -46,6 +45,5 @@ ScalarReceptionSignalAnalogModel::ScalarReceptionSignalAnalogModel(const simtime
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

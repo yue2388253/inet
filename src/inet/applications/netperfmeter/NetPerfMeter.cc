@@ -101,7 +101,6 @@ NetPerfMeter::~NetPerfMeter()
     }
 }
 
-
 // ###### Parse vector of cDynamicExpression from string ####################
 void NetPerfMeter::parseExpressionVector(std::vector<cDynamicExpression>& expressionVector,
                                          const char*                      string,
@@ -116,7 +115,6 @@ void NetPerfMeter::parseExpressionVector(std::vector<cDynamicExpression>& expres
         expressionVector.push_back(expression);
     }
 }
-
 
 // ###### initialize() method ###############################################
 void NetPerfMeter::initialize(int stage)
@@ -576,7 +574,6 @@ void NetPerfMeter::establishConnection()
     EV << simTime() << ", " << getFullPath() << ": Sending allowed" << endl;
     SendingAllowed = true;
 }
-
 
 // ###### Connection has been established ###################################
 void NetPerfMeter::successfullyEstablishedConnection(cMessage*          msg,
@@ -1131,7 +1128,6 @@ void NetPerfMeter::sendDataOfNonSaturatedStreams(const unsigned long long bytesA
     scheduleAt(simTime() + nextFrameTime, TransmitTimerVector[streamID]);
 }
 
-
 // ###### Send data of non-saturated streams ################################
 void NetPerfMeter::sendDataOfTraceFile(const unsigned long long bytesAvailableInQueue)
 {
@@ -1188,7 +1184,6 @@ void NetPerfMeter::receiveMessage(cMessage* msg)
     }
 }
 
-
 // ###### SCTP queue length configuration ###################################
 void NetPerfMeter::sendSCTPQueueRequest(const unsigned int queueSize)
 {
@@ -1234,7 +1229,6 @@ void NetPerfMeter::sendTCPQueueRequest(const unsigned int queueSize)
         SocketTCP->sendCommand(request);
     }
 }
-
 
 // ###### Return sprintf-formatted string ####################################
 opp_string NetPerfMeter::format(const char* formatString, ...)

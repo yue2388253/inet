@@ -23,7 +23,6 @@
 #include "inet/routing/ospfv2/router/OspfCommon.h"
 
 namespace inet {
-
 namespace ospf {
 
 class INET_API LinkStateUpdateHandler : public IMessageHandler
@@ -51,7 +50,6 @@ class INET_API LinkStateUpdateHandler : public IMessageHandler
 };
 
 } // namespace ospf
-
 } // namespace inet
 
 #endif // ifndef __INET_LINKSTATEUPDATEHANDLER_H

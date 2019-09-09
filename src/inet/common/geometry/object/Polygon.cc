@@ -43,7 +43,6 @@ Coord Polygon::getNormalUnitVector() const
     return normalVec / normalVec.length();
 }
 
-
 Coord Polygon::getNormalVector() const
 {
     Coord point1 = points[0];

@@ -29,8 +29,8 @@ class INET_API MpduAggregation : public IMpduAggregation, public cObject
         virtual Packet *aggregateFrames(std::vector<Packet *> *frames) override;
 };
 
-} /* namespace ieee80211 */
-} /* namespace inet */
+} // namespace ieee80211
+} // namespace inet
 
 #endif // ifndef __INET_MPDUAGGREGATION_H
 

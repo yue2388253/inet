@@ -49,7 +49,7 @@ class INET_API DefaultProtocolPrinter : public ProtocolPrinter
     virtual void print(const Ptr<const Chunk>& chunk, const Protocol *protocol, const cMessagePrinter::Options *options, Context& context) const override;
 };
 
-} // namespace
+} // namespace inet
 
 #endif // #ifndef __INET_PROTOCOLPRINTER_H_
 

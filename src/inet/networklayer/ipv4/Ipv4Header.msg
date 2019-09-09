@@ -16,7 +16,6 @@
 // along with this program; if not, see <http://www.gnu.org/licenses/>.
 //
 
-
 import inet.common.INETDefs;
 import inet.common.TlvOptions;
 import inet.common.packet.chunk.Chunk;
@@ -48,7 +47,6 @@ const unsigned int MAX_IPADDR_OPTION_ENTRIES = 9;
 const unsigned int MAX_TIMESTAMP_OPTION_ENTRIES = 4;
 
 }}
-
 
 //
 // Ipv4 options class
@@ -165,7 +163,6 @@ class Ipv4OptionUnknown extends Ipv4Option
     // length = 2 + getBytesArraySize()
     uint8_t bytes[];
 }
-
 
 //
 // Represents an Ipv4 datagram.

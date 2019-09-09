@@ -22,7 +22,6 @@
 #include "inet/visualizer/util/AnimationPosition.h"
 
 namespace inet {
-
 namespace visualizer {
 
 class INET_API AnimationSpeedInterpolator
@@ -49,7 +48,6 @@ class INET_API AnimationSpeedInterpolator
 };
 
 } // namespace visualizer
-
 } // namespace inet
 
 #endif // ifndef __INET_ANIMATIONSPEEDINTERPOLATOR_H

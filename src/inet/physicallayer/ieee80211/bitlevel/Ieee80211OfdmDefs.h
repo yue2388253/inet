@@ -19,7 +19,6 @@
 #define __INET_IEEE80211OFDMDEFS_H
 
 namespace inet {
-
 namespace physicallayer {
 
 #define NUMBER_OF_OFDM_DATA_SUBCARRIERS    48
@@ -32,8 +31,9 @@ namespace physicallayer {
 #define SIGNAL_PARITY_FIELD                17
 #define PPDU_SERVICE_FIELD_BITS_LENGTH     16
 #define PPDU_TAIL_BITS_LENGTH              6
-} /* namespace physicallayer */
-} /* namespace inet */
+
+} // namespace physicallayer
+} // namespace inet
 
 #endif // ifndef __INET_IEEE80211OFDMDEFS_H
 

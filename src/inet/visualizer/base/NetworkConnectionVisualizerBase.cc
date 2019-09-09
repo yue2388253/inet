@@ -19,7 +19,6 @@
 #include "inet/visualizer/base/NetworkConnectionVisualizerBase.h"
 
 namespace inet {
-
 namespace visualizer {
 
 void NetworkConnectionVisualizerBase::initialize(int stage)
@@ -58,6 +57,5 @@ void NetworkConnectionVisualizerBase::handleParameterChange(const char *name)
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

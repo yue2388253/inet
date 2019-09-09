@@ -18,7 +18,6 @@
 #include "inet/physicallayer/base/packetlevel/NoiseBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 NoiseBase::NoiseBase(simtime_t startTime, simtime_t endTime) :
@@ -36,6 +35,5 @@ std::ostream& NoiseBase::printToStream(std::ostream& stream, int level) const
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

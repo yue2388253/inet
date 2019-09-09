@@ -27,7 +27,6 @@
 #endif // ifdef WITH_OSG
 
 namespace inet {
-
 namespace visualizer {
 
 using namespace inet::physicallayer;
@@ -118,6 +117,5 @@ void TracingObstacleLossOsgVisualizer::setAlpha(const ObstacleLossVisualization 
 #endif // ifdef WITH_OSG
 
 } // namespace visualizer
-
 } // namespace inet
 

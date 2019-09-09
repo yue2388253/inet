@@ -27,7 +27,6 @@
 #include "inet/physicallayer/common/bitlevel/SignalSymbolModel.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(ApskLayeredErrorModel);
@@ -83,6 +82,5 @@ const IReceptionSampleModel *ApskLayeredErrorModel::computeSampleModel(const Lay
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

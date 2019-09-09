@@ -39,4 +39,3 @@ class INET_API AodvControlPacketsSerializer : public FieldsChunkSerializer
 
 #endif // ifndef __INET_AODVCONTROLPACKETSSERIALIZER_H
 
-

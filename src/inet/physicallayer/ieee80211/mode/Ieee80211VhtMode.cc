@@ -24,7 +24,6 @@
 namespace inet {
 namespace physicallayer {
 
-
 Ieee80211VhtCompliantModes Ieee80211VhtCompliantModes::singleton;
 
 Ieee80211VhtMode::Ieee80211VhtMode(const char *name, const Ieee80211VhtPreambleMode* preambleMode, const Ieee80211VhtDataMode* dataMode, const BandMode carrierFrequencyMode) :
@@ -67,15 +66,12 @@ Ieee80211VhtSignalMode::Ieee80211VhtSignalMode(unsigned int modulationAndCodingS
 {
 }
 
-
 Ieee80211VhtDataMode::Ieee80211VhtDataMode(const Ieee80211Vhtmcs *modulationAndCodingScheme, const Hz bandwidth, GuardIntervalType guardIntervalType) :
         Ieee80211VhtModeBase(modulationAndCodingScheme->getMcsIndex(), computeNumberOfSpatialStreams(modulationAndCodingScheme), bandwidth, guardIntervalType),
         modulationAndCodingScheme(modulationAndCodingScheme),
         numberOfBccEncoders(computeNumberOfBccEncoders())
 {
 }
-
-
 
 Ieee80211Vhtmcs::Ieee80211Vhtmcs(unsigned int mcsIndex, const Ieee80211VhtCode* code, const Ieee80211OfdmModulation* stream1Modulation, const Ieee80211OfdmModulation* stream2Modulation, const Ieee80211OfdmModulation* stream3Modulation, const Ieee80211OfdmModulation* stream4Modulation, const Ieee80211OfdmModulation* stream5Modulation, const Ieee80211OfdmModulation* stream6Modulation, const Ieee80211OfdmModulation* stream7Modulation, const Ieee80211OfdmModulation* stream8Modulation) :
     mcsIndex(mcsIndex),
@@ -181,7 +177,6 @@ Ieee80211Vhtmcs::Ieee80211Vhtmcs(unsigned int mcsIndex, const Ieee80211OfdmModul
 {
 }
 
-
 Ieee80211Vhtmcs::Ieee80211Vhtmcs(unsigned int mcsIndex, const Ieee80211OfdmModulation* stream1Modulation, const Ieee80211OfdmModulation* stream2Modulation, const Ieee80211ConvolutionalCode* convolutionalCode, Hz bandwidth) :
     mcsIndex(mcsIndex),
     stream1Modulation(stream1Modulation),
@@ -212,7 +207,6 @@ Ieee80211Vhtmcs::Ieee80211Vhtmcs(unsigned int mcsIndex, const Ieee80211OfdmModul
 {
 }
 
-
 Ieee80211Vhtmcs::Ieee80211Vhtmcs(unsigned int mcsIndex, const Ieee80211OfdmModulation* stream1Modulation, const Ieee80211ConvolutionalCode* convolutionalCode, Hz bandwidth, int nss) :
     mcsIndex(mcsIndex),
     stream1Modulation(stream1Modulation),
@@ -242,13 +236,10 @@ Ieee80211Vhtmcs::Ieee80211Vhtmcs(unsigned int mcsIndex, const Ieee80211OfdmModul
     code = Ieee80211VhtCompliantCodes::getCompliantCode(convolutionalCode, stream1Modulation, stream2Modulation, stream3Modulation, stream4Modulation, stream5Modulation, stream6Modulation, stream7Modulation, stream8Modulation, bandwidth);
 }
 
-
-
 const simtime_t Ieee80211VhtPreambleMode::getFirstHTLongTrainingFieldDuration() const
 {
     return simtime_t(8E-6);
 }
-
 
 unsigned int Ieee80211VhtPreambleMode::computeNumberOfSpaceTimeStreams(unsigned int numberOfSpatialStreams) const
 {
@@ -288,7 +279,6 @@ bps Ieee80211VhtSignalMode::computeNetBitrate() const
 {
     return computeGrossBitrate() * code->getForwardErrorCorrection()->getCodeRate();
 }
-
 
 b Ieee80211VhtSignalMode::getLength() const
 {
@@ -637,7 +627,6 @@ unsigned int Ieee80211VhtDataMode::getNumberOfBccEncoders160MHz() const
         }
 }
 
-
 unsigned int Ieee80211VhtDataMode::computeNumberOfBccEncoders() const
 {
     // When the BCC FEC encoder is used, a single encoder is used, except that two encoders
@@ -736,7 +725,6 @@ Ieee80211VhtSignalMode::~Ieee80211VhtSignalMode()
 {
     delete code;
 }
-
 
 const DI<Ieee80211Vhtmcs> Ieee80211VhtmcsTable::vhtMcs0BW20MHzNss1([](){ return new Ieee80211Vhtmcs(0, &Ieee80211OfdmCompliantModulations::bpskModulation, &Ieee80211OfdmCompliantCodes::ofdmConvolutionalCode1_2, MHz(20), 1);});
 const DI<Ieee80211Vhtmcs> Ieee80211VhtmcsTable::vhtMcs1BW20MHzNss1([](){ return new Ieee80211Vhtmcs(1, &Ieee80211OfdmCompliantModulations::qpskModulation, &Ieee80211OfdmCompliantCodes::ofdmConvolutionalCode1_2, MHz(20), 1);});
@@ -1090,5 +1078,5 @@ const DI<Ieee80211Vhtmcs> Ieee80211VhtmcsTable::vhtMcs7BW160MHzNss8([](){ return
 const DI<Ieee80211Vhtmcs> Ieee80211VhtmcsTable::vhtMcs8BW160MHzNss8([](){ return new Ieee80211Vhtmcs(8, &Ieee80211OfdmCompliantModulations::qam256Modulation, &Ieee80211OfdmCompliantCodes::ofdmConvolutionalCode3_4, MHz(160), 8);});
 const DI<Ieee80211Vhtmcs> Ieee80211VhtmcsTable::vhtMcs9BW160MHzNss8([](){ return new Ieee80211Vhtmcs(9, &Ieee80211OfdmCompliantModulations::qam256Modulation, &Ieee80211OfdmCompliantCodes::ofdmConvolutionalCode5_6, MHz(160), 8);});
 
-} /* namespace physicallayer */
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet

@@ -20,7 +20,6 @@
 #include "inet/visualizer/linklayer/InterfaceTableCanvasVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(InterfaceTableCanvasVisualizer);
@@ -151,6 +150,5 @@ void InterfaceTableCanvasVisualizer::refreshInterfaceVisualization(const Interfa
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

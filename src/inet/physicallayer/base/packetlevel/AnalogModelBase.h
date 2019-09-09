@@ -22,7 +22,6 @@
 #include "inet/physicallayer/contract/packetlevel/IAntennaGain.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API AnalogModelBase : public cModule, public virtual IAnalogModel
@@ -32,7 +31,6 @@ class INET_API AnalogModelBase : public cModule, public virtual IAnalogModel
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_ANALOGMODELBASE_H

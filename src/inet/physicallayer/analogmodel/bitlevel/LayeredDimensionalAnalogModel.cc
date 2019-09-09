@@ -25,7 +25,6 @@
 #include "inet/physicallayer/contract/packetlevel/IRadioMedium.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(LayeredDimensionalAnalogModel);
@@ -52,6 +51,5 @@ const IReception *LayeredDimensionalAnalogModel::computeReception(const IRadio *
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

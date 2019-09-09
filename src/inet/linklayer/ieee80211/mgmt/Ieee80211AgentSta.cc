@@ -22,7 +22,6 @@
 #include "inet/linklayer/ieee80211/mgmt/Ieee80211Primitives_m.h"
 
 namespace inet {
-
 namespace ieee80211 {
 
 Define_Module(Ieee80211AgentSta);
@@ -331,6 +330,5 @@ void Ieee80211AgentSta::processReassociateConfirm(Ieee80211Prim_ReassociateConfi
 }
 
 } // namespace ieee80211
-
 } // namespace inet
 

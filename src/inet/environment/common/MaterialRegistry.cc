@@ -19,7 +19,6 @@
 #include "inet/environment/common/MaterialRegistry.h"
 
 namespace inet {
-
 namespace physicalenvironment {
 
 MaterialRegistry MaterialRegistry::singleton;
@@ -59,6 +58,5 @@ const Material *MaterialRegistry::getMaterial(const char *name) const
 }
 
 } // namespace physicalenvironment
-
 } // namespace inet
 

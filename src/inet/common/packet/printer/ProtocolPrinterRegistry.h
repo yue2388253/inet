@@ -40,7 +40,7 @@ class INET_API ProtocolPrinterRegistry
     const ProtocolPrinter *getProtocolPrinter(const Protocol* protocol) const;
 };
 
-} // namespace
+} // namespace inet
 
 #endif // #ifndef __INET_PROTOCOLPRINTERREGISTRY_H_
 

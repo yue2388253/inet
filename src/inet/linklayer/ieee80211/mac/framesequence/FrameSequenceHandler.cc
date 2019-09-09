@@ -81,7 +81,6 @@ void FrameSequenceHandler::startFrameSequence(IFrameSequence *frameSequence, Fra
         throw cRuntimeError("Channel access granted while a frame sequence is running");
 }
 
-
 void FrameSequenceHandler::startFrameSequenceStep()
 {
     ASSERT(isSequenceRunning());

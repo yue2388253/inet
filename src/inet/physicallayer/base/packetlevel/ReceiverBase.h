@@ -23,7 +23,6 @@
 #include "inet/physicallayer/contract/packetlevel/ITransmission.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API ReceiverBase : public cModule, public virtual IReceiver
@@ -51,7 +50,6 @@ class INET_API ReceiverBase : public cModule, public virtual IReceiver
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_RECEIVERBASE_H

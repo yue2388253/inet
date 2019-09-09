@@ -47,5 +47,5 @@ const Ptr<Ieee80211AckFrame> RecipientAckProcedure::buildAck(const Ptr<const Iee
     return ack;
 }
 
-} /* namespace ieee80211 */
-} /* namespace inet */
+} // namespace ieee80211
+} // namespace inet

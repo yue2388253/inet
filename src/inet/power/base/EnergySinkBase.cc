@@ -20,7 +20,6 @@
 #include "inet/power/base/EnergySinkBase.h"
 
 namespace inet {
-
 namespace power {
 
 const IEnergyGenerator *EnergySinkBase::getEnergyGenerator(int index) const
@@ -43,6 +42,5 @@ void EnergySinkBase::removeEnergyGenerator(const IEnergyGenerator *energyGenerat
 }
 
 } // namespace power
-
 } // namespace inet
 

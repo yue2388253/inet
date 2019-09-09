@@ -22,7 +22,6 @@
 #include "inet/physicallayer/ieee80211/mode/Ieee80211OfdmMode.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 /**
@@ -68,7 +67,6 @@ class INET_API Ieee80211DsssOfdmMode : public Ieee80211ModeBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IEEE80211DSSSOFDMMODE_H

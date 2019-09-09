@@ -154,8 +154,8 @@ class INET_API ConvolutionalCoder : public IFecCoder
     /* IPrintable object */
     std::ostream& printToStream(std::ostream& stream, int level) const override;
 };
-} /* namespace physicallayer */
-} /* namespace inet */
+} // namespace physicallayer
+} // namespace inet
 
 #endif // ifndef __INET_CONVOLUTIONALCODER_H
 

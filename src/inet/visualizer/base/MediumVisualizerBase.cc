@@ -21,7 +21,6 @@
 #include "inet/visualizer/base/MediumVisualizerBase.h"
 
 namespace inet {
-
 namespace visualizer {
 
 using namespace inet::physicallayer;
@@ -219,6 +218,5 @@ void MediumVisualizerBase::handleSignalRemoved(const physicallayer::ITransmissio
 }
 
 } // namespace visualizer
-
 } // namespace inet
 

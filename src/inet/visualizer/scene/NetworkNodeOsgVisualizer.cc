@@ -23,7 +23,6 @@
 #include "inet/visualizer/scene/NetworkNodeOsgVisualizer.h"
 
 namespace inet {
-
 namespace visualizer {
 
 Define_Module(NetworkNodeOsgVisualizer);
@@ -88,6 +87,5 @@ void NetworkNodeOsgVisualizer::removeNetworkNodeVisualization(NetworkNodeVisuali
 #endif // ifdef WITH_OSG
 
 } // namespace visualizer
-
 } // namespace inet
 

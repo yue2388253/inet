@@ -21,7 +21,6 @@
 #include "inet/physicallayer/base/packetlevel/TransmitterBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 /**
@@ -53,7 +52,6 @@ class INET_API UnitDiskTransmitter : public TransmitterBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IDEALTRANSMITTER_H

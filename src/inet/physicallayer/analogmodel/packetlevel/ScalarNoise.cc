@@ -18,7 +18,6 @@
 #include "inet/physicallayer/analogmodel/packetlevel/ScalarNoise.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 ScalarNoise::ScalarNoise(simtime_t startTime, simtime_t endTime, Hz carrierFrequency, Hz bandwidth, const std::map<simtime_t, W> *powerChanges) :
@@ -60,6 +59,5 @@ W ScalarNoise::computeMaxPower(simtime_t startTime, simtime_t endTime) const
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

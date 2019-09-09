@@ -25,7 +25,6 @@
 #include "inet/physicallayer/contract/packetlevel/IRadioMedium.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 class INET_API IdealObstacleLoss : public TracingObstacleLossBase
@@ -69,7 +68,6 @@ class INET_API IdealObstacleLoss : public TracingObstacleLossBase
 };
 
 } // namespace physicallayer
-
 } // namespace inet
 
 #endif // ifndef __INET_IDEALOBSTACLELOSS_H

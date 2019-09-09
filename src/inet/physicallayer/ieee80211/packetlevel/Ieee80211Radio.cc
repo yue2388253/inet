@@ -26,7 +26,6 @@
 #include "inet/physicallayer/ieee80211/packetlevel/Ieee80211TransmitterBase.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(Ieee80211Radio);
@@ -162,6 +161,5 @@ void Ieee80211Radio::decapsulate(Packet *packet) const
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 

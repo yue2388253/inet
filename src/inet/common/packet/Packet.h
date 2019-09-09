@@ -657,7 +657,7 @@ inline std::ostream& operator<<(std::ostream& os, const Packet *packet) { return
 
 inline std::ostream& operator<<(std::ostream& os, const Packet& packet) { return os << packet.str(); }
 
-} // namespace
+} // namespace inet
 
 #endif // #ifndef __INET_PACKET_H_
 
