@@ -67,11 +67,25 @@ Results
 -------
 
 By adding ``visualizer`` to the simulation model, the visualization of
-some of the networks phenomenona are enabled. The result is shown in the
+some of the networks phenomena are enabled. The 2D result is shown in the
 following image:
 
 .. figure:: media/step1_result_2d.png
-   :width: 100%
+   :width: 70%
+   :align: center
+
+You can change between "*3D Scene*" and "*Module*" (2D) views by clicking
+on one of the following two highlighted buttons:
+
+.. figure:: media/step1_change_view.png
+   :width: 70%
+   :align: center
+
+The result looks like the following in case of 3D simulation:
+
+.. figure:: media/step1_result_3d.png
+   :width: 70%
+   :align: center
 
 Sources:
 :download:`omnetpp.ini <../omnetpp.ini>`,

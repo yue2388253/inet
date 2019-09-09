@@ -21,14 +21,14 @@ The simulation is configured as follows.
    :end-before: # turning off transmissions and receptions
 
 Physical link activity is displayed by :ned:`PhysicalLinkVisualizer`. By
-setting ``displayLinks`` to *true*, we enable displaying physical link
+setting :par:`displayLinks` to *true*, we enable displaying physical link
 activity. By default, all packets and all nodes are considered for the
 visualization. In this step, we want to display physical link activity
 only for VoIP packets. The packets are considered for the visualizer can
-be narrowed by the ``packetFilter`` parameter. We set it to *"\*VoIP\*"*
-to display only VoIP packets. The ``fadeOutTime`` parameter is changed
-so that the activity arrows fade out slowly. We set ``lineColor`` and
-``labelColor`` to *purple* so that the activity arrows are easy to
+be narrowed by the :par:`packetFilter` parameter. We set it to *"\*VoIP\*"*
+to display only VoIP packets. The :par:`fadeOutTime` parameter is changed
+so that the activity arrows fade out slowly. We set :par:`lineColor` and
+:par:`labelColor` to *purple* so that the activity arrows are easy to
 recognize just by looking at the simulation.
 
 Results

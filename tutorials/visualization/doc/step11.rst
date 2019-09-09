@@ -23,7 +23,7 @@ The simulation is configured as follows.
    :end-before: #---
 
 Propagating signals are visualized by :ned:`MediumVisualizer` as animated
-disks. ``Visualizer`` is enabled by setting ``displaySignals`` to true.
+disks. ``Visualizer`` is enabled by setting :par:`displaySignals` to true.
 In 3D visualization, we have three options to customize shape for
 displaying signals:
 
@@ -42,7 +42,7 @@ Results
 The following video shows what happens when we start the simulation.
 
 .. video:: media/step11_result_2d_propsignal.mp4
-   :width: 698
+   :width: 70%
 
 The signal propagation process consists of three phases:
 

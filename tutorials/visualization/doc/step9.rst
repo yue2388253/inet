@@ -8,7 +8,7 @@ In wifi infrastructure mode, wireless nodes have to be associated with
 an access point to be able to communicate with other nodes on the same
 network. The association may change over time, or at a time there might
 be several access points for a wireless node to associate with. It can
-be useful to be able to display information about wifi association e.g.
+be useful to be able to display information about wifi association, e.g.
 the SSID above network node. In this step, we enable displaying wifi
 association.
 
@@ -20,8 +20,7 @@ Wifi association process
 
 The following image shows the wifi association process:
 
-.. image:: media/step8_model_ipaddress_in_inspector.png
-   :width: 100%
+.. TODO: missing image
 
 Visualizer
 ~~~~~~~~~~
@@ -34,8 +33,8 @@ We configure ``visualizer`` as follows:
    :end-before: #---
 
 Wifi association is displayed by :ned:`Ieee80211Visualizer`. We enable it
-by setting ``displayAssociations`` to *true*. Wifi association is
-visualized as a signal sign icon. We set ``displacementHint`` to
+by setting :par:`displayAssociations` to *true*. Wifi association is
+visualized as a signal sign icon. We set :par:`placementHint` to
 *"topCenter"* to place the association icon above the node to center.
 
 Results

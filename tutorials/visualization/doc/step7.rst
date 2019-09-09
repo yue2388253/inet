@@ -21,12 +21,12 @@ Here is the configuration of this step.
    :start-at: [Config Visualization07]
    :end-before: #---
 
-The size of the communication and interference range is mainly depends
+The size of the communication and interference range depends mainly
 on the transmitter power of the device. We set the transmitter power of
 each device to *1mW*, because the default transmitter power is too big
 for this simulation. Communication and interference range are visualized
-by :ned:`MediumVisualizer`. We enable the ``visualizer`` by setting
-``displayCommunicationRanges`` and ``displayInterferenceRanges`` to
+by :ned:`MediumVisualizer`. We enable the ``visualizer`` by setting the
+:par:`displayCommunicationRanges` and :par:`displayInterferenceRanges` parameters
 true.
 
 .. TODO: Visualization of velocity and orientation is disabled in this step...

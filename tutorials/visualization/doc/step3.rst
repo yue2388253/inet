@@ -18,15 +18,17 @@ The model
 As mentioned in ``Step 1.``, the size of the playground is 800x800 meters and is set via display
 string. In 2D visualization, the playground is visualized as a grey
 square. In 3D visualization the playground color is *light green*, but
-it is opaque by default so it is not visible. By decreasing the
-:par:`sceneOpacity`, the playground becomes visible. In addition, the
+it is opaque by default so it is not visible. By decreasing the value of the
+:par:`sceneOpacity` parameter, the playground becomes visible. In addition, the
 :par:`sceneColor` parameter is set to *black* because it fits better with the current
 map.
 
 The playground is placed on the map according to the coordinate system
 module. The position of the origin of the playground is set in the previous step.
 The axes are not visible because their length is 0m by default. We can
-display them by setting their length to a positive number.
+display them by setting their length to a number of nonzero absolute value.
+Negative length means the axes point to the other direction than they would do
+with a positive length.
 
 This step is configured as follows:
 
@@ -35,7 +37,7 @@ This step is configured as follows:
    :start-at: [Config Visualization03]
    :end-before: #---
 
-The length of the axes is set to 100m and their origin is set 0.5m above the playground's
+The length of the axes is set to 100m and their origin is placed 0.5m above the map's
 level.
 
 Results

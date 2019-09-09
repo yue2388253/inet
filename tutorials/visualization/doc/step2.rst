@@ -14,9 +14,8 @@ The model
 ---------
 
 Adding a map to the simulation model requires adding coordinate system
-module to the network, because the map geographical coordinates are
-assigned to the coordinate system module. (In the next step we will
-explain the reason in detail.) We add an
+module to the network, because the map's geographical coordinates are
+assigned to the coordinate system module. We add an
 :ned:`OsgGeographicCoordinateSystem` module to the network and set the origin
 of the coordinate system in the ini file.
 
@@ -52,10 +51,19 @@ Results
 The results are shown in the following image:
 
 .. figure:: media/step2_result_boston3d.png
-   :width: 100%
+   :width: 80%
+   :align: center
 
 The map can be rotated, tilted, moved and zoomed in and out on
 during the simulation.
+
+This result is only visible in 3D mode. Since the OSG visualizer
+is responsible for visualizing the 3D aspects of a simulation,
+its configurations do not affect the 2D representation.
+
+.. figure:: media/step2_result_2d.png
+   :width: 80%
+   :align: center
 
 Sources: :download:`omnetpp.ini <../omnetpp.ini>`,
 :download:`VisualizationB.ned <../VisualizationB.ned>`
