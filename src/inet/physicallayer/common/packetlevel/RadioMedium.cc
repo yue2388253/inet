@@ -236,7 +236,7 @@ bool RadioMedium::isInterferingTransmission(const ITransmission *transmission, c
 void RadioMedium::removeNonInterferingTransmissions()
 {
     communicationCache->removeNonInterferingTransmissions([&] (const ITransmission *transmission) {
-        const ISignal *signal = communicationCache->getCachedSignal(transmission);
+        const IWirelessSignal *signal = communicationCache->getCachedSignal(transmission);
         emit(signalRemovedSignal, check_and_cast<const cObject *>(transmission));
         delete signal;
         delete transmission;
@@ -494,14 +494,14 @@ void RadioMedium::addTransmission(const IRadio *transmitterRadio, const ITransmi
 
 void RadioMedium::removeTransmission(const ITransmission *transmission)
 {
-    const ISignal *signal = communicationCache->getCachedSignal(transmission);
+    const IWirelessSignal *signal = communicationCache->getCachedSignal(transmission);
     communicationCache->removeTransmission(transmission);
     emit(signalRemovedSignal, check_and_cast<const cObject *>(transmission));
     delete signal;
     delete transmission;
 }
 
-ISignal *RadioMedium::createTransmitterSignal(const IRadio *radio, Packet *packet)
+IWirelessSignal *RadioMedium::createTransmitterSignal(const IRadio *radio, Packet *packet)
 {
     Enter_Method_Silent();
     if (packet != nullptr)
@@ -519,7 +519,7 @@ ISignal *RadioMedium::createTransmitterSignal(const IRadio *radio, Packet *packe
     return signal;
 }
 
-ISignal *RadioMedium::createReceiverSignal(const ITransmission *transmission)
+IWirelessSignal *RadioMedium::createReceiverSignal(const ITransmission *transmission)
 {
     auto signal = new WirelessSignal(transmission);
     signal->setDuration(transmission->getDuration());
@@ -534,7 +534,7 @@ ISignal *RadioMedium::createReceiverSignal(const ITransmission *transmission)
     return signal;
 }
 
-void RadioMedium::sendToAffectedRadios(IRadio *radio, const ISignal *transmittedSignal)
+void RadioMedium::sendToAffectedRadios(IRadio *radio, const IWirelessSignal *transmittedSignal)
 {
     const WirelessSignal *signal = check_and_cast<const WirelessSignal *>(transmittedSignal);
     EV_DEBUG << "Sending " << transmittedSignal << " with " << signal->getBitLength() << " bits in " << signal->getDuration() * 1E+6 << " us transmission duration"
@@ -559,7 +559,7 @@ void RadioMedium::sendToAffectedRadios(IRadio *radio, const ISignal *transmitted
 
 }
 
-void RadioMedium::sendToRadio(IRadio *transmitter, const IRadio *receiver, const ISignal *transmittedSignal)
+void RadioMedium::sendToRadio(IRadio *transmitter, const IRadio *receiver, const IWirelessSignal *transmittedSignal)
 {
     const ITransmission *transmission = transmittedSignal->getTransmission();
     if (receiver != transmitter && receiver->getReceiver() != nullptr && isPotentialReceiver(receiver, transmission)) {
@@ -579,7 +579,7 @@ void RadioMedium::sendToRadio(IRadio *transmitter, const IRadio *receiver, const
     }
 }
 
-ISignal *RadioMedium::transmitPacket(const IRadio *radio, Packet *packet)
+IWirelessSignal *RadioMedium::transmitPacket(const IRadio *radio, Packet *packet)
 {
     auto signal = createTransmitterSignal(radio, packet);
     auto transmission = signal->getTransmission();
@@ -591,7 +591,7 @@ ISignal *RadioMedium::transmitPacket(const IRadio *radio, Packet *packet)
     return signal;
 }
 
-Packet *RadioMedium::receivePacket(const IRadio *radio, ISignal *signal)
+Packet *RadioMedium::receivePacket(const IRadio *radio, IWirelessSignal *signal)
 {
     const ITransmission *transmission = signal->getTransmission();
     const IListening *listening = communicationCache->getCachedListening(radio, transmission);
@@ -672,7 +672,7 @@ bool RadioMedium::isReceptionSuccessful(const IRadio *receiver, const ITransmiss
     return isReceptionSuccessful;
 }
 
-void RadioMedium::sendToAllRadios(IRadio *transmitter, const ISignal *signal)
+void RadioMedium::sendToAllRadios(IRadio *transmitter, const IWirelessSignal *signal)
 {
     communicationCache->mapRadios([&] (const IRadio *radio) {
         sendToRadio(transmitter, radio, signal);
