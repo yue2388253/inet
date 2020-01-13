@@ -18,7 +18,7 @@
 #ifndef __INET_SIGNAL_H
 #define __INET_SIGNAL_H
 
-#include "inet/common/INETDefs.h"
+#include "inet/common/packet/Packet.h"
 
 namespace inet {
 namespace physicallayer {
@@ -30,6 +30,31 @@ class INET_API Signal : public cPacket
     Signal(const Signal& other);
 
     virtual Signal *dup() const override { return new Signal(*this); }
+    virtual const Packet *getPacket() { return check_and_cast<Packet *>(getEncapsulatedPacket()); }
+};
+
+class INET_API SignalStart : public cMessage
+{
+  protected:
+    const Signal *signal = nullptr;
+
+  public:
+    SignalStart(const Signal *signal) : signal(signal) { }
+
+    virtual SignalStart *dup() const override { return new SignalStart(*this); }
+    virtual const Signal *getSignal() const { return signal; }
+};
+
+class INET_API SignalEnd : public cMessage
+{
+  protected:
+    const Signal *signal = nullptr;
+
+  public:
+    SignalEnd(const Signal *signal) : signal(signal) { }
+
+    virtual SignalEnd *dup() const override { return new SignalEnd(*this); }
+    virtual const Signal *getSignal() const { return signal; }
 };
 
 } // namespace physicallayer
