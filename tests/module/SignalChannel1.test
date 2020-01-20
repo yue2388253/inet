@@ -1,0 +1,125 @@
+%description:
+Tests SignalChannel:
+
+1. Socket options can be set before the bind() or connect() call.
+2. connect() can be called more than once.
+3. bind() can be called after connect().
+
+%file: SignalChannelTest1.cc
+#include "inet/physicallayer/common/packetlevel/Signal.h"
+#include "inet/physicallayer/common/packetlevel/SignalChannel.h"
+
+using namespace inet;
+namespace SignalChannelTest {
+
+class SignalChannelTestApp1 : public cSimpleModule
+{
+    public:
+       SignalChannelTestApp1() : cSimpleModule(65536) {}
+    protected:
+        virtual void activity();
+};
+
+Define_Module(SignalChannelTestApp1);
+
+void SignalChannelTestApp1::activity()
+{
+    auto signal1 = new inet::physicallayer::Signal("Signal1", 1, 10000);
+    signal1->setRequestedDuration(0.001);
+    send(signal1, "out");
+
+    wait(0.002);
+
+    auto signal2 = new inet::physicallayer::Signal("Signal2", 2, 10000);
+    signal2->setRequestedDuration(0.001);
+
+    auto signal2Begin = new inet::physicallayer::SignalStart(signal2);
+    send(signal2Begin, "out");
+
+    wait(0.0002);
+    signal2->setBitLength(2500);
+    signal2->setRequestedDuration(0.00025);
+    auto signal2Change = new inet::physicallayer::SignalChange(signal2);
+    send(signal2Change, "out");
+
+    wait(0.00005);
+    auto signal2End = new inet::physicallayer::SignalEnd(signal2);
+    send(signal2End, "out");
+
+    wait(0.002);
+
+    auto signal3 = new inet::physicallayer::Signal("Signal3", 3, 10000);
+    signal3->setRequestedDuration(0.001);
+    send(signal3, "out");
+}
+
+class SinkApp : public cSimpleModule
+{
+    public:
+       SinkApp() : cSimpleModule() {}
+    protected:
+        virtual void handleMessage(cMessage *msg) {
+            EV << "message (" << msg->getClassName() << ")" << msg->getFullName() << " arrived\n";
+            delete msg;
+        }
+};
+
+Define_Module(SinkApp);
+
+}
+
+%file: SignalChannelTest.ned
+import inet.physicallayer.common.packetlevel.SignalChannel;
+
+simple SignalChannelTestApp1
+{
+    @class(::SignalChannelTest::SignalChannelTestApp1);
+    gates:
+        input in;
+        output out;
+}
+
+simple SinkApp
+{
+    @class(::SignalChannelTest::SinkApp);
+    gates:
+        input in;
+        output out;
+}
+
+network SignalChannelTestNetwork
+{
+    types:
+        channel C extends SignalChannel
+        {
+            delay = 300us;
+            datarate = 10Mbps;
+        }
+    submodules:
+        app1: SignalChannelTestApp1;
+        app2: SinkApp;
+    connections:
+        app1.out --> C --> app2.in;
+        app1.in <-- C <-- app2.out;
+}
+
+%inifile: omnetpp.ini
+[General]
+ned-path = .;../../../../src;../../lib
+network = SignalChannelTestNetwork
+cmdenv-express-mode = false
+cmdenv-log-prefix = "C:%C: "
+record-eventlog = true
+
+%#--------------------------------------------------------------------------------------------------------------
+%contains: stdout
+End.
+%#--------------------------------------------------------------------------------------------------------------
+%contains-regex: stdout
+End\.
+%#--------------------------------------------------------------------------------------------------------------
+%not-contains: stdout
+undisposed object:
+%not-contains: stdout
+-- check module destructor
+%#--------------------------------------------------------------------------------------------------------------
