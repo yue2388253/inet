@@ -25,3 +25,17 @@ packet Signal
     @descriptor(readonly);
 }
 
+message SignalStart
+{
+    @existingClass;
+    @descriptor(readonly);
+    Signal *signal;
+}
+
+message SignalEnd
+{
+    @existingClass;
+    @descriptor(readonly);
+    Signal *signal;
+}
+

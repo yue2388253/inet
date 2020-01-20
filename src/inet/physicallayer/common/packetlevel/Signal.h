@@ -26,7 +26,7 @@ namespace physicallayer {
 class INET_API Signal : public cPacket
 {
   public:
-    Signal(const char *name=nullptr, short kind=0, int64_t bitLength=0);
+    explicit Signal(const char *name=nullptr, short kind=0, int64_t bitLength=0);
     Signal(const Signal& other);
 
     virtual Signal *dup() const override { return new Signal(*this); }
@@ -39,7 +39,7 @@ class INET_API SignalStart : public cMessage
     const Signal *signal = nullptr;
 
   public:
-    SignalStart(const Signal *signal) : signal(signal) { }
+    explicit SignalStart(const Signal *signal) : cMessage(signal->getName(),signal->getKind()), signal(signal) { /* do not change the ownership of signal */ }
 
     virtual SignalStart *dup() const override { return new SignalStart(*this); }
     virtual const Signal *getSignal() const { return signal; }
@@ -48,13 +48,14 @@ class INET_API SignalStart : public cMessage
 class INET_API SignalEnd : public cMessage
 {
   protected:
-    const Signal *signal = nullptr;
+    Signal *signal = nullptr;
 
   public:
-    SignalEnd(const Signal *signal) : signal(signal) { }
+    explicit SignalEnd(Signal *signal) : cMessage(signal->getName(),signal->getKind()), signal(signal) { /* TODO 'signal' ownership */ }
 
     virtual SignalEnd *dup() const override { return new SignalEnd(*this); }
-    virtual const Signal *getSignal() const { return signal; }
+    virtual Signal *getSignal() const { return signal; }
+    //TODO get Signal with ownership
 };
 
 } // namespace physicallayer
