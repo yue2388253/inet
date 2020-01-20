@@ -19,18 +19,22 @@
 #define __INET_SIGNALCHANNEL_H
 
 #include "inet/common/INETDefs.h"
+#include "inet/physicallayer/common/packetlevel/Signal.h"
 
 namespace inet {
-namespace physicallyer {
+namespace physicallayer {
 
 // TODO: rename?
 class INET_API SignalChannel : public cDatarateChannel
 {
+  protected:
+    const physicallayer::Signal *lastSignal = nullptr;
+    simtime_t lastSignalStartTime = -1;
   public:
     SignalChannel(const char *name = nullptr);
 
     virtual void initialize() override;
-    virtual void processMessage(cMessage *msg, simtime_t t, result_t& result) override;
+    virtual void processMessage(cMessage *msg, simtime_t t, result_t& result) override;     // accepts only Signal, SignalStart, SignalEnd msg-s
 };
 
 } // namespace physicallayer

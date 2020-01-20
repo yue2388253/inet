@@ -4,8 +4,8 @@
 
 package inet.physicallayer.common.packetlevel;
 
-channel DatarateChannel extends ned.DatarateChannel
+channel SignalChannel extends ned.DatarateChannel
 {
-    @class(DatarateChannel);
+    @class(SignalChannel);
 }
 
