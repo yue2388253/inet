@@ -88,10 +88,37 @@ void SignalChannel::processMessage(cMessage *msg, simtime_t t, result_t& result)
             emit(channelBusySignal, &tmp);
         }
     }
+    else if (auto signalChange = dynamic_cast<physicallayer::SignalChange *>(msg)) {
+        auto *signal = signalChange->getSignal();
+        if (lastSignal == nullptr || lastSignalStartTime == -1)
+            throw cRuntimeError("SignalStart was missed");
 
-        if (lastSignalEndTime < t)
-            throw cRuntimeError("The SignalEnd was come too later");
+        if (lastSignal->getTreeId() != signal->getTreeId())
+            throw cRuntimeError("SignalChange does not match for SignalStart");
 
+        if (txFinishTime < t)
+            throw cRuntimeError("The SignalChange arrived too later");
+
+        // datarate modeling
+        simtime_t duration = calculateDuration(const_cast<physicallayer::Signal *>(signal));
+        // result.duration = duration; // Do not set duration!
+
+        if (lastSignalStartTime + duration < t)
+            throw cRuntimeError("Signal too short in SignalChange");
+
+        txFinishTime = lastSignalStartTime + duration;
+
+        // propagation delay modeling
+        result.delay = delay;
+
+        // if channel is disabled, signal that message should be deleted
+        if (isDisabled()) {
+            result.discard = true;
+            cTimestampedValue tmp(t, msg);
+            emit(messageDiscardedSignal, &tmp);
+            return;
+        }
+    }
     else if (auto signalEnd = dynamic_cast<physicallayer::SignalEnd *>(msg)) {
         auto *signal = signalEnd->getSignal();
         if (lastSignal == nullptr || lastSignalStartTime == -1)
