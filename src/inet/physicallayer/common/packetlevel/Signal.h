@@ -45,6 +45,18 @@ class INET_API SignalStart : public cMessage
     virtual const Signal *getSignal() const { return signal; }
 };
 
+class INET_API SignalChange : public cMessage
+{
+  protected:
+    const Signal *signal = nullptr;
+
+  public:
+    explicit SignalChange(const Signal *signal) : cMessage((std::string(signal->getName())+"-change").c_str(), signal->getKind()), signal(signal) { /* do not change the ownership of signal */ }
+
+    virtual SignalChange *dup() const override { return new SignalChange(*this); }
+    virtual const Signal *getSignal() const { return signal; }
+};
+
 class INET_API SignalEnd : public cMessage
 {
   protected:
