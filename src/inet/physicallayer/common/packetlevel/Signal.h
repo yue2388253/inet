@@ -39,7 +39,7 @@ class INET_API SignalStart : public cMessage
     const Signal *signal = nullptr;
 
   public:
-    explicit SignalStart(const Signal *signal) : cMessage(signal->getName(),signal->getKind()), signal(signal) { /* do not change the ownership of signal */ }
+    explicit SignalStart(const Signal *signal) : cMessage((std::string(signal->getName())+"-start").c_str(), signal->getKind()), signal(signal) { /* do not change the ownership of signal */ }
 
     virtual SignalStart *dup() const override { return new SignalStart(*this); }
     virtual const Signal *getSignal() const { return signal; }
@@ -51,10 +51,11 @@ class INET_API SignalEnd : public cMessage
     Signal *signal = nullptr;
 
   public:
-    explicit SignalEnd(Signal *signal) : cMessage(signal->getName(),signal->getKind()), signal(signal) { /* TODO 'signal' ownership */ }
+    explicit SignalEnd(Signal *signal) : cMessage((std::string(signal->getName())+"-end").c_str(), signal->getKind()), signal(signal) { take(this->signal); }
 
-    virtual SignalEnd *dup() const override { return new SignalEnd(*this); }
+    virtual SignalEnd *dup() const override { auto se = new SignalEnd(*this); se->signal = signal->dup(); se->take(se->signal); return se; }
     virtual Signal *getSignal() const { return signal; }
+    virtual Signal *removeSignal() { Signal *s = signal; signal = nullptr; drop(s); return s; }
     //TODO get Signal with ownership
 };
 
