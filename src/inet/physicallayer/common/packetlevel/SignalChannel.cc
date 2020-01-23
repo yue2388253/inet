@@ -32,6 +32,21 @@ void SignalChannel::initialize()
     // TODO:
 }
 
+simtime_t SignalChannel::calculateDuration(cMessage *msg) const
+{
+    if (msg->isPacket()) {
+        if (auto signal = dynamic_cast<Signal *>(msg)) {
+            simtime_t duration = signal->getRequestedDuration();
+            ASSERT(duration != SIMTIME_ZERO);
+            return duration;
+        }
+        else
+            throw cRuntimeError("Unaccepted packet type: %s. SignalChannel accepts only Signal packet", msg->getClassName());
+    }
+
+    return SIMTIME_ZERO;
+}
+
 void SignalChannel::processMessage(cMessage *msg, simtime_t t, result_t& result)
 {
     if (dynamic_cast<physicallayer::Signal *>(msg)) {
