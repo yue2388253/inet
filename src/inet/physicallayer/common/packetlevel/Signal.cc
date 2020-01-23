@@ -30,6 +30,23 @@ Signal::Signal(const Signal& other) :
 {
 }
 
+uint64_t Signal::getAvailableBitLengthAt(simtime_t elapsedTime) const     // linear calculation based on bitLength, requestedDuration, elapsedTime
+{
+    if (elapsedTime >= getRequestedDuration())
+        return getBitLength();
+    return (uint64_t)(getBitLength() * (elapsedTime / getRequestedDuration()));   //TODO calculate it more precise
+}
+
+simtime_t Signal::getDurationOfFirstNBits(int64_t bits) const     // linear calculation based on bitLength, requestedDuration, bits
+{
+    ASSERT(bits >= 0 && bits <= getBitLength());
+    if (bits == getBitLength())
+        return getRequestedDuration();
+
+    return (double)bits / getBitLength() * getRequestedDuration();   //TODO calculate it more precise
+}
+
 } // namespace physicallayer
 } // namespace inet
+
 

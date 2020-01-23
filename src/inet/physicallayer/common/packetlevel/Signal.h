@@ -35,6 +35,16 @@ class INET_API Signal : public cPacket
     virtual const Packet *getPacket() { return check_and_cast<Packet *>(getEncapsulatedPacket()); }
     virtual simtime_t getRequestedDuration() const { return requestedDuration; }
     virtual void setRequestedDuration(simtime_t d) { requestedDuration = d; }
+
+    /**
+     * calculate transmitted/received bitLength at elapsed time from start transmission/reception of this Signal
+     */
+    virtual uint64_t getAvailableBitLengthAt(simtime_t elapsedTime) const;     // calculation based on bitLength, requestedDuration, d
+
+    /**
+     * calculate duration for transmits/receives the specified first N bits
+     */
+    virtual simtime_t getDurationOfFirstNBits(int64_t bits) const;     // calculation based on bitLength, requestedDuration, d
 };
 
 class INET_API SignalStart : public cMessage
