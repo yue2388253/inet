@@ -36,6 +36,7 @@ class INET_API SignalChannel : public cDatarateChannel
     virtual void initialize() override;
     virtual void processMessage(cMessage *msg, simtime_t t, result_t& result) override;     // accepts only Signal, SignalStart, SignalEnd msg-s
     virtual simtime_t calculateDuration(cMessage *msg) const;
+    virtual bool isBusy() const override { return lastSignal != nullptr || simTime() < txFinishTime; }
 };
 
 } // namespace physicallayer
