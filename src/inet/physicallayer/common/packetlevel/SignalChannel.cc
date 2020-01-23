@@ -29,7 +29,8 @@ SignalChannel::SignalChannel(const char *name) : cDatarateChannel(name)
 void SignalChannel::initialize()
 {
     cDatarateChannel::initialize();
-    // TODO:
+    lastSignal = nullptr;
+    lastSignalStartTime = -1;
 }
 
 simtime_t SignalChannel::calculateDuration(cMessage *msg) const
@@ -51,13 +52,18 @@ void SignalChannel::processMessage(cMessage *msg, simtime_t t, result_t& result)
 {
     if (dynamic_cast<physicallayer::Signal *>(msg)) {
         if (lastSignal != nullptr)
-            throw cRuntimeError("Unfinished transmission: (%s)%s,t=%s at %s", lastSignal->getClassName(), lastSignal->getFullName(), lastSignalStartTime.str().c_str(), t.str().c_str());
+            throw cRuntimeError("Unfinished transmission: (%s)%s,t=%s at %s",
+                    lastSignal->getClassName(), lastSignal->getFullName(),
+                    lastSignalStartTime.str().c_str(), t.str().c_str());
 
         cDatarateChannel::processMessage(msg, t, result);
+
     }
     else if (auto signalStart = dynamic_cast<physicallayer::SignalStart *>(msg)) {
         if (lastSignal != nullptr)
-            throw cRuntimeError("Unfinished transmission: (%s)%s,t=%s at %s", lastSignal->getClassName(), lastSignal->getFullName(), lastSignalStartTime.str().c_str(), t.str().c_str());
+            throw cRuntimeError("Unfinished transmission: (%s)%s,t=%s at %s",
+                    lastSignal->getClassName(), lastSignal->getFullName(),
+                    lastSignalStartTime.str().c_str(), t.str().c_str());
 
         //TODO based on copy-paste from cDatarateChannel
 
