@@ -25,12 +25,16 @@ namespace physicallayer {
 
 class INET_API Signal : public cPacket
 {
+  protected:
+    simtime_t requestedDuration;
   public:
     explicit Signal(const char *name=nullptr, short kind=0, int64_t bitLength=0);
     Signal(const Signal& other);
 
     virtual Signal *dup() const override { return new Signal(*this); }
     virtual const Packet *getPacket() { return check_and_cast<Packet *>(getEncapsulatedPacket()); }
+    virtual simtime_t getRequestedDuration() const { return requestedDuration; }
+    virtual void setRequestedDuration(simtime_t d) { requestedDuration = d; }
 };
 
 class INET_API SignalStart : public cMessage
