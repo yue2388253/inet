@@ -50,13 +50,17 @@ simtime_t SignalChannel::calculateDuration(cMessage *msg) const
 
 void SignalChannel::processMessage(cMessage *msg, simtime_t t, result_t& result)
 {
-    if (dynamic_cast<physicallayer::Signal *>(msg)) {
+    if (auto signal = dynamic_cast<physicallayer::Signal *>(msg)) {
         if (lastSignal != nullptr)
             throw cRuntimeError("Unfinished transmission: (%s)%s,t=%s at %s",
                     lastSignal->getClassName(), lastSignal->getFullName(),
                     lastSignalStartTime.str().c_str(), t.str().c_str());
 
+        if (signal->getRequestedDuration() == SIMTIME_ZERO)
+            throw cRuntimeError("The Signal requested duration must not be zero");
+
         cDatarateChannel::processMessage(msg, t, result);
+        signal->setRequestedDuration(SIMTIME_ZERO);
 
     }
     else if (auto signalStart = dynamic_cast<physicallayer::SignalStart *>(msg)) {
@@ -82,6 +86,9 @@ void SignalChannel::processMessage(cMessage *msg, simtime_t t, result_t& result)
         }
 
         auto *signal = signalStart->getSignal();
+        if (signal->getRequestedDuration() == SIMTIME_ZERO)
+            throw cRuntimeError("The Signal requested duration must not be zero");
+
         lastSignal = signal;
         lastSignalStartTime = t;
 
@@ -120,6 +127,9 @@ void SignalChannel::processMessage(cMessage *msg, simtime_t t, result_t& result)
         if (txFinishTime < t)
             throw cRuntimeError("The SignalChange arrived too later");
 
+        if (signal->getRequestedDuration() == SIMTIME_ZERO)
+            throw cRuntimeError("The Signal requested duration must not be zero");
+
         // datarate modeling
         simtime_t duration = calculateDuration(const_cast<physicallayer::Signal *>(signal));
         // result.duration = duration; // Do not set duration!
@@ -151,11 +161,15 @@ void SignalChannel::processMessage(cMessage *msg, simtime_t t, result_t& result)
         if (txFinishTime < t)
             throw cRuntimeError("The SignalEnd arrived too later");
 
+        if (signal->getRequestedDuration() == SIMTIME_ZERO)
+            throw cRuntimeError("The Signal requested duration must not be zero");
+
         simtime_t duration = calculateDuration(signal);
 
         if (t != lastSignalStartTime + duration)
             throw cRuntimeError("SignalEnd duration error");    //TODO a signalend-ben lévő signal duration-je nem egyezik meg a signalstart óta eltelt idővel.
         signal->setDuration(duration);
+        signal->setRequestedDuration(SIMTIME_ZERO);
 
         lastSignal = nullptr;
         lastSignalStartTime = -1;
@@ -174,7 +188,7 @@ void SignalChannel::processMessage(cMessage *msg, simtime_t t, result_t& result)
         // datarate modeling
 
         // propagation delay modeling
-        result.delay = getDelay();
+        result.delay = delay;
 
         // bit error modeling
         if ((flags & (FL_BER_NONZERO | FL_PER_NONZERO)) && msg->isPacket()) {
