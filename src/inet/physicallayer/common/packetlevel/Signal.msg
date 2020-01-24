@@ -32,6 +32,13 @@ message SignalStart
     Signal *signal;
 }
 
+message SignalChange
+{
+    @existingClass;
+    @descriptor(readonly);
+    Signal *signal;
+}
+
 message SignalEnd
 {
     @existingClass;

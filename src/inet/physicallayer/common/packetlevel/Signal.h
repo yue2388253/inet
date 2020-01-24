@@ -47,42 +47,48 @@ class INET_API Signal : public cPacket
     virtual simtime_t getDurationOfFirstNBits(int64_t bits) const;     // calculation based on bitLength, requestedDuration, d
 };
 
-class INET_API SignalStart : public cMessage
+class INET_API SignalBase : public cMessage
+{
+  public:
+    explicit SignalBase(const char *name=nullptr, short kind=0) : cMessage(name, kind) {}
+    //TODO
+};
+
+class INET_API SignalStart : public SignalBase
 {
   protected:
     const Signal *signal = nullptr;
 
   public:
-    explicit SignalStart(const Signal *signal) : cMessage((std::string(signal->getName())+"-start").c_str(), signal->getKind()), signal(signal) { /* do not change the ownership of signal */ }
+    explicit SignalStart(const Signal *signal) : SignalBase((std::string(signal->getName())+"-start").c_str(), signal->getKind()), signal(signal) { /* do not change the ownership of signal */ }
 
     virtual SignalStart *dup() const override { return new SignalStart(*this); }
     virtual const Signal *getSignal() const { return signal; }
 };
 
-class INET_API SignalChange : public cMessage
+class INET_API SignalChange : public SignalBase
 {
   protected:
     const Signal *signal = nullptr;
 
   public:
-    explicit SignalChange(const Signal *signal) : cMessage((std::string(signal->getName())+"-change").c_str(), signal->getKind()), signal(signal) { /* do not change the ownership of signal */ }
+    explicit SignalChange(const Signal *signal) : SignalBase((std::string(signal->getName())+"-change").c_str(), signal->getKind()), signal(signal) { /* do not change the ownership of signal */ }
 
     virtual SignalChange *dup() const override { return new SignalChange(*this); }
     virtual const Signal *getSignal() const { return signal; }
 };
 
-class INET_API SignalEnd : public cMessage
+class INET_API SignalEnd : public SignalBase
 {
   protected:
     Signal *signal = nullptr;
 
   public:
-    explicit SignalEnd(Signal *signal) : cMessage((std::string(signal->getName())+"-end").c_str(), signal->getKind()), signal(signal) { take(this->signal); }
+    explicit SignalEnd(Signal *signal) : SignalBase((std::string(signal->getName())+"-end").c_str(), signal->getKind()), signal(signal) { take(this->signal); }
 
     virtual SignalEnd *dup() const override { auto se = new SignalEnd(*this); se->signal = signal->dup(); se->take(se->signal); return se; }
     virtual Signal *getSignal() const { return signal; }
     virtual Signal *removeSignal() { Signal *s = signal; signal = nullptr; drop(s); return s; }
-    //TODO get Signal with ownership
 };
 
 } // namespace physicallayer
