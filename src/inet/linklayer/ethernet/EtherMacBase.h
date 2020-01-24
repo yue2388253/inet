@@ -30,6 +30,7 @@
 #include "inet/linklayer/common/MacAddress.h"
 #include "inet/linklayer/ethernet/EtherFrame_m.h"
 #include "inet/networklayer/common/InterfaceEntry.h"
+#include "inet/physicallayer/common/packetlevel/Signal.h"
 
 namespace inet {
 
@@ -113,6 +114,8 @@ class INET_API EtherMacBase : public MacProtocolBase
     MacTransmitState transmitState = static_cast<MacTransmitState>(-1);    // "transmit state" of the MAC
     MacReceiveState receiveState = static_cast<MacReceiveState>(-1);    // "receive state" of the MAC
     simtime_t lastTxFinishTime;    // time of finishing the last transmission
+    physicallayer::Signal *currentTxSignal = nullptr;
+    simtime_t lastTxStartTime;    // time of starting the last transmission
     int pauseUnitsRequested = 0;    // requested pause duration, or zero -- examined at endTx
 
     // self messages

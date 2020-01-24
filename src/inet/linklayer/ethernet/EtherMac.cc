@@ -535,7 +535,6 @@ void EtherMac::startFrameTransmission()
     delete oldPacketProtocolTag;
     auto signal = new EthernetSignal(frame->getName());
     signal->setSrcMacFullDuplex(duplexMode);
-    currentSendPkTreeID = signal->getTreeId();
     if (sendRawBytes) {
         auto rawFrame = new Packet(frame->getName(), frame->peekAllAsBytes());
         rawFrame->copyTags(*frame);
@@ -545,7 +544,12 @@ void EtherMac::startFrameTransmission()
     else
         signal->encapsulate(frame);
     signal->addByteLength(extensionLength.get());
-    send(signal, physOutGate);
+
+    signal->setRequestedDuration(signal->getBitLength() / curEtherDescr->txrate);
+    currentTxSignal = signal;
+    currentSendPkTreeID = signal->getTreeId();
+    auto signalStart = new physicallayer::SignalStart(signal);
+    send(signalStart, physOutGate);
 
     // check for collisions (there might be an ongoing reception which we don't know about, see below)
     if (!duplexMode && receiveState != RX_IDLE_STATE) {
@@ -592,6 +596,10 @@ void EtherMac::handleEndTxPeriod()
 
     if (currentTxFrame == nullptr)
         throw cRuntimeError("Frame under transmission cannot be found");
+
+    auto signalEnd = new physicallayer::SignalEnd(currentTxSignal);
+    send(signalEnd, physOutGate);
+    currentTxSignal = nullptr;
 
     numFramesSent++;
     numBytesSent += currentTxFrame->getByteLength();
@@ -697,16 +705,28 @@ void EtherMac::handleEndBackoffPeriod()
 
 void EtherMac::sendJamSignal()
 {
-    if (currentSendPkTreeID == 0)
+    if (currentSendPkTreeID == 0 || currentTxSignal == nullptr)
         throw cRuntimeError("Model error: sending JAM while not transmitting");
+
+    // abort current sending:
+    transmissionChannel->forceTransmissionFinishTime(SIMTIME_ZERO);
+    simtime_t curDuration = simTime() - lastTxStartTime;
+    int64_t curLength = currentTxSignal->getAvailableBitLengthAt(curDuration);
+    Packet *pk = check_and_cast<Packet *>(currentTxSignal->decapsulate());
+    pk->removeAtBack(pk->getDataLength() - b(curLength));
+    currentTxSignal->encapsulate(pk);
+    currentTxSignal->setRequestedDuration(curDuration);
+    auto signalEnd = new physicallayer::SignalEnd(currentTxSignal);
+    send(signalEnd, physOutGate);
+    currentTxSignal = nullptr;
 
     EthernetJamSignal *jam = new EthernetJamSignal("JAM_SIGNAL");
     jam->setByteLength(B(JAM_SIGNAL_BYTES).get());
     jam->setAbortedPkTreeID(currentSendPkTreeID);
-
-    transmissionChannel->forceTransmissionFinishTime(SIMTIME_ZERO);
-    //emit(packetSentToLowerSignal, jam);
-    send(jam, physOutGate);
+    jam->setRequestedDuration(jam->getBitLength() / curEtherDescr->txrate);
+    currentTxSignal = jam;
+    auto jamStart = new physicallayer::SignalStart(jam);
+    send(jamStart, physOutGate);
 
     scheduleAt(transmissionChannel->getTransmissionFinishTime(), endJammingMsg);
     changeTransmissionState(JAMMING_STATE);
@@ -717,6 +737,11 @@ void EtherMac::handleEndJammingPeriod()
     if (transmitState != JAMMING_STATE)
         throw cRuntimeError("At end of JAMMING but not in JAMMING_STATE");
 
+    check_and_cast<EthernetJamSignal *>(currentTxSignal);
+
+    auto jamEnd = new physicallayer::SignalEnd(currentTxSignal);
+    send(jamEnd, physOutGate);
+    currentTxSignal = nullptr;
     EV_DETAIL << "Jamming finished, executing backoff\n";
     handleRetransmission();
 }
