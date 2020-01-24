@@ -317,32 +317,10 @@ void EtherMac::processReceivedJam(EthernetJamSignal *jam)
 
 void EtherMac::processJamSignalFromNetwork(EthernetSignal *msg)
 {
-    EV_DETAIL << "Received " << msg << " from network.\n";
-
-    if (!connected || disabled) {
-        EV_WARN << (!connected ? "Interface is not connected" : "MAC is disabled") << " -- dropping msg " << msg << endl;
-        delete msg;
-        return;
-    }
-
-    // detect cable length violation in half-duplex mode
-    if (!duplexMode) {
-        simtime_t propagationTime = simTime() - msg->getSendingTime();
-        if (propagationTime >= curEtherDescr->maxPropagationDelay) {
-            throw cRuntimeError("Very long frame propagation time detected, maybe cable exceeds "
-                                "maximum allowed length? (%lgs corresponds to an approx. %lgm cable)",
-                    SIMTIME_STR(propagationTime),
-                    SIMTIME_STR(propagationTime * SPEED_OF_LIGHT_IN_CABLE));
-        }
-    }
-
     simtime_t endRxTime = simTime() + msg->getDuration();
     EthernetJamSignal *jamMsg = dynamic_cast<EthernetJamSignal *>(msg);
 
-    if (duplexMode && jamMsg) {
-        throw cRuntimeError("Stray jam signal arrived in full-duplex mode");
-    }
-    else if (!duplexMode && receiveState == RX_RECONNECT_STATE) {
+    if (!duplexMode && receiveState == RX_RECONNECT_STATE) {
         long treeId = jamMsg->getAbortedPkTreeID();
         addReceptionInReconnectState(treeId, endRxTime);
         delete msg;
@@ -364,12 +342,7 @@ void EtherMac::processJamSignalFromNetwork(EthernetSignal *msg)
 
 void EtherMac::processMsgFromNetwork(EthernetSignal *signal)
 {
-    if (auto jamSignal = dynamic_cast<EthernetJamSignal *>(signal)) {
-        processJamSignalFromNetwork(jamSignal);
-        return;
-    }
     EV_DETAIL << "Received " << signal << " from network.\n";
-
     if (!connected || disabled) {
         EV_WARN << (!connected ? "Interface is not connected" : "MAC is disabled") << " -- dropping msg " << signal << endl;
         if (typeid(*signal) == typeid(EthernetSignal)) {    // do not count JAM and IFG packets
@@ -400,6 +373,11 @@ void EtherMac::processMsgFromNetwork(EthernetSignal *signal)
                     SIMTIME_STR(propagationTime),
                     SIMTIME_STR(propagationTime * SPEED_OF_LIGHT_IN_CABLE));
         }
+    }
+
+    if (auto jamSignal = dynamic_cast<EthernetJamSignal *>(signal)) {
+        processJamSignalFromNetwork(jamSignal);
+        return;
     }
 
     simtime_t endRxTime = simTime() + signal->getDuration();
