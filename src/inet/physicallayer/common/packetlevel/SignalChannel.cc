@@ -151,7 +151,7 @@ void SignalChannel::processMessage(cMessage *msg, simtime_t t, result_t& result)
         }
     }
     else if (auto signalEnd = dynamic_cast<physicallayer::SignalEnd *>(msg)) {
-        auto *signal = signalEnd->getSignal();
+        auto *signal = signalEnd->getSignalForUpdate();
         if (lastSignal == nullptr || lastSignalStartTime == -1)
             throw cRuntimeError("SignalStart was missed");
 
