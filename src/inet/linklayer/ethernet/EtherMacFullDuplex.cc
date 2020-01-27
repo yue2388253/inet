@@ -98,7 +98,6 @@ void EtherMacFullDuplex::handleSelfMessage(cMessage *msg)
 void EtherMacFullDuplex::startFrameTransmission()
 {
     ASSERT(currentTxFrame);
-    EV_DETAIL << "Transmitting a copy of frame " << currentTxFrame << endl;
 
     Packet *frame = currentTxFrame->dup();    // note: we need to duplicate the frame because we emit a signal with it in endTxPeriod()
     const auto& hdr = frame->peekAtFront<EthernetMacHeader>();    // note: we need to duplicate the frame because we emit a signal with it in endTxPeriod()
@@ -118,7 +117,9 @@ void EtherMacFullDuplex::startFrameTransmission()
     auto signal = new EthernetSignal(frame->getName());
     signal->setSrcMacFullDuplex(duplexMode);
     if (sendRawBytes) {
-        signal->encapsulate(new Packet(frame->getName(), frame->peekAllAsBytes()));
+        auto rawFrame = new Packet(frame->getName(), frame->peekAllAsBytes());
+        rawFrame->copyTags(*frame);
+        signal->encapsulate(rawFrame);
         delete frame;
     }
     else
@@ -139,8 +140,10 @@ void EtherMacFullDuplex::handleUpperPacket(Packet *packet)
     numFramesFromHL++;
     emit(packetReceivedFromUpperSignal, packet);
 
+    MacAddress address = getMacAddress();
+
     auto frame = packet->peekAtFront<EthernetMacHeader>();
-    if (frame->getDest().equals(getMacAddress())) {
+    if (frame->getDest().equals(address)) {
         throw cRuntimeError("logic error: frame %s from higher layer has local MAC address as dest (%s)",
                 packet->getFullName(), frame->getDest().str().c_str());
     }
@@ -165,7 +168,7 @@ void EtherMacFullDuplex::handleUpperPacket(Packet *packet)
     if (frame->getSrc().isUnspecified()) {
         frame = nullptr; // drop shared ptr
         auto newFrame = packet->removeAtFront<EthernetMacHeader>();
-        newFrame->setSrc(getMacAddress());
+        newFrame->setSrc(address);
         packet->insertAtFront(newFrame);
         frame = newFrame;
     }
@@ -269,7 +272,7 @@ void EtherMacFullDuplex::processRxSignalEnd(EthernetSignal *signal)
     }
     else {
         EV_INFO << "Reception of " << frame << " successfully completed." << endl;
-        processReceivedDataFrame(packet, frame);
+        processReceivedDataFrame(packet);
     }
 }
 
@@ -356,7 +359,7 @@ void EtherMacFullDuplex::handleEndPausePeriod()
     beginSendFrames();
 }
 
-void EtherMacFullDuplex::processReceivedDataFrame(Packet *packet, const Ptr<const EthernetMacHeader>& frame)
+void EtherMacFullDuplex::processReceivedDataFrame(Packet *packet)
 {
     // statistics
     unsigned long curBytes = packet->getByteLength();

@@ -56,7 +56,7 @@ class INET_API EtherMacFullDuplex : public EtherMacBase
     virtual void processMsgFromNetwork(physicallayer::SignalBase *signal);
     virtual void processRxSignalStart(const EthernetSignal *signal);
     virtual void processRxSignalEnd(EthernetSignal *signal);
-    virtual void processReceivedDataFrame(Packet *packet, const Ptr<const EthernetMacHeader>& frame);
+    virtual void processReceivedDataFrame(Packet *packet);
     virtual void processPauseCommand(int pauseUnits);
     virtual void scheduleEndIFGPeriod();
     virtual void scheduleEndPausePeriod(int pauseUnits);
