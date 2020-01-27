@@ -35,7 +35,10 @@ enum SapCode;
 //
 packet EthernetSignal extends physicallayer::Signal
 {
-    bool srcMacFullDuplex;  // meta-info, for detecting model misconfiguration 
+    bool srcMacFullDuplex;  // meta-info, for detecting model misconfiguration
+    double datarate;    // meta-info, store datarate in bit/sec
+}
+
 //
 // Represents dataframe on the Ethernet.
 //
