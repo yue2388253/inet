@@ -51,6 +51,8 @@ class INET_API SignalBase : public cMessage
 {
   public:
     explicit SignalBase(const char *name=nullptr, short kind=0) : cMessage(name, kind) {}
+    SignalBase(const SignalBase& other) : cMessage(other) {}
+    virtual const Signal *getSignal() const = 0;
     //TODO
 };
 
@@ -61,9 +63,10 @@ class INET_API SignalStart : public SignalBase
 
   public:
     explicit SignalStart(const Signal *signal) : SignalBase((std::string(signal->getName())+"-start").c_str(), signal->getKind()), signal(signal) { /* do not change the ownership of signal */ }
+    SignalStart(const SignalStart& other) : SignalBase(other), signal(other.signal) {}
 
     virtual SignalStart *dup() const override { return new SignalStart(*this); }
-    virtual const Signal *getSignal() const { return signal; }
+    virtual const Signal *getSignal() const override { return signal; }
 };
 
 class INET_API SignalChange : public SignalBase
@@ -73,9 +76,10 @@ class INET_API SignalChange : public SignalBase
 
   public:
     explicit SignalChange(const Signal *signal) : SignalBase((std::string(signal->getName())+"-change").c_str(), signal->getKind()), signal(signal) { /* do not change the ownership of signal */ }
+    SignalChange(const SignalChange& other) : SignalBase(other), signal(other.signal) {}
 
     virtual SignalChange *dup() const override { return new SignalChange(*this); }
-    virtual const Signal *getSignal() const { return signal; }
+    virtual const Signal *getSignal() const override { return signal; }
 };
 
 class INET_API SignalEnd : public SignalBase
@@ -85,9 +89,11 @@ class INET_API SignalEnd : public SignalBase
 
   public:
     explicit SignalEnd(Signal *signal) : SignalBase((std::string(signal->getName())+"-end").c_str(), signal->getKind()), signal(signal) { take(this->signal); }
+    SignalEnd(const SignalEnd& other) : SignalBase(other), signal(other.signal->dup()) { take(signal); }
 
-    virtual SignalEnd *dup() const override { auto se = new SignalEnd(*this); se->signal = signal->dup(); se->take(se->signal); return se; }
-    virtual Signal *getSignal() const { return signal; }
+    virtual SignalEnd *dup() const override { return new SignalEnd(*this); }
+    virtual const Signal *getSignal() const override { return signal; }
+    virtual Signal *getSignalForUpdate() { return signal; }
     virtual Signal *removeSignal() { Signal *s = signal; signal = nullptr; drop(s); return s; }
 };
 
