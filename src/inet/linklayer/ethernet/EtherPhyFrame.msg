@@ -36,6 +36,11 @@ enum SapCode;
 packet EthernetSignal extends physicallayer::Signal
 {
     bool srcMacFullDuplex;  // meta-info, for detecting model misconfiguration 
+//
+// Represents dataframe on the Ethernet.
+//
+packet EthernetFrameSignal extends EthernetSignal
+{
 }
 
 //
