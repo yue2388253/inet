@@ -18,6 +18,7 @@ import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
 import inet.node.ethernet.EtherSwitch;
 import inet.node.inet.Router;
 import inet.node.inet.StandardHost;
+import inet.physicallayer.common.packetlevel.SignalChannel;
 import ned.DatarateChannel;
 
 
@@ -29,7 +30,7 @@ network ARPTest
             delay = 1us;
             datarate = 512Mbps;
         }
-        channel ethline extends DatarateChannel
+        channel ethline extends SignalChannel
         {
             delay = 50ns;
             datarate = 100Mbps;
