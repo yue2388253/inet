@@ -30,6 +30,7 @@
 #include "inet/linklayer/ethernet/Ethernet.h"
 #include "inet/linklayer/ethernet/EtherPhyFrame_m.h"
 #include "inet/networklayer/common/InterfaceEntry.h"
+#include "inet/physicallayer/common/packetlevel/SignalChannel.h"
 #include "inet/queueing/function/PacketComparatorFunction.h"
 
 namespace inet {
@@ -489,8 +490,8 @@ void EtherMacBase::readChannelParameters(bool errorWhenAsymmetric)
     // to verify at the next opportunity (event) that the two channels have eventually
     // been set to the same value.
 
-    cDatarateChannel *outTrChannel = check_and_cast_nullable<cDatarateChannel *>(physOutGate->findTransmissionChannel());
-    cDatarateChannel *inTrChannel = check_and_cast_nullable<cDatarateChannel *>(physInGate->findIncomingTransmissionChannel());
+    cDatarateChannel *outTrChannel = check_and_cast_nullable<physicallayer::SignalChannel *>(physOutGate->findTransmissionChannel());
+    cDatarateChannel *inTrChannel = check_and_cast_nullable<physicallayer::SignalChannel *>(physInGate->findIncomingTransmissionChannel());
 
     connected = physOutGate->getPathEndGate()->isConnected() && physInGate->getPathStartGate()->isConnected();
 
