@@ -75,7 +75,7 @@ void EtherMacFullDuplex::handleMessageWhenUp(cMessage *msg)
     else if (msg->getArrivalGateId() == upperLayerInGateId)
         handleUpperPacket(check_and_cast<Packet *>(msg));
     else if (msg->getArrivalGate() == physInGate)
-        processMsgFromNetwork(check_and_cast<EthernetSignal *>(msg));
+        processMsgFromNetwork(check_and_cast<physicallayer::SignalBase *>(msg));
     else
         throw cRuntimeError("Message received from unknown gate!");
     processAtHandleMessageFinished();
@@ -123,7 +123,10 @@ void EtherMacFullDuplex::startFrameTransmission()
     }
     else
         signal->encapsulate(frame);
-    send(signal, physOutGate);
+    signal->setRequestedDuration(signal->getBitLength() / curEtherDescr->txrate);
+    currentTxSignal = signal;
+    auto signalStart = new physicallayer::SignalStart(signal);
+    send(signalStart, physOutGate);
 
     scheduleAt(transmissionChannel->getTransmissionFinishTime(), endTxMsg);
     changeTransmissionState(TRANSMITTING_STATE);
@@ -182,13 +185,30 @@ void EtherMacFullDuplex::handleUpperPacket(Packet *packet)
     }
 }
 
-void EtherMacFullDuplex::processMsgFromNetwork(EthernetSignal *signal)
+void EtherMacFullDuplex::processMsgFromNetwork(physicallayer::SignalBase *signalBase)
+{
+    if (auto signalStart = dynamic_cast<physicallayer::SignalStart *>(signalBase)) {
+        processRxSignalStart(check_and_cast<const EthernetSignal*>(signalStart->getSignal()));
+    }
+    else if (auto signalEnd = dynamic_cast<physicallayer::SignalEnd *>(signalBase)) {
+        processRxSignalEnd(check_and_cast<EthernetSignal*>(signalEnd->removeSignal()));
+    }
+    delete signalBase;
+}
+
+void EtherMacFullDuplex::processRxSignalStart(const EthernetSignal *signal)
+{
+    EV_INFO << signal << " receiving started." << endl;
+    currentRxSignalTreeId = signal->getTreeId();
+}
+
+void EtherMacFullDuplex::processRxSignalEnd(EthernetSignal *signal)
 {
     EV_INFO << signal << " received." << endl;
 
-    if (!connected || disabled) {
+    if (!connected || disabled || currentRxSignalTreeId == -1) {
         EV_WARN << (!connected ? "Interface is not connected" : "MAC is disabled") << " -- dropping msg " << signal << endl;
-        if (typeid(*signal) == typeid(EthernetSignal)) {    // do not count JAM and IFG packets
+        if (typeid(*signal) == typeid(EthernetFrameSignal)) {    // do not count JAM and IFG packets
             auto packet = check_and_cast<Packet *>(signal->decapsulate());
             delete signal;
             decapsulate(packet);
@@ -206,6 +226,9 @@ void EtherMacFullDuplex::processMsgFromNetwork(EthernetSignal *signal)
 
     if (signal->getSrcMacFullDuplex() != duplexMode)
         throw cRuntimeError("Ethernet misconfiguration: MACs on the same link must be all in full duplex mode, or all in half-duplex mode");
+
+    if (signal->getTreeId() != currentRxSignalTreeId)
+        throw cRuntimeError("Model error: SignalStart/SignalEnd mismatch");
 
     if (dynamic_cast<EthernetFilledIfgSignal *>(signal))
         throw cRuntimeError("There is no burst mode in full-duplex operation: EtherFilledIfg is unexpected");
@@ -273,6 +296,9 @@ void EtherMacFullDuplex::handleEndTxPeriod()
     if (nullptr == currentTxFrame)
         throw cRuntimeError("Model error: Frame under transmission cannot be found");
 
+    if (nullptr == currentTxSignal)
+        throw cRuntimeError("Model error: Signal under transmission cannot be found");
+
     numFramesSent++;
     numBytesSent += currentTxFrame->getByteLength();
     emit(packetSentToLowerSignal, currentTxFrame);    //consider: emit with start time of frame
@@ -286,6 +312,10 @@ void EtherMacFullDuplex::handleEndTxPeriod()
             emit(txPausePkUnitsSignal, pauseFrame->getPauseTime());
         }
     }
+
+    auto signalEnd = new physicallayer::SignalEnd(currentTxSignal);
+    currentTxSignal = nullptr;
+    send(signalEnd, physOutGate);
 
     EV_INFO << "Transmission of " << currentTxFrame << " successfully completed.\n";
     deleteCurrentTxFrame();

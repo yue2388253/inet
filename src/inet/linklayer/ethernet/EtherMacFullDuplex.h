@@ -53,12 +53,17 @@ class INET_API EtherMacFullDuplex : public EtherMacBase
     // helpers
     virtual void startFrameTransmission();
     virtual void handleUpperPacket(Packet *pk) override;
-    virtual void processMsgFromNetwork(EthernetSignal *signal);
+    virtual void processMsgFromNetwork(physicallayer::SignalBase *signal);
+    virtual void processRxSignalStart(const EthernetSignal *signal);
+    virtual void processRxSignalEnd(EthernetSignal *signal);
     virtual void processReceivedDataFrame(Packet *packet, const Ptr<const EthernetMacHeader>& frame);
     virtual void processPauseCommand(int pauseUnits);
     virtual void scheduleEndIFGPeriod();
     virtual void scheduleEndPausePeriod(int pauseUnits);
     virtual void beginSendFrames();
+
+    // members
+    long currentRxSignalTreeId = -1;    // message tree Id of the current incoming Signal or -1 when receiver in iddle/off state
 
     // statistics
     simtime_t totalSuccessfulRxTime;    // total duration of successful transmissions on channel
