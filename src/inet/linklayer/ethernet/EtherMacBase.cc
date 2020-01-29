@@ -170,6 +170,7 @@ EtherMacBase::~EtherMacBase()
     cancelAndDelete(endTxMsg);
     cancelAndDelete(endIFGMsg);
     cancelAndDelete(endPauseMsg);
+    delete currentTxSignal;
 }
 
 void EtherMacBase::initialize(int stage)
