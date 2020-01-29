@@ -212,7 +212,7 @@ void EtherMacFullDuplex::processRxSignalEnd(EthernetSignal *signal)
 
     if (!connected || disabled || currentRxSignalTreeId == -1) {
         EV_WARN << (!connected ? "Interface is not connected" : "MAC is disabled") << " -- dropping msg " << signal << endl;
-        if (typeid(*signal) == typeid(EthernetFrameSignal)) {    // do not count JAM and IFG packets
+        if (dynamic_cast<EthernetFrameSignal*>(signal)) {    // do not count JAM and IFG packets
             auto packet = check_and_cast<Packet *>(signal->decapsulate());
             delete signal;
             decapsulate(packet);
