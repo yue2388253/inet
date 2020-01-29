@@ -32,7 +32,7 @@ network BulkTransfer
     types:
         channel C extends SignalChannel
         {
-            datarate = 1Mbps;
+            datarate = 10Mbps;
             delay = 0.1us;
         }
     submodules:
