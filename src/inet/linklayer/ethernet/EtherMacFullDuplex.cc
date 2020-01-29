@@ -118,13 +118,11 @@ void EtherMacFullDuplex::startFrameTransmission()
     signal->setSrcMacFullDuplex(duplexMode);
     signal->setBitrate(curEtherDescr->txrate);
     if (sendRawBytes) {
-        auto rawFrame = new Packet(frame->getName(), frame->peekAllAsBytes());
-        rawFrame->copyTags(*frame);
-        signal->encapsulate(rawFrame);
-        delete frame;
+        auto bytes = frame->peekDataAsBytes();
+        frame->eraseAll();
+        frame->insertAtFront(bytes);
     }
-    else
-        signal->encapsulate(frame);
+    signal->encapsulate(frame);
     signal->setRequestedDuration(signal->getBitLength() / curEtherDescr->txrate);
     currentTxSignal = signal;
     auto signalStart = new physicallayer::SignalStart(signal);
