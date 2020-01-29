@@ -116,6 +116,7 @@ void EtherMacFullDuplex::startFrameTransmission()
     delete oldPacketProtocolTag;
     auto signal = new EthernetSignal(frame->getName());
     signal->setSrcMacFullDuplex(duplexMode);
+    signal->setBitrate(curEtherDescr->txrate);
     if (sendRawBytes) {
         auto rawFrame = new Packet(frame->getName(), frame->peekAllAsBytes());
         rawFrame->copyTags(*frame);
@@ -230,11 +231,15 @@ void EtherMacFullDuplex::processRxSignalEnd(EthernetSignal *signal)
     if (signal->getSrcMacFullDuplex() != duplexMode)
         throw cRuntimeError("Ethernet misconfiguration: MACs on the same link must be all in full duplex mode, or all in half-duplex mode");
 
+    if (signal->getBitrate() != curEtherDescr->txrate)
+        throw cRuntimeError("Ethernet misconfiguration: bitrate in module and on the signal must be same.");
+
     if (signal->getTreeId() != currentRxSignalTreeId)
         throw cRuntimeError("Model error: SignalStart/SignalEnd mismatch");
 
     if (dynamic_cast<EthernetFilledIfgSignal *>(signal))
         throw cRuntimeError("There is no burst mode in full-duplex operation: EtherFilledIfg is unexpected");
+
     bool hasBitError = signal->hasBitError();
     auto packet = check_and_cast<Packet *>(signal->decapsulate());
     delete signal;
