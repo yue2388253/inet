@@ -23,13 +23,14 @@ import inet.linklayer.ethernet.EtherBus;
 import inet.linklayer.ethernet.EtherHub;
 import inet.node.ethernet.EtherHost;
 import inet.node.ethernet.EtherSwitch;
+import inet.physicallayer.common.packetlevel.SignalChannel;
 import ned.DatarateChannel;
 
 
 //
 // A 100Mb/s Ethernet cable. Part of ~LargeNet.
 //
-channel cable extends DatarateChannel
+channel cable extends SignalChannel
 {
     parameters:
         delay = 0.1us;
@@ -116,7 +117,7 @@ module LargeLAN
     gates:
         inout ethg;
     types:
-        channel cabletobus extends DatarateChannel
+        channel cabletobus extends SignalChannel
         {
             parameters:
                 delay = 0.1us;
@@ -189,7 +190,7 @@ network LargeNet
         int dm;  // number of medium LANs on switch D
         int dl;  // number of large LANs on switch D
     types:
-        channel cabletoserver extends DatarateChannel
+        channel cabletoserver extends SignalChannel
         {
             parameters:
                 delay = 0.1us;
