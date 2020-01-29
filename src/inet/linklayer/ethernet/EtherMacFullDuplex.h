@@ -51,6 +51,7 @@ class INET_API EtherMacFullDuplex : public EtherMacBase
     virtual void handleSelfMessage(cMessage *msg) override;
 
     // helpers
+    virtual void processConnectDisconnect() override;
     virtual void startFrameTransmission();
     virtual void handleUpperPacket(Packet *pk) override;
     virtual void processMsgFromNetwork(physicallayer::SignalBase *signal);

@@ -198,17 +198,31 @@ void EtherMacFullDuplex::processMsgFromNetwork(physicallayer::SignalBase *signal
     delete signalBase;
 }
 
+void EtherMacFullDuplex::processConnectDisconnect()
+{
+    EtherMacBase::processConnectDisconnect();
+    if (!connected) {
+        currentRxSignalTreeId = -1;
+    }
+}
+
 void EtherMacFullDuplex::processRxSignalStart(const EthernetSignal *signal)
 {
     EV_INFO << signal << " receiving started." << endl;
-    currentRxSignalTreeId = signal->getTreeId();
+    ASSERT(currentRxSignalTreeId == -1);
+
+    if (!connected || disabled) {
+        EV_WARN << (!connected ? "Interface is not connected" : "MAC is disabled") << " -- dropping msg " << signal << endl;
+    }
+    else
+        currentRxSignalTreeId = signal->getTreeId();
 }
 
 void EtherMacFullDuplex::processRxSignalEnd(EthernetSignal *signal)
 {
     EV_INFO << signal << " received." << endl;
 
-    if (!connected || disabled || currentRxSignalTreeId == -1) {
+    if (!connected || disabled || currentRxSignalTreeId == -1) {    // when currentRxSignalTreeId == -1, then interface was down at start of RX signal or since
         EV_WARN << (!connected ? "Interface is not connected" : "MAC is disabled") << " -- dropping msg " << signal << endl;
         if (dynamic_cast<EthernetFrameSignal*>(signal)) {    // do not count JAM and IFG packets
             auto packet = check_and_cast<Packet *>(signal->decapsulate());
