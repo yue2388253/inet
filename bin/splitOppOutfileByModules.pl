@@ -16,6 +16,7 @@ while ($sor = <STDIN>) {
         $sor = "\n$sor";
     }
     $sor =~ s|[0-9a-f]{4}-[0-9a-f]{4}/tplx|<fingerprint>|g;
+    $sor =~ s|EtherMacFullDuplex|EtherMac|g;
     $files{$out} .= $sor;
 }
 
