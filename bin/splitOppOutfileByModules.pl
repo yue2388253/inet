@@ -12,6 +12,7 @@ while ($sor = <STDIN>) {
         $out =~ s/^\s+|\s+$//g;
         $out =~ s/ .*$//;
 #        print ">$out<\n";
+        $sor =~ s|^\*\* Event \#\d+ |** Event #<eventNum> |;
         $sor = "\n$sor";
     }
     $sor =~ s|[0-9a-f]{4}-[0-9a-f]{4}/tplx|<fingerprint>|g;
