@@ -14,6 +14,7 @@ while ($sor = <STDIN>) {
 #        print ">$out<\n";
         $sor = "\n$sor";
     }
+    $sor =~ s|[0-9a-f]{4}-[0-9a-f]{4}/tplx|<fingerprint>|g;
     $files{$out} .= $sor;
 }
 
