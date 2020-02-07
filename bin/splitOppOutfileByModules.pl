@@ -11,7 +11,7 @@ while ($sor = <STDIN>) {
         $out = $items[1];
         $out =~ s/^\s+|\s+$//g;
         $out =~ s/ .*$//;
-        print ">$out<\n";
+#        print ">$out<\n";
         $sor = "\n$sor";
     }
     $files{$out} .= $sor;
@@ -19,7 +19,7 @@ while ($sor = <STDIN>) {
 
 while (my ($key, $value) = each %files) {
     $fn = "xxxsplit-$key.out";
-    print "fn:$fn\n";
+#    print "fn:$fn\n";
     open(my $fh, ">", $fn)
         or die "Can't open > $fn: $!";
 
@@ -28,3 +28,4 @@ while (my ($key, $value) = each %files) {
     close($fh)
         || warn "close failed: $!";
 }
+
