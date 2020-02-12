@@ -23,6 +23,8 @@ simple EtherPhy
 {
     parameters:
         @display("i=block/rxtx");
+        double bitrate;
+        bool   duplexMode;
     gates:
         input upperLayerIn @labels(EtherFrame);
         output upperLayerOut @labels(EtherFrame);
