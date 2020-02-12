@@ -115,18 +115,10 @@ void EtherMacFullDuplex::startFrameTransmission()
     *newPacketProtocolTag = *oldPacketProtocolTag;
     delete oldPacketProtocolTag;
     EV_INFO << "Transmission of " << frame << " started.\n";
-    auto signal = new EthernetSignal(frame->getName());
-    signal->setSrcMacFullDuplex(duplexMode);
-    signal->setBitrate(curEtherDescr->txrate);
     if (sendRawBytes) {
-        signal->encapsulate(new Packet(frame->getName(), frame->peekAllAsBytes()));
-        delete frame;
+        //TODO
     }
-    else
-        signal->encapsulate(frame);
-    send(signal, physOutGate);
-
-    scheduleAt(transmissionChannel->getTransmissionFinishTime(), endTxMsg);
+    send(frame, physOutGate);
     changeTransmissionState(TRANSMITTING_STATE);
 }
 
