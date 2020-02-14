@@ -18,6 +18,7 @@
 #include "inet/common/packet/Packet.h"
 #include "inet/linklayer/ethernet/EtherMac.h"
 #include "inet/linklayer/ethernet/EtherMacFullDuplex.h"
+#include "inet/physicallayer/ethernet/EtherPhy.h"
 
 namespace inet {
 
@@ -28,7 +29,10 @@ void NoEthFingerprintCalculator::addEvent(cEvent *event)
     if (event->isMessage()) {
         auto message = static_cast<cMessage *>(event);
         auto arrivalModule = message->getArrivalModule();
-        if (dynamic_cast<EtherMac*>(arrivalModule) || dynamic_cast<EtherMacFullDuplex*>(arrivalModule))
+        if (dynamic_cast<EtherMac*>(arrivalModule)
+                || dynamic_cast<EtherMacFullDuplex*>(arrivalModule)
+                || dynamic_cast<physicallayer::EtherPhy*>(arrivalModule)
+                )
             return;
     }
     cSingleFingerprintCalculator::addEvent(event);
