@@ -28,6 +28,8 @@ namespace physicallayer {
 Define_Module(EtherPhy);
 
 simsignal_t EtherPhy::txStateChangedSignal = registerSignal("txStateChanged");
+simsignal_t EtherPhy::txFinishedSignal = registerSignal("txFinished");
+simsignal_t EtherPhy::txAbortedSignal = registerSignal("txAborted");
 simsignal_t EtherPhy::rxStateChangedSignal = registerSignal("rxStateChanged");
 
 void EtherPhy::initialize(int stage)
@@ -55,12 +57,16 @@ void EtherPhy::initialize(int stage)
 
         // initialize self messages
         endTxMsg = new cMessage("EndTransmission", ENDTRANSMISSION);
+
+        subscribe(PRE_MODEL_CHANGE, this);
+        subscribe(POST_MODEL_CHANGE, this);
     }
     else if (stage == INITSTAGE_NETWORK_INTERFACE_CONFIGURATION) {
         interfaceEntry = getContainingNicModule(this);
     }
     else if (stage == INITSTAGE_LINK_LAYER) {
-        cDatarateChannel *outTrChannel = dynamic_cast<cDatarateChannel *>(physOutGate->findTransmissionChannel());
+        transmissionChannel = physOutGate->getTransmissionChannel();
+        cDatarateChannel *outTrChannel = dynamic_cast<cDatarateChannel *>(transmissionChannel);
         if (outTrChannel != nullptr)
             bitrate = outTrChannel->getDatarate();
     }
@@ -74,12 +80,19 @@ void EtherPhy::changeTxState(TxState newState)
     }
 }
 
+void EtherPhy::changeRxState(RxState newState)
+{
+    if (newState != rxState) {
+        rxState = newState;
+        emit(rxStateChangedSignal, newState);
+    }
+}
+
 void EtherPhy::handleMessage(cMessage *message)
 {
     if (message->isSelfMessage()) {
-        if (message == endTxMsg) {
-            changeTxState(TX_IDLE_STATE);
-        }
+        if (message == endTxMsg)
+            currentTxFinished();
         else
             throw cRuntimeError("Unknown self message received!");
     }
@@ -111,6 +124,70 @@ void EtherPhy::handleMessage(cMessage *message)
     }
     else
         throw cRuntimeError("Received unknown message");
+}
+
+void EtherPhy::receiveSignal(cComponent *source, simsignal_t signalID, cObject *obj, cObject *details)
+{
+    Enter_Method_Silent();
+
+//    MacProtocolBase::receiveSignal(source, signalID, obj, details);
+
+    if (signalID == PRE_MODEL_CHANGE) {
+        if (auto gcobj = dynamic_cast<cPrePathCutNotification *>(obj)) {
+            if ((physOutGate == gcobj->pathStartGate) || (physInGate == gcobj->pathEndGate))
+                disconnect();
+        }
+    }
+    else if (signalID == POST_MODEL_CHANGE) {
+        if (auto gcobj = dynamic_cast<cPostPathCreateNotification *>(obj)) {
+            if ((physOutGate == gcobj->pathStartGate) || (physInGate == gcobj->pathEndGate)) {
+                if (physOutGate->getPathEndGate()->isConnected() && physInGate->getPathStartGate()->isConnected())
+                    connect();
+            }
+        }
+    }
+}
+
+void EtherPhy::connect()
+{
+    if (!connected) {
+        connected = true;
+        changeTxState(TX_IDLE_STATE);
+        changeRxState(RX_IDLE_STATE);
+    }
+}
+
+void EtherPhy::disconnect()
+{
+    if (connected) {
+        abortCurrentTx();
+        abortCurrentRx();
+        connected = false;
+        changeTxState(TX_OFF_STATE);
+        changeRxState(RX_OFF_STATE);
+    }
+}
+
+void EtherPhy::currentTxFinished()
+{
+    ASSERT(txState == TX_TRANSMITTING_STATE);
+    emit(txFinishedSignal, 1);   //TODO
+    changeTxState(TX_IDLE_STATE);
+}
+
+void EtherPhy::abortCurrentTx()
+{
+    if (txState == TX_TRANSMITTING_STATE) {
+        ASSERT(endTxMsg->isScheduled());
+        auto abortTime = simTime();
+        transmissionChannel->forceTransmissionFinishTime(abortTime);
+        cancelEvent(endTxMsg);
+        emit(txAbortedSignal, 1);   //TODO
+    }
+}
+
+void EtherPhy::abortCurrentRx()
+{
 }
 
 } // namespace physicallayer

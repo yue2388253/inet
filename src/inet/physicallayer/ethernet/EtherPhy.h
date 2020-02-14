@@ -24,7 +24,23 @@
 namespace inet {
 namespace physicallayer {
 
-class INET_API EtherPhy : public cPhyModule
+/*
+ * Mac <-> Phy communication:
+ *
+ * Mac.send(cPacket) to Phy (start sending)
+ * Phy.emit(txStarted)  // kell ez, vagy elég a TX_TRANSMITTING_STATE ?
+ * Phy.emit(txFinished) // ebbol tudja a Mac, hogy kuldheti a kovetkezot. vagy elég a TX_IDLE_STATE?
+ * Phy.emit(txAborted)  // honnan tudja majd a MAC, hogy dropolja, vagy ujrakuldje?
+ *
+ * Phy.send(cPacket) to Mac (data arrived)
+ * Phy.emit(rxStarted)
+ * Phy.emit(rxFinished)
+ * Phy.emit(rxAborted)
+ *
+ * how to change Mac module the outgoing cPacket: abort now; for preemption; JAM, ... ?
+ */
+
+class INET_API EtherPhy : public cPhyModule, public cListener
 {
   public:
     enum TxState {
@@ -59,15 +75,28 @@ class INET_API EtherPhy : public cPhyModule
     TxState txState = TX_OFF_STATE;    // "transmit state" of the MAC
     RxState rxState = RX_OFF_STATE;    // "receive state" of the MAC
 
+  public:
     static simsignal_t txStateChangedSignal;
+    static simsignal_t txFinishedSignal;
+    static simsignal_t txAbortedSignal;
     static simsignal_t rxStateChangedSignal;
 
-  public:
+  protected:
     virtual int numInitStages() const override { return NUM_INIT_STAGES; }
     virtual void initialize(int stage) override;
     virtual void handleMessage(cMessage *msg) override;
 
     void changeTxState(TxState newState);
+    void changeRxState(RxState newState);
+
+    virtual void receiveSignal(cComponent *src, simsignal_t signalId, cObject *obj, cObject *details) override;
+    virtual void connect();
+    virtual void disconnect();
+    virtual void currentTxFinished();
+    virtual void abortCurrentTx();
+    virtual void abortCurrentRx();
+
+  public:
 };
 
 } // namespace physicallayer

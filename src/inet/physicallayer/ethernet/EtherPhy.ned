@@ -25,6 +25,12 @@ simple EtherPhy
         @display("i=block/rxtx");
         double bitrate;
         bool   duplexMode;
+        bool   sendRawBytes = default(false); // when true packets are serialized into a sequence of bytes before sending out
+        string displayStringTextFormat = default("rate: %b\nsent: %s, rcvd: %r\nqueue: %q, drop: %d");
+        @signal[txStateChanged](type=long); // enum=MacTxState
+        @signal[rxStateChanged](type=long); // enum=MacTransmitState
+        @signal[txFinished](type=long);
+        @signal[txAborted](type=long);
     gates:
         input upperLayerIn @labels(EtherFrame);
         output upperLayerOut @labels(EtherFrame);
