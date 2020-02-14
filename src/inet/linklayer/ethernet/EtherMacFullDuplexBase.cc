@@ -175,8 +175,8 @@ void EtherMacFullDuplexBase::initialize(int stage)
 {
     MacProtocolBase::initialize(stage);
     if (stage == INITSTAGE_LOCAL) {
-        physInGate = gate("phys$i");
-        physOutGate = gate("phys$o");
+        physInGate = getParentModule()->gate("phys$i")->getPathEndGate();
+        physOutGate = getParentModule()->gate("phys$o")->getPathStartGate();
         lowerLayerInGateId = physInGate->getId();
         lowerLayerOutGateId = physOutGate->getId();
         transmissionChannel = nullptr;

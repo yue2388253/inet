@@ -53,12 +53,14 @@ class INET_API EtherMacFullDuplex : public EtherMacFullDuplexBase
     // helpers
     virtual void startFrameTransmission();
     virtual void handleUpperPacket(Packet *pk) override;
-    virtual void processMsgFromNetwork(EthernetSignalBase *signal);
+    virtual void processMsgFromNetwork(Packet *pk);
     virtual void processReceivedDataFrame(Packet *packet, const Ptr<const EthernetMacHeader>& frame);
     virtual void processPauseCommand(int pauseUnits);
     virtual void scheduleEndIFGPeriod();
     virtual void scheduleEndPausePeriod(int pauseUnits);
     virtual void beginSendFrames();
+
+    virtual void receiveSignal(cComponent *src, simsignal_t signalId, intval_t value, cObject *details) override;
 
     // statistics
     simtime_t totalSuccessfulRxTime;    // total duration of successful transmissions on channel

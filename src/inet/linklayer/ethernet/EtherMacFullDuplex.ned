@@ -158,7 +158,9 @@ module EtherMacFullDuplex like IEtherMac
     gates:
         input upperLayerIn @labels(EtherFrame);    // to ~EtherEncap or ~IMacRelayUnit
         output upperLayerOut @labels(EtherFrame);  // to ~EtherEncap or ~IMacRelayUnit
-        inout phys @labels(EtherFrame);            // to physical layer or the network
+        input phyIn @labels(EtherFrame);            // to physical layer or the network
+        output phyOut @labels(EtherFrame);            // to physical layer or the network
+        inout phys;
     submodules:
         queue: <default("EtherQueue")> like IPacketQueue {
             parameters:
