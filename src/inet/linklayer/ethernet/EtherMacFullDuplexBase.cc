@@ -166,7 +166,6 @@ EtherMacFullDuplexBase::EtherMacFullDuplexBase()
 
 EtherMacFullDuplexBase::~EtherMacFullDuplexBase()
 {
-    cancelAndDelete(endTxMsg);
     cancelAndDelete(endIFGMsg);
     cancelAndDelete(endPauseMsg);
 }
@@ -189,7 +188,6 @@ void EtherMacFullDuplexBase::initialize(int stage)
         lastTxFinishTime = -1.0;    // not equals with current simtime.
 
         // initialize self messages
-        endTxMsg = new cMessage("EndTransmission", ENDTRANSMISSION);
         endIFGMsg = new cMessage("EndIFG", ENDIFG);
         endPauseMsg = new cMessage("EndPause", ENDPAUSE);
 
@@ -339,7 +337,6 @@ void EtherMacFullDuplexBase::receiveSignal(cComponent *source, simsignal_t signa
 void EtherMacFullDuplexBase::processConnectDisconnect()
 {
     if (!connected) {
-        cancelEvent(endTxMsg);
         cancelEvent(endIFGMsg);
         cancelEvent(endPauseMsg);
 

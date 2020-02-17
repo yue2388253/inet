@@ -113,7 +113,8 @@ class INET_API EtherMacFullDuplexBase : public MacProtocolBase
     int pauseUnitsRequested = 0;    // requested pause duration, or zero -- examined at endTx
 
     // self messages
-    cMessage *endTxMsg = nullptr, *endIFGMsg = nullptr, *endPauseMsg = nullptr;
+    cMessage *endIFGMsg = nullptr;
+    cMessage *endPauseMsg = nullptr;
 
     // statistics
     unsigned long numFramesSent = 0;

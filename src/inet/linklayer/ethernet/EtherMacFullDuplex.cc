@@ -85,9 +85,7 @@ void EtherMacFullDuplex::handleSelfMessage(cMessage *msg)
 {
     EV_TRACE << "Self-message " << msg << " received\n";
 
-    if (msg == endTxMsg)
-        handleEndTxPeriod();
-    else if (msg == endIFGMsg)
+    if (msg == endIFGMsg)
         handleEndIFGPeriod();
     else if (msg == endPauseMsg)
         handleEndPausePeriod();
