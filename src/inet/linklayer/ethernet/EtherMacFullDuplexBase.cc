@@ -198,7 +198,7 @@ void EtherMacFullDuplexBase::initialize(int stage)
         // initialize pause
         pauseUnitsRequested = 0;
 
-        subscribe(POST_MODEL_CHANGE, this);
+        getContainingNicModule(this)->subscribe(POST_MODEL_CHANGE, this);
 
         WATCH(transmitState);
         WATCH(receiveState);

@@ -277,6 +277,14 @@ void EtherMacFullDuplex::handleEndTxPeriod()
     }
 }
 
+void EtherMacFullDuplex::handleAbortTxPeriod()
+{
+    transmitState = TX_IDLE_STATE;
+    EV_INFO << "Transmission of " << currentTxFrame << " aborted.\n";
+    deleteCurrentTxFrame();
+    lastTxFinishTime = simTime();
+}
+
 void EtherMacFullDuplex::finish()
 {
     EtherMacFullDuplexBase::finish();
@@ -379,7 +387,8 @@ void EtherMacFullDuplex::receiveSignal(cComponent *src, simsignal_t signalId, in
 
     if (signalId == physicallayer::EtherPhy::txFinishedSignal)
         this->handleEndTxPeriod();
-
+    else if (signalId == physicallayer::EtherPhy::txAbortedSignal)
+        this->handleAbortTxPeriod();
 }
 
 } // namespace inet
