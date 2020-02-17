@@ -247,6 +247,7 @@ void EtherMacFullDuplex::handleEndTxPeriod()
     if (nullptr == currentTxFrame)
         throw cRuntimeError("Model error: Frame under transmission cannot be found");
 
+    transmitState = TX_IDLE_STATE;
     numFramesSent++;
     numBytesSent += currentTxFrame->getByteLength();
     emit(packetSentToLowerSignal, currentTxFrame);    //consider: emit with start time of frame
