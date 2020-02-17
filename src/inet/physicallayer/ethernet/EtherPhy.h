@@ -68,6 +68,8 @@ class INET_API EtherPhy : public cPhyModule, public cListener
     cGate *physOutGate = nullptr;    // pointer to the "phys$o" gate
     cGate *upperLayerInGate = nullptr;
     cMessage *endTxMsg = nullptr;
+    EthernetSignalBase *curTx = nullptr;
+    EthernetSignalBase *curRx = nullptr;
     double bitrate = NaN;
     bool   sendRawBytes = false;
     bool   duplexMode = true;
@@ -89,12 +91,20 @@ class INET_API EtherPhy : public cPhyModule, public cListener
     void changeTxState(TxState newState);
     void changeRxState(RxState newState);
 
+    EthernetSignal *encapsulate(Packet *packet);
+    virtual void startTx(EthernetSignalBase *signal);
+    virtual void endTx();
+    virtual void abortTx();
+
+    Packet *decapsulate(EthernetSignal *signal);
+    virtual void startRx(EthernetSignalBase *signal);
+    virtual void endRx(EthernetSignalBase *signal);
+    virtual void abortRx();
+
     virtual void receiveSignal(cComponent *src, simsignal_t signalId, cObject *obj, cObject *details) override;
+    bool checkConnected();
     virtual void connect();
     virtual void disconnect();
-    virtual void currentTxFinished();
-    virtual void abortCurrentTx();
-    virtual void abortCurrentRx();
 
   public:
 };

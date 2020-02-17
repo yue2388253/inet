@@ -22,7 +22,6 @@
 #include "inet/physicallayer/ethernet/EtherPhy.h"
 
 namespace inet {
-
 namespace physicallayer {
 
 Define_Module(EtherPhy);
@@ -92,38 +91,39 @@ void EtherPhy::handleMessage(cMessage *message)
 {
     if (message->isSelfMessage()) {
         if (message == endTxMsg)
-            currentTxFinished();
+            endTx();
         else
             throw cRuntimeError("Unknown self message received!");
     }
-    else if (message->getArrivalGate() == upperLayerInGate) {
-        auto packet = check_and_cast<Packet *>(message);
-        auto phyHeader = makeShared<EthernetPhyHeader>();
-        packet->insertAtFront(phyHeader);
-        packet->clearTags();
-        packet->addTag<PacketProtocolTag>()->setProtocol(&Protocol::ethernetPhy);
-        auto signal = new EthernetSignal(packet->getName());
-        signal->setSrcMacFullDuplex(duplexMode);
-        signal->setBitrate(bitrate);
-        signal->encapsulate(packet);
-        send(signal, physOutGate);
-        scheduleAt(transmissionChannel->getTransmissionFinishTime(), endTxMsg);
-        changeTxState(TX_TRANSMITTING_STATE);
+    else if (connected) {
+        if (message->getArrivalGate() == upperLayerInGate) {
+            auto packet = check_and_cast<Packet *>(message);
+            auto signal = encapsulate(packet);
+            startTx(signal);
+        }
+        else if (message->getArrivalGate() == physInGate) {
+            auto signal = check_and_cast<EthernetSignalBase *>(message);
+            endRx(signal);
+        }
+        else
+            throw cRuntimeError("Received unknown message");
     }
-    else if (message->getArrivalGate() == physInGate) {
-        auto signal = check_and_cast<EthernetSignalBase *>(message);
-        if (signal->getSrcMacFullDuplex() != duplexMode)
-            throw cRuntimeError("Ethernet misconfiguration: MACs on the same link must be all in full duplex mode, or all in half-duplex mode");
-        if (signal->getBitrate() != bitrate)
-            throw cRuntimeError("Ethernet misconfiguration: MACs on the same link must be same bitrate");
-        auto packet = check_and_cast<Packet *>(signal->decapsulate());
-        delete signal;
-        auto phyHeader = packet->popAtFront<EthernetPhyHeader>();
-        packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ethernetMac);
-        send(packet, "upperLayerOut");
+    else {
+        EV_ERROR << "Message " << message << " arrived when PHY disconnected, dropped\n";
+        delete message;
     }
-    else
-        throw cRuntimeError("Received unknown message");
+}
+
+bool EtherPhy::checkConnected()
+{
+    bool newConn = physOutGate->getPathEndGate()->isConnected() && physInGate->getPathStartGate()->isConnected();
+
+    if (newConn) {
+        auto outChannel = physOutGate->findTransmissionChannel();
+        auto inChannel = physInGate->findIncomingTransmissionChannel();
+        newConn = inChannel && outChannel && inChannel->isDisabled() && outChannel->isDisabled();
+    }
+    return newConn;
 }
 
 void EtherPhy::receiveSignal(cComponent *source, simsignal_t signalID, cObject *obj, cObject *details)
@@ -134,16 +134,31 @@ void EtherPhy::receiveSignal(cComponent *source, simsignal_t signalID, cObject *
 
     if (signalID == PRE_MODEL_CHANGE) {
         if (auto gcobj = dynamic_cast<cPrePathCutNotification *>(obj)) {
-            if ((physOutGate == gcobj->pathStartGate) || (physInGate == gcobj->pathEndGate))
+            if (connected && ((physOutGate == gcobj->pathStartGate) || (physInGate == gcobj->pathEndGate))) {
                 disconnect();
+            }
+        }
+        else if (auto gcobj = dynamic_cast<cPreParameterChangeNotification *>(obj)) {
+            if (connected
+                    && (gcobj->par->getOwner() == transmissionChannel || gcobj->par->getOwner() == physInGate->findIncomingTransmissionChannel())
+                    && gcobj->par->getType() == cPar::BOOL
+                    && strcmp(gcobj->par->getName(), "disabled") == 0
+                    /* && gcobj->newValue == true */ //TODO the new value of parameter currently unavailable
+                    ) {
+                disconnect();
+            }
         }
     }
     else if (signalID == POST_MODEL_CHANGE) {
         if (auto gcobj = dynamic_cast<cPostPathCreateNotification *>(obj)) {
             if ((physOutGate == gcobj->pathStartGate) || (physInGate == gcobj->pathEndGate)) {
-                if (physOutGate->getPathEndGate()->isConnected() && physInGate->getPathStartGate()->isConnected())
+                if (checkConnected())
                     connect();
             }
+        }
+        else if (auto gcobj = dynamic_cast<cPostParameterChangeNotification *>(obj)) {
+            if (checkConnected())
+                connect();
         }
     }
 }
@@ -152,6 +167,10 @@ void EtherPhy::connect()
 {
     if (!connected) {
         connected = true;
+        transmissionChannel = physOutGate->getTransmissionChannel();
+        cDatarateChannel *outTrChannel = dynamic_cast<cDatarateChannel *>(transmissionChannel);
+        if (outTrChannel != nullptr)
+            bitrate = outTrChannel->getDatarate();
         changeTxState(TX_IDLE_STATE);
         changeRxState(RX_IDLE_STATE);
     }
@@ -160,37 +179,92 @@ void EtherPhy::connect()
 void EtherPhy::disconnect()
 {
     if (connected) {
-        abortCurrentTx();
-        abortCurrentRx();
+        abortTx();
+        abortRx();
         connected = false;
+        transmissionChannel = nullptr;
         changeTxState(TX_OFF_STATE);
         changeRxState(RX_OFF_STATE);
     }
 }
 
-void EtherPhy::currentTxFinished()
+EthernetSignal *EtherPhy::encapsulate(Packet *packet)
+{
+    auto phyHeader = makeShared<EthernetPhyHeader>();
+    packet->insertAtFront(phyHeader);
+    packet->clearTags();
+    packet->addTag<PacketProtocolTag>()->setProtocol(&Protocol::ethernetPhy);
+    auto signal = new EthernetSignal(packet->getName());
+    signal->setSrcMacFullDuplex(duplexMode);
+    signal->setBitrate(bitrate);
+    signal->encapsulate(packet);
+    return signal;
+}
+
+void EtherPhy::startTx(EthernetSignalBase *signal)
+{
+    ASSERT(txState == TX_IDLE_STATE);
+    ASSERT(curTx == nullptr);
+    curTx = signal;
+    send(signal, physOutGate);
+    scheduleAt(transmissionChannel->getTransmissionFinishTime(), endTxMsg);
+    changeTxState(TX_TRANSMITTING_STATE);
+}
+
+void EtherPhy::endTx()
 {
     ASSERT(txState == TX_TRANSMITTING_STATE);
+    ASSERT(curTx != nullptr);
     emit(txFinishedSignal, 1);   //TODO
+    curTx = nullptr;
     changeTxState(TX_IDLE_STATE);
 }
 
-void EtherPhy::abortCurrentTx()
+void EtherPhy::abortTx()
 {
     if (txState == TX_TRANSMITTING_STATE) {
+        ASSERT(curTx != nullptr);
         ASSERT(endTxMsg->isScheduled());
         auto abortTime = simTime();
         transmissionChannel->forceTransmissionFinishTime(abortTime);
         cancelEvent(endTxMsg);
         emit(txAbortedSignal, 1);   //TODO
+        curTx = nullptr;
+    }
+    else {
+        ASSERT(curTx == nullptr);
+        ASSERT(!endTxMsg->isScheduled());
     }
 }
 
-void EtherPhy::abortCurrentRx()
+Packet *EtherPhy::decapsulate(EthernetSignal *signal)
+{
+    auto packet = check_and_cast<Packet *>(signal->decapsulate());
+    delete signal;
+    auto phyHeader = packet->popAtFront<EthernetPhyHeader>();
+    packet->addTagIfAbsent<PacketProtocolTag>()->setProtocol(&Protocol::ethernetMac);
+    return packet;
+}
+
+void EtherPhy::startRx(EthernetSignalBase *signal)
+{
+    // only the rx end received in full duplex mode
+}
+
+void EtherPhy::endRx(EthernetSignalBase *signal)
+{
+    if (signal->getSrcMacFullDuplex() != duplexMode)
+        throw cRuntimeError("Ethernet misconfiguration: MACs on the same link must be all in full duplex mode, or all in half-duplex mode");
+    if (signal->getBitrate() != bitrate)
+        throw cRuntimeError("Ethernet misconfiguration: MACs on the same link must be same bitrate");
+    auto packet = decapsulate(check_and_cast<EthernetSignal*>(signal));
+    send(packet, "upperLayerOut");
+}
+
+void EtherPhy::abortRx()
 {
 }
 
 } // namespace physicallayer
-
 } // namespace inet
 
