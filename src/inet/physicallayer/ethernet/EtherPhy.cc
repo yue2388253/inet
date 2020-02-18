@@ -159,6 +159,7 @@ void EtherPhy::receiveSignal(cComponent *source, simsignal_t signalID, cObject *
             }
         }
         else if (auto gcobj = dynamic_cast<cPostParameterChangeNotification *>(obj)) {
+            (void)gcobj;
             if (checkConnected())
                 connect();
             else
