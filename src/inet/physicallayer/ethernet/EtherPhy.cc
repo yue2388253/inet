@@ -64,7 +64,9 @@ void EtherPhy::initialize(int stage)
         interfaceEntry = getContainingNicModule(this);
     }
     else if (stage == INITSTAGE_LINK_LAYER) {
-        transmissionChannel = physOutGate->getTransmissionChannel();
+        transmissionChannel = physOutGate->findTransmissionChannel();
+        if (transmissionChannel)
+            transmissionChannel->subscribe(POST_MODEL_CHANGE, this);
         cDatarateChannel *outTrChannel = dynamic_cast<cDatarateChannel *>(transmissionChannel);
         if (outTrChannel != nullptr)
             bitrate = outTrChannel->getDatarate();
@@ -121,7 +123,7 @@ bool EtherPhy::checkConnected()
     if (newConn) {
         auto outChannel = physOutGate->findTransmissionChannel();
         auto inChannel = physInGate->findIncomingTransmissionChannel();
-        newConn = inChannel && outChannel && inChannel->isDisabled() && outChannel->isDisabled();
+        newConn = inChannel && outChannel && !inChannel->isDisabled() && !outChannel->isDisabled();
     }
     return newConn;
 }
@@ -159,6 +161,8 @@ void EtherPhy::receiveSignal(cComponent *source, simsignal_t signalID, cObject *
         else if (auto gcobj = dynamic_cast<cPostParameterChangeNotification *>(obj)) {
             if (checkConnected())
                 connect();
+            else
+                disconnect();
         }
     }
 }
@@ -168,11 +172,14 @@ void EtherPhy::connect()
     if (!connected) {
         connected = true;
         transmissionChannel = physOutGate->getTransmissionChannel();
+        if (!transmissionChannel->isSubscribed(POST_MODEL_CHANGE, this))
+            transmissionChannel->subscribe(POST_MODEL_CHANGE, this);
         cDatarateChannel *outTrChannel = dynamic_cast<cDatarateChannel *>(transmissionChannel);
         if (outTrChannel != nullptr)
             bitrate = outTrChannel->getDatarate();
         changeTxState(TX_IDLE_STATE);
         changeRxState(RX_IDLE_STATE);
+        interfaceEntry->setCarrier(true);
     }
 }
 
@@ -185,6 +192,7 @@ void EtherPhy::disconnect()
         transmissionChannel = nullptr;
         changeTxState(TX_OFF_STATE);
         changeRxState(RX_OFF_STATE);
+        interfaceEntry->setCarrier(false);
     }
 }
 
@@ -257,8 +265,21 @@ void EtherPhy::endRx(EthernetSignalBase *signal)
         throw cRuntimeError("Ethernet misconfiguration: MACs on the same link must be all in full duplex mode, or all in half-duplex mode");
     if (signal->getBitrate() != bitrate)
         throw cRuntimeError("Ethernet misconfiguration: MACs on the same link must be same bitrate");
-    auto packet = decapsulate(check_and_cast<EthernetSignal*>(signal));
-    send(packet, "upperLayerOut");
+
+    //KLUDGE: should set it with receptionOnStart or with receiveSignalStart
+    if (rxState == RX_IDLE_STATE)
+        changeRxState(RX_RECEIVING_STATE);
+    //KLUDGE end
+
+    if (rxState == RX_RECEIVING_STATE) {
+        auto packet = decapsulate(check_and_cast<EthernetSignal*>(signal));
+        send(packet, "upperLayerOut");
+        changeRxState(RX_IDLE_STATE);
+    }
+    else {
+        //TODO
+        delete signal;
+    }
 }
 
 void EtherPhy::abortRx()
