@@ -79,6 +79,7 @@ void EtherPhy::initialize(int stage)
         if (auto outTrChannel = dynamic_cast<cDatarateChannel *>(transmissionChannel)) {
             bitrate = outTrChannel->getDatarate();
             interfaceEntry->par("bitrate").setDoubleValue(bitrate);
+            throw cRuntimeError("replace DatarateChannel to TransmissionChannel and set bitrate on InterfaceEntry");
         }
     }
 }
@@ -211,6 +212,7 @@ void EtherPhy::connect()
         if (auto outTrChannel = dynamic_cast<cDatarateChannel *>(transmissionChannel)) {
             bitrate = outTrChannel->getDatarate();
             interfaceEntry->par("bitrate").setDoubleValue(bitrate);
+            throw cRuntimeError("replace DatarateChannel to TransmissionChannel and set bitrate on InterfaceEntry");
         }
         changeTxState(TX_IDLE_STATE);
         changeRxState(RX_IDLE_STATE);
