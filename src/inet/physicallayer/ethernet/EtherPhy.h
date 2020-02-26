@@ -43,16 +43,18 @@ namespace physicallayer {
 class INET_API EtherPhy : public cPhyModule, public cListener
 {
   public:
-    enum TxState {
+    enum TxState : unsigned short{
         TX_OFF_STATE = 0,
         TX_IDLE_STATE,
         TX_TRANSMITTING_STATE,
+        TX_LAST = TX_TRANSMITTING_STATE
     };
 
-    enum RxState {
+    enum RxState : unsigned short{
         RX_OFF_STATE = 0,
         RX_IDLE_STATE,
         RX_RECEIVING_STATE,
+        RX_LAST = RX_RECEIVING_STATE
     };
 
   protected:
@@ -77,6 +79,9 @@ class INET_API EtherPhy : public cPhyModule, public cListener
     TxState txState = TX_OFF_STATE;    // "transmit state" of the MAC
     RxState rxState = RX_OFF_STATE;    // "receive state" of the MAC
 
+    // statistics
+    simtime_t lastRxStateChangeTime;
+    simtime_t totalRxStateTime[RX_LAST + 1];    // total times by RxState
   public:
     static simsignal_t txStateChangedSignal;
     static simsignal_t txFinishedSignal;
@@ -87,9 +92,11 @@ class INET_API EtherPhy : public cPhyModule, public cListener
     virtual int numInitStages() const override { return NUM_INIT_STAGES; }
     virtual void initialize(int stage) override;
     virtual void handleMessage(cMessage *msg) override;
+    virtual void finish() override;
 
     void changeTxState(TxState newState);
     void changeRxState(RxState newState);
+    void changeRxState(RxState newState, simtime_t t);
 
     EthernetSignal *encapsulate(Packet *packet);
     virtual void startTx(EthernetSignalBase *signal);

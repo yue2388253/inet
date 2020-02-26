@@ -58,9 +58,13 @@ void EtherPhy::initialize(int stage)
         // initialize states
         txState = connected ? TX_IDLE_STATE : TX_OFF_STATE;
         rxState = connected ? RX_IDLE_STATE : RX_OFF_STATE;
+        lastRxStateChangeTime = simTime();
 
         // initialize self messages
         endTxMsg = new cMessage("EndTransmission", ENDTRANSMISSION);
+
+        for (int i = 0; i <= RX_LAST; i++)
+            totalRxStateTime[i] = SIMTIME_ZERO;
 
         subscribe(PRE_MODEL_CHANGE, this);
         subscribe(POST_MODEL_CHANGE, this);
@@ -78,19 +82,42 @@ void EtherPhy::initialize(int stage)
     }
 }
 
+void EtherPhy::finish()
+{
+    changeRxState(RX_OFF_STATE);
+    simtime_t t(SIMTIME_ZERO);
+    for (int i = 0; i <= RX_LAST; i++)
+        t += totalRxStateTime[i];
+    if (t > SIMTIME_ZERO) {
+        recordScalar("rx channel idle (%)", 100 * (totalRxStateTime[RX_IDLE_STATE] / t));
+        recordScalar("rx channel utilization (%)", 100 * (totalRxStateTime[RX_RECEIVING_STATE] / t));
+        recordScalar("rx channel off (%)", 100 * (totalRxStateTime[RX_OFF_STATE] / t));
+    }
+}
+
 void EtherPhy::changeTxState(TxState newState)
 {
     if (newState != txState) {
         txState = newState;
-        emit(txStateChangedSignal, newState);
+        emit(txStateChangedSignal, static_cast<intval_t>(newState));
     }
 }
 
 void EtherPhy::changeRxState(RxState newState)
 {
+    simtime_t t = simTime();
+    changeRxState(newState, t);
+}
+
+void EtherPhy::changeRxState(RxState newState, simtime_t t)
+{
+    ASSERT(t >= lastRxStateChangeTime);
+
+    totalRxStateTime[rxState] += t - lastRxStateChangeTime;
+    lastRxStateChangeTime = t;
     if (newState != rxState) {
         rxState = newState;
-        emit(rxStateChangedSignal, newState);
+        emit(rxStateChangedSignal, static_cast<intval_t>(newState));
     }
 }
 
@@ -274,7 +301,7 @@ void EtherPhy::endRx(EthernetSignalBase *signal)
 
     //KLUDGE: should set it with receptionOnStart or with receiveSignalStart
     if (rxState == RX_IDLE_STATE)
-        changeRxState(RX_RECEIVING_STATE);
+        changeRxState(RX_RECEIVING_STATE, simTime() - signal->getDuration());
     //KLUDGE end
 
     if (rxState == RX_RECEIVING_STATE) {
