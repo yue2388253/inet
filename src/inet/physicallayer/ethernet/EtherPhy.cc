@@ -31,6 +31,11 @@ simsignal_t EtherPhy::txFinishedSignal = registerSignal("txFinished");
 simsignal_t EtherPhy::txAbortedSignal = registerSignal("txAborted");
 simsignal_t EtherPhy::rxStateChangedSignal = registerSignal("rxStateChanged");
 
+EtherPhy::~EtherPhy()
+{
+    cancelAndDelete(endTxMsg);
+}
+
 void EtherPhy::initialize(int stage)
 {
     cPhyModule::initialize(stage);

@@ -107,6 +107,7 @@ class INET_API EtherPhy : public cPhyModule, public cListener
     virtual void disconnect();
 
   public:
+    virtual ~EtherPhy();
 };
 
 } // namespace physicallayer
