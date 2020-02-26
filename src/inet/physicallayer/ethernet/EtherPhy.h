@@ -99,6 +99,7 @@ class INET_API EtherPhy : public cPhyModule, public cListener
     void changeRxState(RxState newState, simtime_t t);
 
     EthernetSignal *encapsulate(Packet *packet);
+    virtual simtime_t calculateDuration(EthernetSignalBase *signal);
     virtual void startTx(EthernetSignalBase *signal);
     virtual void endTx();
     virtual void abortTx();

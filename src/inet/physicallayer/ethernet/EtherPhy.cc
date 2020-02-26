@@ -43,10 +43,6 @@ void EtherPhy::initialize(int stage)
         physInGate = gate("phys$i");
         physOutGate = gate("phys$o");
         upperLayerInGate = gate("upperLayerIn");
-        bitrate = par("bitrate");
-        duplexMode = par("duplexMode");
-        if (!duplexMode)
-            throw cRuntimeError("half-duplex currently not supported.");
         displayStringTextFormat = par("displayStringTextFormat");
         sendRawBytes = par("sendRawBytes");
 
@@ -71,14 +67,19 @@ void EtherPhy::initialize(int stage)
     }
     else if (stage == INITSTAGE_NETWORK_INTERFACE_CONFIGURATION) {
         interfaceEntry = getContainingNicModule(this);
+        bitrate = interfaceEntry->par("bitrate");   //TODO add a NED parameter reference when supported in OMNeT++
+        duplexMode = interfaceEntry->par("duplexMode");   //TODO add a NED parameter reference when supported in OMNeT++
+        if (!duplexMode)
+            throw cRuntimeError("half-duplex currently not supported.");
     }
     else if (stage == INITSTAGE_LINK_LAYER) {
         transmissionChannel = physOutGate->findTransmissionChannel();
         if (transmissionChannel)
             transmissionChannel->subscribe(POST_MODEL_CHANGE, this);
-        cDatarateChannel *outTrChannel = dynamic_cast<cDatarateChannel *>(transmissionChannel);
-        if (outTrChannel != nullptr)
+        if (auto outTrChannel = dynamic_cast<cDatarateChannel *>(transmissionChannel)) {
             bitrate = outTrChannel->getDatarate();
+            interfaceEntry->par("bitrate").setDoubleValue(bitrate);
+        }
     }
 }
 
@@ -207,9 +208,10 @@ void EtherPhy::connect()
         transmissionChannel = physOutGate->getTransmissionChannel();
         if (!transmissionChannel->isSubscribed(POST_MODEL_CHANGE, this))
             transmissionChannel->subscribe(POST_MODEL_CHANGE, this);
-        cDatarateChannel *outTrChannel = dynamic_cast<cDatarateChannel *>(transmissionChannel);
-        if (outTrChannel != nullptr)
+        if (auto outTrChannel = dynamic_cast<cDatarateChannel *>(transmissionChannel)) {
             bitrate = outTrChannel->getDatarate();
+            interfaceEntry->par("bitrate").setDoubleValue(bitrate);
+        }
         changeTxState(TX_IDLE_STATE);
         changeRxState(RX_IDLE_STATE);
         interfaceEntry->setCarrier(true);
@@ -242,13 +244,22 @@ EthernetSignal *EtherPhy::encapsulate(Packet *packet)
     return signal;
 }
 
+simtime_t EtherPhy::calculateDuration(EthernetSignalBase *signal)
+{
+    return signal->getBitLength() / signal->getBitrate();
+}
+
 void EtherPhy::startTx(EthernetSignalBase *signal)
 {
     ASSERT(txState == TX_IDLE_STATE);
     ASSERT(curTx == nullptr);
+
     curTx = signal;
+    auto duration = calculateDuration(signal);
     send(signal, physOutGate);
-    scheduleAt(transmissionChannel->getTransmissionFinishTime(), endTxMsg);
+    // sendPacketStart(signal, physOutGate, duration);
+    ASSERT(transmissionChannel->getTransmissionFinishTime() == simTime() + duration);
+    scheduleAt(simTime() + duration, endTxMsg);
     changeTxState(TX_TRANSMITTING_STATE);
 }
 
