@@ -37,12 +37,8 @@ class INET_API EtherMacFullDuplex : public EtherMacFullDuplexBase
   protected:
     virtual int numInitStages() const override { return NUM_INIT_STAGES; }
     virtual void initialize(int stage) override;
-    virtual void initializeStatistics() override;
     virtual void initializeFlags() override;
     virtual void handleMessageWhenUp(cMessage *msg) override;
-
-    // finish
-    virtual void finish() override;
 
     // event handlers
     virtual void handleEndIFGPeriod();

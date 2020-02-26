@@ -51,14 +51,6 @@ void EtherMacFullDuplex::initialize(int stage)
     }
 }
 
-void EtherMacFullDuplex::initializeStatistics()
-{
-    EtherMacFullDuplexBase::initializeStatistics();
-
-    // initialize statistics
-    totalSuccessfulRxTime = 0.0;
-}
-
 void EtherMacFullDuplex::initializeFlags()
 {
     EtherMacFullDuplexBase::initializeFlags();
@@ -184,8 +176,6 @@ void EtherMacFullDuplex::processMsgFromNetwork(Packet *packet)
         return;
     }
 
-    totalSuccessfulRxTime += packet->getDuration();
-
     emit(packetReceivedFromLowerSignal, packet);
 
     if (packet->hasBitError() || !verifyCrcAndLength(packet)) {
@@ -283,16 +273,6 @@ void EtherMacFullDuplex::handleAbortTxPeriod()
     EV_INFO << "Transmission of " << currentTxFrame << " aborted.\n";
     deleteCurrentTxFrame();
     lastTxFinishTime = simTime();
-}
-
-void EtherMacFullDuplex::finish()
-{
-    EtherMacFullDuplexBase::finish();
-
-    simtime_t t = simTime();
-    simtime_t totalRxChannelIdleTime = t - totalSuccessfulRxTime;
-    recordScalar("rx channel idle (%)", 100 * (totalRxChannelIdleTime / t));
-    recordScalar("rx channel utilization (%)", 100 * (totalSuccessfulRxTime / t));
 }
 
 void EtherMacFullDuplex::handleEndPausePeriod()
