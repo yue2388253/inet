@@ -258,7 +258,7 @@ void EtherPhy::startTx(EthernetSignalBase *signal)
 
     curTx = signal;
     auto duration = calculateDuration(signal);
-    send(signal, physOutGate);
+    send(signal, physOutGate, duration);
     // sendPacketStart(signal, physOutGate, duration);
     ASSERT(transmissionChannel->getTransmissionFinishTime() == simTime() + duration);
     scheduleAt(simTime() + duration, endTxMsg);
