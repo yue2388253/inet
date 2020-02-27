@@ -17,13 +17,14 @@
 
 package inet.node.ethernet;
 
-import ned.DatarateChannel;
+import ned.TransmissionChannel;
+
 
 //
 // Base for Ethernet link types. Propagation delay can be specified with the
 // length of the cable, i.e. in meters instead of nanoseconds or microseconds.
 //
-channel EtherLink extends DatarateChannel
+channel EtherLink extends TransmissionChannel
 {
     double length @unit(m) = default(10m);
     delay = replaceUnit(length / 2e8, "s");
@@ -34,7 +35,6 @@ channel EtherLink extends DatarateChannel
 //
 channel Eth10M extends EtherLink
 {
-    datarate = 10Mbps;
 }
 
 //
@@ -42,7 +42,6 @@ channel Eth10M extends EtherLink
 //
 channel Eth100M extends EtherLink
 {
-    datarate = 100Mbps;
 }
 
 //
@@ -50,7 +49,6 @@ channel Eth100M extends EtherLink
 //
 channel Eth1G extends EtherLink
 {
-    datarate = 1Gbps;
 }
 
 //
@@ -58,7 +56,6 @@ channel Eth1G extends EtherLink
 //
 channel Eth10G extends EtherLink
 {
-    datarate = 10Gbps;
 }
 
 //
@@ -66,7 +63,6 @@ channel Eth10G extends EtherLink
 //
 channel Eth40G extends EtherLink
 {
-    datarate = 40Gbps;
 }
 
 //
@@ -74,7 +70,6 @@ channel Eth40G extends EtherLink
 //
 channel Eth100G extends EtherLink
 {
-    datarate = 100Gbps;
 }
 
 //
@@ -82,7 +77,6 @@ channel Eth100G extends EtherLink
 //
 channel Eth200G extends EtherLink
 {
-    datarate = 200Gbps;
 }
 
 //
@@ -90,6 +84,5 @@ channel Eth200G extends EtherLink
 //
 channel Eth400G extends EtherLink
 {
-    datarate = 400Gbps;
 }
 
