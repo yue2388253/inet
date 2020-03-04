@@ -26,16 +26,14 @@ import ned.TransmissionChannel;
 
 channel NormalP extends TransmissionChannel
 {
-    parameters:
-        datarate = default(10Mbps);
-        delay = default(1ms);
+    double datarate @unit(bps) = default(10Mbps);
+    delay = default(1ms);
 }
 
 channel FastP extends TransmissionChannel
 {
-    parameters:
-        datarate = 100Mbps;
-        delay = 1ms;
+    double datarate @unit(bps) = 100Mbps;
+    delay = 1ms;
 }
 
 network RedMarkerNetwork

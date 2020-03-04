@@ -32,9 +32,8 @@ import ned.TransmissionChannel;
 channel cable extends TransmissionChannel
 {
     delay = 0.1us;
-        datarate = 100Mbps;
+    double datarate @unit(bps) = 100Mbps;
 }
-
 
 //
 // Several hosts on an Ethernet hub; part of ~LargeNet.
@@ -130,7 +129,7 @@ module LargeLAN
     types:
         channel cabletobus extends TransmissionChannel
         {
-                datarate = 10Mbps;
+            double datarate @unit(bps) = 10Mbps;
             delay = 0s;
         }
     submodules:
@@ -207,9 +206,8 @@ network LargeNet
     types:
         channel cabletoserver extends TransmissionChannel
         {
-            parameters:
-                delay = 0s;
-                datarate = 1Gbps;
+            delay = 0s;
+            double datarate @unit(bps) = 1Gbps;
         }
     submodules:
         switchBB[n]: EtherSwitch {

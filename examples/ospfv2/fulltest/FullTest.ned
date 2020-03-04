@@ -13,7 +13,7 @@ import ned.TransmissionChannel;
 channel C extends TransmissionChannel
 {
     delay = 0.1us;
-    datarate = 100Mbps;
+    double datarate @unit(bps) = 100 Mbps;
 }
 
 module OspfLan
