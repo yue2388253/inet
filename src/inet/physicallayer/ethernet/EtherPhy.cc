@@ -55,6 +55,8 @@ void EtherPhy::initialize(int stage)
         txState = connected ? TX_IDLE_STATE : TX_OFF_STATE;
         rxState = connected ? RX_IDLE_STATE : RX_OFF_STATE;
         lastRxStateChangeTime = simTime();
+        emit(txStateChangedSignal, static_cast<intval_t>(txState));
+        emit(rxStateChangedSignal, static_cast<intval_t>(rxState));
 
         // initialize self messages
         endTxMsg = new cMessage("EndTransmission", ENDTRANSMISSION);
