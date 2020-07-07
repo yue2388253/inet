@@ -13,32 +13,15 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 //
 
-#include "inet/common/clock/LinearClock.h"
+#include "inet/clock/common/ClockTime.h"
 
 namespace inet {
 
-Define_Module(LinearClock);
+#ifdef WITH_CLOCK_SUPPORT
 
-void LinearClock::initialize()
-{
-    origin = par("origin");
-    driftRate = par("driftRate").doubleValue() / 1e6;
-}
+const ClockTime ClockTime::ZERO;
 
-simclocktime_t LinearClock::fromSimTime(simtime_t t) const
-{
-    return SimClockTime::from((t-origin) / (1 + driftRate));
-}
-
-simtime_t LinearClock::toSimTime(simclocktime_t clock) const
-{
-    return clock.asSimTime() * (1 + driftRate) + origin;
-}
-
-simclocktime_t LinearClock::getArrivalClockTime(cMessage *msg) const
-{
-    return fromSimTime(msg->getArrivalTime()); // note: imprecision due to conversion to simtime and forth
-}
+#endif // WITH_CLOCK_SUPPORT
 
 } // namespace inet
 

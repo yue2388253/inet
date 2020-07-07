@@ -13,25 +13,29 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 //
 
-#ifndef __INET_IDEALCLOCK_H
-#define __INET_IDEALCLOCK_H
-
-#include "inet/common/clock/base/PredictableClockBase.h"
+#include "inet/clock/oscillator/RandomDriftOscillator.h"
 
 namespace inet {
 
-/**
- * Models a clock where the clock time is identical to the simulation time.
- */
-class INET_API IdealClock : public PredictableClockBase
+Define_Module(RandomDriftOscillator);
+
+void RandomDriftOscillator::initialize(int stage)
 {
-  public:
-    virtual simclocktime_t fromSimTime(simtime_t t) const override;
-    virtual simtime_t toSimTime(simclocktime_t t) const override;
-    virtual simclocktime_t getArrivalClockTime(cMessage *msg) const override;
-};
+    ConstantDriftOscillator::initialize(stage);
+    if (stage == INITSTAGE_LOCAL)
+        scheduleAfter(par("changeInterval"), timer);
+}
+
+void RandomDriftOscillator::handleMessage(cMessage *message)
+{
+    if (message == timer) {
+        double driftRateChange = par("driftRateChange").doubleValue() / 1E+6;
+        setDriftRate(driftRate + driftRateChange);
+        scheduleAfter(par("changeInterval"), timer);
+    }
+    else
+        throw cRuntimeError("Unknown message");
+}
 
 } // namespace inet
-
-#endif // ifndef __INET_IDEALCLOCK_H
 

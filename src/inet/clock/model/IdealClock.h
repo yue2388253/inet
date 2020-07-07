@@ -13,19 +13,21 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 //
 
-package inet.common.clock;
+#ifndef __INET_IDEALCLOCK_H
+#define __INET_IDEALCLOCK_H
 
-import inet.common.clock.contract.IClock;
+#include "inet/clock/base/ClockBase.h"
 
-//
-// Models a clock where the drift rate is constant.
-//
-simple LinearClock like IClock
+namespace inet {
+
+class INET_API IdealClock : public ClockBase
 {
-    parameters:
-        double origin @unit(s) = default(0s); // the simulation time when the clock's value is zero
-        //TODO rename to: offset? startTime? timeShift? 
-        double driftRate @unit(ppm) = default(0ppm); // clock precision, expressed as a ratio in parts per million
-        @display("i=block/timer");
-}
+  public:
+    virtual clocktime_t computeClockTimeFromSimTime(simtime_t t) const override;
+    virtual simtime_t computeSimTimeFromClockTime(clocktime_t t) const override;
+};
+
+} // namespace inet
+
+#endif // ifndef __INET_IDEALCLOCK_H
 

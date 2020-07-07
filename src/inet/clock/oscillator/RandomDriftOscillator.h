@@ -13,30 +13,26 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 //
 
-#ifndef __INET_LINEARCLOCK_H
-#define __INET_LINEARCLOCK_H
+#ifndef __INET_RANDOMDRIFTOSCILLATOR_H
+#define __INET_RANDOMDRIFTOSCILLATOR_H
 
-#include "inet/common/clock/base/PredictableClockBase.h"
+#include "inet/clock/oscillator/ConstantDriftOscillator.h"
 
 namespace inet {
 
-/**
- * Models a clock with a constant clock drift rate.
- */
-class INET_API LinearClock : public PredictableClockBase
+class INET_API RandomDriftOscillator : public ConstantDriftOscillator
 {
-  private:
-    simtime_t origin;
-    double driftRate;
+  protected:
+    cMessage *timer = nullptr;
 
-  public:
-    virtual void initialize() override;
-    virtual simclocktime_t fromSimTime(simtime_t t) const override;
-    virtual simtime_t toSimTime(simclocktime_t t) const override;
-    virtual simclocktime_t getArrivalClockTime(cMessage *msg) const override; // note: imprecise (may not be exactly equal to simclocktime passed into scheduleClockEvent())
+  protected:
+    virtual ~RandomDriftOscillator() { cancelAndDelete(timer); }
+
+    virtual void initialize(int stage) override;
+    virtual void handleMessage(cMessage *message) override;
 };
 
 } // namespace inet
 
-#endif // ifndef __INET_LINEARCLOCK_H
+#endif // ifndef __INET_RANDOMDRIFTOSCILLATOR_H
 

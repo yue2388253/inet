@@ -13,15 +13,21 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 //
 
-#include "inet/common/clock/common/SimClockTime.h"
+#include "inet/clock/model/IdealClock.h"
 
 namespace inet {
 
-#ifdef WITH_CLOCK_SUPPORT
+Define_Module(IdealClock);
 
-const SimClockTime SimClockTime::ZERO;
+clocktime_t IdealClock::computeClockTimeFromSimTime(simtime_t t) const
+{
+    return ClockTime::from(t);
+}
 
-#endif // WITH_CLOCK_SUPPORT
+simtime_t IdealClock::computeSimTimeFromClockTime(clocktime_t clock) const
+{
+    return clock.asSimTime();
+}
 
 } // namespace inet
 

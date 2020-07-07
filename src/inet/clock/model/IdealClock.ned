@@ -13,26 +13,17 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 //
 
-#include "inet/common/clock/IdealClock.h"
+package inet.clock.model;
 
-namespace inet {
+import inet.clock.base.ClockBase;
+import inet.clock.contract.IClock;
 
-Define_Module(IdealClock);
-
-simclocktime_t IdealClock::fromSimTime(simtime_t t) const
+//
+// Models a clock where the clock time is identical to the simulation time.
+//
+module IdealClock extends ClockBase like IClock
 {
-    return SimClockTime::from(t);
+    parameters:
+        @class(IdealClock);
 }
-
-simtime_t IdealClock::toSimTime(simclocktime_t clock) const
-{
-    return clock.asSimTime();
-}
-
-simclocktime_t IdealClock::getArrivalClockTime(cMessage *msg) const
-{
-    return SimClockTime::from(msg->getArrivalTime());
-}
-
-} // namespace inet
 

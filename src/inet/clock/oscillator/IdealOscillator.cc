@@ -13,32 +13,31 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 //
 
-cplusplus {{
-#include "inet/common/clock/common/SimClockTime.h"
-}}
+#include "inet/clock/oscillator/IdealOscillator.h"
 
-namespace inet;
+namespace inet {
 
-class SimClockTime
+Define_Module(IdealOscillator);
+
+void IdealOscillator::initialize(int stage)
 {
-    @existingClass;
-    @overwritePreviousDefinition;
-    @descriptor(false);
-    @opaque;
-    @byValue;
-    @cppType(inet::common::SimClockTime);
-    @fromString(inet::common::SimClockTime::parse($)); @toString($.str());
-    @defaultValue(SIMCLOCKTIME_ZERO);
+    OscillatorBase::initialize(stage);
+    if (stage == INITSTAGE_LOCAL) {
+        origin = simTime();
+        tickLength = par("tickLength");
+        WATCH(tickLength);
+    }
 }
 
-class simclocktime_t
+int64_t IdealOscillator::computeTicksForInterval(simtime_t timeInterval) const
 {
-    @existingClass;
-    @overwritePreviousDefinition;
-    @descriptor(false);
-    @opaque;
-    @byValue;
-    @cppType(inet::simclocktime_t);
-    @fromString(inet::common::SimClockTime::parse($)); @toString($.str());
-    @defaultValue(SIMCLOCKTIME_ZERO);
+    return (int64_t)floor(timeInterval / tickLength);
 }
+
+simtime_t IdealOscillator::computeIntervalForTicks(int64_t numTicks) const
+{
+    return tickLength * numTicks;
+}
+
+} // namespace inet
+

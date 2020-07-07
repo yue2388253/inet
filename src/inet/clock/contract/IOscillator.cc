@@ -13,16 +13,12 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 //
 
-package inet.common.clock;
+#include "inet/clock/contract/IOscillator.h"
 
-import inet.common.clock.contract.IClock;
+namespace inet {
 
-//
-// Models a clock where the clock time is identical to the simulation time.
-//
-simple IdealClock like IClock
-{
-    parameters:
-        @display("i=block/timer");
-}
+simsignal_t IOscillator::preOscillatorStateChangedSignal = cComponent::registerSignal("preOscillatorStateChanged");
+simsignal_t IOscillator::postOscillatorStateChangedSignal = cComponent::registerSignal("postOscillatorStateChanged");
+
+} // namespace inet
 

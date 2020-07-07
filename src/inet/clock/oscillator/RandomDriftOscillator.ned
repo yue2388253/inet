@@ -13,25 +13,16 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 //
 
-#include "inet/common/clock/base/PredictableClockBase.h"
+package inet.clock.oscillator;
 
-namespace inet {
-
-simclocktime_t PredictableClockBase::getClockTime() const
+//
+// This oscillator changes drift rate with a random walk process.
+//
+simple RandomDriftOscillator extends ConstantDriftOscillator
 {
-    return fromSimTime(simTime());
+    parameters:
+        volatile double changeInterval @unit(s);
+        volatile double driftRateChange @unit(ppm);
+	    @class(RandomDriftOscillator);
 }
-
-void PredictableClockBase::scheduleClockEvent(simclocktime_t t, cMessage *msg)
-{
-    getTargetModule()->scheduleAt(toSimTime(t), msg);
-}
-
-cMessage *PredictableClockBase::cancelClockEvent(cMessage *msg)
-{
-    return getTargetModule()->cancelEvent(msg);
-}
-
-
-} // namespace inet
 
