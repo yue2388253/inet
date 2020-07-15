@@ -33,6 +33,16 @@ namespace inet {
 
 #  define EVSTREAM                      EV
 
+// Around OMNeT++ 6.0, send functions and cChannel::processMessage() has
+// an extra SendOptions *options argument.
+#if OMNETPP_BUILDNUM >= 1503
+#define SENDOPTIONS_ARG        , const SendOptions& options
+#define SENDOPTIONS_ARG_NAME   , options
+#else
+#define SENDOPTIONS_ARG
+#define SENDOPTIONS_NAME
+#endif
+
 #ifdef _MSC_VER
 // complementary error function, not in MSVC
 double INET_API erfc(double x);
