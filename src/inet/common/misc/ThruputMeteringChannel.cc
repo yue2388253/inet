@@ -58,9 +58,9 @@ void ThruputMeteringChannel::initialize()
     fmt = par("thruputDisplayFormat");
 }
 
-void ThruputMeteringChannel::processMessage(cMessage *msg, simtime_t t, result_t& result)
+void ThruputMeteringChannel::processMessage(cMessage *msg SENDOPTIONS_ARG, simtime_t t, result_t& result)
 {
-    cDatarateChannel::processMessage(msg, t, result);
+    cDatarateChannel::processMessage(msg SENDOPTIONS_ARG_NAME, t, result);
 
     cPacket *pkt = dynamic_cast<cPacket *>(msg);
     // TODO handle disabled state (show with different style?/color? or print "disabled"?)
