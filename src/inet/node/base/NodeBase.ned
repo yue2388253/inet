@@ -52,26 +52,26 @@ module NodeBase like INetworkNode
             parameters:
                 @display("p=125,80;is=s");
         }
-        energyStorage: <default("")> like IEnergyStorage if typename != "" {
+        clock: <default("")> like IClock if typename != "" {
             parameters:
                 @display("p=125,320;is=s");
         }
-        energyManagement: <default("")> like IEnergyManagement if typename != "" {
+        energyStorage: <default("")> like IEnergyStorage if typename != "" {
             parameters:
                 @display("p=125,400;is=s");
         }
-        energyGenerator: <default("")> like IEnergyGenerator if typename != "" {
+        energyManagement: <default("")> like IEnergyManagement if typename != "" {
             parameters:
                 @display("p=125,480;is=s");
+        }
+        energyGenerator: <default("")> like IEnergyGenerator if typename != "" {
+            parameters:
+                @display("p=125,560;is=s");
         }
         // TODO: move mobility right after status to have it in the same order as in their positions, changes fingerprints 
         mobility: <default("")> like IMobility if typename != "" {
             parameters:
                 @display("p=125,160;is=s");
-        }
-        clock: <default("")> like IClock if typename != "" {
-            parameters:
-                @display("p=100,200;is=s");
         }
 }
 
