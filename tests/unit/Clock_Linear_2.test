@@ -1,5 +1,5 @@
 %description:
-Tests OsciallatorBasedClock:
+Tests OscillatorBasedClock:
 
 %#--------------------------------------------------------------------------------------------------------------
 %inifile: omnetpp.ini
@@ -9,7 +9,7 @@ network = inet.test.unittest.lib.ClockTestNetwork
 cmdenv-express-mode = false
 cmdenv-log-prefix = "C:%C: "
 
-*.host.clock.typename = "OsciallatorBasedClock"
+*.host.clock.typename = "OscillatorBasedClock"
 *.host.clock.oscillator.driftRate = 1e6 ppm
 %#--------------------------------------------------------------------------------------------------------------
 %postrun-command: grep "^C:" test.out > clock.out || true

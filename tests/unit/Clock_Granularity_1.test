@@ -9,7 +9,7 @@ network = inet.test.unittest.lib.ClockTestNetwork
 cmdenv-express-mode = false
 cmdenv-log-prefix = "C:%C: "
 
-*.host.clock.typename = "OsciallatorBasedClock"
+*.host.clock.typename = "OscillatorBasedClock"
 *.host.clock.oscillator.nominalTickLength = 0.1s
 %#--------------------------------------------------------------------------------------------------------------
 %postrun-command: grep "^C:" test.out > clock.out || true
