@@ -7,7 +7,7 @@ import inet.node.ethernet.Eth100M;
 import inet.node.ethernet.EtherSwitch;
 import inet.node.inet.Router;
 import inet.node.inet.StandardHost;
-import inet.node.inet.WirelessHost;
+import inet.tracker.integrated.IntegratedTracker;
 import inet.visualizer.integrated.IntegratedVisualizer;
 
 
@@ -15,6 +15,10 @@ network TransportConnectionVisualizationEnablingShowcase
 {
     @display("bgb=596,373");
     submodules:
+        tracker: IntegratedTracker {
+            parameters:
+                @display("p=100,50;is=s");
+        }
         host1: StandardHost {
             @display("p=78,133");
         }
@@ -35,6 +39,10 @@ network TransportConnectionVisualizationMultipleConnectionsShowcase
 {
     @display("bgb=596,421");
     submodules:
+        tracker: IntegratedTracker {
+            parameters:
+                @display("p=100,50;is=s");
+        }
         host1: StandardHost {
             @display("p=59,103");
         }
@@ -67,6 +75,10 @@ network Complexer
 {
     @display("bgb=596,421");
     submodules:
+        tracker: IntegratedTracker {
+            parameters:
+                @display("p=100,50;is=s");
+        }
         host1: StandardHost {
             @display("p=59,103");
         }

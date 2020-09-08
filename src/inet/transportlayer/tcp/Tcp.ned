@@ -217,7 +217,9 @@ simple Tcp like ITcp
         @display("i=block/wheelbarrow");
         @signal[tcpConnectionAdded];
         @signal[tcpConnectionRemoved];
+        @signal[packetSentToUpper](type=cPacket);
         @signal[packetReceivedFromUpper](type=cPacket);
+        @signal[packetSentToLower](type=cPacket);
         @signal[packetReceivedFromLower](type=cPacket);
     gates:
         input appIn @labels(TcpCommand/down) @messageKinds(inet::TcpCommandCode);

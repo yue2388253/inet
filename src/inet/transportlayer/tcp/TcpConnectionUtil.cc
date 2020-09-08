@@ -312,6 +312,7 @@ void TcpConnection::sendToIP(Packet *tcpSegment, const Ptr<TcpHeader>& tcpHeader
 
     insertTransportProtocolHeader(tcpSegment, Protocol::tcp, tcpHeader);
 
+    tcpMain->emit(packetSentToLowerSignal, tcpSegment);
     tcpMain->sendFromConn(tcpSegment, "ipOut");
 }
 
@@ -340,6 +341,7 @@ void TcpConnection::sendToIP(Packet *tcpSegment, const Ptr<TcpHeader>& tcpHeader
 
     insertTransportProtocolHeader(tcpSegment, Protocol::tcp, tcpHeader);
 
+    tcpMain->emit(packetSentToLowerSignal, tcpSegment);
     tcpMain->sendFromConn(tcpSegment, "ipOut");
 }
 
@@ -391,6 +393,8 @@ void TcpConnection::sendEstabIndicationToApp()
 
 void TcpConnection::sendToApp(cMessage *msg)
 {
+    if (msg->isPacket())
+        tcpMain->emit(packetSentToUpperSignal, msg);
     tcpMain->sendFromConn(msg, "appOut");
 }
 
