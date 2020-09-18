@@ -17,15 +17,12 @@
 
 package inet.linklayer.ethernet;
 
-import inet.physicallayer.ethernet.WireJunction;
-
 
 //
-// A generic wiring hub model.
+// An Ethernet hub model.
 //
 // ethg[i] gates represent ports. Messages arriving on a port are broadcast
-// to every other port. For the model to work correctly, all connecting
-// links (both incoming and outgoing ones) must have the same datarate.
+// to every other port.
 //
 // Messages are not interpreted by the hub model in any way, thus the hub
 // model is not specific to Ethernet. Messages may represent anything, from
@@ -36,12 +33,15 @@ import inet.physicallayer.ethernet.WireJunction;
 // checks the equivalence of input/output datarates on startup; you are
 // responsible that links added at runtime have have the correct datarate.
 //
-simple EtherHub extends WireJunction
+simple EtherHub
 {
     parameters:
         @networkNode();
         @labels(node,ethernet-node);
-        @display("i=device/hub");
+        @display("i=device/hub;bgb=155,104");
+        @signal[packetReceived](type=cMessage);
         @statistic[packetReceived](title="packets"; source=packetReceived; record=count,"sum(packetBytes)","vector(packetBytes)"; interpolationmode=none);
+    gates:
+        inout ethg[] @labels(EtherFrame-conn);
 }
 
