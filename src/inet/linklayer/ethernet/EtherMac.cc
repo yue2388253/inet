@@ -615,7 +615,15 @@ void EtherMac::startFrameTransmission()
     }
     else {
         // no collision
-        scheduleEndTxPeriod(sentFrameByteLength);
+
+        // update burst variables
+        if (frameBursting) {
+            bytesSentInBurst += sentFrameByteLength;
+            framesSentInBurst++;
+        }
+
+        scheduleAt(transmissionChannel->getTransmissionFinishTime(), endTxTimer);
+        changeTransmissionState(TRANSMITTING_STATE);
 
         // only count transmissions in totalSuccessfulRxTxTime if channel is half-duplex
         if (!duplexMode)
@@ -1001,18 +1009,6 @@ void EtherMac::fillIFGIfInBurst()
         bytesSentInBurst = B(0);
         framesSentInBurst = 0;
     }
-}
-
-void EtherMac::scheduleEndTxPeriod(B sentFrameByteLength)
-{
-    // update burst variables
-    if (frameBursting) {
-        bytesSentInBurst += sentFrameByteLength;
-        framesSentInBurst++;
-    }
-
-    scheduleAt(transmissionChannel->getTransmissionFinishTime(), endTxTimer);
-    changeTransmissionState(TRANSMITTING_STATE);
 }
 
 void EtherMac::scheduleEndPausePeriod(int pauseUnits)
