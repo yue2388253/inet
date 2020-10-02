@@ -921,7 +921,7 @@ void EtherMac::updateRxSignals(EthernetSignalBase *signal, simtime_t endRxTime)
     if (!found)
         rxSignals.push_back(RxSignal(signalId, signal, endRxTime));
 
-    if (endRxTimer->getArrivalTime() != maxEndRxTime) {
+    if (endRxTimer->getArrivalTime() != maxEndRxTime || endRxTime == maxEndRxTime ) {
         rescheduleAt(maxEndRxTime, endRxTimer);
     }
 }
