@@ -98,7 +98,7 @@ void WireJunction::handleMessage(cMessage *msg)
         return;
     }
 
-    long incomingTxId = signal->getOrigPacketId();
+    long incomingTxId = signal->getTransmissionId();
     for (int i = 0; i < numPorts; i++) {
         if (i != arrivalPort) {
             cGate *ogate = gate(outputGateBaseId + i);
@@ -109,9 +109,8 @@ void WireJunction::handleMessage(cMessage *msg)
             SendOptions sendOptions;
             sendOptions.duration(signal->getDuration());
 
-
             if (!signal->isUpdate()) {
-                addTxInfo(signal->getId(), i, outSignal->getId(), simTime() + signal->getDuration());
+                addTxInfo(signal->getTransmissionId(), i, outSignal->getTransmissionId(), simTime() + signal->getDuration());
             }
             else {
                 TxInfo *tx = findTxInfo(incomingTxId, i);
