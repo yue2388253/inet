@@ -621,7 +621,6 @@ void EtherMac::sendSignal(EthernetSignalBase *signal, simtime_t_cref duration)
     ASSERT(curTxSignal == nullptr);
     signal->setDuration(duration);
     curTxSignal = signal->dup();
-    curTxSignal->setOrigPacketId(signal->getId());
     send(signal, SendOptions().duration(duration), physOutGate);
 }
 
@@ -631,7 +630,7 @@ void EtherMac::sendJamSignal()
     ASSERT(curTxSignal != nullptr);
     simtime_t duration = simTime() - curTxSignal->getCreationTime();    //TODO save and use start tx time
     cutEthernetSignalEnd(curTxSignal, duration);    //TODO save and use start tx time
-    send(curTxSignal, SendOptions().finishTx(curTxSignal->getOrigPacketId()).duration(duration), physOutGate);
+    send(curTxSignal, SendOptions().finishTx(curTxSignal->getTransmissionId()).duration(duration), physOutGate);
     curTxSignal = nullptr;
 
     // send JAM
@@ -906,10 +905,10 @@ void EtherMac::updateRxSignals(EthernetSignalBase *signal, simtime_t endRxTime)
     simtime_t maxEndRxTime = endRxTime;
     bool found = false;
     bool isUpdate = signal->isUpdate();
-    long signalId = isUpdate ? signal->getOrigPacketId() : signal->getId();
+    long signalTransmissionId = signal->getTransmissionId();
 
     for (auto& rx: rxSignals) {
-        if (isUpdate && rx.signalId == signalId) {
+        if (isUpdate && rx.transmissionId == signalTransmissionId) {
             ASSERT(!found);
             found = true;
             delete rx.signal;
@@ -922,7 +921,7 @@ void EtherMac::updateRxSignals(EthernetSignalBase *signal, simtime_t endRxTime)
     }
 
     if (!found)
-        rxSignals.push_back(RxSignal(signalId, signal, endRxTime));
+        rxSignals.push_back(RxSignal(signalTransmissionId, signal, endRxTime));
 
     if (endRxTimer->getArrivalTime() != maxEndRxTime || endRxTime == maxEndRxTime ) {
         rescheduleAt(maxEndRxTime, endRxTimer);

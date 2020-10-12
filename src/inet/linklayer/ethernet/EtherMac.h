@@ -51,10 +51,10 @@ class INET_API EtherMac : public EtherMacBase
   protected:
     class RxSignal {
       public:
-        long signalId = -1;
+        long transmissionId = -1;
         EthernetSignalBase *signal = nullptr;
         simtime_t endRxTime;
-        RxSignal(long signalId, EthernetSignalBase *signal, simtime_t_cref endRxTime) : signalId(signalId), signal(signal), endRxTime(endRxTime) {}
+        RxSignal(long transmissionId, EthernetSignalBase *signal, simtime_t_cref endRxTime) : transmissionId(transmissionId), signal(signal), endRxTime(endRxTime) {}
     };
     std::vector<RxSignal> rxSignals;
 
