@@ -618,7 +618,8 @@ void EtherMac::sendSignal(EthernetSignalBase *signal, simtime_t_cref duration)
     ASSERT(curTxSignal == nullptr);
     signal->setDuration(duration);
     curTxSignal = signal->dup();
-    send(signal, SendOptions().duration(duration), physOutGate);
+    curTxId = signal->getId();
+    send(signal, SendOptions().transmissionId(curTxId).duration(duration), physOutGate);
 }
 
 void EtherMac::sendJamSignal()
@@ -627,8 +628,9 @@ void EtherMac::sendJamSignal()
     ASSERT(curTxSignal != nullptr);
     simtime_t duration = simTime() - curTxSignal->getCreationTime();    //TODO save and use start tx time
     cutEthernetSignalEnd(curTxSignal, duration);    //TODO save and use start tx time
-    send(curTxSignal, SendOptions().finishTx(curTxSignal->getTransmissionId()).duration(duration), physOutGate);
+    send(curTxSignal, SendOptions().finishTx(curTxId).duration(duration), physOutGate);
     curTxSignal = nullptr;
+    curTxId = -1;
 
     // send JAM
     EthernetJamSignal *jam = new EthernetJamSignal("JAM_SIGNAL");
@@ -647,6 +649,7 @@ void EtherMac::txFinished()
     ASSERT(curTxSignal != nullptr);
     delete curTxSignal;
     curTxSignal = nullptr;
+    curTxId = -1;
 }
 
 void EtherMac::handleEndJammingPeriod()
@@ -930,6 +933,7 @@ void EtherMac::dropCurrentTxFrame(PacketDropDetails& details)
     EtherMacBase::dropCurrentTxFrame(details);
     delete curTxSignal;
     curTxSignal = nullptr;
+    curTxId = -1;
 }
 
 } // namespace inet
