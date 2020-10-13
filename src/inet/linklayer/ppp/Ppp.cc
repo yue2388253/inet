@@ -192,7 +192,8 @@ void Ppp::startTransmitting()
         pppFrame->insertAtFront(bytes);
     }
     curTxPacket = pppFrame->dup();
-    send(pppFrame, physOutGate);
+    curTxPacket->setTransmissionId(pppFrame->getId());
+    send(pppFrame, SendOptions().transmissionId(curTxPacket->getTransmissionId()), physOutGate);
 
     ASSERT(datarateChannel == physOutGate->getTransmissionChannel());    //FIXME reread datarateChannel when changed
 
