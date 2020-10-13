@@ -110,7 +110,8 @@ void WireJunction::handleMessage(cMessage *msg)
             sendOptions.duration(signal->getDuration());
 
             if (!signal->isUpdate()) {
-                addTxInfo(signal->getTransmissionId(), i, outSignal->getTransmissionId(), simTime() + signal->getDuration());
+                sendOptions.transmissionId(outSignal->getId());
+                addTxInfo(signal->getTransmissionId(), i, outSignal->getId(), simTime() + signal->getDuration());
             }
             else {
                 TxInfo *tx = findTxInfo(incomingTxId, i);
