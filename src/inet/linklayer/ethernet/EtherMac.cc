@@ -238,7 +238,7 @@ void EtherMac::handleSignalFromNetwork(EthernetSignalBase *signal)
     if (duplexMode && jamSignal)
         throw cRuntimeError("Stray jam signal arrived in full-duplex mode");
 
-
+#if 0
     if (!duplexMode && transmitState == WAIT_IFG_STATE &&
             signal->isReceptionStart() && endIfgTimer->isScheduled() &&
             endIfgTimer->getSendingTime() == simTime() &&
@@ -250,6 +250,7 @@ void EtherMac::handleSignalFromNetwork(EthernetSignalBase *signal)
         EV_DETAIL << "Aborted IFG period (elapsed IFG is ZERO)\n";
         changeTransmissionState(TX_IDLE_STATE);
     }
+#endif
 
     if (auto jamSignal = dynamic_cast<EthernetJamSignal *>(signal)) {
         updateRxSignals(signal, simTime() + signal->getRemainingDuration());
