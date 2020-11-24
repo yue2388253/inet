@@ -33,11 +33,12 @@ Register_Class(cQueue);
 
 class FunctionBasedComparator : public cQueue::Comparator
 {
-   cQueue::CompareFunc f;
+    cQueue::CompareFunc f;
+
   public:
-   FunctionBasedComparator(cQueue::CompareFunc f) : f(f) {}
-   virtual FunctionBasedComparator *dup() const override {return new FunctionBasedComparator(f);}
-   virtual bool less(cObject *a, cObject *b) override {return f(a,b) < 0;}
+    FunctionBasedComparator(cQueue::CompareFunc f) : f(f) {}
+    virtual FunctionBasedComparator *dup() const override { return new FunctionBasedComparator(f); }
+    virtual bool less(cObject *a, cObject *b) override { return f(a, b) < 0; }
 };
 
 cQueue::cQueue(const cQueue& queue) : cOwnedObject(queue)

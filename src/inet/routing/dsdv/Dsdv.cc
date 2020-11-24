@@ -154,17 +154,17 @@ void Dsdv::handleSelfMessage(cMessage *msg)
         hello->setHopdistance(1);
 
         /*http://www.cs.ucsb.edu/~ebelding/txt/bc.txt
-        The IPv4 address for "limited broadcast" is 255.255.255.255, and is not supposed to be forwarded.
-        Since the nodes in an ad hoc network are asked to forward the flooded packets, the limited broadcast
-        address is a poor choice.  The other available choice, the "directed broadcast" address, would presume a
-        choice of routing prefix for the ad hoc network and thus is not a reasonable choice.
-        (...)
-        Limited Broadcast - Sent to all NICs on the some network segment as the source NIC. It is represented with
-        the 255.255.255.255 TCP/IP address. This broadcast is not forwarded by routers so will only appear on one
-        network segment.
-        Direct broadcast - Sent to all hosts on a network. Routers may be configured to forward directed broadcasts
-        on large networks. For network 192.168.0.0, the broadcast is 192.168.255.255.
-        */
+           The IPv4 address for "limited broadcast" is 255.255.255.255, and is not supposed to be forwarded.
+           Since the nodes in an ad hoc network are asked to forward the flooded packets, the limited broadcast
+           address is a poor choice.  The other available choice, the "directed broadcast" address, would presume a
+           choice of routing prefix for the ad hoc network and thus is not a reasonable choice.
+           (...)
+           Limited Broadcast - Sent to all NICs on the some network segment as the source NIC. It is represented with
+           the 255.255.255.255 TCP/IP address. This broadcast is not forwarded by routers so will only appear on one
+           network segment.
+           Direct broadcast - Sent to all hosts on a network. Routers may be configured to forward directed broadcasts
+           on large networks. For network 192.168.0.0, the broadcast is 192.168.255.255.
+         */
         // new control info for DsdvHello
         auto packet = new Packet("Hello", hello);
         auto addressReq = packet->addTag<L3AddressReq>();

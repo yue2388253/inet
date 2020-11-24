@@ -91,7 +91,7 @@ const char *MatchableObject::getAsString(const char *attribute) const
         bool found = findDescriptorField(d, token, fid, index);
         if (!found) return nullptr;
     }
-*/
+ */
 
     int fieldId;
     int index;

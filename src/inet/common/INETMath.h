@@ -224,7 +224,7 @@ inline double n_choose_k(int n, int k) {
  */
 template<typename T>
 inline const T minnan(const T& a, const T& b) {
-static_assert(!std::is_integral<T>::value, "minnan() is only meant for doubles and double based units, use std::min() for integers");
+    static_assert(!std::is_integral<T>::value, "minnan() is only meant for doubles and double based units, use std::min() for integers");
     if (a < b)
         return a;
     else if (b < a)
@@ -242,7 +242,7 @@ static_assert(!std::is_integral<T>::value, "minnan() is only meant for doubles a
  */
 template<typename T>
 inline const T maxnan(const T& a, const T& b) {
-static_assert(!std::is_integral<T>::value, "maxnan() is only meant for doubles and double based units, use std::max() for integers");
+    static_assert(!std::is_integral<T>::value, "maxnan() is only meant for doubles and double based units, use std::max() for integers");
     if (a > b)
         return a;
     else if (b > a)
