@@ -328,8 +328,8 @@ void Ospfv2PacketSerializer::serializeNetworkLsa(MemoryOutputStream& stream, con
 void Ospfv2PacketSerializer::deserializeNetworkLsa(MemoryInputStream& stream, const Ptr<Ospfv2LinkStateUpdatePacket> updatePacket, Ospfv2NetworkLsa& networkLsa)
 {
     networkLsa.setNetworkMask(stream.readIpv4Address());
-    int numAttachedRouters = (B(networkLsa.getHeader().getLsaLength()) -
-                              OSPFv2_LSA_HEADER_LENGTH - OSPFv2_NETWORKLSA_MASK_LENGTH).get() / OSPFv2_NETWORKLSA_ADDRESS_LENGTH.get();
+    int numAttachedRouters = (B(networkLsa.getHeader().getLsaLength())
+                              - OSPFv2_LSA_HEADER_LENGTH - OSPFv2_NETWORKLSA_MASK_LENGTH).get() / OSPFv2_NETWORKLSA_ADDRESS_LENGTH.get();
     if (numAttachedRouters < 0)
         updatePacket->markIncorrect();
     else
@@ -357,8 +357,8 @@ void Ospfv2PacketSerializer::deserializeSummaryLsa(MemoryInputStream& stream, co
     if (stream.readByte() != 0)
         updatePacket->markIncorrect();
     summaryLsa.setRouteCost(stream.readUint24Be());
-    int numTos = (B(summaryLsa.getHeader().getLsaLength()) -
-                  OSPFv2_LSA_HEADER_LENGTH - OSPFv2_NETWORKLSA_MASK_LENGTH - B(4)).get() / OSPFv2_TOS_LENGTH.get();
+    int numTos = (B(summaryLsa.getHeader().getLsaLength())
+                  - OSPFv2_LSA_HEADER_LENGTH - OSPFv2_NETWORKLSA_MASK_LENGTH - B(4)).get() / OSPFv2_TOS_LENGTH.get();
     if (numTos < 0)
         updatePacket->markIncorrect();
     else
@@ -391,8 +391,8 @@ void Ospfv2PacketSerializer::deserializeAsExternalLsa(MemoryInputStream& stream,
     auto& contents = asExternalLsa.getContentsForUpdate();
     contents.setNetworkMask(stream.readIpv4Address());
 
-    int numExternalTos = (B(asExternalLsa.getHeader().getLsaLength()) -
-                          OSPFv2_LSA_HEADER_LENGTH - OSPFv2_ASEXTERNALLSA_HEADER_LENGTH).get() / OSPFv2_ASEXTERNALLSA_TOS_INFO_LENGTH.get();
+    int numExternalTos = (B(asExternalLsa.getHeader().getLsaLength())
+                          - OSPFv2_LSA_HEADER_LENGTH - OSPFv2_ASEXTERNALLSA_HEADER_LENGTH).get() / OSPFv2_ASEXTERNALLSA_TOS_INFO_LENGTH.get();
     if (numExternalTos < 0)
         updatePacket->markIncorrect();
     else

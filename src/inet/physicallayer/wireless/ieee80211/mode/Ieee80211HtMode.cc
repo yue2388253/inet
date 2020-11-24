@@ -186,19 +186,19 @@ bps Ieee80211HtSignalMode::computeNetBitrate() const
 
 b Ieee80211HtSignalMode::getLength() const
 {
-    return getMCSLength() +
-           getCBWLength() +
-           getHTLengthLength() +
-           getSmoothingLength() +
-           getNotSoundingLength() +
-           getReservedLength() +
-           getAggregationLength() +
-           getSTBCLength() +
-           getFECCodingLength() +
-           getShortGILength() +
-           getNumOfExtensionSpatialStreamsLength() +
-           getCRCLength() +
-           getTailBitsLength();
+    return getMCSLength()
+           + getCBWLength()
+           + getHTLengthLength()
+           + getSmoothingLength()
+           + getNotSoundingLength()
+           + getReservedLength()
+           + getAggregationLength()
+           + getSTBCLength()
+           + getFECCodingLength()
+           + getShortGILength()
+           + getNumOfExtensionSpatialStreamsLength()
+           + getCRCLength()
+           + getTailBitsLength();
 }
 
 bps Ieee80211HtDataMode::computeGrossBitrate() const
@@ -262,16 +262,16 @@ b Ieee80211HtDataMode::getCompleteLength(b dataLength) const
 
 unsigned int Ieee80211HtDataMode::computeNumberOfSpatialStreams(const Ieee80211OfdmModulation *stream1Modulation, const Ieee80211OfdmModulation *stream2Modulation, const Ieee80211OfdmModulation *stream3Modulation, const Ieee80211OfdmModulation *stream4Modulation) const
 {
-    return (stream1Modulation ? 1 : 0) + (stream2Modulation ? 1 : 0) +
-           (stream3Modulation ? 1 : 0) + (stream4Modulation ? 1 : 0);
+    return (stream1Modulation ? 1 : 0) + (stream2Modulation ? 1 : 0)
+           + (stream3Modulation ? 1 : 0) + (stream4Modulation ? 1 : 0);
 }
 
 unsigned int Ieee80211HtDataMode::computeNumberOfCodedBitsPerSubcarrierSum() const
 {
-    return (modulationAndCodingScheme->getModulation() ? modulationAndCodingScheme->getModulation()->getSubcarrierModulation()->getCodeWordSize() : 0) +
-           (modulationAndCodingScheme->getStreamExtension1Modulation() ? modulationAndCodingScheme->getStreamExtension1Modulation()->getSubcarrierModulation()->getCodeWordSize() : 0) +
-           (modulationAndCodingScheme->getStreamExtension2Modulation() ? modulationAndCodingScheme->getStreamExtension2Modulation()->getSubcarrierModulation()->getCodeWordSize() : 0) +
-           (modulationAndCodingScheme->getStreamExtension3Modulation() ? modulationAndCodingScheme->getStreamExtension3Modulation()->getSubcarrierModulation()->getCodeWordSize() : 0);
+    return (modulationAndCodingScheme->getModulation() ? modulationAndCodingScheme->getModulation()->getSubcarrierModulation()->getCodeWordSize() : 0)
+           + (modulationAndCodingScheme->getStreamExtension1Modulation() ? modulationAndCodingScheme->getStreamExtension1Modulation()->getSubcarrierModulation()->getCodeWordSize() : 0)
+           + (modulationAndCodingScheme->getStreamExtension2Modulation() ? modulationAndCodingScheme->getStreamExtension2Modulation()->getSubcarrierModulation()->getCodeWordSize() : 0)
+           + (modulationAndCodingScheme->getStreamExtension3Modulation() ? modulationAndCodingScheme->getStreamExtension3Modulation()->getSubcarrierModulation()->getCodeWordSize() : 0);
 }
 
 unsigned int Ieee80211HtDataMode::computeNumberOfBccEncoders() const

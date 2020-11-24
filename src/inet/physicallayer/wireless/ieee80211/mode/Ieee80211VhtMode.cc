@@ -283,19 +283,19 @@ bps Ieee80211VhtSignalMode::computeNetBitrate() const
 
 b Ieee80211VhtSignalMode::getLength() const
 {
-    return getMCSLength() +
-           getCBWLength() +
-           getHTLengthLength() +
-           getSmoothingLength() +
-           getNotSoundingLength() +
-           getReservedLength() +
-           getAggregationLength() +
-           getSTBCLength() +
-           getFECCodingLength() +
-           getShortGILength() +
-           getNumOfExtensionSpatialStreamsLength() +
-           getCRCLength() +
-           getTailBitsLength();
+    return getMCSLength()
+           + getCBWLength()
+           + getHTLengthLength()
+           + getSmoothingLength()
+           + getNotSoundingLength()
+           + getReservedLength()
+           + getAggregationLength()
+           + getSTBCLength()
+           + getFECCodingLength()
+           + getShortGILength()
+           + getNumOfExtensionSpatialStreamsLength()
+           + getCRCLength()
+           + getTailBitsLength();
 }
 
 bps Ieee80211VhtDataMode::computeGrossBitrate() const
@@ -374,14 +374,14 @@ unsigned int Ieee80211VhtDataMode::computeNumberOfSpatialStreams(const Ieee80211
 
 unsigned int Ieee80211VhtDataMode::computeNumberOfCodedBitsPerSubcarrierSum() const
 {
-    return (modulationAndCodingScheme->getModulation() ? modulationAndCodingScheme->getModulation()->getSubcarrierModulation()->getCodeWordSize() : 0) +
-           (modulationAndCodingScheme->getStreamExtension1Modulation() ? modulationAndCodingScheme->getStreamExtension1Modulation()->getSubcarrierModulation()->getCodeWordSize() : 0) +
-           (modulationAndCodingScheme->getStreamExtension2Modulation() ? modulationAndCodingScheme->getStreamExtension2Modulation()->getSubcarrierModulation()->getCodeWordSize() : 0) +
-           (modulationAndCodingScheme->getStreamExtension3Modulation() ? modulationAndCodingScheme->getStreamExtension3Modulation()->getSubcarrierModulation()->getCodeWordSize() : 0) +
-           (modulationAndCodingScheme->getStreamExtension4Modulation() ? modulationAndCodingScheme->getStreamExtension4Modulation()->getSubcarrierModulation()->getCodeWordSize() : 0) +
-           (modulationAndCodingScheme->getStreamExtension5Modulation() ? modulationAndCodingScheme->getStreamExtension5Modulation()->getSubcarrierModulation()->getCodeWordSize() : 0) +
-           (modulationAndCodingScheme->getStreamExtension6Modulation() ? modulationAndCodingScheme->getStreamExtension6Modulation()->getSubcarrierModulation()->getCodeWordSize() : 0) +
-           (modulationAndCodingScheme->getStreamExtension7Modulation() ? modulationAndCodingScheme->getStreamExtension7Modulation()->getSubcarrierModulation()->getCodeWordSize() : 0);
+    return (modulationAndCodingScheme->getModulation() ? modulationAndCodingScheme->getModulation()->getSubcarrierModulation()->getCodeWordSize() : 0)
+           + (modulationAndCodingScheme->getStreamExtension1Modulation() ? modulationAndCodingScheme->getStreamExtension1Modulation()->getSubcarrierModulation()->getCodeWordSize() : 0)
+           + (modulationAndCodingScheme->getStreamExtension2Modulation() ? modulationAndCodingScheme->getStreamExtension2Modulation()->getSubcarrierModulation()->getCodeWordSize() : 0)
+           + (modulationAndCodingScheme->getStreamExtension3Modulation() ? modulationAndCodingScheme->getStreamExtension3Modulation()->getSubcarrierModulation()->getCodeWordSize() : 0)
+           + (modulationAndCodingScheme->getStreamExtension4Modulation() ? modulationAndCodingScheme->getStreamExtension4Modulation()->getSubcarrierModulation()->getCodeWordSize() : 0)
+           + (modulationAndCodingScheme->getStreamExtension5Modulation() ? modulationAndCodingScheme->getStreamExtension5Modulation()->getSubcarrierModulation()->getCodeWordSize() : 0)
+           + (modulationAndCodingScheme->getStreamExtension6Modulation() ? modulationAndCodingScheme->getStreamExtension6Modulation()->getSubcarrierModulation()->getCodeWordSize() : 0)
+           + (modulationAndCodingScheme->getStreamExtension7Modulation() ? modulationAndCodingScheme->getStreamExtension7Modulation()->getSubcarrierModulation()->getCodeWordSize() : 0);
 }
 
 unsigned int Ieee80211VhtDataMode::getNumberOfBccEncoders20MHz() const

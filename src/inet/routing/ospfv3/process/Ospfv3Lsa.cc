@@ -18,15 +18,15 @@ Ospfv3SpfVertex::Ospfv3SpfVertex(Ospfv3Lsa *asocLSA, int distance)
 // for ROUTER_LSA
 B calculateLSASize(const Ospfv3RouterLsa *routerLSA)
 {
-    return OSPFV3_LSA_HEADER_LENGTH + OSPFV3_ROUTER_LSA_HEADER_LENGTH +
-           (OSPFV3_ROUTER_LSA_BODY_LENGTH * routerLSA->getRoutersArraySize());
+    return OSPFV3_LSA_HEADER_LENGTH + OSPFV3_ROUTER_LSA_HEADER_LENGTH
+           + (OSPFV3_ROUTER_LSA_BODY_LENGTH * routerLSA->getRoutersArraySize());
 }
 
 // for NETWORK_LSA
 B calculateLSASize(const Ospfv3NetworkLsa *networkLSA)
 {
-    return OSPFV3_LSA_HEADER_LENGTH + OSPFV3_NETWORK_LSA_HEADER_LENGTH +
-           (OSPFV3_NETWORK_LSA_ATTACHED_LENGTH * networkLSA->getAttachedRouterArraySize());
+    return OSPFV3_LSA_HEADER_LENGTH + OSPFV3_NETWORK_LSA_HEADER_LENGTH
+           + (OSPFV3_NETWORK_LSA_ATTACHED_LENGTH * networkLSA->getAttachedRouterArraySize());
 }
 
 // for  INTER_AREA_PREFIX_LSA
