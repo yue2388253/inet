@@ -89,55 +89,55 @@ class INET_API cQueue : public cOwnedObject
          * The iterator can be initialized for forward (front-to-back, using
          * <tt>++</tt>) or reverse (back-to-front, using <tt>--</tt>) iteration.
          */
-        Iterator(const cQueue& q, bool reverse=false) { init(q, reverse);}
+        Iterator(const cQueue& q, bool reverse = false) { init(q, reverse); }
 
         /**
          * Reinitializes the iterator object.
          */
-        void init(const cQueue& q, bool reverse=false) {p = reverse ? q.backp : q.frontp;}
+        void init(const cQueue& q, bool reverse = false) { p = reverse ? q.backp : q.frontp; }
 
         /**
          * Returns the current object.
          */
-        cObject *operator*() const {return p ? p->obj : nullptr;}
+        cObject *operator*() const { return p ? p->obj : nullptr; }
 
         /**
          * DEPRECATED. Use the * operator to access the object the iterator is at.
          */
-        _OPPDEPRECATED cObject *operator()() const {return operator*();}
+        _OPPDEPRECATED cObject *operator()() const { return operator*(); }
 
         /**
          * Returns true if the iterator has reached either end of the queue.
          */
-        bool end() const {return p == nullptr;}
+        bool end() const { return p == nullptr; }
 
         /**
          * Prefix increment operator (++it). Moves the iterator to the next object
          * in the queue. It has no effect if the iterator has reached either
          * end of the queue.
          */
-        Iterator& operator++() {if (!end()) p = p->next; return *this;}
+        Iterator& operator++() { if (!end()) p = p->next; return *this; }
 
         /**
          * Postfix increment operator (it++). Moves the iterator to the next object
          * in the queue, and returns the iterator's previous state. It has
          * no effect if the iterator has reached either end of the queue.
          */
-        Iterator operator++(int) {Iterator tmp(*this); if (!end()) p = p->next; return tmp;}
+        Iterator operator++(int) { Iterator tmp(*this); if (!end()) p = p->next; return tmp; }
 
         /**
          * Prefix decrement operator (--it). Moves the iterator to the previous object
          * in the queue. It has no effect if the iterator has reached either
          * end of the queue.
          */
-        Iterator& operator--() {if (!end()) p = p->prev; return *this;}
+        Iterator& operator--() { if (!end()) p = p->prev; return *this; }
 
         /**
          * Postfix decrement operator (it--). Moves the iterator to the previous object
          * in the queue, and returns the iterator's previous state. It has
          * no effect if the iterator has reached either end of the queue.
          */
-        Iterator operator--(int) {Iterator tmp(*this); if (!end()) p = p->prev; return tmp;}
+        Iterator operator--(int) { Iterator tmp(*this); if (!end()) p = p->prev; return tmp; }
     };
 
     friend class Iterator;
@@ -202,7 +202,7 @@ class INET_API cQueue : public cOwnedObject
      * Contained objects that are owned by the queue will be duplicated
      * so that the new queue will have its own copy of them.
      */
-    virtual cQueue *dup() const override  {return new cQueue(*this);}
+    virtual cQueue *dup() const override { return new cQueue(*this); }
 
     /**
      * Produces a one-line description of the object's contents.
@@ -308,17 +308,17 @@ class INET_API cQueue : public cOwnedObject
     /**
      * Returns true if the queue is empty.
      */
-    bool isEmpty() const {return getLength()==0;}
+    bool isEmpty() const { return getLength() == 0; }
 
     /**
      * DEPRECATED. Use getLength() instead.
      */
-    _OPPDEPRECATED int length() const {return getLength();}
+    _OPPDEPRECATED int length() const { return getLength(); }
 
     /**
      * DEPRECATED. Use isEmpty() instead.
      */
-    _OPPDEPRECATED bool empty() const {return isEmpty();}
+    _OPPDEPRECATED bool empty() const { return isEmpty(); }
 
     /**
      * Returns the ith element in the queue, or nullptr if i is out of range.
@@ -348,14 +348,14 @@ class INET_API cQueue : public cOwnedObject
      * that are NOT cOwnedObject. Since they do not support the ownership
      * protocol, they will always be treated by the queue as owned objects.
      */
-    void setTakeOwnership(bool tk) {takeOwnership=tk;}
+    void setTakeOwnership(bool tk) { takeOwnership = tk; }
 
     /**
      * Returns the flag which determines whether the container object
      * should automatically take ownership of the objects that are inserted
      * into it. See setTakeOwnedship() for more details.
      */
-    bool getTakeOwnership() const {return takeOwnership;}
+    bool getTakeOwnership() const { return takeOwnership; }
     //@}
 };
 
@@ -364,7 +364,6 @@ typedef cQueue::CompareFunc CompareFunc;
 
 } // namespace queueing
 } // namespace inet
-
 
 #endif
 
