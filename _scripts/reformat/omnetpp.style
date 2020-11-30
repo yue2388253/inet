@@ -240,7 +240,7 @@ sp_after_angle                  = ignore   # ignore/add/remove/force
 sp_angle_paren                  = remove   # ignore/add/remove/force
 
 # Add or remove space between '>' and '()' as found in 'new List<byte>();'.
-sp_angle_paren_empty            = ignore   # ignore/add/remove/force
+sp_angle_paren_empty            = remove   # ignore/add/remove/force
 
 # Add or remove space between '>' and a word as in 'List<byte> m;' or
 # 'template <typename T> static ...'.
@@ -296,7 +296,7 @@ sp_before_semi                  = remove   # ignore/add/remove/force
 sp_before_semi_for              = remove   # ignore/add/remove/force
 
 # Add or remove space before a semicolon of an empty part of a for statement.
-sp_before_semi_for_empty        = force    # ignore/add/remove/force
+sp_before_semi_for_empty        = remove    # ignore/add/remove/force
 
 # Add or remove space after ';', except when followed by a comment.
 #
@@ -310,7 +310,7 @@ sp_after_semi_for               = force    # ignore/add/remove/force
 
 # Add or remove space after the final semicolon of an empty part of a for
 # statement, as in 'for ( ; ; <here> )'.
-sp_after_semi_for_empty         = force    # ignore/add/remove/force
+sp_after_semi_for_empty         = remove    # ignore/add/remove/force
 
 # Add or remove space before '[' (except '[]').
 sp_before_square                = remove   # ignore/add/remove/force
@@ -603,7 +603,7 @@ sp_catch_brace                  = force    # ignore/add/remove/force
 # (OC) Add or remove space before the '{' of a '@catch' statement, if the '{'
 # and '@catch' are on the same line, as in '@catch (decl) <here> {'.
 # If set to ignore, sp_catch_brace is used.
-sp_oc_catch_brace               = ignore   # ignore/add/remove/force
+sp_oc_catch_brace               = force    # ignore/add/remove/force
 
 # Add or remove space between '}' and 'catch' if on the same line.
 sp_brace_catch                  = force    # ignore/add/remove/force
@@ -797,14 +797,14 @@ sp_range                        = ignore   # ignore/add/remove/force
 
 # Add or remove space after ':' in a Java/C++11 range-based 'for',
 # as in 'for (Type var : expr)'.
-sp_after_for_colon              = ignore   # ignore/add/remove/force
+sp_after_for_colon              = force    # ignore/add/remove/force
 
 # Add or remove space before ':' in a Java/C++11 range-based 'for',
 # as in 'for (Type var : expr)'.
-sp_before_for_colon             = ignore   # ignore/add/remove/force
+sp_before_for_colon             = force    # ignore/add/remove/force
 
 # (D) Add or remove space between 'extern' and '(' as in 'extern (C)'.
-sp_extern_paren                 = ignore   # ignore/add/remove/force
+sp_extern_paren                 = force    # ignore/add/remove/force
 
 # Add or remove space after the opening of a C++ comment,
 # i.e. '// A' vs. '//A'.
@@ -832,7 +832,7 @@ sp_after_newop_paren            = ignore   # ignore/add/remove/force
 
 # Add or remove space inside parenthesis of the new operator
 # as in 'new(foo) BAR'.
-sp_inside_newop_paren           = ignore   # ignore/add/remove/force
+sp_inside_newop_paren           = remove   # ignore/add/remove/force
 
 # Add or remove space after the open parenthesis of the new operator,
 # as in 'new(foo) BAR'.
@@ -2348,7 +2348,7 @@ cmt_reflow_mode                 = 0        # unsigned number
 
 # Whether to convert all tabs to spaces in comments. If false, tabs in
 # comments are left alone, unless used for indenting.
-cmt_convert_tab_to_spaces       = false    # true/false
+cmt_convert_tab_to_spaces       = true     # true/false
 
 # Whether to apply changes to multi-line comments, including cmt_width,
 # keyword substitution and leading chars.
