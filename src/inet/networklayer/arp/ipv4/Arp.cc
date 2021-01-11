@@ -148,6 +148,21 @@ void Arp::flush()
     }
 }
 
+void Arp::purgeCache()
+{
+    simtime_t now = simTime();
+    auto i = arpCache.begin();
+    while (i != arpCache.end()) {
+        ArpCacheEntry *entry = i->second;
+        if (!entry->pending && entry->lastUpdate + cacheTimeout < now) {
+            delete entry;
+            i = arpCache.erase(i);
+        }
+        else
+            ++i;
+    }
+}
+
 void Arp::refreshDisplay() const
 {
     OperationalBase::refreshDisplay();
@@ -264,6 +279,7 @@ void Arp::dumpArpPacket(const ArpPacket *arp)
 
 void Arp::processArpPacket(Packet *packet)
 {
+    purgeCache();
     EV_INFO << "Received " << packet << " from network protocol.\n";
     const auto& arp = packet->peekAtFront<ArpPacket>();
     dumpArpPacket(arp.get());
