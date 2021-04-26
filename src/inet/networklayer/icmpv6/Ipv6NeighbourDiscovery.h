@@ -102,6 +102,8 @@ class INET_API Ipv6NeighbourDiscovery : public cSimpleModule, public LifecycleUn
     ModuleRefByPar<Ipv6RoutingTable> rt6;
     ModuleRefByPar<Icmpv6> icmpv6;
     CrcMode crcMode = CRC_MODE_UNDEFINED;
+    simtime_t minIntervalBetweenRAs;
+    simtime_t maxIntervalBetweenRAs;
 
 #ifdef INET_WITH_xMIPv6
     ModuleRefByPar<xMIPv6> mipv6; // in case the node has MIP support
@@ -169,6 +171,7 @@ class INET_API Ipv6NeighbourDiscovery : public cSimpleModule, public LifecycleUn
     /************************Miscellaneous Stuff***************************/
     virtual int numInitStages() const override { return NUM_INIT_STAGES; }
     virtual void initialize(int stage) override;
+    virtual void handleParameterChange(const char *name) override;
     virtual void handleMessage(cMessage *msg) override;
     virtual void processNDMessage(Packet *packet, const Icmpv6Header *msg);
     virtual void finish() override;

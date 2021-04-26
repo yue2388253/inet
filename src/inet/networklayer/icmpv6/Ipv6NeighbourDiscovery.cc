@@ -86,6 +86,22 @@ Ipv6NeighbourDiscovery::~Ipv6NeighbourDiscovery()
     }
 }
 
+void Ipv6NeighbourDiscovery::handleParameterChange(const char *name)
+{
+    if (name == nullptr) {
+        // in initialize only:
+        minIntervalBetweenRAs = par("minIntervalBetweenRAs"); // TODO processing it anytime
+        maxIntervalBetweenRAs = par("maxIntervalBetweenRAs"); // TODO processing it anytime
+    }
+    if (name == nullptr || !strcmp(name, "crcMode")) {
+        const char *crcModeString = par("crcMode");
+        crcMode = parseCrcMode(crcModeString, false);
+        if (name) return;
+    }
+    if (name)
+        throw cRuntimeError("Changing parameter '%s' not supported", name);
+}
+
 void Ipv6NeighbourDiscovery::initialize(int stage)
 {
     cSimpleModule::initialize(stage);
@@ -95,6 +111,7 @@ void Ipv6NeighbourDiscovery::initialize(int stage)
         crcMode = parseCrcMode(crcModeString, false);
     }
     else if (stage == INITSTAGE_NETWORK_LAYER_PROTOCOLS) {
+        handleParameterChange(nullptr);
         cModule *node = findContainingNode(this);
         NodeStatus *nodeStatus = node ? check_and_cast_nullable<NodeStatus *>(node->getSubmodule("status")) : nullptr;
         bool isOperational = (!nodeStatus) || nodeStatus->getState() == NodeStatus::UP;
@@ -110,7 +127,6 @@ void Ipv6NeighbourDiscovery::initialize(int stage)
 #endif /* INET_WITH_xMIPv6 */
 
         pendingQueue.setName("pendingQueue");
-
 #ifdef INET_WITH_xMIPv6
 //         MIPv6Enabled = par("MIPv6Support"); // (Zarrar 14.07.07)
         /*if(rt6->isRouter()) // 12.9.07 - CB
@@ -125,7 +141,6 @@ void Ipv6NeighbourDiscovery::initialize(int stage)
 
         for (int i = 0; i < ift->getNumInterfaces(); i++) {
             NetworkInterface *ie = ift->getInterface(i);
-
             if (ie->getProtocolData<Ipv6InterfaceData>()->getAdvSendAdvertisements() && !(ie->isLoopback())) {
                 createRaTimer(ie);
             }
@@ -1664,10 +1679,8 @@ void Ipv6NeighbourDiscovery::createRaTimer(NetworkInterface *ie)
 
     if (canServeWirelessNodes(ie)) {
         EV_INFO << "This Interface is connected to a WLAN AP, hence using MIPv6 Default Values" << endl;
-        simtime_t minRAInterval = par("minIntervalBetweenRAs"); // reading from the omnetpp.ini (ZY 23.07.09)
-        simtime_t maxRAInterval = par("maxIntervalBetweenRAs"); // reading from the omnetpp.ini (ZY 23.07.09
-        ie->getProtocolDataForUpdate<Ipv6InterfaceData>()->setMinRtrAdvInterval(minRAInterval);
-        ie->getProtocolDataForUpdate<Ipv6InterfaceData>()->setMaxRtrAdvInterval(maxRAInterval);
+        ie->getProtocolDataForUpdate<Ipv6InterfaceData>()->setMinRtrAdvInterval(minIntervalBetweenRAs);
+        ie->getProtocolDataForUpdate<Ipv6InterfaceData>()->setMaxRtrAdvInterval(maxIntervalBetweenRAs);
     }
     else {
         EV_INFO << "This Interface is not connected to a WLAN AP, hence using default values" << endl;
