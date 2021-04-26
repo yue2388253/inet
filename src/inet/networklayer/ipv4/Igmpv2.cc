@@ -153,6 +153,17 @@ Igmpv2::~Igmpv2()
         deleteRouterInterfaceData(routerData.begin()->first);
 }
 
+void Igmpv2::handleParameterChange(const char *name)
+{
+    if (name == nullptr || !strcmp(name, "crcMode")) {
+        const char *crcModeString = par("crcMode");
+        crcMode = parseCrcMode(crcModeString, false);
+        if (name) return;
+    }
+    if (name)
+        throw cRuntimeError("Changing parameter '%s' not supported", name);
+}
+
 void Igmpv2::initialize(int stage)
 {
     cSimpleModule::initialize(stage);
@@ -176,7 +187,6 @@ void Igmpv2::initialize(int stage)
 //        version1RouterPresentInterval = par("version1RouterPresentInterval");
         const char *crcModeString = par("crcMode");
         crcMode = parseCrcMode(crcModeString, false);
-
         addWatches();
     }
     // TODO INITSTAGE
