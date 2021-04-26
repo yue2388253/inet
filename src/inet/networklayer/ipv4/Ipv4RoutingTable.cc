@@ -61,6 +61,24 @@ Ipv4RoutingTable::~Ipv4RoutingTable()
         delete elem;
 }
 
+void Ipv4RoutingTable::handleParameterChange(const char *name)
+{
+    if (name == nullptr || !strcmp(name, "forwarding")) {
+        forwarding = par("forwarding");
+        if (name) return;
+    }
+    if (name == nullptr || !strcmp(name, "multicastForwarding")) {
+        multicastForward = par("multicastForwarding");
+        if (name) return;
+    }
+    if (name == nullptr || !strcmp(name, "useAdminDist")) {
+        useAdminDist = par("useAdminDist");
+        if (name) return;
+    }
+    if (name)
+        throw cRuntimeError("Changing parameter '%s' not supported", name);
+}
+
 void Ipv4RoutingTable::initialize(int stage)
 {
     cSimpleModule::initialize(stage);
