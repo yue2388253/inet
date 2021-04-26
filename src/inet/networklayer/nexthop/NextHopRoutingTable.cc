@@ -54,6 +54,20 @@ NextHopRoutingTable::~NextHopRoutingTable()
         delete elem;
 }
 
+void NextHopRoutingTable::handleParameterChange(const char *name)
+{
+    if (name == nullptr || !strcmp(name, "forwarding")) {
+        forwarding = par("forwarding");
+        if (name) return;
+    }
+    if (name == nullptr || !strcmp(name, "multicastForwarding")) {
+        multicastForwarding = par("multicastForwarding");
+        if (name) return;
+    }
+    if (name)
+        throw cRuntimeError("Changing parameter '%s' not supported", name);
+}
+
 void NextHopRoutingTable::initialize(int stage)
 {
     cSimpleModule::initialize(stage);
@@ -72,7 +86,7 @@ void NextHopRoutingTable::initialize(int stage)
         else
             throw cRuntimeError("Unknown address type");
         forwarding = par("forwarding");
-        multicastForwarding = par("multicastForwarding");
+        multicastForwarding = par("multicastForwarding")
 
         WATCH_PTRVECTOR(routes);
         WATCH_PTRVECTOR(multicastRoutes);
@@ -91,9 +105,8 @@ void NextHopRoutingTable::initialize(int stage)
     else if (stage == INITSTAGE_LINK_LAYER) {
         // At this point, all L2 modules have registered themselves (added their
         // interface entries). Create the per-interface Ipv4 data structures.
-        IInterfaceTable *interfaceTable = getModuleFromPar<IInterfaceTable>(par("interfaceTableModule"), this);
-        for (int i = 0; i < interfaceTable->getNumInterfaces(); ++i)
-            configureInterface(interfaceTable->getInterface(i));
+        for (int i = 0; i < ift->getNumInterfaces(); ++i)
+            configureInterface(ift->getInterface(i));
     }
     else if (stage == INITSTAGE_NETWORK_LAYER) {
         configureLoopback();
