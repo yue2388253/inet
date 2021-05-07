@@ -69,12 +69,12 @@ module RsvpMplsRouter
         }
         linkStateRouting: LinkStateRouting {
             parameters:
-                peers = peers;
+                peers = parent.peers;
                 @display("p=600,80");
         }
         rsvp: RsvpTe {
             parameters:
-                peers = peers;
+                peers = parent.peers;
                 classifierModule = "^.classifier";
                 @display("p=300,80");
         }

@@ -43,14 +43,14 @@ module EthernetPhyLayer like IEthernetPhyLayer
             @display("p=200,100");
         }
         interFrameGapInserter: InterpacketGapInserter {
-            duration = default(96s / dropUnit(bitrate));  // 96 bit / <bitrate> bps
+            duration = default(96s / dropUnit(parent.bitrate));  // 96 bit / <bitrate> bps
             @display("p=200,200");
         }
         outboundEmitter: <default("PacketEmitter")> like IPacketFlow {
             @display("p=200,300");
         }
         transmitter: <default("PacketTransmitter")> like IPacketTransmitter {
-            datarate = default(bitrate);
+            datarate = default(parent.bitrate);
             @display("p=200,400");
         }
         phyHeaderChecker: <default("EthernetPhyHeaderChecker")> like IPacketFilter {
@@ -60,7 +60,7 @@ module EthernetPhyLayer like IEthernetPhyLayer
             @display("p=500,300");
         }
         receiver: <default("PacketReceiver")> like IPacketReceiver {
-            datarate = default(bitrate);
+            datarate = default(parent.bitrate);
             @display("p=500,400");
         }
     connections:
