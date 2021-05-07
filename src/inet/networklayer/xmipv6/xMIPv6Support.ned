@@ -46,8 +46,8 @@ module xMIPv6Support like IxMIPv6Support
         output toIPv6;
     submodules:
         xMobileIPv6: xMIPv6 {
-            isHomeAgent = isHomeAgent;
-            isMobileNode = isMobileNode;
+            isHomeAgent = parent.isHomeAgent;
+            isMobileNode = parent.isMobileNode;
             @display("p=250,150");
         }
         buList: BindingUpdateList {

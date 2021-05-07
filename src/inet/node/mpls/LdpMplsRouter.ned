@@ -65,8 +65,8 @@ module LdpMplsRouter
         }
         ldp: Ldp {
             parameters:
-                holdTime = holdTime;
-                helloInterval = helloInterval;
+                holdTime = parent.holdTime;
+                helloInterval = parent.helloInterval;
                 @display("p=450,80");
         }
         at: MessageDispatcher {
