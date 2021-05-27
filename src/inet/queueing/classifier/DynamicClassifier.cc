@@ -41,7 +41,17 @@ int DynamicClassifier::classifyPacket(Packet *packet)
     if (it == classIndexToGateItMap.end()) {
         auto parentModule = getParentModule();
         int submoduleIndex = gateSize("out");
+#if OMNETPP_VERSION >= 0x0600 && OMNETPP_BUILDNUM >= 1516
+        if (parentModule->hasSubmoduleVector(submoduleName)) {
+            int origVectorSize = parentModule->getSubmoduleVectorSize(submoduleName);
+            parentModule->setSubmoduleVectorSize(submoduleName, std::max(origVectorSize, submoduleIndex + 1));
+        }
+        else
+            parentModule->addSubmoduleVector(submoduleName, submoduleIndex + 1);
+        auto module = moduleType->create(submoduleName, parentModule, submoduleIndex);
+#else
         auto module = moduleType->create(submoduleName, parentModule, submoduleIndex + 1, submoduleIndex);
+#endif
         auto moduleInputGate = module->gate("in");
         auto moduleOutputGate = module->gate("out");
         auto multiplexer = parentModule->getSubmodule("multiplexer");
