@@ -70,11 +70,25 @@ void TcpServerListener::finish()
 
 void TcpServerListener::socketAvailable(TcpSocket *socket, TcpAvailableInfo *availableInfo)
 {
+    static const char *submoduleVectorName = "connection";
     const char *serverConnectionModuleType = par("serverConnectionModuleType");
     cModuleType *moduleType = cModuleType::get(serverConnectionModuleType);
-    cModule *submodule = getParentModule()->getSubmodule("connection", 0);
+    cModule *parentModule = getParentModule();
+#if OMNETPP_VERSION >= 0x0600 && OMNETPP_BUILDNUM >= 1516
+    int submoduleIndex = 0;
+    if (parentModule->hasSubmoduleVector(submoduleVectorName)) {
+        submoduleIndex = parentModule->getSubmoduleVectorSize(submoduleVectorName);
+        parentModule->setSubmoduleVectorSize(submoduleVectorName, submoduleIndex + 1);
+    }
+    else {
+        parentModule->addSubmoduleVector(submoduleVectorName, 1);
+    }
+    auto connection = moduleType->create(submoduleVectorName, parentModule, submoduleIndex);
+#else
+    cModule *submodule = parentModule->getSubmodule(submoduleVectorName, 0);
     int submoduleIndex = submodule == nullptr ? 0 : submodule->getVectorSize();
-    auto connection = moduleType->create("connection", getParentModule(), submoduleIndex + 1, submoduleIndex);
+    auto connection = moduleType->create(submoduleVectorName, parentModule, submoduleIndex + 1, submoduleIndex);
+#endif
     connection->finalizeParameters();
     connection->buildInside();
     connection->callInitialize();
