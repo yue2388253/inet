@@ -19,6 +19,7 @@
 #define __INET_ETHERNETFRAMECLASSIFIER_H
 
 #include "inet/common/stlutils.h"
+#include "inet/common/IProtocolRegistrationListener.h"
 #include "inet/common/ModuleRefByPar.h"
 #include "inet/networklayer/contract/IInterfaceTable.h"
 #include "inet/queueing/base/PacketClassifierBase.h"
@@ -32,7 +33,7 @@ namespace inet {
  * - PAUSE frames
  * - others
  */
-class INET_API EthernetForker : public queueing::PacketClassifierBase
+class INET_API EthernetForker : public queueing::PacketClassifierBase, public TransparentProtocolRegistrationListener
 {
   protected:
     ModuleRefByPar<IInterfaceTable> interfaceTable;
@@ -61,6 +62,8 @@ class INET_API EthernetForker : public queueing::PacketClassifierBase
      * Sends the incoming packet to either the first or the second gate.
      */
     virtual int classifyPacket(Packet *packet) override;
+
+    virtual cGate *getRegistrationForwardingGate(cGate *gate) override;
 };
 
 } // namespace inet

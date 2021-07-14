@@ -28,7 +28,7 @@ simple EthernetForker extends PacketClassifierBase like IPacketClassifier
     parameters:
         @class(EthernetForker);
         @display("i=block/classifier");
-        string bridgeAddress; // MacAddress
+        string bridgeAddress = default(""); // MacAddress
         string interfaceTableModule;
         object localDeliveryMacAddresses = default([["01:80:C2:00:00:00", "01:80:C2:00:00:0F"]]);   // array of arrays of MAC addresses, one inner array contains 1 or 2 MAC addresses: [[a,b], [c]] means a..b, c
 }

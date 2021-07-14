@@ -33,7 +33,8 @@ void EthernetForker::initialize(int stage)
     PacketClassifierBase::initialize(stage);
     if (stage == INITSTAGE_LOCAL) {
         interfaceTable.reference(this, "interfaceTableModule", true);
-        bridgeAddress.setAddress(par("bridgeAddress").stringValue());
+        if (!par("bridgeAddress").isEmptyString())
+            bridgeAddress.setAddress(par("bridgeAddress").stringValue());
         auto localDeliveryMacAddresses = check_and_cast<cValueArray*>(par("localDeliveryMacAddresses").objectValue())->asObjectVector<cValueArray>();
         for (auto elem : localDeliveryMacAddresses) {
             if (elem->size() == 1) {
@@ -75,6 +76,16 @@ int EthernetForker::classifyPacket(Packet *packet)
     if (incomingInterface->matchesMacAddress(destinationAddress))
         return 0;
     return 1;
+}
+
+cGate *EthernetForker::getRegistrationForwardingGate(cGate *gate)
+{
+    if (contains(outputGates, gate))
+        return this->inputGate;
+    else if (gate == inputGate)
+        return outputGates[0];  // TODO
+    else
+        throw cRuntimeError("Unknown gate");
 }
 
 } // namespace inet
