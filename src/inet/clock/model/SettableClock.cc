@@ -9,6 +9,7 @@
 
 #include "inet/clock/oscillator/ConstantDriftOscillator.h"
 #include "inet/common/XMLUtils.h"
+#include "inet/common/ModuleAccess.h"
 
 namespace inet {
 
@@ -90,6 +91,8 @@ void SettableClock::setClockTime(clocktime_t newClockTime, bool resetOscillator)
             }
         }
         emit(timeChangedSignal, newClockTime.asSimTime());
+//        this->getParentModule()->bubble("Clock time set");
+        getContainingNode(this)->bubble("Clock time set");
     }
 }
 
