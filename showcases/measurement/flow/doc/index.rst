@@ -140,6 +140,7 @@ We want to measure the following:
 For this purpose, we specify five packet flows, and measure elapsed time and queueing time along the following flows:
 
 .. - Four packet flows going from each client's UDP app to the UDP app in the two servers (``client1`` -> ``server1``, ``client1`` -> ``server2``, ``client2`` -> ``server1``, ``client2`` -> ``server2``)
+
 - Four packet flows corresponding to the packet streams ``c1s1``, ``c1s2``, ``c2s1`` and ``c2s2`` (i.e. each flow is between the client and server UDP apps) 
 - A packet flow going between the Ethernet interfaces connecting ``switch1`` and ``switch2``.
 
@@ -156,25 +157,25 @@ The following is a screenshot showing the five defined packet flows in action:
 
 .. **TODO** kliensek kozott az appok kozotti traffic; switchek kozott minden -> amit szeretnenk merni
 
-Let's see how we set up these flows. The UDP apps in the clients and servers are the :ned:`UdpApp` type, i.e. the modular UDP app. This module has an optional ``outbound`` submodule that we can specify in the .INI file to be a :ned:`FlowMeasurementStarter` in the clients:
+Let's see how we set up these flows. The UDP apps in the clients and servers are the :ned:`UdpSourceApp` and :ned:`UdpSinkApp` type, which are versions of the modular :ned:`UdpApp` suitable only to work as a packet source or sink, respectively. These modules have optional ``measurementStarter`` and ``measurementRecorder`` submodules that we can enable in the .INI file. We enable the measurement starter (by setting its type to :ned:`FlowMeasurementStarter`) in the clients:
 
 .. literalinclude:: ../omnetpp.ini
-   :start-at: *.client1.app[*].outbound.typename = "FlowMeasurementStarter"
-   :end-at: *.client1.app[*].outbound.typename = "FlowMeasurementStarter"
+   :start-at: *.client*.app[*].measurementStarter.typename = "FlowMeasurementStarter"
+   :end-at: *.client*.app[*].measurementStarter.typename = "FlowMeasurementStarter"
    :language: ini
 
-Here is the :ned:`FlowMeasurementStarter` in the UDP app:
+Here is the :ned:`FlowMeasurementStarter` in a client's UDP app:
 
-.. figure:: media/Default_UdpApp3.png
+.. figure:: media/Default_UdpApp4.png
    :align: center
 
-   Figure X. :ned:`FlowMeasurementStarter` in UDP app
+   Figure X. :ned:`FlowMeasurementStarter` in client UDP app
 
-Similarly, we specify the inbound module in the server UDP apps to be a :ned:`FlowMeasurementRecorder`:
+Similarly, we enable the measurement recorder module in the server UDP apps (by setting their type to :ned:`FlowMeasurementRecorder`):
 
 .. literalinclude:: ../omnetpp.ini
-   :start-at: *.server1.app[*].inbound.typename = "FlowMeasurementRecorder"
-   :end-at: *.server1.app[*].inbound.typename = "FlowMeasurementRecorder"
+   :start-at: *.server*.app[*].measurementRecorder.typename = "FlowMeasurementRecorder"
+   :end-at: *.server*.app[*].measurementRecorder.typename = "FlowMeasurementRecorder"
    :language: ini
 
 For the packet flow between the two switches, we can enable the built-in ``measurementLayer`` submodule of :ned:`EthernetInterface`:
@@ -192,8 +193,8 @@ For the packet flow between the two switches, we can enable the built-in ``measu
 Here is the complete flow definition configuration (including the definitions already mentioned):
 
 .. literalinclude:: ../omnetpp.ini
-   :start-at: *.client1.app[*].outbound.typename = "FlowMeasurementStarter"
-   :end-at: *.switch2.eth[2].measurementLayer.measurementRecorder.measure = "elapsedTime or queueingTime"
+   :start-at: *.client*.app[*].measurementStarter.typename
+   :end-at: *.switch2.eth[2].measurementLayer.measurementRecorder.measure
    :language: ini
 
 We set up the four flows between the clients and the servers, and also the flow between the two switches. We name flows based on source and destination node (e.g. ``c1s1`` for ``client1->server1``). We set the measurement modules to measure the elapsed time and the queueing time. Some notes:
