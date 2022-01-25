@@ -50,3 +50,9 @@
 /examples/voipstream/VoIPStreamLargeNet/,    -f omnetpp.ini -c General -r 0,      5s,     2a70-e1e6/tplx;a39a-0890/~tNl;10eb-9d2c/tyf, PASS, udp EthernetMac EthernetCsmaMac
 /examples/voipstream/VoIPStreamTrafficTest/, -f omnetpp.ini -c General -r 0,      2s,     a740-3b44/tplx;5bd3-8774/~tNl;88ed-5fa9/~tND;7d7a-b707/tyf, PASS, udp EthernetMac
 
+/examples/voipstream/osudp, -f receiver.ini -c General, 10s, 0000-0000/tplx, ERROR, emulation
+/examples/voipstream/osudp, -f sender.ini -c g711_aLaw, 10s, 0000-0000/tplx, ERROR, emulation
+/examples/voipstream/osudp, -f sender.ini -c g711_muLaw, 10s, 0000-0000/tplx, ERROR, emulation
+/examples/voipstream/osudp, -f sender.ini -c g726, 10s, 0000-0000/tplx, ERROR, emulation
+/examples/voipstream/osudp, -f sender.ini -c pcm_s16le, 10s, 0000-0000/tplx, ERROR, emulation
+
