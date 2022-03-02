@@ -196,8 +196,9 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    ('users-guide/index', 'users-guide.tex', "INET Framework User's Guide", '', 'manual', False),
-    ('developers-guide/index', 'developers-guide.tex', "INET Framework Developer's Guide", '', 'manual', False),
+    #('users-guide/index', 'users-guide.tex', "INET Framework User's Guide", '', 'manual', False),
+    ('showcases/tsn/timesynchronization/gptp/doc/index', 'timesynchronization.tex', "GPTP Showcase", '', 'article', False),
+    #('developers-guide/index', 'developers-guide.tex', "INET Framework Developer's Guide", '', 'manual', False),
 ]
 
 
