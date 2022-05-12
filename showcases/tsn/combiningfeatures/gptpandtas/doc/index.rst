@@ -341,17 +341,16 @@ Thus the clocks in this domain keep being synchronized. (the hot-standby master 
 Note that when the primary master node goes offline, the hot-standby master node cannot synchronize to it any more.
 Thus its clock drifts from the primary master's, denoted by the orange and blue lines diverging. The bridge and slave nodes continue to synchronize to the hot-standby master node.
 (denoted by the other lines following it)
+**TODO** a tobbi node gorbeje ragaszkodik a sarga gorbehez
 
-.. **TODO** a tobbi node gorbeje ragaszkodik a sarga gorbehez
+TODO denoted by the orange and blue lines diverging
 
-.. TODO denoted by the orange and blue lines diverging
+TODO sudden change -> ezert nyultunk bele hogy ez latvanyos legyen
 
-.. TODO sudden change -> ezert nyultunk bele hogy ez latvanyos legyen
-
-.. TODO azert v a nagy change, hirtelen iranyvaltas, azert v mert a domain 0 es 2
-   -> az egyik driftje + a masik - -> emiatt van a nagy change
-   -> ha a difference kicsi lenne akkor you could barely see any change!!!!
-   -> szandekosan csinaltuk igy nem biztos hogy mindig igy van
+TODO azert v a nagy change, hirtelen iranyvaltas, azert v mert a domain 0 es 2
+-> az egyik driftje + a masik - -> emiatt van a nagy change
+-> ha a difference kicsi lenne akkor you could barely see any change!!!!
+-> szandekosan csinaltuk igy nem biztos hogy mindig igy van
 
 .. .. figure:: media/linkfailure_bridgesendstations.svg
       :align: center
@@ -390,7 +389,7 @@ In this configuration, we take the primary master clock offline just as in the p
 one that synchronizes to the hot-standby master, so time synchronization can continue to keep the difference of clocks in the network below
 the required limit.
 
-.. TODO there is no difference in time sync at all; abban tortenik valtozas h melyik az aktiv clock
+TODO there is no difference in time sync at all; abban tortenik valtozas h melyik az aktiv clock
 
 .. Here is the configuration:
 
@@ -399,11 +398,11 @@ Both changes are scheduled at 2s, halfway through the simulation:
 
 .. note:: We schedule the two changes at the same time, 2s. This is unrealistic.
 
-.. TODO switching from one domain and another is controlled manually -> BS
-   exactly the same time -> BS
+TODO switching from one domain and another is controlled manually -> BS
+exactly the same time -> BS
 
-   -> insert that -> no mechanism here that actually detects the breakage of the time
-   sync domain -> this is just one way of it breaking -> also completely unrealistic
+-> insert that -> no mechanism here that actually detects the breakage of the time
+sync domain -> this is just one way of it breaking -> also completely unrealistic
 
 .. literalinclude:: ../omnetpp.ini
    :language: ini
@@ -420,7 +419,7 @@ Let's examine the results. The clock drifts in domain 0 (clock time of the prima
 .. figure:: media/Failover_domain0.png
    :align: center
 
-.. **TODO** this is the same chart -> is the same egy link
+**TODO** this is the same chart -> is the same egy link
 
 The clocks begin to diverge from each other after the link break.
 
@@ -444,9 +443,9 @@ The next chart displays the clock drift of the active clock in all nodes:
 .. figure:: media/Failover_endstations.png
    :align: center
 
-.. **TODO** the nodes use the time of the active clock
+**TODO** the nodes use the time of the active clock
 
-.. **TODO** Basically, the nodes had a correctly synchronized time domain in the previous one as well. We just switch the active clock over to the one that has the correct time.
+**TODO** Basically, the nodes had a correctly synchronized time domain in the previous one as well. We just switch the active clock over to the one that has the correct time.
 
 The following chart displays the delay:
 
