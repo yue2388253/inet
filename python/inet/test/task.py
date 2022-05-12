@@ -1,5 +1,7 @@
 import logging
 
+from omnetpp.common.task import *
+
 from inet.common import *
 
 logger = logging.getLogger(__name__)

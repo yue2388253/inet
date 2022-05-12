@@ -1,11 +1,11 @@
 import logging
 import re
 
-# TODO use Task classes
+from omnetpp.simulation.task import *
 
+# TODO use Task classes
 from inet.common.ide import *
 from inet.simulation.project import *
-from inet.simulation.task import *
 from inet.test.fingerprint.store import *
 from inet.test.simulation import *
 
@@ -383,7 +383,9 @@ def print_correct_fingerprints(**kwargs):
     for test_task in multiple_test_tasks.tasks:
         print(test_task.simulation_task.get_parameters_string(**kwargs) + " " + COLOR_GREEN + str(test_task.fingerprint) + COLOR_RESET)
 
-def print_missing_correct_fingerprints(simulation_project=default_project, ingredients="tplx", num_runs=1):
+def print_missing_correct_fingerprints(simulation_project=None, ingredients="tplx", num_runs=1):
+    if simulation_project is None:
+        simulation_project = get_default_simulation_project()
     correct_fingerprint_store = get_correct_fingerprint_store(simulation_project)
     for simulation_config in get_all_simulation_configs(simulation_project):
         if not simulation_config.abstract and not simulation_config.emulation:
@@ -394,7 +396,9 @@ def print_missing_correct_fingerprints(simulation_project=default_project, ingre
                     if len(stored_fingerprint_entries) == 0:
                         print(simulation_task.get_parameters_string())
 
-def insert_missing_correct_fingerprints(source_ingredients, target_ingredients, simulation_project=default_project, **kwargs):
+def insert_missing_correct_fingerprints(source_ingredients, target_ingredients, simulation_project=None, **kwargs):
+    if simulation_project is None:
+        simulation_project = get_default_simulation_project()
     correct_fingerprint_store = get_correct_fingerprint_store(simulation_project)
     multiple_simulation_tasks = get_simulation_tasks(**kwargs)
     for simulation_task in multiple_simulation_tasks.tasks:
@@ -600,7 +604,9 @@ def remove_correct_fingerprints(**kwargs):
     correct_fingerprint_store = get_correct_fingerprint_store(multiple_simulation_tasks.simulation_project)
     correct_fingerprint_store.write()
 
-def remove_extra_correct_fingerprints(simulation_project=default_project, **kwargs):
+def remove_extra_correct_fingerprints(simulation_project=None, **kwargs):
+    if simulation_project is None:
+        simulation_project = get_default_simulation_project()
     correct_fingerprint_store = get_correct_fingerprint_store(simulation_project)
     for entry in correct_fingerprint_store.get_entries():
         found = False

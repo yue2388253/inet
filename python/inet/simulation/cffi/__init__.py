@@ -1,9 +1,11 @@
 import os
 
+from omnetpp.common.util import *
+
 from inet.common.util import *
 
-omnetpp_project_path = get_workspace_path("omnetpp")
-inet_project_path = get_workspace_path("inet")
+omnetpp_project_path = get_omnetpp_relative_path(".")
+inet_project_path = get_inet_relative_path(".")
 
 if omnetpp_project_path is not None and inet_project_path is not None and \
    os.path.exists(omnetpp_project_path) and os.path.exists(inet_project_path) and \

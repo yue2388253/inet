@@ -1,13 +1,15 @@
 import cppyy
 
+from omnetpp.common.util import *
+
 from inet.common.util import *
 
 # setup omnetpp include path
-cppyy.add_include_path(get_workspace_path("omnetpp/include"))
-cppyy.add_include_path(get_workspace_path("omnetpp/src"))
+cppyy.add_include_path(get_omnetpp_relative_path("include"))
+cppyy.add_include_path(get_omnetpp_relative_path("src"))
 
 # setup omnetpp library path
-cppyy.add_library_path(get_workspace_path("omnetpp/lib"))
+cppyy.add_library_path(get_omnetpp_relative_path("lib"))
 
 # load omnetpp libraries
 cppyy.load_library("liboppcmdenv")

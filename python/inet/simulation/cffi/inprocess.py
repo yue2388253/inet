@@ -27,11 +27,11 @@ class InprocessSimulationRunner:
         SimTime.setScaleExp(-12)
         static_flag = cStaticFlag()
         static_flag.__python_owns__ = False
-        cSimulation.loadNedSourceFolder(get_workspace_path("inet/src"))
-        cSimulation.loadNedSourceFolder(get_workspace_path("inet/examples"))
-        cSimulation.loadNedSourceFolder(get_workspace_path("inet/showcases"))
-        cSimulation.loadNedSourceFolder(get_workspace_path("inet/tutorials"))
-        cSimulation.loadNedSourceFolder(get_workspace_path("inet/tests/networks"))
+        cSimulation.loadNedSourceFolder(get_inet_relative_path("src"))
+        cSimulation.loadNedSourceFolder(get_inet_relative_path("examples"))
+        cSimulation.loadNedSourceFolder(get_inet_relative_path("showcases"))
+        cSimulation.loadNedSourceFolder(get_inet_relative_path("tutorials"))
+        cSimulation.loadNedSourceFolder(get_inet_relative_path("tests/networks"))
         cSimulation.doneLoadingNedFiles()
 
     def teardown(self):
