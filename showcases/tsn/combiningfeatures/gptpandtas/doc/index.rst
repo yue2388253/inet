@@ -125,7 +125,7 @@ However, we configure the drift rate of the oscillator in ``tsnClock2`` a bit di
 
 We specify a random drift rate for all oscillators in the second line, but override this setting for the oscillators of ``TsnClock2`` in the first line with a specific constant drift rate, in order to make the failover effect more visible.
 
-.. **TODO** minden time domainnek a timeja minden nodeban nyilvan van tartva -> ez a multiclock lenyege
+**TODO** minden time domainnek a timeja minden nodeban nyilvan van tartva -> ez a multiclock lenyege -> is that included somewhere?
 
 .. **TODO** time aware shaping config
 
@@ -197,6 +197,8 @@ The switches and the devices have four gPTP domains, and four up-to-date clocks 
       :language: ini
       :end-before: NormalOperation
 
+In the next section, we examine the simulation results for the three cases.
+
 The Example Simulations and Results
 -----------------------------------
 
@@ -228,9 +230,9 @@ to this gPTP time domain):
 
    domain 0 of the primary master clock
 
-   three other time domains being maintained but not used
+.. **TODO** three other time domains being maintained but not used
 
-   all nodes use
+.. **TODO** all nodes use domain 0
 
 .. Here are the results:
 
@@ -327,7 +329,7 @@ The clocks begin to diverge after time synchronization in this gPTP time domain 
 .. TODO domain -> time domain! too generic
 
 The next chart shows clock drift in domain 2. This is the domain of the hot-standby master clock, which stays online.
-Thus the clocks in this domain keep being synchronized. (the hot-standby master is denoted with the thick orange line, the primary master with the dotted blue line.)
+Thus the clocks in this time domain keep being synchronized. (the hot-standby master is denoted with the thick orange line, the primary master with the dotted blue line.)
 
 .. **TODO** keep being synchronized
 
@@ -341,6 +343,12 @@ Thus the clocks in this domain keep being synchronized. (the hot-standby master 
 Note that when the primary master node goes offline, the hot-standby master node cannot synchronize to it any more.
 Thus its clock drifts from the primary master's, denoted by the orange and blue lines diverging. The bridge and slave nodes continue to synchronize to the hot-standby master node
 (denoted by the other lines following the hot-standby master node).
+
+.. note:: The clock drift rate of the primary master is positive, the hot-standby master's is negative, thus the large change in direction (we set the constant drift rate for ``tsnClock2`` in the configuration to make sure the change in direction is apparent).
+
+.. **TODO** we set the constant drift rate for tsnClock1 in the configuration to make sure the change in direction is apparent
+   
+.. **TODO** thus the sudden/substantial/large change in direction
 
 .. **TODO** a tobbi node gorbeje ragaszkodik a sarga gorbehez
 
@@ -399,7 +407,7 @@ the required limit.
 We schedule the link break with a scenario manager script. We also schedule changing the active clock parameter in the :ned:`MultiClock` modules in all nodes.
 Both changes are scheduled at 2s, halfway through the simulation:
 
-.. note:: We schedule the two changes at the same time, 2s. This is unrealistic.
+.. note:: We schedule the two changes at the same time, 2s. This is unrealistic (there is no mechanism here that detects the breakage of the time synchronization domains, so we switch the active clock manually with the scenario manager).
 
 .. TODO switching from one domain and another is controlled manually -> BS
    exactly the same time -> BS
@@ -411,7 +419,7 @@ Both changes are scheduled at 2s, halfway through the simulation:
    :language: ini
    :start-at: Failover
 
-Here are the results:
+.. Here are the results:
 
 Let's examine the results. The clock drifts in domain 0 (clock time of the primary master node) are displayed on the following chart:
 
@@ -422,7 +430,7 @@ Let's examine the results. The clock drifts in domain 0 (clock time of the prima
 .. figure:: media/Failover_domain0.png
    :align: center
 
-.. **TODO** this is the same chart -> is the same egy link
+**TODO** this is the same chart -> is the same egy link
 
 The clocks begin to diverge from each other after the link break.
 
