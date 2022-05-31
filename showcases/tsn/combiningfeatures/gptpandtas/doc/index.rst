@@ -485,7 +485,8 @@ For comparison, the next chart displays the delay for the three configurations o
       :width: 100%
 
 
-Sources: :download:`omnetpp.ini <../omnetpp.ini>`, :download:`GptpAndTasShowcase.ned <../GptpAndTasShowcase.ned>`
+| Sources: :download:`omnetpp.ini <../omnetpp.ini>`, :download:`GptpAndTasShowcase.ned <../GptpAndTasShowcase.ned>`
+| Extra configurations: :download:`extras.ini <../extras.ini>`
 
 Discussion
 ----------
