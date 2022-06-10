@@ -16,3 +16,10 @@ class FcsHeader extends FieldsChunk
     uint32_t fcs = 0;
     FcsMode fcsMode = FCS_MODE_UNDEFINED;
 }
+
+class Fcs16Chunk extends FieldsChunk
+{
+    chunkLength = B(2);
+    uint16_t fcs = 0;
+    FcsMode fcsMode = FCS_MODE_UNDEFINED;
+}
