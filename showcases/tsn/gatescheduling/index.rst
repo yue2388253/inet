@@ -10,8 +10,10 @@ these constraints.
 
 Currently, INET contains three gate scheduling configurator models:
 
-- :ned:`EagerGateScheduleConfigurator`: This is a simple model, which iterates over traffic classes in order of priority, and sets gate schedules. Might not be able to find a solution that the other configurators are
-- :ned:`TSNschedGateScheduleConfigurator` and :ned:`Z3GateScheduleConfigurator`: These use a SAT-solver-based method to find solutions that satisfy the requirements
+- :ned:`EagerGateScheduleConfigurator`: This is a simple model, which eagerly allocates the gate schedule. It can fail even in cases where a solution exists.
+- :ned:`Z3GateScheduleConfigurator`: This uses a SAT-solver-based method to find solutions that satisfy the latency and jitter requirements.
+- :ned:`TSNschedGateScheduleConfigurator`: This uses an external
+tool instead of the built-in functionality.
 
 The following showcases demonstrate gate scheduling for time-aware shaping:
 
