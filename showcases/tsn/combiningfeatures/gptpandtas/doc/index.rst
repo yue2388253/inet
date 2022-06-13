@@ -125,7 +125,7 @@ However, we configure the drift rate of the oscillator in ``tsnClock2`` a bit di
 
 We specify a random drift rate for all oscillators in the second line, but override this setting for the oscillators of ``TsnClock2`` in the first line with a specific constant drift rate, in order to make the failover effect more visible.
 
-**TODO** minden time domainnek a timeja minden nodeban nyilvan van tartva -> ez a multiclock lenyege -> is that included somewhere?
+.. **TODO** minden time domainnek a timeja minden nodeban nyilvan van tartva -> ez a multiclock lenyege -> is that included somewhere?
 
 .. **TODO** time aware shaping config
 
@@ -407,7 +407,9 @@ the required limit.
 We schedule the link break with a scenario manager script. We also schedule changing the active clock parameter in the :ned:`MultiClock` modules in all nodes.
 Both changes are scheduled at 2s, halfway through the simulation:
 
-.. note:: We schedule the two changes at the same time, 2s. This is unrealistic (there is no mechanism here that detects the breakage of the time synchronization domains, so we switch the active clock manually with the scenario manager).
+.. note:: We schedule the two changes at the same time, 2s. This is unrealistic. There is no mechanism here that detects the breakage of the time synchronization domains, so we switch the active clock manually with the scenario manager. Even if there was such mechanism, switching to another time domain at exactly the same moment as the link break happens is unrealistic as well.
+
+.. **TODO** also, switching to another time domain at exactly the same moment is unrealistic as well (even if there was a mechanism)
 
 .. TODO switching from one domain and another is controlled manually -> BS
    exactly the same time -> BS
@@ -430,7 +432,7 @@ Let's examine the results. The clock drifts in domain 0 (clock time of the prima
 .. figure:: media/Failover_domain0.png
    :align: center
 
-**TODO** this is the same chart -> is the same egy link
+.. **TODO** this is the same chart -> is the same egy link
 
 The clocks begin to diverge from each other after the link break.
 
@@ -440,6 +442,8 @@ The next chart displays the clock drifts in domain 2 (clock time of the hot-stan
    :align: center
 
 After the link break, the clocks are synchronized to the hot-standby master's time.
+
+.. note:: The two charts above are exactly the same as the charts for Time Domain 0 and 2 in the Link Failure of Master Clock section, because there is no difference between the two cases in time synchronization and the scheduled link break. The difference is in which one is the active time domain.
 
 The next chart displays the clock drift of the active clock in all nodes:
 
@@ -463,7 +467,7 @@ The following chart displays the delay:
 .. figure:: media/delay_normaloperation.png
    :align: center
 
-The delay is constant and the same as during normal operation, due to the seamless failover to the hot-standby master node.
+The delay is constant and the same as during normal operation, due to the seamless failover to the hot-standby master node (not even one frame suffers increased delay).
 For comparison, the next chart displays the delay for the three configurations on individual plots, with the same axis scale:
 
 .. figure:: media/Delay_all.png
@@ -483,6 +487,8 @@ For comparison, the next chart displays the delay for the three configurations o
    .. .. figure:: media/results.png
       :align: center
       :width: 100%
+
+.. note:: There is a configuration in :download:`extras.ini <../extras.ini>` that simulates what happens if the primary master clock comes back online after some time, and all nodes switch back to it. The relevant charts are in Extras.anf.
 
 
 | Sources: :download:`omnetpp.ini <../omnetpp.ini>`, :download:`GptpAndTasShowcase.ned <../GptpAndTasShowcase.ned>`
