@@ -21,4 +21,4 @@ The following showcases demonstrate gate scheduling for time-aware shaping:
 
    eager/doc/index
    sat/doc/index
-   tsnsched/doc/index
+..   tsnsched/doc/index
