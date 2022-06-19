@@ -328,7 +328,7 @@ The clocks begin to diverge after time synchronization in this gPTP time domain 
 
 .. TODO domain -> time domain! too generic
 
-The next chart shows clock drift in domain 2. This is the domain of the hot-standby master clock, which stays online.
+The next chart shows clock drift in time domain 2. This is the time domain of the hot-standby master clock, which stays online.
 Thus the clocks in this time domain keep being synchronized. (the hot-standby master is denoted with the thick orange line, the primary master with the dotted blue line.)
 
 .. **TODO** keep being synchronized
@@ -340,7 +340,7 @@ Thus the clocks in this time domain keep being synchronized. (the hot-standby ma
 .. figure:: media/LinkFailure_domain2.png
    :align: center
 
-Note that when the primary master node goes offline, the hot-standby master node cannot synchronize to it any more.
+When the primary master node goes offline, the hot-standby master node cannot synchronize to it any more.
 Thus its clock drifts from the primary master's, denoted by the orange and blue lines diverging. The bridge and slave nodes continue to synchronize to the hot-standby master node
 (denoted by the other lines following the hot-standby master node).
 
@@ -372,7 +372,7 @@ Thus its clock drifts from the primary master's, denoted by the orange and blue 
 
 .. The active clocks are still the ones using domain 0 as the source of time, thus their times diverge after the link break TODO due to not being synced. Again, this chart is the same as the one displaying domain 0.
 
-The active clocks in bridge and slave nodes are the ones that use Domain 0 as the source of time, thus the clock drift chart for the active clocks is the same as the one displaying clock drift for Domain 0.
+The active clocks in bridge and slave nodes are the ones that use time domain 0 as the source of time, thus the clock drift chart for the active clocks is the same as the one displaying clock drift for time domain 0.
 
 .. TODO nem kell a chart csak annyi hogy ugynaaz
 
@@ -400,7 +400,9 @@ In this configuration, we take the primary master clock offline just as in the p
 one that synchronizes to the hot-standby master, so time synchronization can continue to keep the difference of clocks in the network below
 the required limit.
 
-.. TODO there is no difference in time sync at all; abban tortenik valtozas h melyik az aktiv clock
+.. **TODO** there is no difference in time sync at all; abban tortenik valtozas h melyik az aktiv clock -> dont know if this is needed
+
+.. note:: There is no difference in time synchronization at all in the three configurations. The difference is in which clocks/domains are active.
 
 .. Here is the configuration:
 
@@ -410,6 +412,8 @@ Both changes are scheduled at 2s, halfway through the simulation:
 .. note:: We schedule the two changes at the same time, 2s. This is unrealistic. There is no mechanism here that detects the breakage of the time synchronization domains, so we switch the active clock manually with the scenario manager. Even if there was such mechanism, switching to another time domain at exactly the same moment as the link break happens is unrealistic as well.
 
 .. **TODO** also, switching to another time domain at exactly the same moment is unrealistic as well (even if there was a mechanism)
+
+.. **TODO** currently there is no mechanism in INET
 
 .. TODO switching from one domain and another is controlled manually -> BS
    exactly the same time -> BS
