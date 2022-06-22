@@ -1,10 +1,10 @@
-Eager Gate Scheduling
-=====================
+Eager Gate Schedule Configuration
+=================================
 
 Goals
 -----
 
-This showcase demonstrates how the eager gate scheduling configurator can set up schedules in a simple network.
+This showcase demonstrates how the eager gate schedule configurator can set up schedules in a simple network.
 
 | INET version: ``4.4``
 | Source files location: `inet/showcases/tsn/gatescheduling/eager <https://github.com/inet-framework/tree/master/showcases/tsn/gatescheduling/eager>`__
@@ -36,7 +36,7 @@ A gate cycle duration of 1ms is displayed on the following sequence chart. Note 
 .. figure:: media/seqchart.png
     :align: center
 
-Here is the time delay of the ``client2-best effort-1`` from the packet source and the packet sink on the sequence chart. Note that the delay is within the 500us requirement:
+Here is the delay for the second packet of ``client2`` in the best effort traffic class, from the packet source to the packet sink. Note that this stream is the outlier on the above chart. The delay is within the 500us requirement, but it's quite close to it:
 
 .. figure:: media/timediff.png
     :align: center

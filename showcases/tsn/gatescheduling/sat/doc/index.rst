@@ -1,10 +1,10 @@
-SAT Solver-based Gate Scheduling
-================================
+SAT Solver-based Gate Schedule Configuration
+============================================
 
 Goals
 -----
 
-This showcase demonstrates the SAT Solver-based gate scheduling configurator TODO
+This showcase demonstrates a gate schedule configurator that solves the autoconfiguration problem using a multivariate linear inequality system, directly producing the gate control lists from the variables.
 
 | INET version: ``4.4``
 | Source files location: `inet/showcases/tsn/gatescheduling/sat <https://github.com/inet-framework/tree/master/showcases/tsn/gatescheduling/sat>`__
@@ -25,7 +25,7 @@ Here is the configuration:
 Results
 -------
 
-A gate cycle of 1ms is displayed on the following sequence chart. Note the time efficiency of the gate schedules:
+A gate cycle of 1ms is displayed on the following sequence chart. Note that the time efficiency of the gate schedules is even better than in the `Eager` case:
 
 .. figure:: media/seqchart.png
     :align: center
@@ -35,7 +35,7 @@ The application end-to-end delay for the different traffic classes is displayed 
 .. figure:: media/delay.png
     :align: center
 
-The delay is constant for every packet, and within the specified constraint of 500us.
+The delay is constant for every packet, and within the specified constraint of 500us. Note that the traffic delay is symmetric among the different source and sink combinations (in contrast with the `Eager` case).
 
 The next sequence chart excerpt displays one packet as it travels from the packet source to the packet sink, with the delay indicated:
 
@@ -43,9 +43,9 @@ The next sequence chart excerpt displays one packet as it travels from the packe
     :align: center
 
 All packets have the exact same delay, which can be calculated analytically: ``(propagation time + transmission time) * 3`` (queueing time is zero).
-Inserting the values of 86.64us transmission time and 0.05us propagation time per link, the delay is 260us for the best effort traffic category. **TODO** its apparently not 
+Inserting the values of 84.64 us transmission time and 0.05 us propagation time per link, the delay is 254.07 us for the best effort traffic category.
 
-The following charts compare the SAT-based and Eager gate scheduling configurators in terms of application end-to-end delay:
+The following charts compare the SAT-based and Eager gate schedule configurators in terms of application end-to-end delay:
 
 .. figure:: media/delay_comparison_besteffort.png
     :align: center
@@ -53,8 +53,7 @@ The following charts compare the SAT-based and Eager gate scheduling configurato
 .. figure:: media/delay_comparison_video.png
     :align: center
 
-The difference is that in case of the SAT-based gate scheduling configurator, all packets have the same constant delay; the eager configurator produces
-outliers.
+The difference is that in case of the SAT-based gate schedule configurator, all flows in a given traffic class have the same constant delay; in case of the eager configurator's delay, some streams have more delay than others.
 
 Sources: :download:`omnetpp.ini <../omnetpp.ini>`
 
