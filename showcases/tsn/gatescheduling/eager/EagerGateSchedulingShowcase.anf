@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <analysis version="2">
     <inputs>
-        <input pattern="/inet/showcases/tsn/gatescheduling/eager/results/General-*.vec"/>
-        <input pattern="/inet/showcases/tsn/gatescheduling/eager/results/General-*.sca"/>
+        <input pattern="/inet/showcases/tsn/gatescheduling/eager/results/Eager-*.vec"/>
+        <input pattern="/inet/showcases/tsn/gatescheduling/eager/results/Eager-*.sca"/>
     </inputs>
     <charts>
         <chart icon="icons/full/obj/linechart.png" id="489326974" name="Application End-to-End Delay" template="linechart_native" type="LINE">
             <script><![CDATA[import math
 from omnetpp.scave import results, chart, utils
+# ----workaround start----
+# workaround when using omnetpp 6.0 that doesn't yet contain the python path feature
+# remove when it's part of a release
+# replace it with:
+#     import modifiedplot
+try:
+    import modifiedplot
+except:
+    import modifiedplot_eager
+    import modifiedplot
+import matplotlib.pyplot as plt
+# ----workaround end----
 
 # get chart properties
 props = chart.get_properties()
@@ -30,8 +42,20 @@ if df.empty:
 # apply vector operations
 df = utils.perform_vector_ops(df, props["vector_operations"])
 
+style_tuple_list = [('module', '.*app\[0\].*', {'marker': 'd', 'markersize': 4}), 
+                    ('module', '.*app\[1\].*', {'marker': 'x', 'markersize': 2}),
+                    ('module', '.*app\[2\].*', {'marker': 'd', 'markersize': 4}),
+                    ('module', '.*app\[3\].*', {'marker': 's', 'markersize': 2})]
+
+order = ['module', {'TsnDumbbellNetwork.server2.app[2].sink': 2,
+                    'TsnDumbbellNetwork.server2.app[3].sink': 3,
+                    'TsnDumbbellNetwork.server1.app[0].sink': 0,
+                    'TsnDumbbellNetwork.server1.app[1].sink': 1}]
+
+modifiedplot.add_to_dataframe(df, style_tuple_list, order=order)
+
 # plot
-utils.plot_vectors(df, props)
+modifiedplot.plot_vectors(df, props)
 
 utils.postconfigure_plot(props)
 
@@ -600,12 +624,12 @@ utils.export_data_if_needed(df, props)
             <property name="linecolor" value=""/>
             <property name="Plot.Caching" value="true"/>
             <property name="legend_prefer_result_titles" value="true"/>
-            <property name="legend_manual" value="false"/>
+            <property name="legend_manual" value="true"/>
             <property name="yaxis_title" value="Application End-to-End Delay [us]"/>
-            <property name="legend_replacements" value="/TsnDumbbellNetwork.//&#10;/.sink//&#10;/\./ /"/>
+            <property name="legend_replacements" value="/TsnDumbbellNetwork.//&#10;/.sink//&#10;/\[//&#10;/\]//&#10;/server1.app0/client1 best effort/&#10;/server1.app1/client2 best effort/&#10;/server2.app2/client1 video/&#10;/server2.app3/client2 video/"/>
             <property name="Legend.Border" value="false"/>
             <property name="title" value="Application End-to-End Delay"/>
-            <property name="legend_automatic" value="true"/>
+            <property name="legend_automatic" value="false"/>
             <property name="Plot.Title.Font" value="Arial-regular-10"/>
             <property name="vector_operations" value="apply: multiply_by(1000000)"/>
             <property name="cycle_seed" value="0"/>
@@ -625,7 +649,7 @@ utils.export_data_if_needed(df, props)
             <property name="image_export_filename" value="delay"/>
             <property name="xaxis_min" value=""/>
             <property name="linewidth" value="1.5"/>
-            <property name="legend_format" value=""/>
+            <property name="legend_format" value="$module"/>
             <property name="filter" value="* AND name =~ meanBitLifeTimePerPacket:vector"/>
             <property name="X.Label.Wrap" value="true"/>
             <property name="vector_start_time" value=""/>

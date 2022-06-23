@@ -48,6 +48,8 @@ The following chart displays the delay for packets of the different traffic cate
 
 All delay is within the specified constraints.
 
+.. note:: Both video streams and the ``client2 best effort`` stream have two cluster points. This is due to these traffic classes having multiple packets per gate cycle. As the different flows interact, some packets have increased delay.
+
 Sources: :download:`omnetpp.ini <../omnetpp.ini>`
 
 Discussion
