@@ -1,5 +1,5 @@
-TSN Sched based Gate Scheduling
-===============================
+TSNsched-based Gate Scheduling
+==============================
 
 Goals
 -----

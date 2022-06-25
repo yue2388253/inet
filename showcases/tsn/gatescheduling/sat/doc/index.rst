@@ -1,4 +1,4 @@
-SAT Solver-based Gate Schedule Configuration
+SAT-Solver-based Gate Schedule Configuration
 ============================================
 
 Goals
