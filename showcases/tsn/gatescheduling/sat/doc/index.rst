@@ -53,6 +53,12 @@ The following charts compare the SAT-based and Eager gate schedule configurators
 .. figure:: media/delay_comparison_video.png
     :align: center
 
+.. figure:: media/delay_comp4242.png
+    :align: center
+
+.. figure:: media/delay_comp3131.png
+    :align: center
+
 The difference is that in case of the SAT-based gate schedule configurator, all flows in a given traffic class have the same constant delay; in case of the eager configurator's delay, some streams have more delay than others.
 
 Sources: :download:`omnetpp.ini <../omnetpp.ini>`
